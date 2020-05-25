@@ -7,7 +7,6 @@ class Routes extends Component {
     return (
       <Router>
         <Switch>
-
         </Switch>
       </Router>
     )
