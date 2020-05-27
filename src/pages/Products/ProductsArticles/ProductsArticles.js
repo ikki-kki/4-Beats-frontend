@@ -6,7 +6,6 @@ import './ProductsArticles.scss';
 class ProductsArticles extends React.Component {
     render() {
         const { lists } = this.props;
-        console.log(this.props)
         const makeCard = lists && lists.map((list, idx) => (
             <ProductCard key={list.id} image={list.image} name={list.name} title={list.title} specLists={list.list} price={list.price}  />
         ))
