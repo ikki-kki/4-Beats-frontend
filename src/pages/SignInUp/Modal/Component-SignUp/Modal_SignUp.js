@@ -1,8 +1,6 @@
 import React from "react";
 import './Modal_SignUp.scss';
-import ReactTransitionGroup from 'react-addons-css-transition-group';
-// import jQuery from "jquery";
-// window.$ = window.jQuery = jQuery;
+
 
 class Modal_SignUp extends React.Component{
   constructor(props){
@@ -73,7 +71,8 @@ class Modal_SignUp extends React.Component{
 
 
   render(){
-    return(
+    return( 
+       
               <div className="Component-SignUp">
                     <button className="gotobackBtn"><span class="material-icons">navigate_before</span></button>
                     <button className="closeBtn-signUp" onClick={this.props.close}><span class="material-icons">close</span></button>
@@ -107,6 +106,7 @@ class Modal_SignUp extends React.Component{
                     </div>
                     <div className="haveAccount"><button className="havaAccountBtn">Do you already have an Beats account?</button></div>
               </div>
+              
     )
   }
 }

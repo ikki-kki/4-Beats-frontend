@@ -11,6 +11,7 @@
           
           .mainTitle{
             padding-bottom: 30px;
+            
 
             .title{
               font-size: 16pt;
@@ -24,6 +25,41 @@
               color:#666;
             }
           }
+
+          .mainTitle_2{
+            padding-bottom: 30px;
+            display: none;
+
+            .title{
+              font-size: 16pt;
+              color: #333;
+              font-size: 33px;
+              padding: 40px 0 22px;
+              font-family: $mainFont;
+            }
+            .subTitle{
+              font-size: 19px;
+              color:#666;
+            }
+          }
+
+          .mainTitle-Second{
+            padding-bottom: 30px;
+            
+
+            .title{
+              font-size: 16pt;
+              color: #333;
+              font-size: 33px;
+              padding: 40px 0 22px;
+              font-family: $mainFont;
+            }
+            .subTitle{
+              font-size: 19px;
+              color:#666;
+            }
+          }
+          
           
           .content{
             margin-bottom: 35px;
