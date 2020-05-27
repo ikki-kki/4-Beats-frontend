@@ -1,11 +1,13 @@
 import React from 'react';
+import { withRouter } from 'react-router-dom';
 
 export class Main extends React.Component {
     render() {
         return (
-            <div>Main Page</div>
+            <div>
+            </div>
         )
     }
 }
 
-export default Main;
+export default withRouter(Main);
