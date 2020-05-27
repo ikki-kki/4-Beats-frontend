@@ -1,0 +1,19 @@
+@import "../../../../../styles/common.scss";
+.ProductSpec {
+    display: flex;
+    align-items: center;
+    margin-bottom: 16px;
+    .iconWrap {
+        width: 24px;
+        height: 24px;
+        margin-right: 14px;
+    }
+    .textWrap {
+        .text {
+            font-family: $mainFont;
+            font-size: 16px;
+            font-weight: 300;
+            color: #fff;
+        }
+    }
+}
