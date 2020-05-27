@@ -4,9 +4,6 @@ import { Link } from 'react-router-dom';
 class ProductCard extends React.Component {
     render() {
         const { name, image, title, specLists, price } = this.props
-        const specList = specLists.map((list, idx) => (
-            <li><span>{list}</span></li>
-        ))
 
         return(
             <section className="productContent">
@@ -22,7 +19,7 @@ class ProductCard extends React.Component {
                             </div>
                         </div>
                         <ul className="productInfoList">
-                            {specList}
+                            { specLists.map((list, idx) => ( <li><span>{list}</span></li> )) }
                         </ul>
                         <p className="price">
                             <span>{ price }</span>
