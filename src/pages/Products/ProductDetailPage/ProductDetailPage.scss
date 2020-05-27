@@ -115,4 +115,53 @@
             }
         }
     }
+    .mainContensHalfBlackWrap {
+        background: linear-gradient(to bottom, #161616 50%, #FFFFFF 0%);
+        position: relative;
+
+        .imgWrap {
+            max-width: 1440px;
+            margin: 0 auto;
+            position: relative;
+            img {
+                width: 100%;
+            }
+            .textWrap {
+                position: absolute;
+                top: 50%;
+                max-width: 460px;
+                margin : 4%;
+                .timeIcon {
+                    background: url('https://www.beatsbydre.com/content/dam/beats/global/pdp-v2-icons/FullBatteryW.png');
+                    width: max-content;
+                    margin-top: 41px;
+                    .timeInfo {
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        flex-direction: column;
+                        font-family: $mainFont;
+                        color: #fff;
+                        min-width: 60px;
+                        height: 100%;
+                        .infoTop {
+                            font-size: 15px;
+                            line-height: 1.5;
+                            font-weight: 500;
+                        }
+                        .infoMiddle {
+                            font-size: 48px;
+                            line-height: 1;
+                            font-weight: 700;
+                        }
+                        .infoBottom {
+                            font-size: 15px;
+                            line-height: 1.5;
+                            font-weight: 500;
+                        }
+                    }
+                }
+            }
+        }
+    }
 }

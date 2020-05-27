@@ -35,15 +35,24 @@ class ProductDetailPage extends React.Component {
                     <div className="sectionSpacing"></div>
                 </section>
                 <section className="mainContensHalfBlackWrap">
-                    <div>
+                    <div className="imgWrap">
                         <img alt="walking man" src={`${Config[0].detailImage}05.jpg.large.2x.jpg`} />
+                        <div className="textWrap">
+                            <TextPiece  
+                                title="Bring on the long days" 
+                                inText="With up to 15 hours of battery life, Powerbeats keep up with marathons, hikes, or multiple workout days in a single charge. And with Fast Fuel, a 5-minute charge gives up to 1 hour of playback when battery is low"/>
+                            <div className="timeIcon">
+                                <div className="timeInfo">
+                                    <div className="infoTop">Up To</div>
+                                    <div className="infoMiddle">15</div>
+                                    <div className="infoBottom">Hours</div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                    <TextPiece  
-                        title="Bring on the long days" 
-                        inText="With up to 15 hours of battery life, Powerbeats keep up with marathons, hikes, or multiple workout days in a single charge. And with Fast Fuel, a 5-minute charge gives up to 1 hour of playback when battery is low"/>
-                    <div className="timeIcon">
-                        <div></div>
-                    </div>
+                </section>
+                <section>
+                    <img alt="power beats" src={`${Config[0].detailImage}04.png.large.2x.png`} />
                 </section>
             </div>
         )
