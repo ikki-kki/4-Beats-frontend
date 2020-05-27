@@ -74,7 +74,6 @@ class Modal_SignUp extends React.Component{
 
   render(){
     return(
-      
               <div className="Component-SignUp">
                     <button className="gotobackBtn"><span class="material-icons">navigate_before</span></button>
                     <button className="closeBtn-signUp" onClick={this.props.close}><span class="material-icons">close</span></button>
