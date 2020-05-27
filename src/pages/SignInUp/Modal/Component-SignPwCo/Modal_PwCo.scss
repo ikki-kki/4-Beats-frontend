@@ -1,12 +1,12 @@
-@import '../../../styles/common.scss';
+@import '../../../../styles/common.scss';
 
-.Modal-signIn-overlay{
+.Modal-PwCo-overlay{
     position: fixed;
     top: 0;
     left: 0;
     bottom: 0;
     right: 0;
-    background-color: rgba(88, 88, 88, 0.589);
+    background-color: rgba(88, 88, 88, 0.16);
 
     &.Modal-anim-enter {
         opacity: 0.00;
@@ -23,14 +23,14 @@
         opacity: 0.00;
       }
   }
-  .loginForm-signIn{
+  .loginForm-PwCo{
       position: fixed;
       top: 50%;
       left: 50%;
       transform: translate(-50%, -50%);
       width:550px;
       // border-radius: 10px;
-      background-color: #e7e7e7;
+      background-color: #fffef2;
       padding:50px;
       box-shadow: 0px 3px 6px rgba(0,0,0,0.16);
       
@@ -86,27 +86,68 @@
         .TextInput{
           width: 100%;
           border:none;
-          background-color: #e7e7e7;
+          background-color: #fffef2;
           font-size:25px;
           border-color:rgba(51, 51, 51, .2);
           border-style: solid;
           border-width: 0 0 1px 0;
-          padding-bottom:3px;     
+          padding-bottom:3px     
         }
         input::placeholder {
-          color: rgb(155, 155, 155);
-          font-family: $mainFont;
-        }
+            color: rgb(155, 155, 155);
+            font-family: $mainFont;
+          }
         .TextInput:focus{
-          border-color:rgba(102, 102, 102, 0.822);
-          border-style: solid;
-          border-width: 0 0 1px 0;
-          transition: all .2s ease-in-out;
-      }
+            border-color:rgba(102, 102, 102, 0.822);
+            border-style: solid;
+            border-width: 0 0 1px 0;
+            transition: all .2s ease-in-out;
+        }
         input:focus::-webkit-input-placeholder, 
         textarea:focus::-webkit-input-placeholder { 
         /* WebKit browsers */ color:transparent; 
+         }
+      }
+
+      .addContent{
+        margin-bottom: 35px;
+        padding-top: 35px;
+
+        .TextInput{
+          width: 100%;
+          border:none;
+          background-color: #fffef2;
+          font-size:25px;
+          border-color:rgba(51, 51, 51, .2);
+          border-style: solid;
+          border-width: 0 0 1px 0;
+          padding-bottom:3px     
         }
+        input::placeholder {
+            color: rgb(155, 155, 155);
+            font-family: $mainFont;
+          }
+        .TextInput:focus{
+            border-color:rgba(102, 102, 102, 0.822);
+            border-style: solid;
+            border-width: 0 0 1px 0;
+            transition: all .2s ease-in-out;
+        }
+        input:focus::-webkit-input-placeholder, 
+        textarea:focus::-webkit-input-placeholder { 
+        /* WebKit browsers */ color:transparent; 
+         }
+         .ForgottenPwBtn{
+            margin-top:20px;
+            margin-bottom:35px;
+            float: right;
+            color:#666;
+            font-family: $mainFont;
+            font-weight: 500;
+            border:0;
+            outline:0;
+            background-color:#fffef2 ;
+         }
       }
   
       .button-wrap{
@@ -116,7 +157,7 @@
           width: 100%;
           height:60px;
           min-width: 210px;
-          background-color: #d6586b;;
+          background-color: #999;
           font-size: 13pt;
           color: white;
           border: 0;
@@ -130,13 +171,13 @@
           width: 100%;
           height:60px;
           min-width: 210px;
-          background-color: $mainRed;
+          background-color: #333;
           font-size: 13pt;
           color: white;
           border: 0;
           transition: all .2s ease-in-out;
           &:hover{
-            background-color: #fc0026;
+            background-color: rgb(22, 22, 22);
             transition: all .2s ease-in-out;
           }
         }
@@ -146,7 +187,7 @@
     // overflow: hidden;
     border:0;
     outline:0;
-    background-color: #e7e7e7;
+    background-color: #fffef2;
     float:right;
   }
 

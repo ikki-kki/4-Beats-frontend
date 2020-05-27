@@ -1,10 +1,11 @@
 import React from 'react';
-import Modal_SignIn from './Modal/Modal_SignIn'
-import Modal_SignUp from './Modal/Modal_SignUp';
-import Modal_PwCo from './Modal/Modal_PwCo';
-import Modal_SignUp_com from './Modal/Modal_SignUp_com'
-import Modal_FoPw from './Modal/Modal_FoPw'
+import Modal_SignIn from './Modal/Component-SignIn/Modal_SignIn'
+import Modal_SignUp from './Modal/Component-SignUp/Modal_SignUp';
+import Modal_PwCo from './Modal/Component-SignPwCo/Modal_PwCo';
+import Modal_FoPw from './Modal/Component-SignFoPw/Modal_FoPw'
+import SignForm from './Modal/SignForm';
 import './SignInUp.scss';
+
 
 class SignInUp extends React.Component{
     constructor(props){
@@ -14,11 +15,7 @@ class SignInUp extends React.Component{
         }
       }
 
-      // ColorChange=()=>[
-      //   this.setState({
-      //     BtnColor:true
-      //   })
-      // ]
+    
       
       openModal = () => {
         this.setState({ isModalOpen: true });
@@ -37,7 +34,7 @@ class SignInUp extends React.Component{
                 <span onClick={this.openModal}>로그인</span>
                 
             </div>
-            <Modal_SignUp isOpen={this.state.isModalOpen} close={this.closeModal} ColorChange={this.buttonColorChange} />
+            <SignForm isOpen={this.state.isModalOpen} close={this.closeModal} ColorChange={this.buttonColorChange} />
         </main>
         )
     }
