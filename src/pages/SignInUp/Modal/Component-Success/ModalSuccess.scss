@@ -1,4 +1,57 @@
 @import '../../../../styles/common.scss';
+.Modal-Success-overlay{
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background-color: rgba(88, 88, 88, 0.589);
+
+  &.Modal-anim-enter {
+      opacity: 0.00;
+      transition: all 0.2s;
+    }
+    &.Modal-anim-enter.Modal-anim-enter-active {
+      opacity: 1;
+    }
+    &.Modal-anim-leave {
+      opacity: 1;
+      transition: all 0.2s;
+    }
+    &.Modal-anim-leave.Modal-anim-leave-active {
+      opacity: 0.00;
+    }
+}
+.loginForm-Success{
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width:550px;
+  // border-radius: 10px;
+  background-color: #e7e7e7;
+  padding:50px;
+  box-shadow: 0px 3px 6px rgba(0,0,0,0.16);
+  
+
+  &.Modal-anim-enter {
+    opacity: 0.00;
+    transform: translate(-50%, -50%) scale(0.7);
+    transition: all 0.2s;
+  }
+  &.Modal-anim-enter.Modal-anim-enter-active {
+    opacity: 1;
+    transform: translate(-50%, -50%) ;
+  }
+  &.Modal-anim-leave {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+    transition: all 0.2s;
+  }  
+  &.Modal-anim-leave.Modal-anim-leave-active {
+    opacity: 0.00;
+    transform: translate(-50%, -50%) scale(0.7);
+  }
 
         .Component-Success{
           .crossBtn{
@@ -39,7 +92,7 @@
               color: white;
               border: 0;
               &:hover{
-                background-color: #ff1b3d;
+                background-color: $mainRed;
                 transition: all .2s ease-in-out;
               }
               // cursor: pointer;
@@ -49,17 +102,7 @@
               // }
             }
           }
-          .AddCloseBtn{
-            margin-top:15px;
-            display:flex;
-            justify-content: center;
-          .CloseBtn{
-              border:0;
-              outline: 0;
-              background-color: #e7e7e7;
-              color:rgb(56, 56, 56);
-              font-family: $mainFont;
-              font-weight: 500;
-          }
+          
+        
         }
-        }
+      }

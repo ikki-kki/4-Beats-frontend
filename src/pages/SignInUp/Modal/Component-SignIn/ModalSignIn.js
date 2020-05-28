@@ -1,8 +1,6 @@
 import React from "react";
 import ReactTransitionGroup from 'react-addons-css-transition-group';
 import './ModalSignIn.scss';
-// import jQuery from "jquery";
-// window.$ = window.jQuery = jQuery;
 
 class ModalSignIn extends React.Component{
   constructor(props){
@@ -10,29 +8,29 @@ class ModalSignIn extends React.Component{
     this.state = {
       isModalOpen: false, 
       BtnColor:true,
-      EmailCheck:true,
+      SignUpOpen:true,
       email:"",
-      
+      password:"",
+    
+    
     }
   }
 
-  // SignUpView =() =>{
-  //   if(this.state.email &&  )
-  //   this.setState({
-  //     EmailCheck:true
-  //   })
-  // }
-
-  
-
-  inputValueEmail = (event) => {
+    inputValueEmail = (event) => {
     this.setState({
         email:event.target.value
     })
 }
+    inputValuePw = (event) => {
+    this.setState({
+        password:event.target.value
+    })
+}
+
+  
 
   buttonColorChange = () => {
-    if (this.state.email.includes('@')){
+    if (this.state.email.includes('@') && this.state.password.length >=5 ){
         this.setState({BtnColor : false});
     }else {
         this.setState({BtnColor : true});
@@ -40,51 +38,75 @@ class ModalSignIn extends React.Component{
 }
 
 
+
+// handleBtnClickEvent(){
+//   fetch('http://10.58.4.172:8000/account/singin', {
+//       method:'POST',
+//       headers:{
+//           'Content-Type':'application/json',
+//       },
+//       body: JSON.stringify({
+//           email:this.state.loginEmail,
+//           password:this.state.loginPw
+//       })
+//   })
+//   .then(response => response.json())
+//   .then(response => {
+//       if (response.token){
+//           localStorage.setItem('token', response.token);
+//           this.props.history.push(' ')
+//       }else{
+//           alert(' ')
+//       }
+//   })
+// }
+
+
   render(){
     return(
-      <React.Fragment>
-      {
-        this.props.isOpen ?
-        <ReactTransitionGroup
-          transitionName={'Modal-anim'}
-          transitionEnterTimeout={200}
-          transitionLeaveTimeout={200}
-        >
-          <div className ="SignIn">
-              <div className="Modal-signIn-overlay" onClick={this.props.close} />
-              <div className="loginForm">
-                  <div className="Component-SignIn">
-                          <button className="closeBtn" onClick={this.props.close}><span class="material-icons">close</span></button>
-                          
-                          <div className ={this.state.EmailCheck ? 'mainTitle' :'mainTitle_2'}>
-                              <h2 className="title">Welcome to the Beats.</h2>
-                              <div className="subTitle">Please enter a vaild email address</div>
-                          </div>
+      <>
+        {
+          this.props.isOpen ?
+          <ReactTransitionGroup
+            transitionName={'Modal-anim'}
+            transitionEnterTimeout={200}
+            transitionLeaveTimeout={200}
+          >
+            <div className="Modal-PwCo-overlay" onClick={this.props.close} />
+            <div className="loginForm-PwCo">
+            <button className="closeBtn" onClick={this.props.close}><span className="material-icons">close</span></button>
+              <div className ="mainTitle">
+                <h2 className="title">Welcome back to Beats.</h2>
+                <div className="subTitle">Please confirm your password</div>
+              </div>
+              <div className="contentInputEmail">
+                <input  onChange ={this.inputValueEmail} onKeyUp ={this.buttonColorChange} className="TextInput" name="email" placeholder="Email address" type="email" />
+              </div>
+              <div className="contentInputPw">
 
-                          {this.state.email.length > 0 && <div className ="mainTitle-Second">
-                              <h2 className="title">It seems you are new to us. Welcome to Beats</h2>
-                              <div className="subTitle">To create an account, please enter your details below</div>
-                          </div>
-                          }
-
-                          <div className="content">
-                              <input onChange={this.inputValueEmail} onKeyUp ={this.buttonColorChange} className="TextInput" name="email" placeholder="Email address" type="email" />
-                          </div>
-
-                          <div className="button-wrap">
-                              <button className ={this.state.BtnColor ? 'button' : 'BtnColorChange'}>Continue</button>
-                          </div>
-                  </div>
-                </div>
+                 <input onChange ={this.inputValuePw} onKeyUp ={this.buttonColorChange} className="TextInput" name="password" placeholder="Password" type="password" />
+                 
+                 <button className="SignUpBtn" onClick={this.props.changeCo} type="button">Sign Up</button>
+                
+                 <button className="ForgottenPwBtn"  type="button">Forgotten password?</button>
+              
+              </div>
+              <div className="button-wrap">
+                <button className ={this.state.BtnColor ? 'button' : 'BtnColorChange'}>Login</button>
+              </div>
+               
             </div>
-                </ReactTransitionGroup>
+          </ReactTransitionGroup>
           :
           <ReactTransitionGroup transitionName={'Modal-anim'} transitionEnterTimeout={200} transitionLeaveTimeout={200} />
         }  
-          </React.Fragment>
+          </>
+    
     )
   }
 }
 export default ModalSignIn;
 
  
+
+

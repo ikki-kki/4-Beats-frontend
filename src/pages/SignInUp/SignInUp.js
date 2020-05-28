@@ -1,17 +1,17 @@
 import React from 'react';
-import ModalSignIn from './Modal/Component-SignIn/ModalSignIn'
-// import Modal_SignUp from './Modal/Component-SignUp/Modal_SignUp';
-// import Modal_PwCo from './Modal/Component-SignPwCo/Modal_PwCo';
-// import Modal_FoPw from './Modal/Component-SignFoPw/Modal_FoPw'
-// import SignForm from './Modal/SignForm';
+import ModalFoPw from './Modal/Component-SignFoPw/ModalFoPw'
+import ModalSignIn from './Modal/Component-SignIn/ModalSignIn';
+import ModalSignUp from './Modal/Component-SignUp/ModalSignUp';
+import ModalSuccess from './Modal/Component-Success/ModalSuccess'
 import './SignInUp.scss';
-
 
 class SignInUp extends React.Component{
     constructor(props){
         super(props);
         this.state = {
           isModalOpen: false,
+          loginState: true,
+          
         }
       }
 
@@ -24,20 +24,31 @@ class SignInUp extends React.Component{
       closeModal = () => {
         this.setState({ isModalOpen: false }); 
       }
- 
+
+      handleOnClickEvent =() => {
+        this.setState({ loginState : false})
+      }
+
+      handleLoginTrue = () => {
+        this.setState({ loginState : true})
+      }
       
-    
     render(){
         return(
         <main className="App">
             <div className="loginTap">
                 <span onClick={this.openModal}>로그인</span>
-                
             </div>
-            <ModalSignIn isOpen={this.state.isModalOpen} close={this.closeModal} ColorChange={this.buttonColorChange} />
+            {/* <ModalSuccess changeCo={this.handleOnClickEvent} isOpen={this.state.isModalOpen} close={this.closeModal} ColorChange={this.buttonColorChange}/> */}
+            {this.state.loginState 
+              ? <ModalSignIn changeCo={this.handleOnClickEvent} isOpen={this.state.isModalOpen} close={this.closeModal} ColorChange={this.buttonColorChange} />
+              : <ModalSignUp changeCo={this.handleLoginTrue} isOpen={this.state.isModalOpen} close={this.closeModal}/> }
         </main>
         )
     }
 }
 
 export default SignInUp; 
+
+
+
