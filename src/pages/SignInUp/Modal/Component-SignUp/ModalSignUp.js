@@ -75,9 +75,9 @@ class ModalSignUp extends React.Component {
             transitionEnterTimeout={200}
             transitionLeaveTimeout={200}
           >
-            <div className="SignUn">
+            <div className="SignUp">
               <div
-                className="Modal-signUn-overlay"
+                className="Modal-SignUp-overlay"
                 onClick={this.props.close}
               />
               <div className="loginForm">

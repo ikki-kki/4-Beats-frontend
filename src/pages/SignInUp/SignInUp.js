@@ -31,7 +31,7 @@ class SignInUp extends React.Component {
 
   render() {
     return (
-      <main className="App">
+      <main className="SignInUp">
         <div className="loginTap">
           <span onClick={this.openModal}>로그인</span>
         </div>

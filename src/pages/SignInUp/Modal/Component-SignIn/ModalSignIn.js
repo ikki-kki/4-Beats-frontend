@@ -59,54 +59,61 @@ class ModalSignIn extends React.Component {
             transitionEnterTimeout={200}
             transitionLeaveTimeout={200}
           >
-            <div className="Modal-PwCo-overlay" onClick={this.props.close} />
-            <div className="loginForm-PwCo">
-              <button className="closeBtn" onClick={this.props.close}>
-                <span className="material-icons">close</span>
-              </button>
-              <div className="mainTitle">
-                <h2 className="title">Welcome back to Beats.</h2>
-                <div className="subTitle">Please confirm your password</div>
-              </div>
-              <div className="contentInputEmail">
-                <input
-                  onChange={this.inputValueEmail}
-                  onKeyUp={this.buttonColorChange}
-                  className="TextInput"
-                  name="email"
-                  placeholder="Email address"
-                  type="email"
-                />
-              </div>
-              <div className="contentInputPw">
-                <input
-                  onChange={this.inputValuePw}
-                  onKeyUp={this.buttonColorChange}
-                  className="TextInput"
-                  name="password"
-                  placeholder="Password"
-                  type="password"
-                />
+            <div className="SignIn">
+              <div
+                className="Modal-SignIn-overlay"
+                onClick={this.props.close}
+              />
+              <div className="loginForm-SignIn">
+                <button className="closeBtn" onClick={this.props.close}>
+                  <span className="material-icons">close</span>
+                </button>
+                <div className="mainTitle">
+                  <h2 className="title">Welcome back to Beats.</h2>
+                  <div className="subTitle">Please confirm your password</div>
+                </div>
+                <div className="contentInputEmail">
+                  <input
+                    onChange={this.inputValueEmail}
+                    onKeyUp={this.buttonColorChange}
+                    className="TextInput"
+                    name="email"
+                    placeholder="Email address"
+                    type="email"
+                  />
+                </div>
+                <div className="contentInputPw">
+                  <input
+                    onChange={this.inputValuePw}
+                    onKeyUp={this.buttonColorChange}
+                    className="TextInput"
+                    name="password"
+                    placeholder="Password"
+                    type="password"
+                  />
 
-                <button
-                  className="SignUpBtn"
-                  onClick={this.props.changeCo}
-                  type="button"
-                >
-                  Sign Up
-                </button>
+                  <button
+                    className="SignInBtn"
+                    onClick={this.props.changeCo}
+                    type="button"
+                  >
+                    Sign Up
+                  </button>
 
-                <button className="ForgottenPwBtn" type="button">
-                  Forgotten password?
-                </button>
-              </div>
-              <div className="button-wrap">
-                <button
-                  className={this.state.BtnColor ? "button" : "BtnColorChange"}
-                  onClick={this.handleBtnClickEvent}
-                >
-                  Login
-                </button>
+                  <button className="ForgottenPwBtn" type="button">
+                    Forgotten password?
+                  </button>
+                </div>
+                <div className="button-wrap">
+                  <button
+                    className={
+                      this.state.BtnColor ? "button" : "BtnColorChange"
+                    }
+                    onClick={this.handleBtnClickEvent}
+                  >
+                    Login
+                  </button>
+                </div>
               </div>
             </div>
           </ReactTransitionGroup>
