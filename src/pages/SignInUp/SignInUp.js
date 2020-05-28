@@ -1,8 +1,8 @@
 import React from 'react';
-import ModalFoPw from './Modal/Component-SignFoPw/ModalFoPw'
+// import ModalFoPw from './Modal/Component-SignFoPw/ModalFoPw'
 import ModalSignIn from './Modal/Component-SignIn/ModalSignIn';
 import ModalSignUp from './Modal/Component-SignUp/ModalSignUp';
-import ModalSuccess from './Modal/Component-Success/ModalSuccess'
+// import ModalSuccess from './Modal/Component-Success/ModalSuccess'
 import './SignInUp.scss';
 
 class SignInUp extends React.Component{
