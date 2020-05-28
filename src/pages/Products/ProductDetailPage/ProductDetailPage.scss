@@ -1,0 +1,118 @@
+@import "../../../styles/common.scss";
+
+.ProductDetailPage {
+    .headerWrapper {
+        .headerContentsWrapper {
+            font-family: $mainFont;
+            position: relative;
+            margin: 0 auto;
+            max-width: 1440px;
+            .headerText {
+                width: 41%;
+                position: absolute;
+                padding: 10.4% 0 0 8.33333%;
+                z-index: 2;
+                h1 {
+                    font-size: 20px;
+                    font-weight: 300;
+                    color: #fff;
+                    margin-bottom: 30px;
+                }
+                .subWrap {
+                    margin-bottom: 50px;
+                    .subTitle {
+                        font-size: 50px;
+                        font-weight: 700;
+                        color: #fff;
+                    }
+                    .subBody {
+                        margin-top: 16px;
+                        font-size: 20px;
+                        font-weight: 300;
+                        line-height: 1.3;
+                        letter-spacing: 0.7px;
+                        color: #fff;
+                    }
+                }
+                .buyWrap {
+                    display: flex;
+                    align-items: center;
+                    margin-bottom: 50px;
+                    .buyBtn {
+                        margin-right: 30px;
+                        .btnWrapper {
+                            text-decoration: none;
+                            color: #fff;
+                            text-transform: uppercase;
+                            span {
+                                display: inline-block;
+                                font-family: $subFont;
+                                font-size: 17px;
+                                letter-spacing: 1px;
+                                padding: 13px 30px 5px 30px;
+                                min-height: 47px;
+                                border-radius: 27px;
+                                border: 1.5px solid $mainRed;
+                                background-color: $mainRed;
+                            }
+                        }
+                    }
+                    .price {
+                        font-size: 20px;
+                        line-height: 1.4;
+                        font-weight: 400;
+                        color: #fff;
+                    }
+                }
+            }
+        }
+        .headerImage {
+            position: relative;
+            .gradientOverlay {
+                position: absolute;
+                right: 0%;
+                width: 100%;
+                height: 100%;
+                z-index: 1;
+                background: linear-gradient(transparent 70%, #161616);
+            }
+            img {
+                width: 100%;     
+            }
+        }
+    }
+    
+    .mainContensBlackWrap {
+        background: #161616;
+        .sectionSpacing {
+            padding-top: 120px;
+        }
+        .imageAndText {
+            max-width: 1440px;
+            display: flex;
+            margin: 0 auto;
+            justify-content: center;
+            align-items: center;
+            font-family: $mainFont;
+            color: #fff;
+            .rightContent {
+                display: flex;
+                flex-direction: column;
+                padding: 0 4.16667%;
+                width: 40%;
+                .contentImageRight {
+                    margin-top: 80px;
+                    img {
+                        width: 100%;
+                    }
+                }
+            }
+            .leftContent {
+                width: 60%;
+                margin-top: 80px;
+                padding-left: 4.16667%;
+                
+            }
+        }
+    }
+}

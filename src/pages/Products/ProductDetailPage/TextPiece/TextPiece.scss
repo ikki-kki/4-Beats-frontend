@@ -1,0 +1,17 @@
+@import '../../../../styles/common.scss';
+.TextPiece { 
+    font-family: $mainFont;
+    color: #fff;
+    h2 {
+        letter-spacing: -0.4px;
+        font-size: 40px;
+        line-height: 1.1;
+        font-weight: 600;
+        margin-bottom: 20px;
+    }
+    p {
+        font-size: 20px;
+        line-height: 1.4;
+        font-weight: 300;
+    }
+}
