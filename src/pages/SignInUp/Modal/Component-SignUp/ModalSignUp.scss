@@ -23,13 +23,13 @@
     right: 0;
     background-color: rgba(88, 88, 88, 0.16);
   }
+
   .loginForm {
     position: fixed;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     width: 550px;
-    // border-radius: 10px;
     background-color: #e7e7e7;
     padding: 50px;
     box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.16);
@@ -58,14 +58,15 @@
         background-color: #e7e7e7;
       }
       .closeBtn-signUp {
-        // overflow: hidden;
         border: 0;
         outline: 0;
         background-color: #e7e7e7;
         float: right;
       }
+
       .mainTitle {
         padding-bottom: 30px;
+
         .title {
           font-size: 16pt;
           color: #333;
@@ -78,6 +79,7 @@
           color: #666;
         }
       }
+
       .content1 {
         margin-bottom: 35px;
         padding-top: 35px;
@@ -101,9 +103,9 @@
           border-width: 0 0 1px 0;
           transition: all 0.2s ease-in-out;
         }
+
         input:focus::-webkit-input-placeholder,
         textarea:focus::-webkit-input-placeholder {
-          /* WebKit browsers */
           color: transparent;
         }
       }
@@ -154,7 +156,6 @@
             color: rgb(155, 155, 155);
             font-family: $mainFont;
           }
-
           .TextInput:focus {
             border-color: rgba(102, 102, 102, 0.822);
             border-style: solid;
@@ -163,11 +164,9 @@
           }
           input:focus::-webkit-input-placeholder,
           textarea:focus::-webkit-input-placeholder {
-            /* WebKit browsers */
             color: transparent;
           }
         }
-
         .content4 {
           display: flex;
 
@@ -202,12 +201,10 @@
           }
           input:focus::-webkit-input-placeholder,
           textarea:focus::-webkit-input-placeholder {
-            /* WebKit browsers */
             color: transparent;
           }
         }
       }
-
       .button-wrap {
         margin: 0;
         button {
