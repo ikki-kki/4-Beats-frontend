@@ -15,7 +15,6 @@
   &.Modal-anim-leave.Modal-anim-leave-active {
     opacity: 0;
   }
-
   .Modal-SignUp-overlay {
     position: fixed;
     top: 0;
@@ -31,11 +30,9 @@
     left: 50%;
     transform: translate(-50%, -50%);
     width: 550px;
-    // border-radius: 10px;
     background-color: #e7e7e7;
     padding: 50px;
     box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.16);
-
     &.Modal-anim-enter {
       opacity: 0;
       transform: translate(-50%, -50%) scale(0.7);
@@ -61,7 +58,6 @@
         background-color: #e7e7e7;
       }
       .closeBtn-signUp {
-        // overflow: hidden;
         border: 0;
         outline: 0;
         background-color: #e7e7e7;
@@ -110,11 +106,9 @@
 
         input:focus::-webkit-input-placeholder,
         textarea:focus::-webkit-input-placeholder {
-          /* WebKit browsers */
           color: transparent;
         }
       }
-
       .addContent {
         .content2 {
           margin-bottom: 35px;
@@ -162,7 +156,6 @@
             color: rgb(155, 155, 155);
             font-family: $mainFont;
           }
-
           .TextInput:focus {
             border-color: rgba(102, 102, 102, 0.822);
             border-style: solid;
@@ -171,11 +164,9 @@
           }
           input:focus::-webkit-input-placeholder,
           textarea:focus::-webkit-input-placeholder {
-            /* WebKit browsers */
             color: transparent;
           }
         }
-
         .content4 {
           display: flex;
 
@@ -210,15 +201,12 @@
           }
           input:focus::-webkit-input-placeholder,
           textarea:focus::-webkit-input-placeholder {
-            /* WebKit browsers */
             color: transparent;
           }
         }
       }
-
       .button-wrap {
         margin: 0;
-
         button {
           width: 100%;
           height: 60px;
@@ -228,12 +216,6 @@
           color: white;
           border: 0;
           margin-top: 25px;
-
-          // cursor: pointer;
-
-          // &:active{
-          //   background-color: #7e49c8;
-          // }
         }
         .BtnColorChange {
           width: 100%;

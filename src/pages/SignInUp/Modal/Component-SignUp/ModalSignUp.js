@@ -20,16 +20,19 @@ class ModalSignUp extends React.Component {
       email: event.target.value,
     });
   };
+
   inputValuePw = (event) => {
     this.setState({
       password: event.target.value,
     });
   };
+
   inputValueLN = (event) => {
     this.setState({
       last_name: event.target.value,
     });
   };
+
   inputValueFN = (event) => {
     this.setState({
       first_name: event.target.value,
@@ -68,7 +71,7 @@ class ModalSignUp extends React.Component {
 
   render() {
     return (
-      <React.Fragment>
+      <>
         {this.props.isOpen ? (
           <ReactTransitionGroup
             transitionName={"Modal-anim"}
@@ -91,7 +94,6 @@ class ModalSignUp extends React.Component {
                   >
                     <span className="material-icons">close</span>
                   </button>
-
                   <div className="mainTitle">
                     <h2 className="title">
                       It seems you are new to us. Welcome to Beats
@@ -182,7 +184,7 @@ class ModalSignUp extends React.Component {
             transitionLeaveTimeout={200}
           />
         )}
-      </React.Fragment>
+      </>
     );
   }
 }

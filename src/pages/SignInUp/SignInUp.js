@@ -1,12 +1,13 @@
 import React from "react";
 import ModalSignIn from "./Modal/Component-SignIn/ModalSignIn";
 import ModalSignUp from "./Modal/Component-SignUp/ModalSignUp";
-// import ModalSuccess from './Modal/Component-Success/ModalSuccess'
+// import ModalSuccess from "./Modal/Component-Success/ModalSuccess";
+// import ModalFoPw from './Modal/Component-SignFoPw/ModalFoPw'
 import "./SignInUp.scss";
 
 class SignInUp extends React.Component {
-  constructor(props) {
-    super(props);
+  constructor() {
+    super();
     this.state = {
       isModalOpen: false,
       loginState: true,
