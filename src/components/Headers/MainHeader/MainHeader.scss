@@ -1,27 +1,27 @@
 @import '../../../styles/common.scss';
-button{
+.login,.btnDefault{
 background: none ; border:none; box-shadow:none; border-radius:0; padding:0; overflow:visible; cursor:pointer} 
-  nav{
+  
+  .header-nav{
     display: flex;
     height: 80px;
     opacity: 1;
     z-index: 2;
-    margin: 0 auto;
-    width: 100%;
-    align-items: center;
     background: #fff;
     position: relative;
-
-    ul{
+    margin:0 auto;
+    justify-content: center;
+    
+    .nav-container{
+      margin: 0 90px;
       display: flex;
       justify-content: space-between;
-      align-items: center;
       font-size: 18px;
       height: inherit;
-      padding: 0 60px;
+      padding: 0 90px;
       font-family: $subFont;
+      width: 100%;
 
-    
       li{
         display: flex;
         align-items: center;
@@ -65,9 +65,6 @@ background: none ; border:none; box-shadow:none; border-radius:0; padding:0; ove
               transform: rotateY(180deg);
               color: $mainRed;
             }
-            .hover-container{
-              display: flex;
-            }
           }        
         }
       }
@@ -76,22 +73,15 @@ background: none ; border:none; box-shadow:none; border-radius:0; padding:0; ove
         position: absolute;
         top: 100%;
         left: 0;
-        padding: 20px 0 60px 0;
+        padding: 20px 90px 50px 90px;
         background-color: $headerGray;
         opacity: 1;
         height: auto;
         display: flex;
 
         .hover-ul{
-          span{
-            color: #fff;
-            font-size: 26px;
-            font-weight: 900;
-            margin-bottom: 40px;
-            margin-top: 10px;
-          }
-
-          margin-right: 5%;
+          margin-left: 90px;
+          padding-right: 5%;
           display: flex;
           flex-direction: column;
           justify-content: end;
@@ -99,6 +89,14 @@ background: none ; border:none; box-shadow:none; border-radius:0; padding:0; ove
           font-family: $mainFont;
           font-size: 20px;
 
+          span{
+            color: #fff;
+            font-size: 26px;
+            font-weight: 900;
+            margin-bottom: 40px;
+            margin-top: 10px;
+          }
+          
           .hover-menus{
             color: white;
             margin: 20px 0;
@@ -125,8 +123,8 @@ background: none ; border:none; box-shadow:none; border-radius:0; padding:0; ove
       }
     }
 
-
-    // .navimg{
-    //         width: 20px;
-    //         margin-right: 10px;
-    //       }
+@media only screen and (max-width: 1440px) {
+  .header-nav .nav-container, .header-nav .hover-container .hover-ul{
+    margin: 0;
+  }
+}
