@@ -157,7 +157,7 @@ export default class MainFooter extends Component {
         </div>
         <div className="copyright">
           <span>Copyright © 2020 Apple Inc. - All rights reserved.</span>
-          <a className="goUp" href="#">
+          <a className="goUp" href="/">
             <i className="fas fa-chevron-up"></i>
           </a>
         </div>

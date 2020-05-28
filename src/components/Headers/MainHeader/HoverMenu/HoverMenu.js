@@ -5,6 +5,9 @@ import "./HoverMenu.scss";
 class HoverMenu extends Component {
   constructor(props) {
     super(props);
+    this.state = {
+      test: "constructor오류 해결을 위한 임시 state",
+    };
   }
 
   //hover시 state가 변하는 함수

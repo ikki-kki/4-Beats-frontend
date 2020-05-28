@@ -8,7 +8,8 @@ export default class MainHeader extends Component {
     super();
     this.state = {
       menuIdx: 0,
-      clickMenu: "none",
+      display: "none",
+      opacity: 0,
     };
   }
 
@@ -23,8 +24,12 @@ export default class MainHeader extends Component {
     }
   };
 
-  clickMenuHandler = () => {
-    this.setState({ clickMenu: "flex" });
+  hoverMenuHandler = () => {
+    this.setState({ display: "flex", opacity: 1 });
+  };
+
+  outMenuHandler = () => {
+    this.setState({ display: "none", opacity: 0 });
   };
 
   render() {
@@ -49,21 +54,29 @@ export default class MainHeader extends Component {
                 />
               </Link>
             </li>
-            <li>
-              <Link to="/" className="headerLink">
+            <li onMouseEnter={this.outMenuHandler}>
+              <Link
+                to="/"
+                className="headerLink"
+                onMouseEnter={this.outMenuHandler}
+              >
                 STORIES
               </Link>
               <div
                 className="hovermenu"
                 id="products"
-                onClick={this.clickMenuHandler}
+                onMouseEnter={this.hoverMenuHandler}
               >
                 <Link to="" className="headerLink">
                   PRODUCTS
                 </Link>
                 <span className="material-icons">expand_more</span>
               </div>
-              <Link to="/support" className="headerLink">
+              <Link
+                to="/support"
+                className="headerLink"
+                onMouseEnter={this.outMenuHandler}
+              >
                 SUPPORT
               </Link>
             </li>
@@ -74,7 +87,8 @@ export default class MainHeader extends Component {
           </ul>
           <div
             className="hover-container"
-            style={{ display: this.state.clickMenu }}
+            onMouseLeave={this.outMenuHandler}
+            style={{ display: this.state.display, opacity: this.state.opacity }}
           >
             <ul className="hover-ul">
               <span>PRODUCTS</span>
