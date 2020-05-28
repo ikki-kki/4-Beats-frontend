@@ -1,0 +1,145 @@
+@import "../../../styles/common.scss";
+.ProductsArticles {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    font-family: $mainFont;
+    .productTitle {
+        text-align: center;
+        width: 1440px;
+        h2 {
+            font-family: $mainFont;
+            text-transform: uppercase;
+            font-size: 90px;
+            font-weight: 800;
+            line-height: 0.89;
+            letter-spacing: -1px;
+            margin-top: 74px;
+            color: #161616;
+        }
+    }
+    .sectionSpacingStart {
+        padding-top: 60px;
+    }
+    .productContent {
+        max-width: 1440px;
+        margin: 0 auto;
+        .contentWrapper {
+            display: flex;
+            margin: 0 auto;
+            align-items: center;
+
+            .ProductInfoWrapper {
+                padding-left: 4%;
+                width: 50%;
+                height: 100%;
+                .subTitle {
+                    font-family: $mainFont;
+                    font-size: 20px;
+                    font-weight: 600;
+                    letter-spacing: -0.6px;
+                    margin-bottom: 16px;
+                }
+                .mainTitle {
+                    max-width: 390px;
+                    padding-left: 7px;
+                    p {
+                        font-family: $mainFont;
+                        text-transform: uppercase;
+                        font-weight: 700;
+                        font-size: 37px;
+                        line-height: 1;
+                        letter-spacing: -.8px;
+                        // padding-top: 7px;
+                        color: #fff;
+                        display: inline;
+                        background-color: #222021;
+                        box-shadow: 7px 0 0 #161616, -7px 0 0 #161616;
+                        margin-block-start: 1em;
+                        margin-block-end: 1em;
+                        margin-inline-start: 0px;
+                        margin-inline-end: 0px;
+                    }
+                }
+                .colorCurcle1 {
+                    margin: 25px 0;
+                    background-color: #f1f1f1;
+                    border-radius: 30px;
+                    width: 34px;
+                    height: 34px;
+                    .colorCurcle2 {
+                        margin: 0 0 0 20px;
+                        background-color: #2d2d2d;
+                        border-radius: 30px;
+                        width: 34px;
+                        height: 34px;
+                        .colorCurcle3 {
+                            margin: 0 0 0 20px;
+                            background-color: #911827;
+                            border-radius: 30px;
+                            width: 34px;
+                            height: 34px;
+                        }
+                    }
+                }
+                .productInfoList {
+                    font-family: $mainFont;
+                    // padding-left: 17px;
+                    letter-spacing: -0.2px;
+                    line-height: 1.2;
+                    color: #161616;
+                    margin-bottom: 16px;
+                    // list-style-type: disc;
+                    li {
+                        font-size: 22px;
+                        color: #161616;
+                        span {
+                            font-size: 15px;
+                            // margin-left: -5px;
+                            font-weight: 300;
+                        }
+                    }
+                    li:before{ 
+                        content: "•";
+                        font-size: 17px;
+                        margin-right:  5px; 
+                    }
+                }
+                .price {
+                    font-size: 15px;
+                    font-weight: 700;
+                    line-height: 1;
+                    color: #161616;
+                    margin-bottom: 16px;
+                }
+                .btnWrapper {
+                    text-decoration: none;
+                    color: #161616;
+                    text-transform: uppercase;
+                    span {
+                        display: inline-block;
+                        font-family: $subFont;
+                        font-size: 17px;
+                        padding: 8px 37px 0 37px;
+                        height: 39px;
+                        border-radius: 27px;
+                        border: 1.5px solid #161616;
+                    }
+                }
+            }
+            .productImageWrapper {
+                padding-left: 4%;
+                width: 50%;
+                img {
+                    width: 100%;
+                    max-width: 724px;
+                    max-height: 786px;
+                }
+            }
+        }
+    }
+    .sectionSpacingEnd {
+        padding-top: 40px;
+    }
+}

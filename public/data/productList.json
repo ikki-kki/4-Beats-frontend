@@ -1,0 +1,94 @@
+{
+    "data": [
+        {
+            "id" : 1,
+            "section" : 1,
+            "image": "https://www.beatsbydre.com/content/dam/beats/web/product/earphones/powerbeats/plp/bbd.plpassset.earphones.powerbeats.jpg.large.1x.jpg",
+            "name": "Powerbeats",
+            "title": "Lightweight wireless earphones for all‑day activity",
+            "list": ["Up to 15 hours of listening time", "Sweat & water resistant", "Adjustable, secure-fit earhooks", "Streamlined, round cable"],
+            "price": "$149.95"
+        },
+        {
+            "id" : 2,
+            "section" : 1,
+            "image": "https://www.beatsbydre.com/content/dam/beats/web/product/earphones/powerbeats-pro/plp/bbd.plpassset.earphones.powerbeatspro.jpg.large.2x.jpg",
+            "name": "Powerbeats Pro",
+            "title": "Totally wireless earphones built for performance",
+            "list": ["Up to 15 hours of listening time", "Sweat & water resistant", "Adjustable, secure-fit earhooks", "Volume & track controls on each earbud"],
+            "price": "$199.95"
+        },
+        {
+            "id" : 3,
+            "section" : 2,
+            "image": "https://www.beatsbydre.com/content/dam/beats/web/product/headphones/solo-pro/plp/bbd.plpassset.headphones.solopro.jpg.large.2x.jpg",
+            "name": "Solo Pro",
+            "title": "Noise cancelling wireless headphones to stay inspired",
+            "list": ["Active Noise Cancelling (ANC)", "Transparency Mode", "Up to 22 hours of listening time", "Integrated on-ear controls"],
+            "price": "$249.95"
+        },
+        {
+            "id" : 3,
+            "section" : 2,
+            "image": "https://www.beatsbydre.com/content/dam/beats/web/product/headphones/solo-pro/plp/bbd.plpassset.headphones.solopro.jpg.large.2x.jpg",
+            "name": "Solo Pro",
+            "title": "Noise cancelling wireless headphones to stay inspired",
+            "list": ["Active Noise Cancelling (ANC)", "Transparency Mode", "Up to 22 hours of listening time", "Integrated on-ear controls"],
+            "price": "$249.95"
+        },
+        {
+            "id" : 3,
+            "section" : 3,
+            "image": "https://www.beatsbydre.com/content/dam/beats/web/product/headphones/solo-pro/plp/bbd.plpassset.headphones.solopro.jpg.large.2x.jpg",
+            "name": "Solo Pro",
+            "title": "Noise cancelling wireless headphones to stay inspired",
+            "list": ["Active Noise Cancelling (ANC)", "Transparency Mode", "Up to 22 hours of listening time", "Integrated on-ear controls"],
+            "price": "$249.95"
+        },
+        {
+            "id" : 3,
+            "section" : 4,
+            "image": "https://www.beatsbydre.com/content/dam/beats/web/product/headphones/solo-pro/plp/bbd.plpassset.headphones.solopro.jpg.large.2x.jpg",
+            "name": "Solo Pro",
+            "title": "Noise cancelling wireless headphones to stay inspired",
+            "list": ["Active Noise Cancelling (ANC)", "Transparency Mode", "Up to 22 hours of listening time", "Integrated on-ear controls"],
+            "price": "$249.95"
+        },
+        {
+            "id" : 3,
+            "section" : 5,
+            "image": "https://www.beatsbydre.com/content/dam/beats/web/product/headphones/solo-pro/plp/bbd.plpassset.headphones.solopro.jpg.large.2x.jpg",
+            "name": "Solo Pro",
+            "title": "Noise cancelling wireless headphones to stay inspired",
+            "list": ["Active Noise Cancelling (ANC)", "Transparency Mode", "Up to 22 hours of listening time", "Integrated on-ear controls"],
+            "price": "$249.95"
+        },
+        {
+            "id" : 3,
+            "section" : 5,
+            "image": "https://www.beatsbydre.com/content/dam/beats/web/product/headphones/solo-pro/plp/bbd.plpassset.headphones.solopro.jpg.large.2x.jpg",
+            "name": "Solo Pro",
+            "title": "Noise cancelling wireless headphones to stay inspired",
+            "list": ["Active Noise Cancelling (ANC)", "Transparency Mode", "Up to 22 hours of listening time", "Integrated on-ear controls"],
+            "price": "$249.95"
+        },
+        {
+            "id" : 3,
+            "section" : 5,
+            "image": "https://www.beatsbydre.com/content/dam/beats/web/product/headphones/solo-pro/plp/bbd.plpassset.headphones.solopro.jpg.large.2x.jpg",
+            "name": "Solo Pro",
+            "title": "Noise cancelling wireless headphones to stay inspired",
+            "list": ["Active Noise Cancelling (ANC)", "Transparency Mode", "Up to 22 hours of listening time", "Integrated on-ear controls"],
+            "price": "$249.95"
+        },
+        {
+            "id" : 3,
+            "section" : 6,
+            "image": "https://www.beatsbydre.com/content/dam/beats/web/product/headphones/solo-pro/plp/bbd.plpassset.headphones.solopro.jpg.large.2x.jpg",
+            "name": "Solo Pro",
+            "title": "Noise cancelling wireless headphones to stay inspired",
+            "list": ["Active Noise Cancelling (ANC)", "Transparency Mode", "Up to 22 hours of listening time", "Integrated on-ear controls"],
+            "price": "$249.95"
+        }
+    ]
+}
