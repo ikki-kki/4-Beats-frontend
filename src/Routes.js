@@ -1,6 +1,6 @@
-import React, { Component } from 'react';
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
-import Main from './pages/Main/Main'
+import React, { Component } from "react";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import Main from "./pages/Main/Main";
 
 class Routes extends Component {
   render() {
@@ -10,8 +10,7 @@ class Routes extends Component {
           <Route exact path="/" component={Main} />
         </Switch>
       </Router>
-    )
+    );
   }
 }
 export default Routes;
-
