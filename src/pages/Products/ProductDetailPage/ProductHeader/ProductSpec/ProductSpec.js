@@ -6,13 +6,13 @@ class ProductSpec extends React.Component {
         const { text, url } = this.props
         return(
             <section className="ProductSpec">
-                <div className="iconWrap">
+                {/* <div className="iconWrap">
                     <div className="icons">
-                        <img alt="icon" src={ url } />
+                        <img alt="icon" src={ url } className="test" />
                     </div>
-                </div>
+                </div> */}
                 <div className="textWrap">
-                    <div className="text">{ text }</div>
+                    <div className="text" style={{ background : url}}>{ text }</div>
                 </div>
             </section>
         )
