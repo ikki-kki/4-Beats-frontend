@@ -1,0 +1,136 @@
+@import '../../../styles/common.scss';
+.login,.btnDefault{
+  background: none ; 
+  border:none; 
+  box-shadow:none;
+  border-radius:0; 
+  padding:0; 
+  overflow:visible;
+} 
+  
+  .header-nav{
+    display: flex;
+    height: 80px;
+    opacity: 1;
+    z-index: 2;
+    background: #fff;
+    position: relative;
+    margin:0 auto;
+    justify-content: center;
+    
+    .nav-container{
+      margin: 0 90px;
+      display: flex;
+      justify-content: space-between;
+      font-size: 18px;
+      height: inherit;
+      padding: 0 90px;
+      font-family: $subFont;
+      width: 100%;
+
+      li{
+        display: flex;
+        align-items: center;
+
+        .headerLink{ 
+          text-decoration: none;
+          color: $mainBlack;
+        
+          .logo{
+            width: 40px;
+          }
+        }
+
+          .login{
+            font-family: $subFont;
+            margin: 0 10px;
+          }
+
+          .btnDefault{
+            width: 10px;
+            height: 10px;
+            background-color: black;
+            border-radius: 50%;
+            border: 0; 
+              &:hover{
+              transform: scale(1.15);
+              transition: all 400ms cubic-bezier(0.215, 0.61, 0.355, 1);
+            }
+          }
+        }
+        .hovermenu{
+          margin-left: 100px;
+          display: flex;
+          align-items: center;
+          span{
+            color: $mainBlack;
+            margin-right: 76px;
+          }
+          &:hover{
+            span{
+              transform: rotateY(180deg);
+              color: $mainRed;
+            }
+          }        
+        }
+      }
+      .hover-container{
+        width: 100%;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        padding: 20px 90px 50px 90px;
+        background-color: $headerGray;
+        opacity: 1;
+        height: auto;
+        display: flex;
+        transition: all 3s ease-in-out;
+
+        .hover-ul{
+          margin-left: 90px;
+          padding-right: 5%;
+          display: flex;
+          flex-direction: column;
+          align-items: baseline;
+          font-family: $mainFont;
+          font-size: 20px;
+
+          span{
+            color: #fff;
+            font-size: 26px;
+            font-weight: 900;
+            margin-bottom: 40px;
+            margin-top: 10px;
+          }
+          
+          .hover-menus{
+            color: white;
+            margin: 20px 0;
+            position: relative;
+            cursor: pointer;
+
+            &:before{
+              content:'';
+              border-bottom: solid 1px #fff;
+              position: absolute;
+              bottom: -4px; 
+              left:0;
+              width: 100%;
+              opacity: 0;
+              -webkit-transition: all 0.4s ease;
+              transition: all 0.4s ease;
+            }
+
+            &:hover:before{
+              opacity: 1.0;
+            }
+          }
+        }
+      }
+    }
+
+@media only screen and (max-width: 1440px) {
+  .header-nav .nav-container, .header-nav .hover-container .hover-ul{
+    margin: 0;
+  }
+}
