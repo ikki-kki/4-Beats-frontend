@@ -28,10 +28,36 @@ class ProductHeader extends React.Component {
                         < ProductSpec text="Sweat & water resistant earphones" url={`${Config.iconUrl}/W-small-waterproof.svg`} />
                         < ProductSpec text="Streamlined, round cable" url={`${Config.iconUrl}/round_cableW.png`} />
                     </div>
-                </div>
             </div>
-        )
-    }
+          </div>
+          <div className="buyWrap">
+            <div className="buyBtn">
+              <Link to="/products/detail" className="btnWrapper">
+                <span>Buy</span>
+              </Link>
+            </div>
+            <div className="price">
+              <span>$149.95</span>
+            </div>
+          </div>
+          <div className="iconWrap">
+            <ProductSpec
+              text="Up to 15 hours of listening time"
+              url="https://www.beatsbydre.com/content/dam/beats/global/pdp-v2-icons/BatteryW.png"
+            />
+            <ProductSpec
+              text="Sweat & water resistant earphones"
+              url="https://www.beatsbydre.com/content/dam/beats/global/pdp-v2-icons/W-small-waterproof.svg"
+            />
+            <ProductSpec
+              text="Streamlined, round cable"
+              url="https://www.beatsbydre.com/content/dam/beats/global/pdp-v2-icons/round_cableW.png"
+            />
+          </div>
+        </div>
+      </div>
+    );
+  }
 }
 
 export default ProductHeader;

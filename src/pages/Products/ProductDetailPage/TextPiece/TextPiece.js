@@ -1,5 +1,5 @@
-import React from 'react';
-import './TextPiece.scss';
+import React from "react";
+import "./TextPiece.scss";
 
 class TextPiece extends React.Component {
     render() {
@@ -13,4 +13,4 @@ class TextPiece extends React.Component {
     }
 }
 
-export default TextPiece
+export default TextPiece;

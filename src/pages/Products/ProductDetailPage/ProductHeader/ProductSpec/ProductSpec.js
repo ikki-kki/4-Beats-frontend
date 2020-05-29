@@ -1,5 +1,5 @@
-import React from 'react';
-import './ProductSpec.scss';
+import React from "react";
+import "./ProductSpec.scss";
 
 class ProductSpec extends React.Component {
     render() {
@@ -16,7 +16,6 @@ class ProductSpec extends React.Component {
                 </div>
             </section>
         )
-    }
 }
 
 export default ProductSpec;
