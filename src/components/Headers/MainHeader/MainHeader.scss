@@ -12,6 +12,7 @@
 }
 
 .MainHeader{
+  z-index: 999;
   position: fixed;
   top:0;
   left:0;
@@ -94,6 +95,7 @@
         height: auto;
         display: flex;
         transition: all 3s ease-in-out;
+        z-index:5;
 
         .hover-ul{
           margin-left: 90px;

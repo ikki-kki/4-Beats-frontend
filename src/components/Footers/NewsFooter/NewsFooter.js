@@ -39,7 +39,7 @@ export default class NewsFooter extends Component {
               </label>
             </div>
           </div>
-          <RedBorderButton />
+          <RedBorderButton text="sign up" />
         </div>
       </div>
     );

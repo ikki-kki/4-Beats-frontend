@@ -3,14 +3,13 @@ import { Link } from "react-router-dom";
 import "./WhiteBorderButton.scss";
 
 export default class WhiteBorderButton extends Component {
-  constructor() {
-    super();
-    this.state = {};
+  constructor(props) {
+    super(props);
   }
   render() {
     return (
       <Link to="/" className="WhiteBorderButton">
-        see more
+        {this.props.text}
       </Link>
     );
   }

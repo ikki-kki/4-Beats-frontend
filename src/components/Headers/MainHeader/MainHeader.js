@@ -135,7 +135,7 @@ export default class MainHeader extends Component {
                 >
                   Speaker
                 </li>
-                <WhiteBorderButton />
+                <WhiteBorderButton text="SEE MORE" />
               </ul>
               <HoverMenu name={this.state.menuIdx} />
             </div>

@@ -1,5 +1,7 @@
 import React, { Component } from "react";
+import "../../Buttons/RedButton";
 import "./BuyHeader.scss";
+import RedButton from "../../Buttons/RedButton";
 
 export default class BuyHeader extends Component {
   render() {
@@ -8,7 +10,7 @@ export default class BuyHeader extends Component {
         <nav className="header-nav">
           <div className="nav-container">
             <p>Powerbeats</p>
-            <button>BUY</button>
+            <RedButton text="buy" />
           </div>
         </nav>
       </header>
