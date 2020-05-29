@@ -1,0 +1,70 @@
+@import '../../../styles/common.scss';
+.login,.btnDefault{
+  background: none ; 
+  border:none; 
+  box-shadow:none;
+  border-radius:0; 
+  padding:0; 
+  overflow:visible;
+} 
+
+.BuyHeader{
+  position: fixed;
+  top:0;
+  left:0;
+  animation: top 0.2s ease-in-out;
+  width: 100%;
+  z-index: 999;
+  overflow: hidden;
+
+  .header-nav{
+    display: flex;
+    height: 80px;
+    z-index: 2;
+    background: #fff;
+    margin:0 auto;
+    justify-content: center;
+    position: relative;
+    
+    .nav-container{
+      margin: 0 90px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 18px;
+      height: inherit;
+      padding: 0 90px;
+      font-family: $subFont;
+      width: 100%;
+
+        p{
+          font-family: $mainFont;
+          font-size: 1rem;
+        }
+        div{
+          font-family: $mainFont;
+          width: 100%;
+          display: flex;
+          padding-right:40px;
+          justify-content: flex-end;
+          font-size: 1rem;
+          letter-spacing: 0.04rem;
+          
+          .color{
+            color: $mainBlack;
+            margin-right: 5px;
+            font-weight: 600;
+          }
+          .price{
+            font-size:100;
+          }
+        }
+      }
+    }
+  }
+
+@media only screen and (max-width: 1440px) {
+  .header-nav .nav-container, .header-nav .hover-container .hover-ul{
+    margin: 0;
+  }
+}
