@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import RedBorderButton from "../../Buttons/RedBorderButton";
+
 import "./NewsFooter.scss";
 
 export default class NewsFooter extends Component {
