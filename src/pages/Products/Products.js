@@ -26,48 +26,6 @@ class Products extends React.Component {
           productsList: res,
         })
       );
-
-    // .then(res => (
-    //     res.data.map((a) => (
-    //         if(a.section == 1) {
-    //             this.setState({
-    //                 productsListSec : {
-    //                     sec1: a
-    //                 }
-    //             })
-    //         } else if (a.section == 2) {
-    //             this.setState({
-    //                 productsListSec : {
-    //                     sec2: a
-    //                 }
-    //             })
-    //         } else if (a.section == 3) {
-    //             this.setState({
-    //                 productsListSec : {
-    //                     sec3: a
-    //                 }
-    //             })
-    //         } else if (a.section == 4) {
-    //             this.setState({
-    //                 productsListSec : {
-    //                     sec4: a
-    //                 }
-    //             })
-    //         } else if (a.section == 5) {
-    //             this.setState({
-    //                 productsListSec : {
-    //                     sec5: a
-    //                 }
-    //             })
-    //         } else if (a.section == 6) {
-    //             this.setState({
-    //                 productsListSec : {
-    //                     sec6: a
-    //                 }
-    //             })
-    //         }
-    //     ))
-    // ))
   }
   render() {
     return (

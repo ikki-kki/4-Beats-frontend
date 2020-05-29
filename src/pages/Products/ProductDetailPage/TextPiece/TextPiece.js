@@ -3,9 +3,9 @@ import "./TextPiece.scss";
 
 class TextPiece extends React.Component {
   render() {
-    const { title, inText } = this.props;
+    const { color, title, inText, width } = this.props;
     return (
-      <div className="TextPiece">
+      <div style={{ color: color, width: width }} className="TextPiece">
         <h2>{title}</h2>
         <p>{inText}</p>
       </div>
