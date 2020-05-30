@@ -1,6 +1,6 @@
 import React from "react";
-import { Link } from "react-router-dom";
 import ProductSpec from "./ProductSpec/ProductSpec";
+import Config from "../../Config";
 import "./ProductHeader.scss";
 
 class ProductHeader extends React.Component {
@@ -18,9 +18,9 @@ class ProductHeader extends React.Component {
           </div>
           <div className="buyWrap">
             <div className="buyBtn">
-              <Link to="/products/detail" className="btnWrapper">
+              <a href="#buy" className="btnWrapper">
                 <span>Buy</span>
-              </Link>
+              </a>
             </div>
             <div className="price">
               <span>$149.95</span>
@@ -29,17 +29,42 @@ class ProductHeader extends React.Component {
           <div className="iconWrap">
             <ProductSpec
               text="Up to 15 hours of listening time"
-              url="https://www.beatsbydre.com/content/dam/beats/global/pdp-v2-icons/BatteryW.png"
+              url={`${Config.iconUrl}/BatteryW.png`}
             />
             <ProductSpec
-              text="Sweat & water resistant earphones"
-              url="https://www.beatsbydre.com/content/dam/beats/global/pdp-v2-icons/W-small-waterproof.svg"
+              text="Sweat and water resistant earphones"
+              url={`${Config.iconUrl}/W-small-waterproof.svg`}
             />
             <ProductSpec
               text="Streamlined, round cable"
-              url="https://www.beatsbydre.com/content/dam/beats/global/pdp-v2-icons/round_cableW.png"
+              url={`${Config.iconUrl}/round_cableW.png`}
             />
           </div>
+        </div>
+
+        <div className="buyWrap">
+          <div className="buyBtn">
+            <a href="#buy" className="btnWrapper">
+              <span>Buy</span>
+            </a>
+          </div>
+          <div className="price">
+            <span>$149.95</span>
+          </div>
+        </div>
+        <div className="iconWrap">
+          <ProductSpec
+            text="Up to 15 hours of listening time"
+            url="https://www.beatsbydre.com/content/dam/beats/global/pdp-v2-icons/BatteryW.png"
+          />
+          <ProductSpec
+            text="Sweat and water resistant earphones"
+            url="https://www.beatsbydre.com/content/dam/beats/global/pdp-v2-icons/W-small-waterproof.svg"
+          />
+          <ProductSpec
+            text="Streamlined, round cable"
+            url="https://www.beatsbydre.com/content/dam/beats/global/pdp-v2-icons/round_cableW.png"
+          />
         </div>
       </div>
     );
