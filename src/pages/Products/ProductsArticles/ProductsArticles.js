@@ -8,18 +8,20 @@ class ProductsArticles extends React.Component {
     const { lists } = this.props;
     const makeCard =
       lists &&
-      lists.map((list, idx) => (
+      lists.map((list) => (
         <ProductCard
-          key={list.id}
-          image={list.image}
+          key={list.item}
+          num={list.item}
+          image={list.product_image[0].image_url}
           name={list.name}
-          title={list.title}
-          specLists={list.list}
+          title={list.description}
+          specLists={list.item_info}
           price={list.price}
         />
       ));
     return (
       <div className="ProductsArticles">
+        <hr className="seperateSection" />
         <section className="productTitle">
           <h2>
             High‑performance <br />
