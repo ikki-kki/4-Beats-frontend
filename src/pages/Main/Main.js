@@ -10,7 +10,7 @@ export class Main extends React.Component {
   render() {
     return (
       <>
-        <Cart />
+        {/* <Cart /> */}
         <div>
           <MainHeader />
           <Story />
