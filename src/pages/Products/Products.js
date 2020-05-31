@@ -28,22 +28,22 @@ class Products extends React.Component {
       .then((res) => {
         this.setState({
           sec1: this.state.productsList.filter((res) => {
-            return res.theme == "HIGH‑PERFORMANCE WIRELESS EARPHONES";
+            return res.theme === "HIGH‑PERFORMANCE WIRELESS EARPHONES";
           }),
           sec2: this.state.productsList.filter((res2) => {
-            return res2.theme == "EVERYDAY WIRELESS ON‑EAR HEADPHONES";
+            return res2.theme === "EVERYDAY WIRELESS ON‑EAR HEADPHONES";
           }),
           sec3: this.state.productsList.filter((res3) => {
-            return res3.theme == "PREMIUM SOUND WIRELESS OVER‑EAR HEADPHONES";
+            return res3.theme === "PREMIUM SOUND WIRELESS OVER‑EAR HEADPHONES";
           }),
           sec4: this.state.productsList.filter((res4) => {
-            return res4.theme == "ALWAYS‑READY WIRELESS EARPHONES";
+            return res4.theme === "ALWAYS‑READY WIRELESS EARPHONES";
           }),
           sec5: this.state.productsList.filter((res5) => {
-            return res5.theme == "WIRED OPTIONS";
+            return res5.theme === "WIRED OPTIONS";
           }),
           sec6: this.state.productsList.filter((res6) => {
-            return res6.theme == "COMPACT YET POWERFUL WIRELESS SPEAKER";
+            return res6.theme === "COMPACT YET POWERFUL WIRELESS SPEAKER";
           }),
         });
       });
