@@ -30,7 +30,7 @@ class ModalSignUp extends React.Component {
 
   inputValuePwCo = (event) => {
     this.setState({
-      password_confirm: event.target.value,
+      password_re: event.target.value,
     });
   };
 
@@ -47,7 +47,8 @@ class ModalSignUp extends React.Component {
   };
 
   buttonColorChange = () => {
-    if (this.state.email.includes("@")) {
+    const { email, password, password_re } = this.state;
+    if (email.includes("@") || password === password_re) {
       this.setState({ BtnColor: false });
     } else {
       this.setState({ BtnColor: true });
@@ -68,21 +69,26 @@ class ModalSignUp extends React.Component {
         email: "",
       });
     } else {
-      fetch("API", {
+      fetch("http://10.58.5.168:8000/api/register/check", {
         method: "POST",
+        headers: {
+          "Content-type": "application/json",
+        },
         body: JSON.stringify({
           email: this.state.email,
         }),
       })
         .then((response) => response.json())
         .then((response) => {
-          if (response.token === true) {
-            alert("사용가능 한 아이디입니다");
+          if (response.status === 200) {
+            localStorage.setItem("token", response.token);
+            alert("Available Email");
             this.setState({
               emailCheck: this.state.email,
             });
+            console.log(this.state.emailCheck);
           } else {
-            alert("이미 존재하는 아이디입니다");
+            alert("This email already exists.");
           }
         });
     }
@@ -105,6 +111,7 @@ class ModalSignUp extends React.Component {
         password_re: "",
       });
     } else {
+      alert("사용가능한 비번");
       if (this.state.password === this.state.password_re) {
         this.setState({
           passwordCheck: this.state.password_re,
@@ -114,25 +121,43 @@ class ModalSignUp extends React.Component {
   };
 
   handleClickEvent = () => {
-    fetch("API", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
-        email: this.state.emailCheck,
-        password: this.state.passwordCheck,
-        first_name: this.state.first_name,
-        last_name: this.state.last_name,
-      }),
-    })
-      .then((response) => response.json())
-      .then((response) => {
-        if (response.token) {
+    const {
+      email,
+      password,
+      emailCheck,
+      passwordCheck,
+      password_re,
+      first_name,
+      last_name,
+    } = this.state;
+
+    if (
+      email &&
+      password &&
+      password_re &&
+      email === emailCheck &&
+      password === password_re &&
+      password === passwordCheck &&
+      first_name &&
+      last_name
+    ) {
+      fetch("http://10.58.5.168:8000/api/register", {
+        method: "POST",
+
+        body: JSON.stringify({
+          email: this.state.emailCheck,
+          password: this.state.passwordCheck,
+          password_re: this.state.password_re,
+          first_name: this.state.first_name,
+          last_name: this.state.last_name,
+        }),
+      }).then((response) => {
+        if (response.status === 200) {
           localStorage.setItem("token", response.token);
           this.props.switch();
         }
       });
+    }
   };
 
   render() {
@@ -169,6 +194,7 @@ class ModalSignUp extends React.Component {
                     </div>
                   </div>
                   <div className="content1">
+                    <button onClick={this.checkEmail}>check</button>
                     <input
                       onChange={this.inputValueEmail}
                       onKeyUp={this.buttonColorChange}
@@ -190,6 +216,7 @@ class ModalSignUp extends React.Component {
                       />
                     </div>
                     <div className="content3">
+                      <button onClick={this.CheckPw}>check</button>
                       <input
                         onChange={this.inputValuePwCo}
                         onKeyUp={this.buttonColorChange}

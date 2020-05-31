@@ -141,30 +141,6 @@
     textarea:focus::-webkit-input-placeholder {
       color: transparent;
     }
-
-    // .SignInBtn {
-    //   margin-top: 20px;
-    //   margin-bottom: 35px;
-    //   float: left;
-    //   color: #666;
-    //   font-family: $mainFont;
-    //   font-weight: 500;
-    //   border: 0;
-    //   outline: 0;
-    //   background-color: #e7e7e7;
-    // }
-
-    // .ForgottenPwBtn {
-    //   margin-top: 20px;
-    //   margin-bottom: 35px;
-    //   float: right;
-    //   color: #666;
-    //   font-family: $mainFont;
-    //   font-weight: 500;
-    //   border: 0;
-    //   outline: 0;
-    //   background-color: #e7e7e7;
-    // }
   }
   .SignUpB {
     width: 100%;
@@ -185,21 +161,12 @@
         left: 44.5%;
         width: 11%;
         opacity: 0;
-
-        // -webkit-transition: all 0.4s ease;
         transition: all 0.4s ease;
       }
-
       &:hover:before {
         opacity: 1;
       }
     }
-
-    // &:hover {
-    //   background-color: $mainRed;
-    //   color: white;
-    //   transition: all 0.2s ease-in-out;
-    // }
   }
 
   .SignInBtn-wrap {
