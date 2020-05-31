@@ -19,30 +19,24 @@ class Products extends React.Component {
   componentDidMount() {
     fetch("http://10.58.5.168:8000/api/product")
       .then((res) => res.json())
-      // .then(res => console.log(res))
-      .then((res) =>
-        this.setState({
-          productsList: res.data,
-        })
-      )
       .then((res) => {
         this.setState({
-          sec1: this.state.productsList.filter((res) => {
+          sec1: res.data.filter((res) => {
             return res.theme === "HIGH‑PERFORMANCE WIRELESS EARPHONES";
           }),
-          sec2: this.state.productsList.filter((res2) => {
+          sec2: res.data.filter((res2) => {
             return res2.theme === "EVERYDAY WIRELESS ON‑EAR HEADPHONES";
           }),
-          sec3: this.state.productsList.filter((res3) => {
+          sec3: res.data.filter((res3) => {
             return res3.theme === "PREMIUM SOUND WIRELESS OVER‑EAR HEADPHONES";
           }),
-          sec4: this.state.productsList.filter((res4) => {
+          sec4: res.data.filter((res4) => {
             return res4.theme === "ALWAYS‑READY WIRELESS EARPHONES";
           }),
-          sec5: this.state.productsList.filter((res5) => {
+          sec5: res.data.filter((res5) => {
             return res5.theme === "WIRED OPTIONS";
           }),
-          sec6: this.state.productsList.filter((res6) => {
+          sec6: res.data.filter((res6) => {
             return res6.theme === "COMPACT YET POWERFUL WIRELESS SPEAKER";
           }),
         });
