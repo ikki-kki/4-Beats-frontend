@@ -1,5 +1,6 @@
 import React from "react";
 import ReactTransitionGroup from "react-addons-css-transition-group";
+import Config from "../../Config";
 import "./ModalSignIn.scss";
 
 class ModalSignIn extends React.Component {
@@ -34,7 +35,7 @@ class ModalSignIn extends React.Component {
 
   handleBtnClickEvent = () => {
     console.log("clicked");
-    fetch("http://10.58.5.168:8000/api/login", {
+    fetch(Config.SignInAPI, {
       method: "POST",
       body: JSON.stringify({
         email: this.state.email,

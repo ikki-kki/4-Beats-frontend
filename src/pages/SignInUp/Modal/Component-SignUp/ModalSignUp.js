@@ -1,5 +1,9 @@
 import React from "react";
 import ReactTransitionGroup from "react-addons-css-transition-group";
+import Config from "../../Config";
+import { ValidationEmail } from "../../Utils";
+import { ValidationPassword } from "../../Utils";
+
 import "./ModalSignUp.scss";
 
 class ModalSignUp extends React.Component {
@@ -59,17 +63,16 @@ class ModalSignUp extends React.Component {
   checkEmail = (e) => {
     e.preventDefault();
     //이메일 유효성 검사 함수
-    const chkEmail = (str) => {
-      var regExp = /^[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*.[a-zA-Z]{2,3}$/i;
-      return regExp.test(str) ? true : false;
-    };
-    if (chkEmail(this.state.email) === false) {
+
+    ValidationEmail();
+
+    if (ValidationEmail(this.state.email) === false) {
       alert("Email is invalid");
       this.setState({
         email: "",
       });
     } else {
-      fetch("http://10.58.5.168:8000/api/register/check", {
+      fetch(Config.SignUpEmailCheckAPI, {
         method: "POST",
         headers: {
           "Content-type": "application/json",
@@ -99,12 +102,8 @@ class ModalSignUp extends React.Component {
     e.preventDefault();
 
     //비밀번호 유효성 검사 (영문, 숫자 혼합 6~20)
-    const CheckPwd = (str) => {
-      var reg_pwd = /^.*(?=.{6,20})(?=.*[0-9])(?=.*[a-zA-Z]).*$/;
-      return !reg_pwd.test(str) ? false : true;
-    };
-
-    if (CheckPwd(this.state.password_re) === false) {
+    ValidationPassword();
+    if (ValidationPassword(this.state.password_re) === false) {
       alert("영문, 숫자를 혼합하여 6~12자 이내");
       this.setState({
         password: "",
@@ -141,7 +140,7 @@ class ModalSignUp extends React.Component {
       first_name &&
       last_name
     ) {
-      fetch("http://10.58.5.168:8000/api/register", {
+      fetch(Config.SignUpBtnAPI, {
         method: "POST",
 
         body: JSON.stringify({

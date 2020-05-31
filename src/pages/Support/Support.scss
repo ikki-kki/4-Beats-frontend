@@ -1,17 +1,18 @@
 @import "../../styles/common.scss";
 .Support {
-  .Main-Top {
+  .Support-Top {
     position: relative;
     .Main-Text-Wrap {
+      width: 80%;
       position: absolute;
       z-index: 1;
       text-align: center;
-      width: 80%;
-      margin-left: 8%;
+      margin-left: 2.3%;
+      margin-top: 2.4%;
       h1 {
         font-family: $mainFont;
-        font-size: 60px;
-        font-weight: 800;
+        font-size: 75px;
+        font-weight: 700;
         line-height: 1;
         color: white;
         padding: 10% 0 0 8%;
@@ -19,7 +20,7 @@
       }
     }
     .Main-Img {
-      margin-top: 80px;
+      margin-top: 90px;
       img {
         width: 100%;
         position: absolute;
