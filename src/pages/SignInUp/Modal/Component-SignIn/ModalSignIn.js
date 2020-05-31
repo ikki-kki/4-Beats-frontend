@@ -1,14 +1,14 @@
 import React from "react";
 import ReactTransitionGroup from "react-addons-css-transition-group";
+import Config from "../../Config";
 import "./ModalSignIn.scss";
 
 class ModalSignIn extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      isModalOpen: false,
       BtnColor: true,
-      SignUpOpen: true,
+      // SignUpOpen: true,
       email: "",
       password: "",
     };
@@ -18,13 +18,11 @@ class ModalSignIn extends React.Component {
     this.setState({
       email: event.target.value,
     });
-    console.log(event.target.value);
   };
   inputValuePw = (event) => {
     this.setState({
       password: event.target.value,
     });
-    console.log(event.target.value);
   };
 
   buttonColorChange = () => {
@@ -35,20 +33,30 @@ class ModalSignIn extends React.Component {
     }
   };
 
-  handleBtnClickEvent() {
-    fetch("API", {
+  handleBtnClickEvent = () => {
+    console.log("clicked");
+    fetch(Config.SignInAPI, {
       method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
       body: JSON.stringify({
         email: this.state.email,
         password: this.state.password,
       }),
     })
       .then((response) => response.json())
-      .then((response) => console.log(response));
-  }
+      .then((response) => {
+        if (response.token) {
+          localStorage.setItem("token", response.token);
+          this.props.history.push("/products");
+        }
+      });
+  };
+
+  menuHandler = (e) => {
+    console.log(e.target.id);
+    if (e.target.id === "SignIn") {
+      this.setState({ menuIdx: 0 });
+    }
+  };
 
   render() {
     return (
@@ -91,20 +99,9 @@ class ModalSignIn extends React.Component {
                     placeholder="Password"
                     type="password"
                   />
-
-                  <button
-                    className="SignInBtn"
-                    onClick={this.props.changeCo}
-                    type="button"
-                  >
-                    Sign Up
-                  </button>
-
-                  <button className="ForgottenPwBtn" type="button">
-                    Forgotten password?
-                  </button>
                 </div>
-                <div className="button-wrap">
+
+                <div className="SignInBtn-wrap">
                   <button
                     className={
                       this.state.BtnColor ? "button" : "BtnColorChange"
@@ -112,6 +109,16 @@ class ModalSignIn extends React.Component {
                     onClick={this.handleBtnClickEvent}
                   >
                     Login
+                  </button>
+                </div>
+                <div className="SignUpB">
+                  <button
+                    className="SignUpBtn"
+                    onClick={this.props.changeCo}
+                    type="button"
+                    id="SignIn"
+                  >
+                    Sign Up
                   </button>
                 </div>
               </div>
