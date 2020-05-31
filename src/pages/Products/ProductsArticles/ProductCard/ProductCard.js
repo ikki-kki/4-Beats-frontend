@@ -1,10 +1,17 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import "./ProductCard.scss";
+// const colorCircles = {
+//   Powerbeats: ["#f1f1f1", "#2b2b2b", "#911827"],
+//   2: ["#f7ede2", "#2b2b2b", "#374754", "#fff"],
+//   3: ["#f7ede2", "#2b2b2b", "#374754", "#fff"],
+// };
 
 class ProductCard extends React.Component {
   render() {
-    const { name, image, title, specLists, price } = this.props;
-
+    const { num, name, image, title, specLists, price } = this.props;
+    console.log(name);
+    // console.log(colorCircles.{name}[0]);
     return (
       <section className="productContent">
         <div className="contentWrapper">
@@ -13,15 +20,15 @@ class ProductCard extends React.Component {
             <div className="mainTitle">
               <p>{title}</p>
             </div>
-            <div className="colorCurcle1">
-              <div className="colorCurcle2">
-                <div className="colorCurcle3">&nbsp;</div>
+            <div className={"item" + num}>
+              <div className="colorCircle1">
+                <div className="colorCircle2">&nbsp;</div>
               </div>
             </div>
             <ul className="productInfoList">
               {specLists.map((list, idx) => (
                 <li>
-                  <span>{list}</span>
+                  <span key={idx}>{list.item_info}</span>
                 </li>
               ))}
             </ul>
