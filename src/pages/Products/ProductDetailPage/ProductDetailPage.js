@@ -5,6 +5,7 @@ import TextPiece from "./TextPiece/TextPiece";
 import Config from "../Config";
 import NewsFooter from "../../../components/Footers/NewsFooter/NewsFooter";
 import MainHeader from "../../../components/Headers/MainHeader/MainHeader";
+import MainFooter from "../../../components/Footers/MainFooter/MainFooter";
 import "./ProductDetailPage.scss";
 
 const selProduct = {
@@ -507,6 +508,7 @@ class ProductDetailPage extends React.Component {
           <NewsFooter />
           <div className="sectionSpacing3" />
         </section>
+        <MainFooter />
       </div>
     );
   }

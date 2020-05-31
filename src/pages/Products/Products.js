@@ -2,6 +2,9 @@ import React from "react";
 import { withRouter } from "react-router-dom";
 import ProductsArticles from "./ProductsArticles/ProductsArticles";
 import MainHeader from "../../components/Headers/MainHeader/MainHeader";
+import NewsFooter from "../../components/Footers/NewsFooter/NewsFooter";
+import MainFooter from "../../components/Footers/MainFooter/MainFooter";
+import "./Products.scss";
 
 class Products extends React.Component {
   constructor() {
@@ -57,6 +60,12 @@ class Products extends React.Component {
           section5={this.state.sec5}
           section6={this.state.sec6}
         />
+        <section className="news">
+          <div className="sectionSpacing4" />
+          <NewsFooter />
+          <div className="sectionSpacing3" />
+        </section>
+        <MainFooter />
       </>
     );
   }

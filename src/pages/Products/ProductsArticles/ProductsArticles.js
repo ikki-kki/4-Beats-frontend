@@ -168,7 +168,6 @@ class ProductsArticles extends React.Component {
         </section>
         <div className="sectionSpacingStart" />
         {makeCard6}
-        <hr className="seperateSection" />
       </div>
     );
   }
