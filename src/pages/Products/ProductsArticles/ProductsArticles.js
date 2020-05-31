@@ -1,6 +1,7 @@
 import React from "react";
 import { withRouter } from "react-router-dom";
 import ProductCard from "./ProductCard/ProductCard";
+import Fade from "react-reveal/Fade";
 import "./ProductsArticles.scss";
 
 class ProductsArticles extends React.Component {
@@ -108,64 +109,76 @@ class ProductsArticles extends React.Component {
     return (
       <div className="ProductsArticles">
         <div className="sectionSpacingStart" />
-        <section className="productTitle">
-          <h2>
-            High‑performance
-            <br />
-            wireless earphones
-          </h2>
-        </section>
+        <Fade>
+          <section className="productTitle">
+            <h2>
+              High‑performance
+              <br />
+              wireless earphones
+            </h2>
+          </section>
+        </Fade>
         <div className="sectionSpacingStart" />
         {makeCard1}
         <hr className="seperateSection" />
         <div className="sectionSpacingStart" />
-        <section className="productTitle">
-          <h2>
-            EVERYDAY WIRELESS
-            <br />
-            ON‑EAR HEADPHONES
-          </h2>
-        </section>
+        <Fade>
+          <section className="productTitle">
+            <h2>
+              EVERYDAY WIRELESS
+              <br />
+              ON‑EAR HEADPHONES
+            </h2>
+          </section>
+        </Fade>
         <div className="sectionSpacingStart" />
         {makeCard2}
         <hr className="seperateSection" />
         <div className="sectionSpacingStart" />
-        <section className="productTitle">
-          <h2>
-            PREMIUM SOUND WIRELESS
-            <br />
-            OVER‑EAR HEADPHONES
-          </h2>
-        </section>
+        <Fade>
+          <section className="productTitle">
+            <h2>
+              PREMIUM SOUND WIRELESS
+              <br />
+              OVER‑EAR HEADPHONES
+            </h2>
+          </section>
+        </Fade>
         <div className="sectionSpacingStart" />
         {makeCard3}
         <hr className="seperateSection" />
         <div className="sectionSpacingStart" />
-        <section className="productTitle">
-          <h2>
-            ALWAYS‑READY
-            <br />
-            WIRELESS EARPHONES
-          </h2>
-        </section>
+        <Fade>
+          <section className="productTitle">
+            <h2>
+              ALWAYS‑READY
+              <br />
+              WIRELESS EARPHONES
+            </h2>
+          </section>
+        </Fade>
         <div className="sectionSpacingStart" />
         {makeCard4}
         <hr className="seperateSection" />
         <div className="sectionSpacingStart" />
-        <section className="productTitle">
-          <h2>WIRED OPTIONS</h2>
-        </section>
+        <Fade>
+          <section className="productTitle">
+            <h2>WIRED OPTIONS</h2>
+          </section>
+        </Fade>
         <div className="sectionSpacingStart" />
         {makeCard5}
         <hr className="seperateSection" />
         <div className="sectionSpacingStart" />
-        <section className="productTitle">
-          <h2>
-            COMPACT YET POWERFUL
-            <br />
-            WIRELESS SPEAKER
-          </h2>
-        </section>
+        <Fade>
+          <section className="productTitle">
+            <h2>
+              COMPACT YET POWERFUL
+              <br />
+              WIRELESS SPEAKER
+            </h2>
+          </section>
+        </Fade>
         <div className="sectionSpacingStart" />
         {makeCard6}
       </div>

@@ -171,24 +171,30 @@ class ProductDetailPage extends React.Component {
           <div className="sectionSpacing"></div>
           <div className="imageAndText">
             <div className="leftContent">
-              <TextPiece
-                color="#161616"
-                title="Comfort by design"
-                inText="With a streamlined, round cable engineered to minimize friction, and secure-fit earhooks for added stability, these earphones feel light and comfortable even after hours of wear."
-              />
-              <div className="contentImageLeft">
+              <Fade>
+                <TextPiece
+                  color="#161616"
+                  title="Comfort by design"
+                  inText="With a streamlined, round cable engineered to minimize friction, and secure-fit earhooks for added stability, these earphones feel light and comfortable even after hours of wear."
+                />
+              </Fade>
+              <Fade left>
+                <div className="contentImageLeft">
+                  <img
+                    alt="woman"
+                    src={`${Config.detailImage}07.jpg.large.2x.jpg`}
+                  />
+                </div>
+              </Fade>
+            </div>
+            <Fade right>
+              <div className="rightContent">
                 <img
-                  alt="woman"
-                  src={`${Config.detailImage}07.jpg.large.2x.jpg`}
+                  alt="womanfull"
+                  src={`${Config.detailImage}06.jpg.large.2x.jpg`}
                 />
               </div>
-            </div>
-            <div className="rightContent">
-              <img
-                alt="womanfull"
-                src={`${Config.detailImage}06.jpg.large.2x.jpg`}
-              />
-            </div>
+            </Fade>
           </div>
           <div className="sectionSpacing"></div>
         </section>
@@ -270,16 +276,20 @@ class ProductDetailPage extends React.Component {
         <div className="sectionSpacing" />
         <section className="mainContentsListen">
           <div className="imgWrap">
-            <img
-              alt="walking man"
-              src={`${Config.detailImage}08.jpg.large.2x.jpg`}
-            />
-            <div className="textWrap">
-              <TextPiece
-                color="#fff"
-                title="Listen with a friend"
-                inText="With Audio Sharing, you can pair two sets of Beats headphones or AirPods to one iPhone and enjoy the same song, podcast, or movie along with a friend."
+            <Fade>
+              <img
+                alt="walking man"
+                src={`${Config.detailImage}08.jpg.large.2x.jpg`}
               />
+            </Fade>
+            <div className="textWrap">
+              <Fade bottom>
+                <TextPiece
+                  color="#fff"
+                  title="Listen with a friend"
+                  inText="With Audio Sharing, you can pair two sets of Beats headphones or AirPods to one iPhone and enjoy the same song, podcast, or movie along with a friend."
+                />
+              </Fade>
             </div>
           </div>
         </section>
@@ -290,75 +300,86 @@ class ProductDetailPage extends React.Component {
           </div>
           <div className="containerWrap">
             <div className="widthContainer">
-              <div className="detailWrap">
-                <div className="imgWrap">
-                  <img
-                    alt="detail"
-                    src={`${Config.ProductDetail}-p11c.jpg.large.2x.jpg`}
-                  />
+              <Fade bottom>
+                <div className="detailWrap">
+                  <div className="imgWrap">
+                    <img
+                      alt="detail"
+                      src={`${Config.ProductDetail}-p11c.jpg.large.2x.jpg`}
+                    />
+                  </div>
+                  <div className="textWrap">
+                    <h4>Enhanced call performance</h4>
+                    <p>
+                      With multiple on-ear microphones that target your voice
+                      and filter out external noise, and Class 1 Bluetooth for
+                      extended range and fewer dropouts.
+                    </p>
+                  </div>
                 </div>
-                <div className="textWrap">
-                  <h4>Enhanced call performance</h4>
-                  <p>
-                    With multiple on-ear microphones that target your voice and
-                    filter out external noise, and Class 1 Bluetooth for
-                    extended range and fewer dropouts.
-                  </p>
+              </Fade>
+              <Fade bottom>
+                <div className="detailWrap">
+                  <div className="imgWrap">
+                    <img
+                      alt="detail"
+                      src={`${Config.ProductDetail}-p09a.jpg.large.2x.jpg`}
+                    />
+                  </div>
+                  <div className="textWrap">
+                    <h4>On-ear controls</h4>
+                    <p>
+                      Take calls, skip songs, and adjust volume directly from
+                      the earbud, so you don’t need your device to control your
+                      audio.
+                    </p>
+                  </div>
                 </div>
-              </div>
-              <div className="detailWrap">
-                <div className="imgWrap">
-                  <img
-                    alt="detail"
-                    src={`${Config.ProductDetail}-p09a.jpg.large.2x.jpg`}
-                  />
+              </Fade>
+              <Fade bottom>
+                <div className="detailWrap">
+                  <div className="imgWrap">
+                    <img
+                      alt="detail"
+                      src={`${Config.ProductDetail}-p10b.jpg.large.2x.jpg`}
+                    />
+                  </div>
+                  <div className="textWrap">
+                    <h4>Voice controls</h4>
+                    <p>
+                      Stay in the zone with hands-free controls via “Hey Siri”
+                      on iOS devices, and voice capability with the push of the
+                      b button on a variety of compatible devices.
+                    </p>
+                  </div>
                 </div>
-                <div className="textWrap">
-                  <h4>On-ear controls</h4>
-                  <p>
-                    Take calls, skip songs, and adjust volume directly from the
-                    earbud, so you don’t need your device to control your audio.
-                  </p>
-                </div>
-              </div>
-              <div className="detailWrap">
-                <div className="imgWrap">
-                  <img
-                    alt="detail"
-                    src={`${Config.ProductDetail}-p10b.jpg.large.2x.jpg`}
-                  />
-                </div>
-                <div className="textWrap">
-                  <h4>Voice controls</h4>
-                  <p>
-                    Stay in the zone with hands-free controls via “Hey Siri” on
-                    iOS devices, and voice capability with the push of the b
-                    button on a variety of compatible devices.
-                  </p>
-                </div>
-              </div>
+              </Fade>
             </div>
           </div>
           <div className="sectionSpacing2" />
         </section>
         <section className="whatInTheBox">
           <div className="contentWrap">
-            <div className="textWrap">
-              <h2>What’s in the box</h2>
-              <ul>
-                <li>Powerbeats wireless earphones</li>
-                <li>Carrying case</li>
-                <li>Eartips with four size options</li>
-                <li>Lightning to USB-A charging cable</li>
-                <li>Quick Start Guide</li>
-                <li>Warranty Card</li>
-              </ul>
-            </div>
+            <Fade>
+              <div className="textWrap">
+                <h2>What’s in the box</h2>
+                <ul>
+                  <li>Powerbeats wireless earphones</li>
+                  <li>Carrying case</li>
+                  <li>Eartips with four size options</li>
+                  <li>Lightning to USB-A charging cable</li>
+                  <li>Quick Start Guide</li>
+                  <li>Warranty Card</li>
+                </ul>
+              </div>
+            </Fade>
             <div className="imgWrap">
-              <img
-                alt="box"
-                src={`${Config.ProductDetail}-p12.png.large.2x.png`}
-              />
+              <Fade bottom>
+                <img
+                  alt="box"
+                  src={`${Config.ProductDetail}-p12.png.large.2x.png`}
+                />
+              </Fade>
             </div>
           </div>
         </section>
