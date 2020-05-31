@@ -1,14 +1,15 @@
 @import '../../styles/common.scss';
 
 .BlackBorderButton{
+  width: 140px;
   height: 47px;
   position: relative;
-  background-color: $mainRed;
-  color: #fff;
+  background-color: #fff;
+  color: $mainBlack;
   display: inline-block;
   text-align: center;
-  padding: 15px 30px 10px 32px;
-  //border: 1.5px solid $mainRed;
+  padding: 13px 30px 10px 34px;
+  border: 1.5px solid $mainBlack;
   border-radius: 27px;
   font-family: $subFont;
   letter-spacing: 1px;
@@ -24,7 +25,7 @@
       left:0;
       width: 100%;
       height: 100%;
-      background-color: $mainRed;
+      background-color: #fff;
       border-radius: 10rem;
       z-index: -2;
     }
@@ -35,13 +36,17 @@
       left: 0;
       width: 100%;
       height: 0%;
-      background-color: black;
+      background-color: $mainBlack;
+      border:0;
       transition: all .15s;
       border-radius: 10rem;
       z-index: -1;
     }
     &:hover{
       color: #fff;
+      border: 1.5px solid $mainBlack;
+      background-color:$mainBlack;
+
       &:before{
         height: 100%
       }

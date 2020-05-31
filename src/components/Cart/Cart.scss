@@ -1,0 +1,99 @@
+@import "../../styles/common.scss";
+
+button{
+  background: none ; 
+  border:none; 
+  box-shadow:none;
+  border-radius:0; 
+  padding:0; 
+  overflow:visible;
+}
+
+.Cart{ 
+  width: 100%;
+  background-color: $mainBlack;
+  color: #fff;
+ // overflow-y: scroll;
+  max-height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  transform: none;
+  transition: transform 5s cubic-bezier(0.215, 0.61, 0.355, 1);
+  z-index: 1300;
+  font-family: $mainFont;
+  margin: 0 auto;
+  color: $footerGray;
+  line-height: 1rem;
+  font-weight: 300;
+  
+  .cartProducts{
+    font-size: 1.2rem;
+    margin: 0 auto;
+    width: 100%;
+    padding: 40px 40px 0;
+
+    .cartHeader{
+      padding: 0 0 15px;
+      border-bottom: 2px solid #424242;
+      display: flex;
+      justify-content: space-between;
+
+      .titleLable{
+        width: calc(100% * 5/12);
+        flex-basis: auto;
+        flex-shrink: 0;
+      }
+      .sizeLabel{
+        width: calc(100% * 3/12);
+        flex-basis: auto;
+      }
+      .quantityLabel{
+        flex-grow: 1;
+      }
+      .headerClose{
+        height: 18px;
+        width: 18px;
+        display: flex;
+        justify-content: center;
+
+        span{
+          color: #fff;
+        }
+      }
+    }
+  }
+  .cartSummary{
+    padding: 30px 40px 40px;
+
+    .notice{
+      margin-left: 66.6666%;
+      flex-basis: auto;
+      width: calc(100% * 4/12);
+    }
+    .items{
+      margin-left: 66.6666%;
+      flex-basis: auto;
+      width: calc(100% * 4/12);
+      display: flex;
+      justify-content: space-between;
+      padding: 25px 0;
+
+      h5{
+        display: inline-block;
+      }
+      span{
+        font-size: 1.8rem;
+        line-height: 1;
+        color: #fff;
+        font-weight: 500;
+      }
+    }
+    .buyBtn{
+      margin-left: 66.6666%;
+      flex-basis: auto;
+      width: calc(100% * 4/12);
+      padding: 15px 0 15px;
+    }
+  }
+}
