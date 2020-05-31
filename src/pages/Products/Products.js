@@ -1,6 +1,7 @@
 import React from "react";
 import { withRouter } from "react-router-dom";
 import ProductsArticles from "./ProductsArticles/ProductsArticles";
+import MainHeader from "../../components/Headers/MainHeader/MainHeader";
 
 class Products extends React.Component {
   constructor() {
@@ -46,6 +47,7 @@ class Products extends React.Component {
   render() {
     return (
       <>
+        <MainHeader />
         {/* <ProductsArticles lists={this.state.productsList} /> */}
         <ProductsArticles
           section1={this.state.sec1}

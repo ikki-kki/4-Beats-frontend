@@ -88,7 +88,7 @@ export default class MainHeader extends Component {
                   id="products"
                   onMouseEnter={this.hoverMenuHandler}
                 >
-                  <Link to="" className="headerLink">
+                  <Link to="/products" className="headerLink">
                     PRODUCTS
                   </Link>
                   <span className="material-icons">expand_more</span>

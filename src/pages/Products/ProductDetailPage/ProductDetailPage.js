@@ -502,7 +502,11 @@ class ProductDetailPage extends React.Component {
           </div>
           <div className="sectionSpacing3" />
         </section>
-        <NewsFooter />
+        <section className="news">
+          <div className="sectionSpacing4" />
+          <NewsFooter />
+          <div className="sectionSpacing3" />
+        </section>
       </div>
     );
   }
