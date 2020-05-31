@@ -106,8 +106,10 @@
             padding-top: 120px;
         }
 
+        width: 100%;
+
         .imageAndText {
-            max-width: 1440px;
+            width: 90%;
             display: flex;
             margin: 0 auto;
             justify-content: center;
@@ -146,9 +148,11 @@
         background: linear-gradient(to bottom, #161616 50%, #ffffff 0%);
         position: relative;
         font-family: $mainFont;
+        width: 100%;
 
         .imgWrap {
-            max-width: 1440px;
+            // max-width: 1440px;
+            width: 90%;
             margin: 0 auto;
             position: relative;
 
@@ -214,9 +218,10 @@
 
     .mainContentsPerformance {
         font-family: $mainFont;
+        width: 100%;
 
         .imgWrap {
-            max-width: 1440px;
+            width: 90%;
             margin: 0 auto;
 
             // position: relative;
@@ -254,8 +259,10 @@
             padding-top: 120px;
         }
 
+        width: 100%;
+
         .imageAndText {
-            max-width: 1440px;
+            width: 90%;
             display: flex;
             margin: 0 auto;
             justify-content: center;
@@ -518,9 +525,10 @@
         background: linear-gradient(to bottom, #ffffff 50%, #161616 0%);
         position: relative;
         font-family: $mainFont;
+        width: 100%;
 
         .imgWrap {
-            max-width: 1440px;
+            width: 90%;
             margin: 0 auto;
             position: relative;
 
@@ -544,6 +552,7 @@
         justify-content: center;
         flex-direction: column;
         font-family: $mainFont;
+        width: 100%;
 
         .sectionSpacing {
             padding-top: 120px;
@@ -560,9 +569,10 @@
         .containerWrap {
             display: flex;
             justify-content: center;
+            width: 100%;
 
             .widthContainer {
-                max-width: 1440px;
+                width: 90%;
                 display: flex;
                 justify-content: center;
 
