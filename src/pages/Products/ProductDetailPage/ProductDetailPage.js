@@ -6,6 +6,7 @@ import Config from "../Config";
 import NewsFooter from "../../../components/Footers/NewsFooter/NewsFooter";
 import MainHeader from "../../../components/Headers/MainHeader/MainHeader";
 import MainFooter from "../../../components/Footers/MainFooter/MainFooter";
+import Fade from "react-reveal/Fade";
 import "./ProductDetailPage.scss";
 
 const selProduct = {
@@ -90,67 +91,81 @@ class ProductDetailPage extends React.Component {
         <section className="mainContentsReady">
           <div className="sectionSpacing"></div>
           <div className="imageAndText">
-            <div className="leftContent">
-              <img
-                alt="skate"
-                src={`${Config.detailImage}02.jpg.large.2x.jpg`}
-              />
-            </div>
-            <div className="rightContent">
-              <TextPiece
-                color="#fff"
-                title="Ready when you are"
-                inText="Seamlessly go from working out — to hanging out. Just leave them around your neck until you’re ready to listen again."
-              />
-              <div className="contentImageRight">
+            <Fade left>
+              <div className="leftContent">
                 <img
-                  alt="man"
-                  src={`${Config.detailImage}03.jpg.large.2x.jpg`}
+                  alt="skate"
+                  src={`${Config.detailImage}02.jpg.large.2x.jpg`}
                 />
               </div>
+            </Fade>
+            <div className="rightContent">
+              <Fade>
+                <TextPiece
+                  color="#fff"
+                  title="Ready when you are"
+                  inText="Seamlessly go from working out — to hanging out. Just leave them around your neck until you’re ready to listen again."
+                />
+              </Fade>
+              <Fade right>
+                <div className="contentImageRight">
+                  <img
+                    alt="man"
+                    src={`${Config.detailImage}03.jpg.large.2x.jpg`}
+                  />
+                </div>
+              </Fade>
             </div>
           </div>
           <div className="sectionSpacing" />
         </section>
         <section className="mainContentsBring">
           <div className="imgWrap">
-            <img
-              alt="walking man"
-              src={`${Config.detailImage}05.jpg.large.2x.jpg`}
-            />
-            <div className="textWrap">
-              <TextPiece
-                color="#fff"
-                title="Bring on the long days"
-                inText="With up to 15 hours of battery life, Powerbeats keep up with marathons, hikes, or multiple workout days in a single charge. And with Fast Fuel, a 5-minute charge gives up to 1 hour of playback when battery is low"
+            <Fade>
+              <img
+                alt="walking man"
+                src={`${Config.detailImage}05.jpg.large.2x.jpg`}
               />
-              <div className="timeIcon">
-                <div className="timeInfo">
-                  <div className="infoTop">Up To</div>
-                  <div className="infoMiddle">15</div>
-                  <div className="infoBottom">Hours</div>
+            </Fade>
+            <div className="textWrap">
+              <Fade bottom>
+                <TextPiece
+                  color="#fff"
+                  title="Bring on the long days"
+                  inText="With up to 15 hours of battery life, Powerbeats keep up with marathons, hikes, or multiple workout days in a single charge. And with Fast Fuel, a 5-minute charge gives up to 1 hour of playback when battery is low"
+                />
+                <div className="timeIcon">
+                  <div className="iconStart" />
+                  <div className="timeInfo">
+                    <div className="infoTop">Up To</div>
+                    <div className="infoMiddle">15</div>
+                    <div className="infoBottom">Hours</div>
+                  </div>
+                  <div className="iconEnd" />
                 </div>
-              </div>
+              </Fade>
             </div>
           </div>
         </section>
         <section className="mainContentsPerformance">
-          <div className="imgWrap">
-            <img
-              alt="power beats"
-              src={`${Config.detailImage}04.png.large.2x.png`}
-            />
-          </div>
-          <div className="textWrap">
-            <TextPiece
-              width="60%"
-              color="#161616"
-              title="Performance runs in the family"
-              inText="Powerbeats matches the sleek design and advanced engineering of Powerbeats Pro, with the same powerful sound and reinforced sweat and water resistance."
-            />
-          </div>
-          <p className="viewAll">Looking for totally wireless?</p>
-          <p className="viewAllLink">EXPLORE POWERBEATS PRO</p>
+          <Fade>
+            <div className="imgWrap">
+              <img
+                alt="power beats"
+                src={`${Config.detailImage}04.png.large.2x.png`}
+              />
+            </div>
+            <div className="textWrap">
+              <TextPiece
+                width="60%"
+                color="#161616"
+                title="Performance runs in the family"
+                inText="Powerbeats matches the sleek design and advanced engineering of Powerbeats Pro, with the same powerful sound and reinforced sweat and water resistance."
+              />
+            </div>
+            <p className="viewAll">Looking for totally wireless?</p>
+            <p className="viewAllLink">EXPLORE POWERBEATS PRO</p>
+          </Fade>
         </section>
         <section className="mainContentsComfort">
           <div className="sectionSpacing"></div>
