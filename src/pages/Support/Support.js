@@ -18,10 +18,7 @@ class Support extends React.Component {
           </div>
         </div>
         <div className="Support-Popular">
-          <img
-            src="https://www.beatsbydre.com/content/dam/beats-support/global/images/popular-topics-gray.jpg.large.1x.jpg"
-            alt="popular topics"
-          />
+          <img src={Config.SupportPopularImg} alt="popular topics" />
         </div>
       </div>
     );
