@@ -1,13 +1,16 @@
 @import "../../../styles/common.scss";
+
 .ProductsArticles {
     display: flex;
     justify-content: center;
     flex-direction: column;
     align-items: center;
     font-family: $mainFont;
+
     .productTitle {
         text-align: center;
-        width: 1440px;
+        max-width: 1440px;
+
         h2 {
             width: 100%;
             font-family: $mainFont;
@@ -20,12 +23,15 @@
             color: #161616;
         }
     }
+
     .sectionSpacingStart {
         padding-top: 60px;
     }
+
     .productContent {
         max-width: 1440px;
         margin: 0 auto;
+
         .contentWrapper {
             display: flex;
             margin: 0 auto;
@@ -35,6 +41,7 @@
                 padding-left: 4%;
                 width: 50%;
                 height: 100%;
+
                 .subTitle {
                     font-family: $mainFont;
                     font-size: 20px;
@@ -42,9 +49,11 @@
                     letter-spacing: -0.6px;
                     margin-bottom: 16px;
                 }
+
                 .mainTitle {
                     max-width: 390px;
                     padding-left: 7px;
+
                     p {
                         font-family: $mainFont;
                         text-transform: uppercase;
@@ -63,27 +72,31 @@
                         margin-inline-end: 0px;
                     }
                 }
-                .colorCurcle1 {
-                    margin: 25px 0;
-                    background-color: #f1f1f1;
-                    border-radius: 30px;
-                    width: 34px;
-                    height: 34px;
-                    .colorCurcle2 {
-                        margin: 0 0 0 20px;
-                        background-color: #2d2d2d;
-                        border-radius: 30px;
-                        width: 34px;
-                        height: 34px;
-                        .colorCurcle3 {
-                            margin: 0 0 0 20px;
-                            background-color: #911827;
-                            border-radius: 30px;
-                            width: 34px;
-                            height: 34px;
-                        }
-                    }
-                }
+
+                // .colorCurcle1 {
+                //     margin: 25px 0;
+                //     // background-color: #f1f1f1;
+                //     border-radius: 30px;
+                //     width: 34px;
+                //     height: 34px;
+
+                //     .colorCurcle2 {
+                //         margin: 0 0 0 20px;
+                //         // background-color: #2d2d2d;
+                //         border-radius: 30px;
+                //         width: 34px;
+                //         height: 34px;
+
+                //         .colorCurcle3 {
+                //             margin: 0 0 0 20px;
+                //             // background-color: #911827;
+                //             border-radius: 30px;
+                //             width: 34px;
+                //             height: 34px;
+                //         }
+                //     }
+                // }
+
                 .productInfoList {
                     font-family: $mainFont;
                     // padding-left: 17px;
@@ -91,22 +104,26 @@
                     line-height: 1.2;
                     color: #161616;
                     margin-bottom: 16px;
+
                     // list-style-type: disc;
                     li {
                         font-size: 22px;
                         color: #161616;
+
                         span {
                             font-size: 15px;
                             // margin-left: -5px;
                             font-weight: 300;
                         }
                     }
-                    li:before{ 
+
+                    li:before {
                         content: "•";
                         font-size: 17px;
-                        margin-right:  5px; 
+                        margin-right: 5px;
                     }
                 }
+
                 .price {
                     font-size: 15px;
                     font-weight: 700;
@@ -114,10 +131,12 @@
                     color: #161616;
                     margin-bottom: 16px;
                 }
+
                 .btnWrapper {
                     text-decoration: none;
                     color: #161616;
                     text-transform: uppercase;
+
                     span {
                         display: inline-block;
                         font-family: $subFont;
@@ -129,9 +148,11 @@
                     }
                 }
             }
+
             .productImageWrapper {
                 padding-left: 4%;
                 width: 50%;
+
                 img {
                     width: 100%;
                     max-width: 724px;
@@ -140,7 +161,14 @@
             }
         }
     }
+
     .sectionSpacingEnd {
         padding-top: 40px;
+    }
+
+    .seperateSection {
+        width: 100%;
+        margin: 0 auto;
+        border-top: 1px solid #dddddd;
     }
 }
