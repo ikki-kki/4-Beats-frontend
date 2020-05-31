@@ -1,6 +1,7 @@
 import React from "react";
 import ProductSpec from "./ProductSpec/ProductSpec";
 import Config from "../../Config";
+import RedButton from "../../../../components/Buttons/RedButton";
 import "./ProductHeader.scss";
 
 class ProductHeader extends React.Component {
@@ -19,7 +20,7 @@ class ProductHeader extends React.Component {
           <div className="buyWrap">
             <div className="buyBtn">
               <a href="#buy" className="btnWrapper">
-                <span>Buy</span>
+                <RedButton text={"Buy"} />
               </a>
             </div>
             <div className="price">

@@ -58,7 +58,6 @@ export default class MainHeader extends Component {
     return (
       <main
         style={{
-          height: "100vh",
           width: "100%",
           background: "#f4f4f4",
           margin: "0 auto",

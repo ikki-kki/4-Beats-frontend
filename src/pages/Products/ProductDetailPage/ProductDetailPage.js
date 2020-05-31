@@ -3,72 +3,79 @@ import { withRouter } from "react-router-dom";
 import ProductHeader from "./ProductHeader/ProductHeader";
 import TextPiece from "./TextPiece/TextPiece";
 import Config from "../Config";
+import NewsFooter from "../../../components/Footers/NewsFooter/NewsFooter";
+import MainHeader from "../../../components/Headers/MainHeader/MainHeader";
 import "./ProductDetailPage.scss";
 
-const selProduct = [
-  {
+const selProduct = {
+  0: {
     productColor: "white",
     productColorName: "White",
     productColorNameC: "#000",
     src: `${Config.ProductImage}/powerbeats-white.png.large.2x.png.large.2x.png`,
     check: 1,
+    color: "rgb(101, 101, 101)",
   },
-  {
+  1: {
     productColor: "black",
     productColorName: "Black",
     productColorNameC: "#fff",
     src: `${Config.ProductImage}/powerbeats-black.png.large.2x.png.large.2x.png`,
     check: 1,
+    color: "#fff",
   },
-  {
+  2: {
     productColor: "#911827",
     productColorName: "Red",
     productColorNameC: "#fff",
     src: `${Config.ProductImage}/powerbeats-red.png.large.2x.png.large.2x.png`,
     check: 1,
+    color: "#fff",
   },
-];
+};
 
 class ProductDetailPage extends React.Component {
   state = {
     current: 0,
+    view: false,
   };
 
-  changeWhite = () => {
-    this.setState({ current: 0 });
-  };
-  changeBlack = () => {
-    this.setState({ current: 1 });
-  };
-  changeRed = () => {
-    this.setState({ current: 2 });
+  changeColor = (e) => {
+    this.setState({ current: e });
   };
 
   leftBtn = () => {
-    if (this.state.current === 0) {
-      this.changeBlack();
-    } else if (this.state.current === 1) {
-      this.changeWhite();
-    } else if (this.state.current === 2) {
-      this.changeBlack();
+    if (this.state.current !== 0) {
+      this.setState({ current: this.state.current - 1 });
+    } else {
+      this.setState({ current: 2 });
     }
-    // console.log('left')
   };
 
   rightBtn = () => {
-    if (this.state.current === 1) {
-      this.changeRed();
-    } else if (this.state.current === 0) {
-      this.changeBlack();
-    } else if (this.state.current === 2) {
-      this.changeWhite();
+    if (this.state.current < 2) {
+      this.setState({ current: this.state.current + 1 });
+    } else {
+      this.setState({ current: 0 });
     }
-    // console.log('right')
+  };
+
+  showBtn = () => {
+    if (this.state.view === true) {
+      this.setState({
+        view: false,
+      });
+    } else if (this.state.view === false) {
+      this.setState({
+        view: true,
+      });
+    }
   };
 
   render() {
     return (
       <div className="ProductDetailPage">
+        <MainHeader />
         <section className="headerWrapper">
           <ProductHeader />
           <div className="headerImage">
@@ -102,7 +109,7 @@ class ProductDetailPage extends React.Component {
               </div>
             </div>
           </div>
-          <div className="sectionSpacing"></div>
+          <div className="sectionSpacing" />
         </section>
         <section className="mainContentsBring">
           <div className="imgWrap">
@@ -127,7 +134,7 @@ class ProductDetailPage extends React.Component {
           </div>
         </section>
         <section className="mainContentsPerformance">
-          <div className="imgwrap">
+          <div className="imgWrap">
             <img
               alt="power beats"
               src={`${Config.detailImage}04.png.large.2x.png`}
@@ -178,26 +185,41 @@ class ProductDetailPage extends React.Component {
         >
           <div className="gradient" />
           <div className="selectColorWrapper">
-            <h2 className="selectColorHeader">
+            <h2
+              className="selectColorHeader"
+              style={{ color: selProduct[this.state.current].color }}
+            >
               <span>Select your color</span>
             </h2>
             <div className="selectColorCircle">
-              <div onClick={this.changeWhite} className="colorCirclesWhite">
+              <div
+                onClick={() => this.changeColor(0)}
+                className="colorCirclesWhite white"
+              >
                 <span
-                  className="checkedWhite"
-                  style={{ opacity: this.state.check }}
+                  className={`checkedWhite white ${
+                    this.state.current === 0 ? "checked" : ""
+                  }`}
                 />
               </div>
-              <div onClick={this.changeBlack} className="colorCirclesBlack">
+              <div
+                onClick={() => this.changeColor(1)}
+                className="colorCirclesBlack black"
+              >
                 <span
-                  className="checkedBlack"
-                  style={{ opacity: this.state.check }}
+                  className={`checkedBlack black ${
+                    this.state.current === 1 ? "checked" : ""
+                  }`}
                 />
               </div>
-              <div onClick={this.changeRed} className="colorCirclesRed">
+              <div
+                onClick={() => this.changeColor(2)}
+                className="colorCirclesRed red"
+              >
                 <span
-                  className="checkedRed"
-                  style={{ opacity: this.state.check }}
+                  className={`checkedRed red ${
+                    this.state.current === 2 ? "checked" : ""
+                  }`}
                 />
               </div>
             </div>
@@ -253,10 +275,12 @@ class ProductDetailPage extends React.Component {
           <div className="containerWrap">
             <div className="widthContainer">
               <div className="detailWrap">
-                <img
-                  alt="detail"
-                  src={`${Config.ProductDetail}-p11c.jpg.large.2x.jpg`}
-                />
+                <div className="imgWrap">
+                  <img
+                    alt="detail"
+                    src={`${Config.ProductDetail}-p11c.jpg.large.2x.jpg`}
+                  />
+                </div>
                 <div className="textWrap">
                   <h4>Enhanced call performance</h4>
                   <p>
@@ -267,10 +291,12 @@ class ProductDetailPage extends React.Component {
                 </div>
               </div>
               <div className="detailWrap">
-                <img
-                  alt="detail"
-                  src={`${Config.ProductDetail}-p09a.jpg.large.2x.jpg`}
-                />
+                <div className="imgWrap">
+                  <img
+                    alt="detail"
+                    src={`${Config.ProductDetail}-p09a.jpg.large.2x.jpg`}
+                  />
+                </div>
                 <div className="textWrap">
                   <h4>On-ear controls</h4>
                   <p>
@@ -280,10 +306,12 @@ class ProductDetailPage extends React.Component {
                 </div>
               </div>
               <div className="detailWrap">
-                <img
-                  alt="detail"
-                  src={`${Config.ProductDetail}-p10b.jpg.large.2x.jpg`}
-                />
+                <div className="imgWrap">
+                  <img
+                    alt="detail"
+                    src={`${Config.ProductDetail}-p10b.jpg.large.2x.jpg`}
+                  />
+                </div>
                 <div className="textWrap">
                   <h4>Voice controls</h4>
                   <p>
@@ -318,37 +346,163 @@ class ProductDetailPage extends React.Component {
             </div>
           </div>
         </section>
-        <section>
-          <div className="rightContent">
-            <TextPiece
-              title="Ready when you are"
-              inText="Seamlessly go from working out — to hanging out. Just leave them around your neck until you’re ready to listen again."
-            />
-            <div className="contentImageRight">
-              <img
-                alt="man"
-                src={`${Config[0].detailImage}03.jpg.large.2x.jpg`}
-              />
+        <section className="powerDropDownMenu">
+          <div className="dropBtn">
+            <h2>
+              <button onClick={this.showBtn}>
+                Powerbeats details
+                <i
+                  className={`fas fa-angle-down ${
+                    this.state.view ? "iconActive" : ""
+                  }`}
+                ></i>
+              </button>
+            </h2>
+          </div>
+          <div
+            className={`menuWrap ${this.state.view ? "menuWrapActive" : ""}`}
+            style={{ display: this.state.view }}
+          >
+            <div className="listLeftRight">
+              <div className="totalListLeft">
+                <div className="titleListWrap">
+                  <div className="listContainer">
+                    <h3>Highlights</h3>
+                    <div className="listWrap">
+                      <ul>
+                        <li>
+                          Wireless high-performance earphones with streamlined,
+                          round cable and adjustable, secure-fit earhooks for
+                          lightweight comfort and stability.
+                        </li>
+                        <li>
+                          Reinforced, sleek design for sweat & water resistance
+                          during tough workouts
+                        </li>
+                        <li>
+                          Integrated on-ear controls for music, phone calls, and
+                          voice capability
+                        </li>
+                        <li>
+                          Powerful, balanced sound with dynamic range and noise
+                          isolation
+                        </li>
+                        <li>Up to 15 hours of listening time</li>
+                      </ul>
+                    </div>
+                  </div>
+                  <div className="listContainer">
+                    <h3>Battery</h3>
+                    <div className="listWrap">
+                      <ul>
+                        <li>
+                          Powerbeats (single charge): Up to 15 hours of
+                          listening time
+                        </li>
+                        <li>
+                          Fast Fuel: A 5-minute charge provides up to 1 hour of
+                          playback
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                  <div className="listContainer">
+                    <h3>On-ear controls</h3>
+                    <div className="listWrap">
+                      <ul>
+                        <li>Power button on the left earbud</li>
+                        <li>
+                          Volume, track, and call controls on the right earbud
+                        </li>
+                        <li>
+                          Hands-free controls with “Hey Siri” and voice
+                          assistant on compatible devices
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                  <div className="listContainer">
+                    <h3>Other features</h3>
+                    <div className="listWrap">
+                      <ul>
+                        <li>Dual beam-forming microphones</li>
+                        <li>Motion-detecting accelerometer</li>
+                        <li>Speech-detecting accelerometer</li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div className="totalListRight">
+                <div className="titleListWrap">
+                  <div className="listContainer">
+                    <h3>General</h3>
+                    <div className="listWrap">
+                      <ul>
+                        <li>Height: 2.2 in / 5.6 cm</li>
+                        <li>Weight: 0.93 oz / 26.3 g</li>
+                        <li>Form factor: In ear </li>
+                        <li>Power: Rechargeable lithium-ion </li>
+                      </ul>
+                    </div>
+                  </div>
+                  <div className="listContainer">
+                    <h3>Connectivity</h3>
+                    <div className="listWrap">
+                      <ul>
+                        <li>Apple H1 chip</li>
+                        <li>Class 1 Wireless Bluetooth</li>
+                      </ul>
+                    </div>
+                  </div>
+                  <div className="listContainer">
+                    <h3>Packaging</h3>
+                    <div className="listWrap">
+                      <ul>
+                        <li>Powerbeats product box uses 70% recycled fiber*</li>
+                        <li>* Excluding the sleeve</li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
-
-          <div className="sectionSpacing"></div>
-        </section>
-        <section className="mainContensHalfBlackWrap">
-          <div>
-            <img
-              alt="walking man"
-              src={`${Config[0].detailImage}05.jpg.large.2x.jpg`}
-            />
+          <div className="sectionSpacing3" />
+          <div className="explainWrap">
+            <div className="explain">
+              <p>
+                {" "}
+                Testing conducted by Apple in November 2019 using preproduction
+                Powerbeats and software paired with iPhone XS units and
+                prerelease software. The playlist consisted of continuous pink
+                noise at 80dB. 5-Minute charge testing conducted with drained
+                Powerbeats that were charged for 5 minutes, then audio playback
+                was started until Powerbeats stopped playback. Battery life
+                depends on device settings, environment, usage, and many other
+                factors.
+              </p>
+              <p>
+                {" "}
+                Compatible with all Apple W1 and H1 chip-enabled Beats
+                headphones and AirPods. Works with iPhone 8 or later and iPod
+                touch (7th generation) with the latest version of iOS; and
+                12.9-inch iPad Pro (2nd generation or later), 11-inch iPad Pro,
+                10.5-inch iPad Pro, iPad (5th generation or later), iPad Air
+                (3rd generation), and iPad mini (5th generation) with the latest
+                version of iPadOS.
+              </p>
+              <p>
+                {" "}
+                Siri may not be available in all languages or in all areas, and
+                features may vary by area. Internet access is required. Cellular
+                data charges may apply.
+              </p>
+            </div>
           </div>
-          <TextPiece
-            title="Bring on the long days"
-            inText="With up to 15 hours of battery life, Powerbeats keep up with marathons, hikes, or multiple workout days in a single charge. And with Fast Fuel, a 5-minute charge gives up to 1 hour of playback when battery is low"
-          />
-          <div className="timeIcon">
-            <div></div>
-          </div>
+          <div className="sectionSpacing3" />
         </section>
+        <NewsFooter />
       </div>
     );
   }
