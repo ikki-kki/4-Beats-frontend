@@ -6,8 +6,6 @@ import BlackBorderButton from "../../../../components/Buttons/BlackBorderButton"
 class ProductCard extends React.Component {
   render() {
     const { num, name, image, title, specLists, price } = this.props;
-    console.log(name);
-    // console.log(colorCircles.{name}[0]);
     return (
       <section className="productContent">
         <div className="contentWrapper">
