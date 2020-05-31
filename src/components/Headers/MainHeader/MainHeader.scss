@@ -7,16 +7,26 @@
   padding:0; 
   overflow:visible;
 } 
+.nav-up{
+  top: -80px;
+}
+
+.MainHeader{
+  z-index: 999;
+  position: fixed;
+  top:0;
+  left:0;
+  transition: top 0.2s ease-in-out;
+  width: 100%;
   
   .header-nav{
     display: flex;
     height: 80px;
-    opacity: 1;
     z-index: 2;
     background: #fff;
-    position: relative;
     margin:0 auto;
     justify-content: center;
+    position: relative;
     
     .nav-container{
       margin: 0 90px;
@@ -85,6 +95,7 @@
         height: auto;
         display: flex;
         transition: all 3s ease-in-out;
+        z-index:5;
 
         .hover-ul{
           margin-left: 90px;
@@ -124,10 +135,15 @@
             &:hover:before{
               opacity: 1.0;
             }
+
+          }
+          .lastChild{
+            margin-bottom: 148px;
           }
         }
       }
     }
+  }
 
 @media only screen and (max-width: 1440px) {
   .header-nav .nav-container, .header-nav .hover-container .hover-ul{

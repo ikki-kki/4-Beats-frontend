@@ -3,6 +3,8 @@ import { withRouter } from "react-router-dom";
 import ProductHeader from "./ProductHeader/ProductHeader";
 import TextPiece from "./TextPiece/TextPiece";
 import Config from "../Config";
+import NewsFooter from "../../../components/Footers/NewsFooter/NewsFooter";
+import MainHeader from "../../../components/Headers/MainHeader/MainHeader";
 import "./ProductDetailPage.scss";
 
 const selProduct = {
@@ -73,6 +75,7 @@ class ProductDetailPage extends React.Component {
   render() {
     return (
       <div className="ProductDetailPage">
+        <MainHeader />
         <section className="headerWrapper">
           <ProductHeader />
           <div className="headerImage">
@@ -499,6 +502,7 @@ class ProductDetailPage extends React.Component {
           </div>
           <div className="sectionSpacing3" />
         </section>
+        <NewsFooter />
       </div>
     );
   }

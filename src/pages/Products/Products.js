@@ -52,7 +52,15 @@ class Products extends React.Component {
   render() {
     return (
       <>
-        <ProductsArticles lists={this.state.productsList} />
+        {/* <ProductsArticles lists={this.state.productsList} /> */}
+        <ProductsArticles
+          section1={this.state.sec1}
+          section2={this.state.sec2}
+          section3={this.state.sec3}
+          section4={this.state.sec4}
+          section5={this.state.sec5}
+          section6={this.state.sec6}
+        />
       </>
     );
   }

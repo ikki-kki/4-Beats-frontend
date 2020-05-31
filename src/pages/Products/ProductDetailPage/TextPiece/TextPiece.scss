@@ -1,7 +1,9 @@
 @import '../../../../styles/common.scss';
-.TextPiece { 
+
+.TextPiece {
     font-family: $mainFont;
     color: #fff;
+
     h2 {
         letter-spacing: -0.4px;
         font-size: 40px;
@@ -9,6 +11,7 @@
         font-weight: 600;
         margin-bottom: 20px;
     }
+
     p {
         font-size: 20px;
         line-height: 1.4;

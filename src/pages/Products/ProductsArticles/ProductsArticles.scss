@@ -9,7 +9,7 @@
 
     .productTitle {
         text-align: center;
-        width: 1440px;
+        max-width: 1440px;
 
         h2 {
             width: 100%;
@@ -166,5 +166,9 @@
         padding-top: 40px;
     }
 
-
+    .seperateSection {
+        width: 100%;
+        margin: 0 auto;
+        border-top: 1px solid #dddddd;
+    }
 }
