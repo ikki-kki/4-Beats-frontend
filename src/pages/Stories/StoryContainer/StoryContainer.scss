@@ -1,0 +1,31 @@
+@import '../../../styles/common.scss';
+
+.StoryContainer{
+  width: 100%;
+  margin: 150px auto;
+  
+  .storyContainer{
+    padding: 0 90px;
+    margin: 0 90px;
+
+    .storyBox{
+      display: flex;
+      flex-direction: column;
+      
+      .columns{
+        display: flex;
+        justify-content: space-between;
+      }
+      .buttonBox{
+        padding-top:24px;
+        text-align: center;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 1440px) {
+  .StoryContainer .storyContainer{
+    margin: 0;
+  }
+}

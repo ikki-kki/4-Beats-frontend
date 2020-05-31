@@ -2,21 +2,24 @@
 
 
 .MainFooter{
-  display: flex;
-  justify-content: center;
-  margin: 0 60px;
-  flex-direction: column;
-  align-items: center;
+  margin-top: 60px;
+  width: 100%;
+  background-color: #fff;
 
-  .footer-container{
-    width: 85%;
-    padding: 90px 0 70px 0;
+  .inner{
     display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 60px;
     
+    .footer-container{
+    width: 85%;
+    padding: 90px 10px 70px 10px;
+    display: flex;
     
     .logo{
       flex: 0 0 25%;
-      background-color: white;
       .footerLink{
         .logo{
           width: 40px;
@@ -121,10 +124,11 @@
                 }
 
   }
+  }
 }
 
 @media only screen and (max-width: 1440px) {
-  .MainFooter{
+  .MainFooter .inner{
     margin: 0;
   }
 }
