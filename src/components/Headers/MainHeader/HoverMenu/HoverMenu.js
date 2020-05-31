@@ -10,20 +10,16 @@ class HoverMenu extends Component {
     };
   }
 
-  //hover시 state가 변하는 함수
   render() {
-    //console.log("헤더 props: ", this.props);
-    //console.log("헤더 데이터: ", headerData[this.props.name]);
-    //console.log("헤더 클래스: ", this.state.class)
     return (
       <div className="HoverMenu">
         <div className="main-img-box">
-          {headerMain[this.props.name].data.map((data, i) => {
+          {headerMain[this.props.id].map((data, i) => {
             return <img className="main-img" key={i} src={data.img} alt="" />;
           })}
         </div>
         <div className="sub-imgs-container">
-          {headerData[this.props.name].data.map((data, i) => {
+          {headerData[this.props.id].map((data, i) => {
             return (
               <div className="sub-imgs-box" key={i}>
                 <img className="sub-img" src={data.img} alt="" />
