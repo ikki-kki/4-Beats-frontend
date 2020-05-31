@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
+import RedButton from "../../Buttons/RedButton";
 import "./CartHeader.scss";
 
 export default class CartHeader extends Component {
@@ -15,7 +16,7 @@ export default class CartHeader extends Component {
               </Link>
               <span className="price">$192.68</span>
             </div>
-            <button>ADD TO BAG</button>
+            <RedButton text="add to bag" />
           </div>
         </nav>
       </header>

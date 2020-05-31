@@ -34,7 +34,7 @@ class SignInUp extends React.Component {
     return (
       <main className="SignInUp">
         <div className="loginTap">
-          <span onClick={this.openModal}>로그인</span>
+          <span onClick={this.openModal}> 로그인</span>
         </div>
         {/* <ModalSuccess changeCo={this.handleOnClickEvent} isOpen={this.state.isModalOpen} close={this.closeModal} ColorChange={this.buttonColorChange}/> */}
         {this.state.loginState ? (
@@ -48,6 +48,7 @@ class SignInUp extends React.Component {
           <ModalSignUp
             changeCo={this.handleLoginTrue}
             isOpen={this.state.isModalOpen}
+            switch={this.handleOnClickEvent}
             close={this.closeModal}
           />
         )}

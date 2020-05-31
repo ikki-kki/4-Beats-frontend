@@ -1,0 +1,31 @@
+@import "../../styles/common.scss";
+.Support {
+  .Support-Top {
+    position: relative;
+    .Main-Text-Wrap {
+      width: 80%;
+      position: absolute;
+      z-index: 1;
+      text-align: center;
+      margin-left: 2.3%;
+      margin-top: 2.4%;
+      h1 {
+        font-family: $mainFont;
+        font-size: 75px;
+        font-weight: 700;
+        line-height: 1;
+        color: white;
+        padding: 10% 0 0 8%;
+        text-align: left;
+      }
+    }
+    .Main-Img {
+      margin-top: 90px;
+      img {
+        width: 100%;
+        position: absolute;
+        z-index: 0;
+      }
+    }
+  }
+}

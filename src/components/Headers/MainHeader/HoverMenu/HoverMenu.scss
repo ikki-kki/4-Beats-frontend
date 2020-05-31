@@ -15,6 +15,7 @@
       flex-direction: column;
       margin-bottom: 1.7%;
       overflow: hidden;
+      cursor: pointer;
         .main-img{
           display: block;
           width: 100%;
@@ -23,6 +24,7 @@
           background-size: cover;
           background-position: center;
           transition: all .2s ease-in-out;
+          cursor: pointer;
 
           &:hover{
             transform:scale(1.05);
