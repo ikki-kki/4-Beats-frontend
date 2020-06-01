@@ -38,7 +38,7 @@ export default class Cart extends Component {
             <span>₩ 95,000</span>
           </div>
           <div className="buyBtn">
-            <WhiteBorderButton text="paymont" link="/" />
+            <WhiteBorderButton text="paymont" link="/order" />
           </div>
         </div>
       </div>
