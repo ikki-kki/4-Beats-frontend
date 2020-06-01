@@ -5,7 +5,7 @@ import "./GrayBorderButton.scss";
 export default class GrayBorderButton extends Component {
   render() {
     return (
-      <Link to="/" className="GrayBorderButton">
+      <Link to={this.props.link} className="GrayBorderButton">
         {this.props.text}
       </Link>
     );
