@@ -1,6 +1,6 @@
 import React from "react";
 import { withRouter } from "react-router-dom";
-import Cart from "../../components/Cart/Cart";
+// import Cart from "../../components/Cart/Cart";
 import MainHeader from "../../components/Headers/MainHeader/MainHeader";
 //import BuyHeader from "../../components/Headers/BuyHeader/BuyHeader";
 import Footer from "../../components/Footers/Footers";
