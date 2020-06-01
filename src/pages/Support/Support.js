@@ -30,10 +30,7 @@ class Support extends React.Component {
               <div className="PopularImg">
                 <img src={Config.SupportPopularImg} alt="popular topics" />
               </div>
-              <div className="PopularContent">
-                <div className="MainText">
-                  <p>Popular topics</p>
-                </div>
+              {/* <div>
                 <div>
                   <div>
                     <p>Bluetooth Pairing</p>
@@ -54,7 +51,8 @@ class Support extends React.Component {
                   </div>
                   <div>BEATS UPDATER</div>
                 </div>
-              </div>
+                <div>BEATS UPDATER</div>
+              </div> */}
             </div>
           </section>
           <section className="Support-Res">
@@ -123,6 +121,7 @@ class Support extends React.Component {
                     </div>
                   </div>
                 </div>
+<<<<<<< HEAD
                 <div className="Tile">
                   <div className="Tile-Inner">
                     <h4>Contact Us</h4>
@@ -133,6 +132,18 @@ class Support extends React.Component {
                     <div className="Service-Btn">
                       <BlackButton text="CONTACT APPLE SUPPORT" />
                     </div>
+=======
+              </div>
+              <div className="Tile">
+                <div className="Tile-Inner">
+                  <h4>Contact Us</h4>
+                  <p>
+                    Beats by Dr. Dre is part of Apple. Contact Apple for
+                    support.
+                  </p>
+                  <div className="Service-Btn">
+                    <BlackButton text="CONTACT APPLE" />
+>>>>>>> master
                   </div>
                 </div>
               </div>

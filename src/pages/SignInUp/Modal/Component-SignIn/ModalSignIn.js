@@ -34,7 +34,6 @@ class ModalSignIn extends React.Component {
   };
 
   handleBtnClickEvent = () => {
-    console.log("clicked");
     fetch(Config.SignInAPI, {
       method: "POST",
       body: JSON.stringify({
@@ -59,6 +58,7 @@ class ModalSignIn extends React.Component {
   };
 
   render() {
+    const { close, changeCo } = this.props;
     return (
       <>
         {this.props.isOpen ? (
@@ -68,12 +68,9 @@ class ModalSignIn extends React.Component {
             transitionLeaveTimeout={200}
           >
             <div className="SignIn">
-              <div
-                className="Modal-SignIn-overlay"
-                onClick={this.props.close}
-              />
+              <div className="Modal-SignIn-overlay" onClick={close} />
               <div className="loginForm-SignIn">
-                <button className="closeBtn" onClick={this.props.close}>
+                <button className="closeBtn" onClick={close}>
                   <span className="material-icons">close</span>
                 </button>
                 <div className="mainTitle">
@@ -114,7 +111,7 @@ class ModalSignIn extends React.Component {
                 <div className="SignUpB">
                   <button
                     className="SignUpBtn"
-                    onClick={this.props.changeCo}
+                    onClick={changeCo}
                     type="button"
                     id="SignIn"
                   >
