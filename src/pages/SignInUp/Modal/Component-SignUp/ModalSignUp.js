@@ -1,8 +1,7 @@
 import React from "react";
 import ReactTransitionGroup from "react-addons-css-transition-group";
+import { ValidationEmail, ValidationPassword } from "../../Utils";
 import Config from "../../Config";
-import { ValidationEmail } from "../../Utils";
-import { ValidationPassword } from "../../Utils";
 
 import "./ModalSignUp.scss";
 
@@ -51,12 +50,55 @@ class ModalSignUp extends React.Component {
   };
 
   buttonColorChange = () => {
-    const { email, password, password_re } = this.state;
-    if (email.includes("@") || password === password_re) {
+    const { password, password_re } = this.state;
+    if (password === password_re) {
       this.setState({ BtnColor: false });
     } else {
       this.setState({ BtnColor: true });
     }
+  };
+
+  FetchEmail = () => {
+    fetch(Config.SignUpEmailCheckAPI, {
+      method: "POST",
+      headers: {
+        "Content-type": "application/json",
+      },
+      body: JSON.stringify({
+        email: this.state.email,
+      }),
+    })
+      .then((response) => response.json())
+      .then((response) => {
+        if (response.status === 200) {
+          localStorage.setItem("token", response.token);
+          alert("Available Email");
+          this.setState({
+            emailCheck: this.state.email,
+          });
+        } else {
+          alert("This email already exists.");
+        }
+      });
+  };
+
+  FetchRegister = () => {
+    fetch(Config.SignUpBtnAPI, {
+      method: "POST",
+
+      body: JSON.stringify({
+        email: this.state.emailCheck,
+        password: this.state.passwordCheck,
+        password_re: this.state.password_re,
+        first_name: this.state.first_name,
+        last_name: this.state.last_name,
+      }),
+    }).then((response) => {
+      if (response.status === 200) {
+        localStorage.setItem("token", response.token);
+        this.props.switch();
+      }
+    });
   };
 
   //이메일 중복검사
@@ -72,28 +114,7 @@ class ModalSignUp extends React.Component {
         email: "",
       });
     } else {
-      fetch(Config.SignUpEmailCheckAPI, {
-        method: "POST",
-        headers: {
-          "Content-type": "application/json",
-        },
-        body: JSON.stringify({
-          email: this.state.email,
-        }),
-      })
-        .then((response) => response.json())
-        .then((response) => {
-          if (response.status === 200) {
-            localStorage.setItem("token", response.token);
-            alert("Available Email");
-            this.setState({
-              emailCheck: this.state.email,
-            });
-            console.log(this.state.emailCheck);
-          } else {
-            alert("This email already exists.");
-          }
-        });
+      this.FetchEmail();
     }
   };
   //첫번째 두번째 패스워드 일치 확인
@@ -140,26 +161,12 @@ class ModalSignUp extends React.Component {
       first_name &&
       last_name
     ) {
-      fetch(Config.SignUpBtnAPI, {
-        method: "POST",
-
-        body: JSON.stringify({
-          email: this.state.emailCheck,
-          password: this.state.passwordCheck,
-          password_re: this.state.password_re,
-          first_name: this.state.first_name,
-          last_name: this.state.last_name,
-        }),
-      }).then((response) => {
-        if (response.status === 200) {
-          localStorage.setItem("token", response.token);
-          this.props.switch();
-        }
-      });
+      this.FetchRegister();
     }
   };
 
   render() {
+    const { close, changeCo } = this.props;
     return (
       <>
         {this.props.isOpen ? (
@@ -169,23 +176,14 @@ class ModalSignUp extends React.Component {
             transitionLeaveTimeout={200}
           >
             <div className="SignUp">
-              <div
-                className="Modal-SignUp-overlay"
-                onClick={this.props.close}
-              />
+              <div className="Modal-SignUp-overlay" onClick={close} />
               <div className="loginForm">
                 <div className="Component-SignUp">
                   <div className="BackCloseBtn">
-                    <button
-                      className="gotobackBtn"
-                      onClick={this.props.changeCo}
-                    >
+                    <button className="gotobackBtn" onClick={changeCo}>
                       <span className="material-icons">navigate_before</span>
                     </button>
-                    <button
-                      className="closeBtn-signUp"
-                      onClick={this.props.close}
-                    >
+                    <button className="closeBtn-signUp" onClick={close}>
                       <span className="material-icons">close</span>
                     </button>
                   </div>
@@ -198,7 +196,8 @@ class ModalSignUp extends React.Component {
                     </div>
                   </div>
                   <div className="content1">
-                    <button onClick={this.checkEmail}>check</button>
+                    {/* <button onClick={this.checkEmail}>check</button> */}
+
                     <input
                       onChange={this.inputValueEmail}
                       onKeyUp={this.buttonColorChange}
@@ -207,6 +206,9 @@ class ModalSignUp extends React.Component {
                       placeholder="Email address"
                       type="email"
                     />
+                    <button onClick={this.checkEmail}>
+                      <i className="fa fa-check" aria-hidden="true"></i>
+                    </button>
                   </div>
                   <div className="addContent">
                     <div className="content2">
@@ -221,6 +223,7 @@ class ModalSignUp extends React.Component {
                     </div>
                     <div className="content3">
                       {/* <button onClick={this.CheckPw}>check</button> */}
+
                       <input
                         onChange={this.inputValuePwCo}
                         onKeyUp={this.buttonColorChange}
@@ -229,6 +232,9 @@ class ModalSignUp extends React.Component {
                         placeholder="Confirm your password"
                         type="password"
                       />
+                      <button onClick={this.CheckPw}>
+                        <i class="fa fa-check" aria-hidden="true"></i>
+                      </button>
                     </div>
                     <div className="content4">
                       <div className="content4-1">
@@ -264,10 +270,7 @@ class ModalSignUp extends React.Component {
                     </button>
                   </div>
                   <div className="haveAccount">
-                    <button
-                      className="havaAccountBtn"
-                      onClick={this.props.changeCo}
-                    >
+                    <button className="havaAccountBtn" onClick={changeCo}>
                       Do you already have an Beats account?
                     </button>
                   </div>
