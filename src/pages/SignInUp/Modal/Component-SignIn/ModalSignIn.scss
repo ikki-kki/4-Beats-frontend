@@ -6,7 +6,7 @@
   left: 0;
   bottom: 0;
   right: 0;
-  background-color: rgba(88, 88, 88, 0.16);
+  background-color: rgba(88, 88, 88, 0.589);
   &.Modal-anim-enter {
     opacity: 0;
     transition: all 0.2s;
@@ -28,7 +28,6 @@
     left: 0;
     bottom: 0;
     right: 0;
-    background-color: rgba(88, 88, 88, 0.16);
   }
 }
 .loginForm-SignIn {
@@ -37,9 +36,9 @@
   left: 50%;
   transform: translate(-50%, -50%);
   width: 550px;
-  background-color: #e7e7e7;
+  background-color: white;
   padding: 50px;
-  box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.16);
+  box-shadow: 0px 4px 7px rgba(0, 0, 0, 0.507);
 
   &.Modal-anim-enter {
     opacity: 0;
@@ -63,7 +62,7 @@
   .closeBtn {
     border: 0;
     outline: 0;
-    background-color: #e7e7e7;
+    background-color: white;
     float: right;
   }
 
@@ -90,7 +89,7 @@
     .TextInput {
       width: 100%;
       border: none;
-      background-color: #e7e7e7;
+      background-color: white;
       font-size: 25px;
       border-color: rgba(51, 51, 51, 0.2);
       border-style: solid;
@@ -120,7 +119,7 @@
     .TextInput {
       width: 100%;
       border: none;
-      background-color: #e7e7e7;
+      background-color: white;
       font-size: 25px;
       border-color: rgba(51, 51, 51, 0.2);
       border-style: solid;
@@ -147,7 +146,7 @@
     text-align: center;
     .SignUpBtn {
       height: 24px;
-      background-color: #e7e7e7;
+      background-color: white;
       font-size: 12pt;
       color: rgb(129, 129, 129);
       border: 0;
@@ -186,12 +185,12 @@
       height: 60px;
       min-width: 210px;
       background-color: $mainRed;
-      font-size: 13pt;
+      font-size: 14pt;
       color: white;
       border: 0;
       transition: all 0.2s ease-in-out;
       &:hover {
-        background-color: #ee1212;
+        background-color: #f50e0e;
         transition: all 0.2s ease-in-out;
       }
     }
