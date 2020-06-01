@@ -121,18 +121,6 @@ class Support extends React.Component {
                     </div>
                   </div>
                 </div>
-<<<<<<< HEAD
-                <div className="Tile">
-                  <div className="Tile-Inner">
-                    <h4>Contact Us</h4>
-                    <p>
-                      Beats by Dr. Dre is part of Apple. Contact Apple for
-                      support.
-                    </p>
-                    <div className="Service-Btn">
-                      <BlackButton text="CONTACT APPLE SUPPORT" />
-                    </div>
-=======
               </div>
               <div className="Tile">
                 <div className="Tile-Inner">
@@ -143,7 +131,6 @@ class Support extends React.Component {
                   </p>
                   <div className="Service-Btn">
                     <BlackButton text="CONTACT APPLE" />
->>>>>>> master
                   </div>
                 </div>
               </div>
