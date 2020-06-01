@@ -9,6 +9,7 @@
   font-size: 1.2rem;
   color: $footerGray;
   justify-content: space-between;
+  border-bottom: 2px solid $cartGray;
 
   .productContainer{
     flex-basis: auto;
@@ -26,7 +27,6 @@
     }
     .productColor{
       border: 1px solid #fff;
-      background-color: #911827;
       display: inline-block;
       border-radius: 50%;
       width: 34px;
@@ -44,7 +44,7 @@
       padding: 0 16px;
       height: 40px;
       color: #fff;
-      border: 1px solid #424242;
+      border: 1px solid $cartGray;
       font-size: 1rem;
       
       &:hover{
@@ -52,8 +52,8 @@
       }
     }
     .productCount{
-      border: 1px solid #424242;
-      background-color: #424242;
+      border: 1px solid $cartGray;
+      background-color: $cartGray;
       display: flex;
       align-items: center;
       color: #fff;

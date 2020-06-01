@@ -7,7 +7,28 @@ export default class Cart extends Component {
     super();
     this.state = {
       showCart: false,
+      response: [],
+      product: "",
+      color: "",
     };
+  }
+
+  componentDidMoute() {
+    const token = localStorage.getItem("token");
+    console.log(token);
+    fetch("http://10.58.5.168:8000/api/product/1/Black", {
+      method: "GET",
+      headers: {
+        Authorization: token,
+        "Content-Type": "application/json",
+      },
+    })
+      .then((res) => res.json())
+      .then((res) => {
+        this.setState({
+          response: res,
+        });
+      });
   }
 
   render() {
@@ -26,7 +47,14 @@ export default class Cart extends Component {
             </button>
           </div>
           <ul className="cartProductsList">
-            <CartLists />
+            {this.state.response.map((el, i) => (
+              <CartLists
+                key={i}
+                product={el.name}
+                color={el.color}
+                price={el.price}
+              />
+            ))}
           </ul>
         </div>
         <div className="cartSummary">
