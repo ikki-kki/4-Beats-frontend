@@ -29,7 +29,7 @@ class Support extends React.Component {
               <div className="MainText">
                 <p>Popular topics</p>
               </div>
-              <div>
+              {/* <div>
                 <div>
                   <p>Bluetooth Pairing</p>
                 </div>
@@ -48,7 +48,7 @@ class Support extends React.Component {
                   <p>Firmware Updates</p>
                 </div>
                 <div>BEATS UPDATER</div>
-              </div>
+              </div> */}
             </div>
           </div>
         </section>
@@ -126,7 +126,7 @@ class Support extends React.Component {
                     support.
                   </p>
                   <div className="Service-Btn">
-                    <BlackButton text="CONTACT APPLE SUPPORT" />
+                    <BlackButton text="CONTACT APPLE" />
                   </div>
                 </div>
               </div>
