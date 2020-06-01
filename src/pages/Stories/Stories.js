@@ -2,25 +2,50 @@ import React, { Component } from "react";
 import StoryArticlesLarge from "./StoryArticles/StoryArticlesLarge/StoryArticlesLarge";
 import StoryArticlesSmall from "./StoryArticles/StoryArticlesSmall/StoryArticlesSmall";
 import StoryArticlesMiddle from "./StoryArticles/StoryArticlesMiddle/StoryArticlesMiddle";
-import BlackBorderButton from "../../../components/Buttons/BlackBorderButton";
-import "./StoryContainer.scss";
-export default class StoryContainer extends Component {
+import BlackBorderButton from "../../components/Buttons/BlackBorderButton";
+import MainHeader from "../../components/Headers/MainHeader/MainHeader";
+import "./Stories.scss";
+export default class Stories extends Component {
   constructor() {
     super();
     this.state = {
       clicked: 0,
       display: "inline-block",
+      clickCart: false,
     };
   }
-
+  /**
+   * tasks
+   * 1. MainHeader 컴포넌트 안의 .headerLink를 onclick했을 때
+   *    Stories의 margin-top이 Cart컴포넌트 크기만큼 증가
+   * 2. document.getElementById(id_attribute_value).clientHeight;
+   *    를 이용해 Cart 컴포넌트의 크기를 구한 후 Stories의 늘어날 margin 값과 대치시켜주기
+   */
   clickHandler = () => {
     this.setState({ clicked: 1, display: "none" });
+  };
+
+  callBackClickCart = (e) => {
+    this.setState({ clickCart: e.target.onClick }, () =>
+      console.log(this.state.clickCart)
+    );
+
+    // if (this.state.clickCart === false) {
+    //   this.setState({
+    //     clickCart: true,
+    //   });
+    // } else if (this.state.clickCart === true) {
+    //   this.setState({
+    //     clickCart: false,
+    //   });
+    // }
   };
 
   render() {
     console.log(this.state.clicked);
     return (
       <main className="StoryContainer">
+        <MainHeader callBackClickCart={this.clickCartHandler} />
         <section className="storyContainer">
           <div className="storyBox">
             <div className="columns">

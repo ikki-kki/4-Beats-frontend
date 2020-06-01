@@ -76,7 +76,7 @@
           }
           &:hover{
             .hovermenuIcon{
-              transform: rotateY(180deg);
+              transform: rotate(180deg);
               color: $mainRed;
             }
           }        
@@ -141,6 +141,9 @@
         }
       }
     }
+  }
+  .showCartHeder{
+    margin-top: 400px;
   }
 
 @media only screen and (max-width: 1440px) {
