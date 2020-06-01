@@ -12,7 +12,7 @@ export default class NewsFooter extends Component {
           <span>BEATS NEWSLETTER</span>
         </h2>
         <div className="inputContainer">
-          <label className="inputLabel" for="inputText">
+          <label className="inputLabel" htmlFor="inputText">
             Sign up now to hear about new stories, product drops,
             collaborations, and all things Beats — straight from your inbox.
           </label>
@@ -25,7 +25,7 @@ export default class NewsFooter extends Component {
           <div className="checkboxContainer">
             <div>
               <input type="checkbox" id="check1" className="checkbox" />
-              <label for="check1">
+              <label htmlFor="check1">
                 <b>*&nbsp;</b>I am 16 years of age or older and agree with the
                 Terms &
                 <br />
@@ -34,13 +34,13 @@ export default class NewsFooter extends Component {
             </div>
             <div>
               <input type="checkbox" id="check2" className="checkbox" />
-              <label type="checkbox" for="check2">
+              <label type="checkbox" htmlFor="check2">
                 <b>*&nbsp;</b>I would like to receive marketing emails from
                 Beats
               </label>
             </div>
           </div>
-          <RedBorderButton text="sign up" />
+          <RedBorderButton text="sign up" link="/" />
         </div>
       </div>
     );
