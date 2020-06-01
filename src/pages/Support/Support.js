@@ -66,19 +66,19 @@ class Support extends React.Component {
                     warranty, and pricing in your country.
                   </p>
                   <div className="Service-Btn">
-                    <BlackButton />
+                    <BlackButton text="VIEW SERVICE AND WARRANTY" />
                   </div>
                 </div>
               </div>
               <div className="Tile">
                 <div className="Tile-Inner">
-                  <h4>Service And Warranty</h4>
+                  <h4>Register Your Beats</h4>
                   <p>
                     Tell us about your new Beats and get product updates and
                     special offers.
                   </p>
                   <div className="Service-Btn">
-                    <BlackButton />
+                    <BlackButton text="REGISTER TOUR BEATS" />
                   </div>
                 </div>
               </div>
@@ -90,7 +90,7 @@ class Support extends React.Component {
                     your own.
                   </p>
                   <div className="Service-Btn">
-                    <BlackButton />
+                    <BlackButton text="UPDATE YOUR BEATS" />
                   </div>
                 </div>
               </div>
@@ -102,7 +102,7 @@ class Support extends React.Component {
                     Retail Store, Apple Online Store or authorized retailers.
                   </p>
                   <div className="Service-Btn">
-                    <BlackButton />
+                    <BlackButton text="VIEW RETAILERS" />
                   </div>
                 </div>
               </div>
@@ -114,7 +114,7 @@ class Support extends React.Component {
                     world. Make sure you buy the real deal.
                   </p>
                   <div className="Service-Btn">
-                    <BlackButton />
+                    <BlackButton text="LEARN ABOUT SAFE BUYING" />
                   </div>
                 </div>
               </div>
@@ -126,7 +126,7 @@ class Support extends React.Component {
                     support.
                   </p>
                   <div className="Service-Btn">
-                    <BlackButton />
+                    <BlackButton text="CONTACT APPLE SUPPORT" />
                   </div>
                 </div>
               </div>
