@@ -175,15 +175,20 @@ class ModalSignUp extends React.Component {
               />
               <div className="loginForm">
                 <div className="Component-SignUp">
-                  <button className="gotobackBtn" onClick={this.props.changeCo}>
-                    <span className="material-icons">navigate_before</span>
-                  </button>
-                  <button
-                    className="closeBtn-signUp"
-                    onClick={this.props.close}
-                  >
-                    <span className="material-icons">close</span>
-                  </button>
+                  <div className="BackCloseBtn">
+                    <button
+                      className="gotobackBtn"
+                      onClick={this.props.changeCo}
+                    >
+                      <span className="material-icons">navigate_before</span>
+                    </button>
+                    <button
+                      className="closeBtn-signUp"
+                      onClick={this.props.close}
+                    >
+                      <span className="material-icons">close</span>
+                    </button>
+                  </div>
                   <div className="mainTitle">
                     <h2 className="title">
                       It seems you are new to us. <br /> Welcome to Beats
@@ -215,7 +220,7 @@ class ModalSignUp extends React.Component {
                       />
                     </div>
                     <div className="content3">
-                      <button onClick={this.CheckPw}>check</button>
+                      {/* <button onClick={this.CheckPw}>check</button> */}
                       <input
                         onChange={this.inputValuePwCo}
                         onKeyUp={this.buttonColorChange}

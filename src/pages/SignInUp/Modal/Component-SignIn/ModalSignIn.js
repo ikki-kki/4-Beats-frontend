@@ -78,7 +78,7 @@ class ModalSignIn extends React.Component {
                 </button>
                 <div className="mainTitle">
                   <h2 className="title">Welcome back to Beats.</h2>
-                  <div className="subTitle">Please confirm your password</div>
+                  {/* <div className="subTitle">Please confirm your password</div> */}
                 </div>
                 <div className="contentInputEmail">
                   <input
