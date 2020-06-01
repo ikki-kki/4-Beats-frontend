@@ -1,39 +1,31 @@
 @import "../../../styles/common.scss";
-
 .ProductDetailPage {
   overflow: hidden;
-
+  transition: all 0.5s cubic-bezier(0.215, 0.61, 0.355, 1);
   .headerWrapper {
-    margin-top: 80px;
-
     .headerContentsWrapper {
       font-family: $mainFont;
       position: relative;
       margin: 0 auto;
       max-width: 1440px;
-
       .headerText {
         width: 41%;
         position: absolute;
         padding: 10.4% 0 0 8.33333%;
         z-index: 2;
-
         h1 {
           font-size: 20px;
           font-weight: 300;
           color: #fff;
           margin-bottom: 30px;
         }
-
         .subWrap {
           margin-bottom: 50px;
-
           .subTitle {
             font-size: 50px;
             font-weight: 700;
             color: #fff;
           }
-
           .subBody {
             margin-top: 16px;
             font-size: 20px;
@@ -43,26 +35,22 @@
             color: #fff;
           }
         }
-
         .buyWrap {
           display: flex;
           align-items: center;
           margin-bottom: 50px;
-
           .buyBtn {
             margin-right: 30px;
-
             .btnWrapper {
               text-decoration: none;
               color: #fff;
               text-transform: uppercase;
-
               span {
                 display: inline-block;
                 font-family: $subFont;
                 font-size: 17px;
                 letter-spacing: 1px;
-                padding: 13px 30px 5px 30px;
+                padding: 13px 30px 5px;
                 min-height: 47px;
                 border-radius: 27px;
                 border: 1.5px solid $mainRed;
@@ -70,7 +58,6 @@
               }
             }
           }
-
           .price {
             font-size: 20px;
             line-height: 1.4;
@@ -80,34 +67,27 @@
         }
       }
     }
-
     .headerImage {
       position: relative;
-
       .gradientOverlay {
         position: absolute;
-        right: 0%;
+        right: 0;
         width: 100%;
         height: 100%;
         z-index: 1;
         background: linear-gradient(transparent 70%, #161616);
       }
-
       img {
         width: 100%;
       }
     }
   }
-
   .mainContentsReady {
     background: #161616;
-
     .sectionSpacing {
       padding-top: 120px;
     }
-
     width: 100%;
-
     .imageAndText {
       width: 90%;
       display: flex;
@@ -116,65 +96,54 @@
       align-items: center;
       font-family: $mainFont;
       color: #fff;
-
       .rightContent {
         display: flex;
         flex-direction: column;
         padding: 0 4.16667%;
         width: 40%;
-
         .contentImageRight {
           margin-top: 80px;
-
           img {
             width: 100%;
           }
         }
       }
-
       .leftContent {
         width: 60%;
         margin-top: 80px;
         padding-left: 4.16667%;
-
         img {
           width: 100%;
         }
       }
     }
   }
-
   .mainContentsBring {
     background: linear-gradient(to bottom, #161616 50%, #ffffff 0%);
     position: relative;
     font-family: $mainFont;
     width: 100%;
-
     .imgWrap {
       // max-width: 1440px;
       width: 90%;
       margin: 0 auto;
       position: relative;
-
       img {
         width: 100%;
       }
-
       .textWrap {
         position: absolute;
         top: 50%;
         max-width: 460px;
         margin: 4%;
-
         .timeIcon {
-          //   background: url("https://www.beatsbydre.com/content/dam/beats/global/pdp-v2-icons/FullBatteryW.png");
+          // background: url("https://www.beatsbydre.com/content/dam/beats/global/pdp-v2-icons/FullBatteryW.png");
           width: max-content;
           margin-top: 41px;
           position: relative;
           display: flex;
           align-items: center;
-
-          //   .timeInfo::before {
+          // .timeInfo::before {
           //     content: "";
           //     position: absolute;
           //     top: 0;
@@ -183,7 +152,7 @@
           //     background-size: 23px 100px;
           //     width: 23px;
           //     z-index: -1;
-          //   }
+          // }
           .iconStart {
             height: 100px;
             background-image: url("https://www.beatsbydre.com/content/dam/beats/global/pdp-v2-icons/FullBatteryW.png");
@@ -203,19 +172,16 @@
             padding: 2.4px 0 2.4px 7px;
             border-top: 2px solid #fff;
             border-bottom: 2px solid #fff;
-
             .infoTop {
               font-size: 15px;
               line-height: 1.5;
               font-weight: 500;
             }
-
             .infoMiddle {
               font-size: 48px;
               line-height: 1;
               font-weight: 700;
             }
-
             .infoBottom {
               font-size: 15px;
               line-height: 1.5;
@@ -233,35 +199,29 @@
       }
     }
   }
-
   .mainContentsPerformance {
     font-family: $mainFont;
     width: 100%;
-
     .imgWrap {
       width: 90%;
       margin: 0 auto;
-
       // position: relative;
       img {
         width: 100%;
       }
     }
-
     .textWrap {
       display: flex;
       justify-content: center;
       text-align: center;
       margin-bottom: 16px;
     }
-
     .viewAll {
       text-align: center;
       font-size: 16px;
       font-weight: 400;
       line-height: 1.5;
     }
-
     .viewAllLink {
       font-family: $subFont;
       text-align: center;
@@ -269,16 +229,12 @@
       line-height: 1.6;
     }
   }
-
   .mainContentsComfort {
     font-family: $mainFont;
-
     .sectionSpacing {
       padding-top: 120px;
     }
-
     width: 100%;
-
     .imageAndText {
       width: 90%;
       display: flex;
@@ -287,65 +243,47 @@
       align-items: center;
       font-family: $mainFont;
       color: #fff;
-
       .leftContent {
         display: flex;
         flex-direction: column;
         margin: 0 4.16667%;
         width: 40%;
-
         .contentImageLeft {
           margin-top: 80px;
-
           img {
             width: 100%;
           }
         }
       }
-
       .rightContent {
         width: 60%;
         margin-top: 80px;
-
         padding-right: 4.16667%;
-
         img {
           width: 100%;
         }
       }
     }
   }
-
   .mainContentsSelect {
     background-color: rgb(255, 255, 255);
     font-family: $mainFont;
     position: relative;
     transition: all ease-in-out 0.3s;
-
     .gradient {
       position: absolute;
       top: 0;
       left: 0;
       bottom: 0;
       right: 0;
-      background: radial-gradient(
-        circle farthest-side transparent 10%,
-        rgba(0, 0, 0, 0.3) 100%
-      );
-      background-image: -webkit-radial-gradient(
-        center,
-        circle farthest-side,
-        transparent 10%,
-        rgba(0, 0, 0, 0.3) 100%
-      );
+      background: radial-gradient(circle farthest-side transparent 10%, rgba(0, 0, 0, 0.3) 100%);
+      background-image: -webkit-radial-gradient(center, circle farthest-side, transparent 10%, rgba(0, 0, 0, 0.3) 100%);
       display: flex;
       justify-content: center;
     }
-
     .selectColorWrapper {
       max-width: 1440px;
       margin: 0 auto;
-
       .selectColorHeader {
         font-size: 40px;
         font-weight: 900;
@@ -355,18 +293,15 @@
         text-align: center;
         // color: rgb(101, 101, 101);
         position: relative;
-
         span {
           color: #fff;
           z-index: 100;
           position: relative;
         }
       }
-
       .selectColorCircle {
         display: flex;
         justify-content: center;
-
         .colorCirclesWhite {
           background-color: #fff;
           background-size: contain;
@@ -377,7 +312,6 @@
           margin: 10px;
           box-shadow: inset 2px 2px 2px 0 rgba(0, 0, 0, 0.21);
           cursor: pointer;
-
           .checkedWhite {
             position: absolute;
             width: 15px;
@@ -386,15 +320,12 @@
             left: 18px;
             opacity: 0;
             z-index: 10;
-            background: url(https://www.beatsbydre.com/etc/designs/apps/beats/resources/img/icons/Check-border-1x.png)
-              no-repeat;
+            background: url('https://www.beatsbydre.com/etc/designs/apps/beats/resources/img/icons/Check-border-1x.png') no-repeat;
           }
-
           .checked {
             opacity: 1;
           }
         }
-
         .colorCirclesBlack {
           background-color: #000;
           background-size: contain;
@@ -405,7 +336,6 @@
           margin: 10px;
           box-shadow: inset 2px 2px 2px 0 rgba(0, 0, 0, 0.21);
           cursor: pointer;
-
           .checkedBlack {
             position: absolute;
             width: 15px;
@@ -414,15 +344,12 @@
             left: 18px;
             opacity: 0;
             z-index: 10;
-            background: url(https://www.beatsbydre.com/etc/designs/apps/beats/resources/img/icons/Check-border-1x.png)
-              no-repeat;
+            background: url('https://www.beatsbydre.com/etc/designs/apps/beats/resources/img/icons/Check-border-1x.png') no-repeat;
           }
-
           .checked {
             opacity: 1;
           }
         }
-
         .colorCirclesRed {
           background-color: #911827;
           background-size: contain;
@@ -433,7 +360,6 @@
           margin: 10px;
           box-shadow: inset 2px 2px 2px 0 rgba(0, 0, 0, 0.21);
           cursor: pointer;
-
           .checkedRed {
             position: absolute;
             width: 15px;
@@ -442,21 +368,17 @@
             left: 18px;
             opacity: 0;
             z-index: 10;
-            background: url(https://www.beatsbydre.com/etc/designs/apps/beats/resources/img/icons/Check-border-1x.png)
-              no-repeat;
+            background: url('https://www.beatsbydre.com/etc/designs/apps/beats/resources/img/icons/Check-border-1x.png') no-repeat;
           }
-
           .checked {
             opacity: 1;
           }
         }
       }
-
       .selectColorName {
         text-align: center;
         margin: 34px 0 20px;
         padding: 0 4.1%;
-
         .selectProductName {
           padding: 0 5px;
           font-size: 16px;
@@ -465,7 +387,6 @@
           transition: all ease-in-out 0.6s;
         }
       }
-
       .selectColorImgWrap {
         width: 100%;
         text-align: center;
@@ -473,7 +394,6 @@
         display: flex;
         justify-content: space-between;
         align-items: center;
-
         .leftBtn {
           width: 60px;
           height: 130px;
@@ -484,36 +404,30 @@
           justify-content: center;
           align-items: center;
           border: none;
-
           .leftBtnWrap {
             position: absolute;
             width: 30px;
             height: 40px;
             top: 46px;
             left: 10px;
-            background: url(https://www.beatsbydre.com/etc/designs/apps/beats/resources/img/icons/slide-show-caret.png)
-              no-repeat;
+            background: url('https://www.beatsbydre.com/etc/designs/apps/beats/resources/img/icons/slide-show-caret.png') no-repeat;
             z-index: 5;
             transform: scaleX(-1);
           }
         }
-
         .imageWrap {
           position: relative;
           width: 369px;
           height: 526px;
-
           .productImg1 {
             display: block;
             transition: all ease-in-out 0.6s;
-
             img {
               width: 100%;
               transition: all ease-in-out 0.6s;
             }
           }
         }
-
         .rightBtn {
           width: 60px;
           height: 130px;
@@ -524,41 +438,34 @@
           justify-content: center;
           align-items: center;
           border: none;
-
           .rightBtnWrap {
             position: absolute;
             width: 30px;
             height: 40px;
             top: 46px;
             left: 20px;
-            background: url(https://www.beatsbydre.com/etc/designs/apps/beats/resources/img/icons/slide-show-caret.png)
-              no-repeat;
+            background: url('https://www.beatsbydre.com/etc/designs/apps/beats/resources/img/icons/slide-show-caret.png') no-repeat;
             z-index: 5;
           }
         }
       }
     }
   }
-
   .sectionSpacing {
     padding-top: 120px;
   }
-
   .mainContentsListen {
     background: linear-gradient(to bottom, #ffffff 50%, #161616 0%);
     position: relative;
     font-family: $mainFont;
     width: 100%;
-
     .imgWrap {
       width: 90%;
       margin: 0 auto;
       position: relative;
-
       img {
         width: 100%;
       }
-
       .textWrap {
         position: absolute;
         top: 40%;
@@ -568,7 +475,6 @@
       }
     }
   }
-
   .detailBox {
     background-color: #161616;
     display: flex;
@@ -576,11 +482,9 @@
     flex-direction: column;
     font-family: $mainFont;
     width: 100%;
-
     .sectionSpacing {
       padding-top: 120px;
     }
-
     .detailTitle {
       text-align: center;
       color: #fff;
@@ -588,50 +492,41 @@
       font-weight: 700;
       margin-bottom: 20px;
     }
-
     .containerWrap {
       display: flex;
       justify-content: center;
       width: 100%;
-
       .widthContainer {
         width: 90%;
         display: flex;
         justify-content: center;
-
         .detailWrap {
-          padding: 20px 20px 10px 20px;
+          padding: 20px 20px 10px;
           text-align: left;
           width: 100%;
           flex: 0 0 34.4%;
-
           .imgWrap {
             width: 100%;
             overflow: hidden;
             margin-bottom: 20px;
-
             img {
               width: 100%;
               transform: scale(1);
               transition: all ease-in-out 0.3s;
               cursor: pointer;
             }
-
             img:hover {
               transform: scale(1.05);
             }
           }
-
           .textWrap {
-            padding: 20px 20px 10px 20px;
+            padding: 20px 20px 10px;
             color: #fff;
-
             h4 {
               font-size: 24px;
               font-weight: 600;
               margin-bottom: 20px;
             }
-
             p {
               font-size: 18px;
               line-height: 1.4;
@@ -641,26 +536,21 @@
         }
       }
     }
-
     .sectionSpacing2 {
       padding-top: 75px;
     }
   }
-
   .whatInTheBox {
     max-width: 1440px;
     margin: 0 auto;
     font-family: $mainFont;
-
     .contentWrap {
       width: 100%;
       display: flex;
       justify-content: space-around;
       align-items: center;
-
       .textWrap {
         padding-left: 4%;
-
         h2 {
           font-size: 40px;
           line-height: 1.1;
@@ -668,7 +558,6 @@
           font-weight: 700;
           margin-bottom: 20px;
         }
-
         li {
           list-style-type: circle;
           color: rgb(85, 85, 85);
@@ -676,34 +565,27 @@
           font-weight: 400;
           line-height: 1.5;
         }
-
         ul {
           margin-bottom: 16px;
         }
       }
-
       .imgWrap {
         width: 50%;
-
         img {
           width: 100%;
         }
       }
     }
   }
-
   .powerDropDownMenu {
     font-family: $mainFont;
     display: flex;
     justify-content: center;
     flex-direction: column;
-
     .dropBtn {
       text-align: center;
-
       h2 {
         margin-bottom: 48px;
-
         button {
           background-color: #fff;
           font-size: 28px;
@@ -712,7 +594,6 @@
           border: none;
           margin-right: 20px;
         }
-
         .fas {
           transform: rotate(0deg);
           size: 5px;
@@ -720,13 +601,11 @@
           transform-origin: 50% 50%;
           margin-left: 20px;
         }
-
         .iconActive {
           transform: rotate(-180deg);
         }
       }
     }
-
     .menuWrap {
       overflow: hidden;
       max-height: 0;
@@ -735,18 +614,15 @@
       justify-content: center;
       transition: all ease-in-out 0.9s;
       text-align: center;
-
       .listLeftRight {
         display: flex;
         justify-content: space-around;
         text-align: center;
-
         .totalListLeft {
           text-align: left;
           display: inline-block;
           width: 40%;
           margin-right: 50px;
-
           .titleListWrap {
             .listContainer {
               h3 {
@@ -754,7 +630,6 @@
                 font-weight: 800;
                 font-size: 20px;
               }
-
               .listWrap {
                 li {
                   color: rgb(85, 85, 85);
@@ -767,13 +642,11 @@
             }
           }
         }
-
         .totalListRight {
           display: inline-block;
           width: 40%;
           text-align: left;
           margin-left: 50px;
-
           .titleListWrap {
             .listContainer {
               h3 {
@@ -781,7 +654,6 @@
                 font-weight: 800;
                 font-size: 20px;
               }
-
               .listWrap {
                 li {
                   color: rgb(85, 85, 85);
@@ -796,27 +668,22 @@
         }
       }
     }
-
     .menuWrapActive {
       overflow: auto;
       max-height: 2000px;
       opacity: 1;
     }
-
     .sectionSpacing3 {
       padding-top: 60px;
     }
-
     .explainWrap {
       position: relative;
-
       .explain {
         font-size: 11px;
         color: gray;
         width: 77.5%;
         margin: 0 auto;
         text-align: left;
-
         p {
           padding-top: 10px;
           line-height: 1.6;
@@ -824,16 +691,17 @@
       }
     }
   }
-
   .news {
     .sectionSpacing4 {
       padding-top: 120px;
     }
-
     background-color: #f7f7f8;
-
     .sectionSpacing3 {
       padding-top: 60px;
     }
   }
+}
+.cartClicked {
+  margin-top: 400px;
+  transition: all 0.5s cubic-bezier(0.215, 0.61, 0.355, 1);
 }
