@@ -5,7 +5,7 @@ import "./WhiteBorderButton.scss";
 export default class WhiteBorderButton extends Component {
   render() {
     return (
-      <Link to="/" className="WhiteBorderButton">
+      <Link to={this.props.link} className="WhiteBorderButton">
         {this.props.text}
       </Link>
     );

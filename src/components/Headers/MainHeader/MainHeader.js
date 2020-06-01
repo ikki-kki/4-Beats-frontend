@@ -1,10 +1,13 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
+import { withRouter } from "react-router-dom";
 import HoverMenu from "./HoverMenu/HoverMenu";
 import WhiteBorderButton from "../../Buttons/WhiteBorderButton";
+import SignInUp from "../../../pages/SignInUp/SignInUp";
+//import Cart from "../../Cart/Cart";
 import "./MainHeader.scss";
 
-export default class MainHeader extends Component {
+class MainHeader extends Component {
   constructor() {
     super();
     this.state = {
@@ -12,31 +15,16 @@ export default class MainHeader extends Component {
       display: "none",
       menuHidden: false,
     };
-    //this.handleScroll = this.handleScroll.bind(this);
   }
+  //라우터 이동 메서드
+  // toProducts = () => {
+  //   this.props.history.push("/products");
+  // };
+
+  //view 관련 매서드
   menuHandler = (id) => {
     this.setState({ menuIdx: id });
   };
-
-  // componentWillMount() {
-  //   window.addEventListener("scroll", this.handleScroll);
-  // }
-
-  // componentWillUnmount() {
-  //   window.removeEventListener("scroll", this.handleScroll);
-  // }
-
-  // handleScroll(e) {
-  //   let lastScrollTop = 0;
-  //   const currentScrollTop = MainHeader.scrollTop;
-
-  //   if (!this.state.menuHidden && currentScrollTop > lastScrollTop) {
-  //     this.setState({ menuHidden: true });
-  //   } else if (this.state.hidden) {
-  //     this.setState({ hidden: false });
-  //   }
-  //   lastScrollTop = currentScrollTop;
-  // }
 
   hoverMenuHandler = () => {
     this.setState({ display: "flex" });
@@ -48,10 +36,11 @@ export default class MainHeader extends Component {
 
   render() {
     return (
-      <header className="MainHeader" hidden={this.state.hidden}>
+      <header className="MainHeader">
         <nav className="header-nav">
+          {/* <Cart /> */}
           <ul className="nav-container">
-            <li>
+            <li className="navMenus">
               <Link to="/" className="headerLink">
                 <img
                   className="logo"
@@ -60,7 +49,7 @@ export default class MainHeader extends Component {
                 />
               </Link>
             </li>
-            <li onMouseEnter={this.outMenuHandler}>
+            <li className="navMenus" onMouseEnter={this.outMenuHandler}>
               <Link
                 to="/"
                 className="headerLink"
@@ -76,7 +65,9 @@ export default class MainHeader extends Component {
                 <Link to="/products" className="headerLink">
                   PRODUCTS
                 </Link>
-                <span className="material-icons">expand_more</span>
+                <span className="material-icons hovermenuIcon">
+                  expand_more
+                </span>
               </div>
               <Link
                 to="/support"
@@ -86,8 +77,11 @@ export default class MainHeader extends Component {
                 SUPPORT
               </Link>
             </li>
-            <li>
-              <button className="login">LOGIN</button>
+            {/* 로그인이랑 연결 */}
+            <li className="navMenus">
+              <button className="login">
+                <SignInUp />
+              </button>
               <button className="btnDefault" type="button"></button>
             </li>
           </ul>
@@ -97,7 +91,7 @@ export default class MainHeader extends Component {
             style={{ display: this.state.display }}
           >
             <ul className="hover-ul">
-              <span>PRODUCTS</span>
+              <span className="hoverTitle">PRODUCTS</span>
               <li
                 className="hover-menus"
                 id="Earphones"
@@ -119,7 +113,7 @@ export default class MainHeader extends Component {
               >
                 Speaker
               </li>
-              <WhiteBorderButton text="SEE MORE" />
+              <WhiteBorderButton text="SEE MORE" link="/products" />
             </ul>
             <HoverMenu id={this.state.menuIdx} />
           </div>
@@ -128,3 +122,4 @@ export default class MainHeader extends Component {
     );
   }
 }
+export default withRouter(MainHeader);
