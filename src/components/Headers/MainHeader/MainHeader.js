@@ -43,6 +43,7 @@ class MainHeader extends Component {
         <Cart
           clickHandler={this.cartClickHandler}
           showCart={this.state.showCart}
+          onMouseEnter={this.outMenuHandler}
         />
         <header className="MainHeader">
           <nav className="header-nav">

@@ -1,17 +1,11 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import "./ProductCard.scss";
-// const colorCircles = {
-//   Powerbeats: ["#f1f1f1", "#2b2b2b", "#911827"],
-//   2: ["#f7ede2", "#2b2b2b", "#374754", "#fff"],
-//   3: ["#f7ede2", "#2b2b2b", "#374754", "#fff"],
-// };
+import BlackBorderButton from "../../../../components/Buttons/BlackBorderButton";
 
 class ProductCard extends React.Component {
   render() {
     const { num, name, image, title, specLists, price } = this.props;
-    console.log(name);
-    // console.log(colorCircles.{name}[0]);
     return (
       <section className="productContent">
         <div className="contentWrapper">
@@ -36,7 +30,7 @@ class ProductCard extends React.Component {
               <span>{price}</span>
             </p>
             <Link to="/products/detail" className="btnWrapper">
-              <span>Learn More</span>
+              <BlackBorderButton text="Learn More" link="/detail" />
             </Link>
           </div>
           <div className="productImageWrapper">
