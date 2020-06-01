@@ -29,9 +29,11 @@ class ProductCard extends React.Component {
             <p className="price">
               <span>{price}</span>
             </p>
-            <Link to="/products/detail" className="btnWrapper">
-              <BlackBorderButton text="Learn More" link="/detail" />
-            </Link>
+            <div className="buttonWrap">
+              <Link to="/products/detail" className="btnWrapper">
+                <BlackBorderButton text="Learn More" link="products/detail" />
+              </Link>
+            </div>
           </div>
           <div className="productImageWrapper">
             <img alt="powerbeats" src={image} />

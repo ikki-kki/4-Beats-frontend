@@ -42,31 +42,36 @@ class Support extends React.Component {
             <div className="PopularImg">
               <img src={Config.SupportPopularImg} alt="popular topics" />
             </div>
-            <div className="PopularContent">
-              <div className="MainText">
-                <p>Popular topics</p>
-              </div>
-              {/* <div>
+          </div>
+        </section>
+        <section className="SupportPopular">
+          <div className="SupportPopularWrap">
+            <div className="PopularImg">
+              <img src={Config.SupportPopularImg} alt="popular topics" />
+            </div>
+            {/* <div>
                 <div>
-                  <p>Bluetooth Pairing</p>
+                  <div>
+                    <p>Bluetooth Pairing</p>
+                  </div>
+                  <div>CONNECT DEVICES WITH BLUETOOTH</div>
+                  <div>PAIR WITH MAC</div>
                 </div>
-                <div>CONNECT DEVICES WITH BLUETOOTH</div>
-                <div>PAIR WITH MAC</div>
-              </div>
-              <div>
                 <div>
-                  <p>Sound Help</p>
+                  <div>
+                    <p>Sound Help</p>
+                  </div>
+                  <div>HEADPHONES AND EARPHONES</div>
+                  <div>SPEAKERS</div>
                 </div>
-                <div>HEADPHONES AND EARPHONES</div>
-                <div>SPEAKERS</div>
-              </div>
-              <div>
                 <div>
-                  <p>Firmware Updates</p>
+                  <div>
+                    <p>Firmware Updates</p>
+                  </div>
+                  <div>BEATS UPDATER</div>
                 </div>
                 <div>BEATS UPDATER</div>
               </div> */}
-            </div>
           </div>
         </section>
         <section className="Support-Res">
@@ -135,16 +140,15 @@ class Support extends React.Component {
                   </div>
                 </div>
               </div>
-              <div className="Tile">
-                <div className="Tile-Inner">
-                  <h4>Contact Us</h4>
-                  <p>
-                    Beats by Dr. Dre is part of Apple. Contact Apple for
-                    support.
-                  </p>
-                  <div className="Service-Btn">
-                    <BlackButton text="CONTACT APPLE" />
-                  </div>
+            </div>
+            <div className="Tile">
+              <div className="Tile-Inner">
+                <h4>Contact Us</h4>
+                <p>
+                  Beats by Dr. Dre is part of Apple. Contact Apple for support.
+                </p>
+                <div className="Service-Btn">
+                  <BlackButton text="CONTACT APPLE" />
                 </div>
               </div>
             </div>
