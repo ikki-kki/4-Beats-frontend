@@ -2,10 +2,11 @@
 
 .StoryContainer{
   width: 100%;
-  margin: 150px auto;
+  margin: 0 auto;
+  transition: all .5s cubic-bezier(0.215, 0.61, 0.355, 1);
   
   .storyContainer{
-    padding: 0 90px;
+    padding: 60px 90px;
     margin: 0 90px;
 
     .storyBox{
@@ -24,7 +25,8 @@
   }
 }
 .cartClicked{
-  margin-top: 500px;
+  margin-top: 400px;
+  transition: all .5s cubic-bezier(0.215, 0.61, 0.355, 1);
 }
 
 @media only screen and (max-width: 1440px) {

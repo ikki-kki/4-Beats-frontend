@@ -10,29 +10,17 @@ export default class Cart extends Component {
     };
   }
 
-  showCartHandler = () => {
-    if (this.state.showCart === true) {
-      this.setState({
-        showCart: false,
-      });
-    } else if (this.state.showCart === false) {
-      this.setState({
-        showCart: true,
-      });
-    }
-  };
-
   render() {
     return (
-      <div className={`Cart ${this.state.showCart ? "cartOhow" : ""}`}>
+      <div className={`Cart ${this.props.showCart ? "" : "cartOpen"}`}>
         <div className="cartProducts">
           <div className="cartHeader">
             <div className="titleLable">Cart</div>
             <div className="sizeLabel">Size</div>
             <div className="quantityLabel">Quantity</div>
             <button
-              className={`headerClose ${this.state.showCart ? "" : "cartOpen"}`}
-              onClick={this.showCartHandler}
+              className={`headerClose ${this.props.showCart ? "" : "cartOpen"}`}
+              onClick={() => this.props.clickHandler()}
             >
               <span className="material-icons">close</span>
             </button>

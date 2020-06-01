@@ -25,27 +25,19 @@ export default class Stories extends Component {
     this.setState({ clicked: 1, display: "none" });
   };
 
-  callBackClickCart = (e) => {
-    this.setState({ clickCart: e.target.onClick }, () =>
-      console.log(this.state.clickCart)
-    );
-
-    // if (this.state.clickCart === false) {
-    //   this.setState({
-    //     clickCart: true,
-    //   });
-    // } else if (this.state.clickCart === true) {
-    //   this.setState({
-    //     clickCart: false,
-    //   });
-    // }
+  callBackClickCart = () => {
+    this.setState({ clickCart: !this.state.clickCart });
   };
 
   render() {
-    console.log(this.state.clicked);
+    console.log(this.state.clickCart);
     return (
-      <main className="StoryContainer">
-        <MainHeader callBackClickCart={this.clickCartHandler} />
+      <main
+        className={`StoryContainer ${
+          this.state.clickCart === true ? "cartClicked" : ""
+        }`}
+      >
+        <MainHeader clickCartHandler={this.callBackClickCart} />
         <section className="storyContainer">
           <div className="storyBox">
             <div className="columns">

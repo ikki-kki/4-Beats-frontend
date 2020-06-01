@@ -12,7 +12,7 @@ button{
 .Cart{ 
   opacity: 0;
   max-height: 0;
-  transition: transform 5s cubic-bezier(0.215, 0.61, 0.355, 1);
+  transition: all .4s cubic-bezier(0.215, 0.61, 0.355, 1);
   width: 100%;
   background-color: $mainBlack;
   color: #fff;
@@ -101,5 +101,5 @@ button{
 .cartOpen{
   opacity: 1;
   max-height: 100vh;
-  transition: transform 5s cubic-bezier(0.215, 0.61, 0.355, 1);
+  transition: all .8s cubic-bezier(0.215, 0.61, 0.355, 1);
 }

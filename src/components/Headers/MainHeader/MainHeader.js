@@ -13,10 +13,11 @@ class MainHeader extends Component {
     this.state = {
       menuIdx: 0,
       display: "none",
+      showCart: "false",
     };
   }
 
-  //view 관련 매서드
+  //메뉴 hover 관련 핸들러
   menuHandler = (id) => {
     this.setState({ menuIdx: id });
   };
@@ -29,15 +30,20 @@ class MainHeader extends Component {
     this.setState({ display: "none" });
   };
 
-  clickCartHandler = () => {
-    this.props.callBackClickCart(this.clickCartHandler);
+  //카트 버튼 클릭 핸들러
+  cartClickHandler = () => {
+    this.props.clickCartHandler();
+    this.setState({ showCart: !this.state.showCart });
   };
 
   render() {
     console.log(this.state.clickCart);
     return (
       <>
-        <Cart />
+        <Cart
+          clickHandler={this.cartClickHandler}
+          showCart={this.state.showCart}
+        />
         <header className="MainHeader">
           <nav className="header-nav">
             <ul className="nav-container">
@@ -86,7 +92,7 @@ class MainHeader extends Component {
                 <button
                   className="btnDefault"
                   type="button"
-                  onClick={this.props.clickCartHandler}
+                  onClick={() => this.cartClickHandler()}
                 ></button>
               </li>
             </ul>

@@ -1,5 +1,5 @@
 @import '../../../styles/common.scss';
-.login,.btnDefault{
+.login, .btnDefault{
   background: none ; 
   border:none; 
   box-shadow:none;
@@ -10,17 +10,17 @@
 } 
 
 .MainHeader{
+  background-color: blue;
   z-index: 999;
-  position: absolute;
+
   top:0;
   left:0;
-  transition: top 0.2s ease-in-out;
   width: 100%;
   
   .header-nav{
     display: flex;
     height: 80px;
-    z-index: 2;
+    z-index: 999;
     background: #fff;
     margin:0 auto;
     justify-content: center;
@@ -147,7 +147,7 @@
   }
 
 @media only screen and (max-width: 1440px) {
-  .header-nav .nav-container, .header-nav .hover-container .hover-ul{
+  .MainHeader .header-nav .nav-container , .header-nav .hover-container .hover-ul{
     margin: 0;
   }
 }
