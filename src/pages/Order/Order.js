@@ -60,6 +60,47 @@ class Order extends React.Component {
               </div>
             </div>
           </div>
+          <section className="customerInfo">
+            <h3>Customer Info</h3>
+            <div className="infoTable">
+              <table>
+                <tbody>
+                  <tr>
+                    <th className="nameTitle">Name</th>
+                    <td>
+                      <div className="inputWrap">
+                        <input type="text" name="orderName" value="yun" />
+                      </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <th className="nameTitle">Phone Number</th>
+                    <td>
+                      <div className="inputWrap">
+                        <input
+                          type="text"
+                          name="orderName"
+                          value="010-1234-5678"
+                        />
+                      </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <th className="nameTitle">E-mail</th>
+                    <td>
+                      <div className="inputWrap">
+                        <input
+                          type="text"
+                          name="orderName"
+                          value="asd@gmail.com"
+                        />
+                      </div>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </section>
           <section className="howToOrder">
             <h3 className="payTitle">Payment</h3>
             <div className="checkPay">
