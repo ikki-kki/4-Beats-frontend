@@ -92,7 +92,19 @@ class Order extends React.Component {
                   <span className="totalPrice">$ 149.95</span>
                 </div>
               </div>
-              <div className="requiredCheck"></div>
+              <div className="requiredCheck">
+                <span className="checkWrap">
+                  <input type="checkbox" className="checkbox require" />
+                  <strong>(필수)</strong>
+                  <p>
+                    구매하실 상품의 결제정보를 확인하였으며, 구매진행에
+                    동의합니다
+                  </p>
+                </span>
+              </div>
+              <div className="buyBtn">
+                <button className="buyButton">Buy</button>
+              </div>
             </div>
           </section>
         </div>

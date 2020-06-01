@@ -111,21 +111,27 @@
                     margin-bottom: 16px;
                 }
 
-                .btnWrapper {
-                    text-decoration: none;
-                    color: #161616;
-                    text-transform: uppercase;
+                .buttonWrap {
+                    width: 147px;
 
-                    span {
-                        display: inline-block;
-                        font-family: $subFont;
-                        font-size: 17px;
-                        padding: 8px 37px 0 37px;
-                        height: 39px;
-                        border-radius: 27px;
-                        border: 1.5px solid #161616;
+                    .btnWrapper {
+                        text-decoration: none;
+                        color: #161616;
+                        text-transform: uppercase;
+
+
+                        span {
+                            display: inline-block;
+                            font-family: $subFont;
+                            font-size: 17px;
+                            padding: 8px 37px 0 37px;
+                            height: 39px;
+                            border-radius: 27px;
+                            border: 1.5px solid #161616;
+                        }
                     }
                 }
+
             }
 
             .productImageWrapper {

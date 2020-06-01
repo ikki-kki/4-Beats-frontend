@@ -1,23 +1,26 @@
 @import '../../../styles/common.scss';
 
-.StoryContainer{
+.StoryContainer {
   width: 100%;
   margin: 150px auto;
-  
-  .storyContainer{
+
+  .storyContainer {
     padding: 0 90px;
     margin: 0 90px;
 
-    .storyBox{
+    .storyBox {
       display: flex;
       flex-direction: column;
-      
-      .columns{
+
+      .columns {
         display: flex;
         justify-content: space-between;
       }
-      .buttonBox{
-        padding-top:24px;
+
+      .buttonBox {
+        width: 147px;
+        margin: 0 auto;
+        padding-top: 24px;
         text-align: center;
       }
     }
@@ -25,7 +28,7 @@
 }
 
 @media only screen and (max-width: 1440px) {
-  .StoryContainer .storyContainer{
+  .StoryContainer .storyContainer {
     margin: 0;
   }
 }
