@@ -3,8 +3,8 @@ import { withRouter } from "react-router-dom";
 import ProductHeader from "./ProductHeader/ProductHeader";
 import TextPiece from "./TextPiece/TextPiece";
 import Config from "../Config";
-import NewsFooter from "../../../components/Footers/NewsFooter/NewsFooter";
 import MainHeader from "../../../components/Headers/MainHeader/MainHeader";
+import NewsFooter from "../../../components/Footers/NewsFooter/NewsFooter";
 import MainFooter from "../../../components/Footers/MainFooter/MainFooter";
 import Fade from "react-reveal/Fade";
 import "./ProductDetailPage.scss";
@@ -383,7 +383,7 @@ class ProductDetailPage extends React.Component {
               </div>
             </Fade>
             <div className="imgWrap">
-              <Fade bottom>
+              <Fade>
                 <img
                   alt="box"
                   src={`${Config.ProductDetail}-p12.png.large.2x.png`}

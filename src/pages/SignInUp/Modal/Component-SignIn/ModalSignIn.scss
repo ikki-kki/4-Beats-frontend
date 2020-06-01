@@ -7,17 +7,21 @@
   bottom: 0;
   right: 0;
   background-color: rgba(88, 88, 88, 0.589);
+
   &.Modal-anim-enter {
     opacity: 0;
     transition: all 0.2s;
   }
+
   &.Modal-anim-enter.Modal-anim-enter-active {
     opacity: 1;
   }
+
   &.Modal-anim-leave {
     opacity: 1;
     transition: all 0.2s;
   }
+
   &.Modal-anim-leave.Modal-anim-leave-active {
     opacity: 0;
   }
@@ -30,6 +34,7 @@
     right: 0;
   }
 }
+
 .loginForm-SignIn {
   position: fixed;
   top: 50%;
@@ -45,15 +50,18 @@
     transform: translate(-50%, -50%) scale(0.7);
     transition: all 0.2s;
   }
+
   &.Modal-anim-enter.Modal-anim-enter-active {
     opacity: 1;
     transform: translate(-50%, -50%);
   }
+
   &.Modal-anim-leave {
     opacity: 1;
     transform: translate(-50%, -50%) scale(1);
     transition: all 0.2s;
   }
+
   &.Modal-anim-leave.Modal-anim-leave-active {
     opacity: 0;
     transform: translate(-50%, -50%) scale(0.7);
@@ -76,6 +84,7 @@
       padding: 40px 0 22px;
       font-family: $mainFont;
     }
+
     .subTitle {
       font-size: 19px;
       color: #666;
@@ -96,16 +105,19 @@
       border-width: 0 0 1px 0;
       padding-bottom: 3px;
     }
+
     input::placeholder {
       color: rgb(155, 155, 155);
       font-family: $mainFont;
     }
+
     .TextInput:focus {
       border-color: $mainRed;
       border-style: solid;
       border-width: 0 0 1px 0;
       transition: all 0.2s ease-in-out;
     }
+
     input:focus::-webkit-input-placeholder,
     textarea:focus::-webkit-input-placeholder {
       color: transparent;
@@ -126,16 +138,19 @@
       border-width: 0 0 1px 0;
       padding-bottom: 3px;
     }
+
     input::placeholder {
       color: rgb(155, 155, 155);
       font-family: $mainFont;
     }
+
     .TextInput:focus {
       border-color: $mainRed;
       border-style: solid;
       border-width: 0 0 1px 0;
       transition: all 0.2s ease-in-out;
     }
+
     input:focus::-webkit-input-placeholder,
     textarea:focus::-webkit-input-placeholder {
       color: transparent;
@@ -144,11 +159,12 @@
   .GotoSignUp {
     width: 100%;
     text-align: center;
+
     .SignUpBtn {
       height: 24px;
       background-color: white;
       font-size: 12pt;
-      color: black;
+      color: #000;
       border: 0;
       margin-top: 10px;
 
@@ -162,6 +178,7 @@
         opacity: 0;
         transition: all 0.4s ease;
       }
+
       &:hover:before {
         opacity: 1;
       }
@@ -171,6 +188,7 @@
   .SignInBtn-wrap {
     margin: 0;
     margin-top: 8px;
+
     button {
       width: 100%;
       height: 60px;
@@ -181,6 +199,7 @@
       border: 0;
       border-radius: 30px;
     }
+
     .BtnColorChange {
       width: 100%;
       height: 60px;

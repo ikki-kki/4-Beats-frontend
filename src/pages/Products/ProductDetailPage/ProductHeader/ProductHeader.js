@@ -20,7 +20,7 @@ class ProductHeader extends React.Component {
           <div className="buyWrap">
             <div className="buyBtn">
               <a href="#buy" className="btnWrapper">
-                <RedButton text={"Buy"} />
+                <RedButton text={"Buy"} link="/order" />
               </a>
             </div>
             <div className="price">
