@@ -7,14 +7,12 @@
   border-radius: 0;
   padding: 0;
   overflow: visible;
-}
-.nav-up {
-  top: -80px;
+  position: relative;
 }
 
 .MainHeader {
   z-index: 999;
-  position: fixed;
+  position: absolute;
   top: 0;
   left: 0;
   transition: top 0.2s ease-in-out;
@@ -39,7 +37,7 @@
       font-family: $subFont;
       width: 100%;
 
-      li {
+      .navMenus {
         display: flex;
         align-items: center;
 
@@ -73,12 +71,12 @@
         margin-left: 100px;
         display: flex;
         align-items: center;
-        span {
+        .hovermenuIcon {
           color: $mainBlack;
           margin-right: 76px;
         }
         &:hover {
-          span {
+          .hovermenuIcon {
             transform: rotateY(180deg);
             color: $mainRed;
           }
@@ -107,7 +105,7 @@
         font-family: $mainFont;
         font-size: 20px;
 
-        span {
+        .hoverTitle {
           color: #fff;
           font-size: 26px;
           font-weight: 900;
@@ -140,6 +138,9 @@
         .lastChild {
           margin-bottom: 148px;
         }
+      }
+      .lastChild {
+        margin-bottom: 148px;
       }
     }
   }

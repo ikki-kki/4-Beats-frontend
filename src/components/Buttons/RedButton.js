@@ -5,7 +5,7 @@ import "./RedButton.scss";
 export default class RedButton extends Component {
   render() {
     return (
-      <Link to="/" className="RedButton">
+      <Link to={this.props.link} className="RedButton">
         {this.props.text}
       </Link>
     );

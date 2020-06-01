@@ -5,7 +5,7 @@ import "./BlackButton.scss";
 export default class BlackButton extends Component {
   render() {
     return (
-      <Link to="/" className="BlackButton">
+      <Link to={this.props.link} className="BlackButton">
         {this.props.text}
       </Link>
     );
