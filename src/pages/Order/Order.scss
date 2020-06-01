@@ -1,0 +1,222 @@
+@import '../../styles/common.scss';
+
+.Order {
+    font-family: $mainFont;
+    font-size: 14px;
+    line-height: 1.4;
+    letter-spacing: -0.5px;
+    width: 100%;
+
+    .orderHeader {
+        width: 80%;
+        margin: 0 auto;
+        padding: 180px 0 90px;
+        text-align: center;
+
+        h2 {
+            font-size: 42px;
+            font-weight: 800;
+        }
+
+        .currentLocation {
+            color: #a9a9a9;
+            font-size: 16px;
+            font-weight: 700;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 25px 0 0;
+
+            .current {
+                color: #333;
+            }
+
+            .fas {
+                transform: rotate(-90deg);
+                padding: 0 10px;
+            }
+        }
+    }
+
+    .tableWrap {
+        margin: 0 auto;
+        width: 80%;
+
+        .tableTitle {
+            font-size: 28px;
+            padding: 0 0 15px 0;
+            font-weight: 600;
+        }
+
+        .productTable {
+            width: 100%;
+
+            table {
+                width: 100%;
+                border-top: 1px solid #000;
+
+                .productN {
+                    width: 40%;
+                }
+
+                th {
+                    padding: 15px 0;
+                    border-bottom: 1px solid #e7e7e7;
+                    font-weight: normal;
+                    color: #8f8f8f;
+                }
+
+                td {
+                    padding-bottom: 20px;
+                    border-bottom: 1px solid #e7e7e7;
+                    height: auto;
+                    padding: 20px 15px;
+                    line-height: 1.4;
+                    letter-spacing: -0.5px;
+                }
+
+                .productImageName {
+                    padding-left: 15px;
+                    padding-right: 0;
+                    white-space: normal;
+                    font-size: 18px;
+                    font-weight: 500;
+
+                    .infoWrap {
+                        display: table;
+                        width: 100%;
+                        margin-left: 20px;
+
+                        .productImg {
+                            display: table-cell;
+                            width: 115px;
+
+                            img {
+                                width: 115px;
+                            }
+                        }
+
+                        .productInfo {
+                            display: table-cell;
+                            padding: 0 0 0 40px;
+                        }
+                    }
+                }
+
+                .taC {
+                    text-align: center;
+                    font-size: 16px;
+                    font-weight: 500;
+
+                }
+
+                .productColor {
+                    .colorCircle2 {
+                        background-color: #911827;
+                        display: inline-block;
+                        // background-color: #911827;
+                        border-radius: 30px;
+                        width: 34px;
+                        height: 34px;
+                    }
+                }
+            }
+        }
+
+        .priceBox {
+            width: 100%;
+            background: #f2f2f2;
+
+            .priceWrap {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                padding: 30px;
+                text-align: center;
+                font-size: 18px;
+                line-height: 30px;
+
+                span {
+                    padding: 0 5px;
+                }
+
+                .totalPrice {
+                    font-size: 26px;
+
+                }
+            }
+        }
+    }
+
+    .howToOrder {
+        margin: 0 auto;
+        width: 80%;
+
+        .payTitle {
+            margin-top: 90px;
+            padding-bottom: 15px;
+            font-weight: 600;
+            font-size: 28px;
+        }
+
+        .checkPay {
+            margin: 16px 0 0;
+            border-top: 1px solid #717171;
+
+            .checkWrap {
+                padding: 12px 0;
+                display: flex;
+                align-items: center;
+
+                .checkTitle {
+                    display: inline-block;
+                    width: 130px;
+                    padding: 7px 0 0 24px;
+                    font-size: 14px;
+                    font-weight: 600;
+                }
+
+                .selection {
+                    display: flex;
+                    align-items: center;
+
+                    .checkForm {
+                        padding: 0 20px;
+                        display: flex;
+                        align-items: center;
+
+                        span {
+                            padding-left: 10px;
+                        }
+                    }
+                }
+            }
+        }
+
+        .lastBuy {
+            .priceBox {
+                width: 100%;
+                background: #f2f2f2;
+
+                .priceWrap {
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    padding: 30px;
+                    text-align: center;
+                    font-size: 18px;
+                    line-height: 30px;
+
+                    span {
+                        padding: 0 5px;
+                    }
+
+                    .totalPrice {
+                        font-size: 26px;
+
+                    }
+                }
+            }
+        }
+    }
+}
