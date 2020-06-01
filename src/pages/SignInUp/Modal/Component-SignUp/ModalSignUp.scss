@@ -265,9 +265,12 @@
           border: 0;
           outline: 0;
           background-color: white;
-          color: rgb(131, 130, 130);
+          color: black;
           font-family: $mainFont;
           font-weight: 500;
+          &:hover {
+            color: $mainRed;
+          }
         }
       }
     }

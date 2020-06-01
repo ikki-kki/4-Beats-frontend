@@ -29,26 +29,28 @@ class Support extends React.Component {
               <div className="MainText">
                 <p>Popular topics</p>
               </div>
-              {/* <div>
+              <div className="ContentBox">
                 <div>
-                  <p>Bluetooth Pairing</p>
+                  <div className="Content">
+                    <p>Bluetooth Pairing</p>
+                  </div>
+                  {/* <div>CONNECT DEVICES WITH BLUETOOTH</div>
+                  <div>PAIR WITH MAC</div> */}
                 </div>
-                <div>CONNECT DEVICES WITH BLUETOOTH</div>
-                <div>PAIR WITH MAC</div>
+                <div>
+                  <div>
+                    <p>Sound Help</p>
+                  </div>
+                  {/* <div>HEADPHONES AND EARPHONES</div>
+                  <div>SPEAKERS</div> */}
+                </div>
+                <div>
+                  <div>
+                    <p>Firmware Updates</p>
+                  </div>
+                  {/* <div>BEATS UPDATER</div> */}
+                </div>
               </div>
-              <div>
-                <div>
-                  <p>Sound Help</p>
-                </div>
-                <div>HEADPHONES AND EARPHONES</div>
-                <div>SPEAKERS</div>
-              </div>
-              <div>
-                <div>
-                  <p>Firmware Updates</p>
-                </div>
-                <div>BEATS UPDATER</div>
-              </div> */}
             </div>
           </div>
         </section>
@@ -65,8 +67,11 @@ class Support extends React.Component {
                     Find answers to all of your questions about service options,
                     warranty, and pricing in your country.
                   </p>
-                  <div className="Service-Btn">
-                    <BlackButton text="VIEW SERVICE AND WARRANTY" />
+                  <div className="Btn">
+                    <BlackButton
+                      text="VIEW SERVICE AND WARRANTY"
+                      className="BlackBtn"
+                    />
                   </div>
                 </div>
               </div>
@@ -77,8 +82,11 @@ class Support extends React.Component {
                     Tell us about your new Beats and get product updates and
                     special offers.
                   </p>
-                  <div className="Service-Btn">
-                    <BlackButton text="REGISTER TOUR BEATS" />
+                  <div className="Btn">
+                    <BlackButton
+                      text="REGISTER TOUR BEATS"
+                      className="BlackBtn"
+                    />
                   </div>
                 </div>
               </div>
@@ -89,8 +97,11 @@ class Support extends React.Component {
                     Check for software updates or rename your Beats and make it
                     your own.
                   </p>
-                  <div className="Service-Btn">
-                    <BlackButton text="UPDATE YOUR BEATS" />
+                  <div className="Btn">
+                    <BlackButton
+                      text="UPDATE YOUR BEATS"
+                      className="BlackBtn"
+                    />
                   </div>
                 </div>
               </div>
@@ -101,8 +112,8 @@ class Support extends React.Component {
                     Shop for genuine Beats by Dr. Dre products at an Apple
                     Retail Store, Apple Online Store or authorized retailers.
                   </p>
-                  <div className="Service-Btn">
-                    <BlackButton text="VIEW RETAILERS" />
+                  <div className="Btn">
+                    <BlackButton text="VIEW RETAILERS" className="BlackBtn" />
                   </div>
                 </div>
               </div>
@@ -113,8 +124,11 @@ class Support extends React.Component {
                     Beats premium products attract consumers from around the
                     world. Make sure you buy the real deal.
                   </p>
-                  <div className="Service-Btn">
-                    <BlackButton text="LEARN ABOUT SAFE BUYING" />
+                  <div className="Btn">
+                    <BlackButton
+                      text="LEARN ABOUT SAFE BUYING"
+                      className="BlackBtn"
+                    />
                   </div>
                 </div>
               </div>
@@ -125,8 +139,8 @@ class Support extends React.Component {
                     Beats by Dr. Dre is part of Apple. Contact Apple for
                     support.
                   </p>
-                  <div className="Service-Btn">
-                    <BlackButton text="CONTACT APPLE" />
+                  <div className="Btn">
+                    <BlackButton text="CONTACT APPLE" className="BlackBtn" />
                   </div>
                 </div>
               </div>

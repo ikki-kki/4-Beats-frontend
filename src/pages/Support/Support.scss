@@ -46,6 +46,7 @@
         }
       }
       .PopularContent {
+        width: 33.333%;
         position: absolute;
         z-index: 1;
         top: 30%;
@@ -60,6 +61,8 @@
             font-weight: 700;
           }
         }
+        .ContentBox {
+        }
       }
     }
   }
@@ -70,16 +73,16 @@
     .Support-Res-Wrap {
       position: relative;
       padding: 80px 0 80px 0;
-      width: 95%;
+      width: 90%;
       margin-left: auto;
       margin-right: auto;
       .Main-Text h2 {
         text-align: center;
-        font-size: 65px;
+        font-size: 62px;
         line-height: 1.1;
         font-weight: 700;
         font-family: $mainFont;
-        margin: 41px 0 41px 0;
+        margin: 41px 0 60px 0;
       }
       .Tiles {
         display: flex;
@@ -87,7 +90,7 @@
         z-index: 10;
         justify-content: center;
         .Tile {
-          flex: 0 0 28.3333%;
+          flex: 0 0 27%;
           text-align: center;
           background-color: white;
           margin: 5px;
@@ -96,20 +99,25 @@
             margin-left: auto;
             margin-right: auto;
             margin-top: 30px;
-            padding: 0 20px;
+            padding: 100px 20px;
           }
           .Tile-Inner h4 {
-            font-size: 20px;
+            font-size: 30px;
             margin-bottom: 20px;
             font-family: $mainFont;
             font-weight: 700;
+            padding-bottom: 40px;
           }
           .Tile-Inner p {
             // font-family: $subFont;
-            font-size: 0.9375rem;
+            font-size: 10px;
             min-height: 90px;
             line-height: 1.6;
             color: #8c8c8c;
+            font-family: $mainFont;
+          }
+          .Btn {
+            margin: 20px 0 20px 0;
           }
         }
       }

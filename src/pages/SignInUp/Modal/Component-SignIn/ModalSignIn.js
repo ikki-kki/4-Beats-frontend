@@ -108,7 +108,7 @@ class ModalSignIn extends React.Component {
                     Login
                   </button>
                 </div>
-                <div className="SignUpB">
+                <div className="GotoSignUp">
                   <button
                     className="SignUpBtn"
                     onClick={changeCo}

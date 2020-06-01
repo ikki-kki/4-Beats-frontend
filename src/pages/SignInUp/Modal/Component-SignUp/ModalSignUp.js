@@ -59,7 +59,7 @@ class ModalSignUp extends React.Component {
   };
 
   FetchEmail = () => {
-    fetch(Config.SignUpEmailCheckAPI, {
+    fetch(Config.SignUpBtnAPI, {
       method: "POST",
       headers: {
         "Content-type": "application/json",
@@ -70,7 +70,7 @@ class ModalSignUp extends React.Component {
     })
       .then((response) => response.json())
       .then((response) => {
-        if (response.status === 200) {
+        if (response.message === "VALID_EMAIL") {
           localStorage.setItem("token", response.token);
           alert("Available Email");
           this.setState({
@@ -196,11 +196,8 @@ class ModalSignUp extends React.Component {
                     </div>
                   </div>
                   <div className="content1">
-                    {/* <button onClick={this.checkEmail}>check</button> */}
-
                     <input
                       onChange={this.inputValueEmail}
-                      onKeyUp={this.buttonColorChange}
                       className="TextInput"
                       name="email"
                       placeholder="Email address"
@@ -222,8 +219,6 @@ class ModalSignUp extends React.Component {
                       />
                     </div>
                     <div className="content3">
-                      {/* <button onClick={this.CheckPw}>check</button> */}
-
                       <input
                         onChange={this.inputValuePwCo}
                         onKeyUp={this.buttonColorChange}
