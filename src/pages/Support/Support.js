@@ -1,12 +1,29 @@
 import React from "react";
 import Config from "./Config";
 import BlackButton from "../../components/Buttons/BlackButton";
+import MainHeader from "../../components/Headers/MainHeader/MainHeader";
 import "./Support.scss";
 
 class Support extends React.Component {
+  constructor() {
+    super();
+    this.state = {
+      clickCart: false,
+    };
+  }
+
+  callBackClickCart = () => {
+    this.setState({ clickCart: !this.state.clickCart });
+  };
+
   render() {
     return (
-      <div className="Support">
+      <div
+        className={`Support ${
+          this.state.clickCart === true ? "cartClicked" : ""
+        }`}
+      >
+        <MainHeader clickCartHandler={this.callBackClickCart} />
         <section className="Support-Top">
           <div className="Support-Top-Wrap">
             <div className="Main-Text">

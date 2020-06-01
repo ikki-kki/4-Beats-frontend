@@ -40,6 +40,7 @@ class ProductDetailPage extends React.Component {
   state = {
     current: 0,
     view: false,
+    clickCart: false,
   };
 
   changeColor = (e) => {
@@ -74,10 +75,18 @@ class ProductDetailPage extends React.Component {
     }
   };
 
+  callBackClickCart = () => {
+    this.setState({ clickCart: !this.state.clickCart });
+  };
+
   render() {
     return (
-      <div className="ProductDetailPage">
-        <MainHeader />
+      <div
+        className={`ProductDetailPage ${
+          this.state.clickCart === true ? "cartClicked" : ""
+        }`}
+      >
+        <MainHeader clickCartHandler={this.callBackClickCart} />
         <section className="headerWrapper">
           <ProductHeader />
           <div className="headerImage">
