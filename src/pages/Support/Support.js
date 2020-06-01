@@ -1,19 +1,32 @@
 import React from "react";
 import Config from "./Config";
-import BlackButton from "../../components/Buttons/BlackButton";
 import MainHeader from "../../components/Headers/MainHeader/MainHeader";
 import "./Support.scss";
+import GrayBorderButton from "../../components/Buttons/GrayBorderButton";
 
 class Support extends React.Component {
   constructor() {
     super();
     this.state = {
       clickCart: false,
+      ShowContent: false,
     };
   }
 
   callBackClickCart = () => {
     this.setState({ clickCart: !this.state.clickCart });
+  };
+
+  ContentShowBtn = () => {
+    if (this.state.ShowContent === true) {
+      this.setState({
+        ShowContent: false,
+      });
+    } else if (this.state.ShowContent === false) {
+      this.setState({
+        ShowContent: true,
+      });
+    }
   };
 
   render() {
@@ -44,26 +57,66 @@ class Support extends React.Component {
             </div>
             <div className="PopularContent">
               <div className="MainText">
-                <p>Popular topics</p>
+                <h2>Popular Topics</h2>
               </div>
               <div className="ContentBox">
-                <div>
-                  <div className="Content">
-                    <p>Bluetooth Pairing</p>
+                <div className="Content">
+                  <div
+                    className="BluetoothPairing"
+                    onClick={this.ContentShowBtn}
+                  >
+                    <button>
+                      <h3>Bluetooth Pairing</h3>
+                    </button>
+                    <span>
+                      <i class="fas fa-plus"></i>
+                    </span>
                   </div>
-                  {/* <div>CONNECT DEVICES WITH BLUETOOTH</div>
-                  <div>PAIR WITH MAC</div> */}
+                  <div
+                    className={`ContentShow ${
+                      this.state.ShowContent ? "ContentShowActive" : ""
+                    }`}
+                  >
+                    <ul>
+                      <li>
+                        <a href="https://www.beatsbydre.com/support/how-to/bluetooth-troubleshooting">
+                          CONNECT DEVICES WITH BLUETOOTH
+                          <span>
+                            <i class="fas fa-caret-right"></i>
+                          </span>
+                        </a>
+                      </li>
+                      <li>
+                        <a href="https://www.beatsbydre.com/support/how-to/bluetooth-troubleshooting">
+                          PAIR WITH MAC
+                          <span>
+                            <i class="fas fa-caret-right"></i>
+                          </span>
+                        </a>
+                      </li>
+                    </ul>
+                  </div>
                 </div>
-                <div>
-                  <div>
-                    <p>Sound Help</p>
+                <div className="Content">
+                  <div className="SoundHelp">
+                    <button>
+                      <h3>Sound Help</h3>
+                    </button>
+                    <span>
+                      <i class="fas fa-plus"></i>
+                    </span>
                   </div>
                   {/* <div>HEADPHONES AND EARPHONES</div>
                   <div>SPEAKERS</div> */}
                 </div>
-                <div>
-                  <div>
-                    <p>Firmware Updates</p>
+                <div className="Content">
+                  <div className="FirmwareUpdates">
+                    <button>
+                      <h3>Firmware Updates</h3>
+                    </button>
+                    <span>
+                      <i class="fas fa-plus"></i>
+                    </span>
                   </div>
                   {/* <div>BEATS UPDATER</div> */}
                 </div>
@@ -85,7 +138,7 @@ class Support extends React.Component {
                     warranty, and pricing in your country.
                   </p>
                   <div className="Btn">
-                    <BlackButton
+                    <GrayBorderButton
                       text="VIEW SERVICE AND WARRANTY"
                       className="BlackBtn"
                     />
@@ -100,7 +153,7 @@ class Support extends React.Component {
                     special offers.
                   </p>
                   <div className="Btn">
-                    <BlackButton
+                    <GrayBorderButton
                       text="REGISTER TOUR BEATS"
                       className="BlackBtn"
                     />
@@ -115,7 +168,7 @@ class Support extends React.Component {
                     your own.
                   </p>
                   <div className="Btn">
-                    <BlackButton
+                    <GrayBorderButton
                       text="UPDATE YOUR BEATS"
                       className="BlackBtn"
                     />
@@ -130,7 +183,10 @@ class Support extends React.Component {
                     Retail Store, Apple Online Store or authorized retailers.
                   </p>
                   <div className="Btn">
-                    <BlackButton text="VIEW RETAILERS" className="BlackBtn" />
+                    <GrayBorderButton
+                      text="VIEW RETAILERS"
+                      className="BlackBtn"
+                    />
                   </div>
                 </div>
               </div>
@@ -142,7 +198,7 @@ class Support extends React.Component {
                     world. Make sure you buy the real deal.
                   </p>
                   <div className="Btn">
-                    <BlackButton
+                    <GrayBorderButton
                       text="LEARN ABOUT SAFE BUYING"
                       className="BlackBtn"
                     />
@@ -157,7 +213,10 @@ class Support extends React.Component {
                     support.
                   </p>
                   <div className="Btn">
-                    <BlackButton text="CONTACT APPLE" className="BlackBtn" />
+                    <GrayBorderButton
+                      text="CONTACT APPLE"
+                      className="BlackBtn"
+                    />
                   </div>
                 </div>
               </div>

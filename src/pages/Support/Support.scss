@@ -2,7 +2,7 @@
 
 .Support {
   width: 100%;
-  transition: all .5s cubic-bezier(0.215, 0.61, 0.355, 1);
+  transition: all 0.5s cubic-bezier(0.215, 0.61, 0.355, 1);
   .Support-Top {
     display: block;
     .Support-Top-Wrap {
@@ -23,7 +23,7 @@
         margin-top: 2.4%;
         h1 {
           font-family: $mainFont;
-          font-size: 75px;
+          font-size: 60px;
           font-weight: 700;
           line-height: 1;
           color: white;
@@ -36,32 +36,93 @@
 
   .SupportPopular {
     display: block;
+    width: 100%;
     .SupportPopularWrap {
       position: relative;
       .PopularImg {
         position: relative;
         z-index: 0;
+        overflow: hidden;
         img {
-          width: 100%;
+          width: 114%;
         }
       }
       .PopularContent {
-        width: 33.333%;
+        width: 32%;
         position: absolute;
         z-index: 1;
-        top: 30%;
-        left: 15%;
+        top: 29%;
+        left: 19%;
         display: flex;
         justify-content: center;
         flex-direction: column;
+        letter-spacing: 0.08rem;
         .MainText {
-          p {
+          h2 {
             font-family: $mainFont;
-            font-size: 60px;
-            font-weight: 700;
+            font-size: 50px;
+            font-weight: 800;
+            margin-bottom: 26px;
+            padding-top: 15px;
           }
         }
         .ContentBox {
+          .Content {
+            padding: 0 30px 0 30px;
+            border-top: solid 1px #dddddd;
+            &:last-child {
+              border-bottom: solid 1px #dddddd;
+            }
+            &:hover {
+              background-color: #f4f4f469;
+            }
+            .BluetoothPairing {
+              width: 100%;
+              display: flex;
+              justify-content: space-between;
+              padding: 40px 0 34px 0;
+            }
+            .SoundHelp {
+              width: 100%;
+              display: flex;
+              justify-content: space-between;
+              padding: 40px 0 34px 0;
+            }
+            .FirmwareUpdates {
+              width: 100%;
+              display: flex;
+              justify-content: space-between;
+              padding: 40px 0 34px 0;
+            }
+
+            .fas {
+              color: #a7a6a6;
+            }
+            .ContentShow {
+              display: none;
+
+              li {
+                font-family: $subFont;
+                a {
+                  color: black;
+                  text-decoration: none;
+                  letter-spacing: 0.06em;
+                  font-weight: 500;
+                  font-size: 14px;
+                }
+              }
+            }
+            .ContentShowActive {
+              height: auto;
+            }
+          }
+
+          h3 {
+            font-family: $mainFont;
+            font-weight: 600;
+            font-size: 1rem;
+            letter-spacing: 0.05rem;
+          }
         }
       }
     }
@@ -73,12 +134,13 @@
     .Support-Res-Wrap {
       position: relative;
       padding: 80px 0 80px 0;
-      width: 90%;
+      width: 85%;
+      max-width: 94.6667rem;
       margin-left: auto;
       margin-right: auto;
       .Main-Text h2 {
         text-align: center;
-        font-size: 62px;
+        font-size: 53px;
         line-height: 1.1;
         font-weight: 700;
         font-family: $mainFont;
@@ -89,8 +151,9 @@
         flex-wrap: wrap;
         z-index: 10;
         justify-content: center;
+
         .Tile {
-          flex: 0 0 27%;
+          flex: 0 0 32.333%;
           text-align: center;
           background-color: white;
           margin: 5px;
@@ -99,21 +162,21 @@
             margin-left: auto;
             margin-right: auto;
             margin-top: 30px;
-            padding: 100px 20px;
+            padding: 48px 20px;
           }
           .Tile-Inner h4 {
-            font-size: 30px;
+            font-size: 25px;
             margin-bottom: 20px;
             font-family: $mainFont;
             font-weight: 700;
-            padding-bottom: 40px;
+            padding-bottom: 15px;
           }
           .Tile-Inner p {
             // font-family: $subFont;
-            font-size: 10px;
+            font-size: 14px;
             min-height: 90px;
             line-height: 1.6;
-            color: #8c8c8c;
+            color: #a1a1a1;
             font-family: $mainFont;
           }
           .Btn {
@@ -124,7 +187,7 @@
     }
   }
 }
-.cartClicked{
+.cartClicked {
   margin-top: 400px;
-  transition: all .5s cubic-bezier(0.215, 0.61, 0.355, 1);
+  transition: all 0.5s cubic-bezier(0.215, 0.61, 0.355, 1);
 }

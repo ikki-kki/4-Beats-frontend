@@ -93,7 +93,7 @@
       font-size: 25px;
       border-color: rgba(51, 51, 51, 0.2);
       border-style: solid;
-      border-width: 0 0 1.5px 0;
+      border-width: 0 0 1px 0;
       padding-bottom: 3px;
     }
     input::placeholder {
@@ -103,7 +103,7 @@
     .TextInput:focus {
       border-color: $mainRed;
       border-style: solid;
-      border-width: 0 0 1.5px 0;
+      border-width: 0 0 1px 0;
       transition: all 0.2s ease-in-out;
     }
     input:focus::-webkit-input-placeholder,
@@ -123,7 +123,7 @@
       font-size: 25px;
       border-color: rgba(51, 51, 51, 0.2);
       border-style: solid;
-      border-width: 0 0 1.5px 0;
+      border-width: 0 0 1px 0;
       padding-bottom: 3px;
     }
     input::placeholder {
@@ -133,7 +133,7 @@
     .TextInput:focus {
       border-color: $mainRed;
       border-style: solid;
-      border-width: 0 0 1.5px 0;
+      border-width: 0 0 1px 0;
       transition: all 0.2s ease-in-out;
     }
     input:focus::-webkit-input-placeholder,

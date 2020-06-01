@@ -59,7 +59,7 @@ class ModalSignUp extends React.Component {
   };
 
   FetchEmail = () => {
-    fetch(Config.SignUpBtnAPI, {
+    fetch(Config.SignUpEmailBtnAPI, {
       method: "POST",
       headers: {
         "Content-type": "application/json",
