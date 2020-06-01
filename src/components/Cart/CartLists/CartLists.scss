@@ -24,6 +24,14 @@
       text-decoration: none;
       color: #fff;
     }
+    .productColor{
+      border: 1px solid #fff;
+      background-color: #911827;
+      display: inline-block;
+      border-radius: 50%;
+      width: 34px;
+      height: 34px;
+    }
   }
   
   .productQuantity{
@@ -31,19 +39,31 @@
     display: flex;
     align-items: center;
     flex-grow: 1;
-    
-    .productQuantityBtn{
+
+    .plusBtn, .minusBtn{
+      padding: 0 16px;
+      height: 40px;
+      color: #fff;
       border: 1px solid #424242;
+      font-size: 1rem;
+      
+      &:hover{
+        background-color: #000;
+      }
+    }
+    .productCount{
+      border: 1px solid #424242;
+      background-color: #424242;
       display: flex;
       align-items: center;
       color: #fff;
-      padding: 10px 16px 10px 19px;
+      padding: 0 15px;
+      height: 40px;
       font-size: 1rem;
+    }
 
-      .icon{
-        margin-left:6px;
-        font-size: 1rem;
-      }
+    .minusBtn{
+      padding: 0 18px;
     }
     
     .productRemove{

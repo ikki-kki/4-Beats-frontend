@@ -10,13 +10,14 @@ export default class CartLists extends Component {
           <Link className="productName" to="">
             This is product Test
           </Link>
-          <div className="productSize">50 mL</div>
+          <div className="productColor"></div>
         </div>
         <div className="productQuantity">
-          <button className="productQuantityBtn">
+          <button className="minusBtn">-</button>
+          <div className="productCount">
             <span className="count">1</span>
-            <span className="material-icons icon">expand_more</span>
-          </button>
+          </div>
+          <button className="plusBtn">+</button>
           <div className="productRemove">
             <button>remove</button>
           </div>

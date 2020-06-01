@@ -16,7 +16,7 @@ export default class Cart extends Component {
         <div className="cartProducts">
           <div className="cartHeader">
             <div className="titleLable">Cart</div>
-            <div className="sizeLabel">Size</div>
+            <div className="colorLabel">Color</div>
             <div className="quantityLabel">Quantity</div>
             <button
               className={`headerClose ${this.props.showCart ? "" : "cartOpen"}`}
