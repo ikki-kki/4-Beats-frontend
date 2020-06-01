@@ -2,27 +2,45 @@ import React from "react";
 import Config from "./Config";
 import BlackButton from "../../components/Buttons/BlackButton";
 import MainHeader from "../../components/Headers/MainHeader/MainHeader";
-import NewsFooter from "../../components/Footers/NewsFooter/NewsFooter";
-import MainFooter from "../../components/Footers/MainFooter/MainFooter";
 import "./Support.scss";
 
 class Support extends React.Component {
+  constructor() {
+    super();
+    this.state = {
+      clickCart: false,
+    };
+  }
+
+  callBackClickCart = () => {
+    this.setState({ clickCart: !this.state.clickCart });
+  };
+
   render() {
     return (
-      <>
-        <MainHeader />
-        <div className="Support">
-          <section className="Support-Top">
-            <div className="Support-Top-Wrap">
-              <div className="Main-Text">
-                <h1>
-                  Welcome to <br />
-                  Beats Support
-                </h1>
-              </div>
-              <div className="Main-Img">
-                <img src={Config.SupportHeroImg} alt="Main-top-img" />
-              </div>
+      <div
+        className={`Support ${
+          this.state.clickCart === true ? "cartClicked" : ""
+        }`}
+      >
+        <MainHeader clickCartHandler={this.callBackClickCart} />
+        <section className="Support-Top">
+          <div className="Support-Top-Wrap">
+            <div className="Main-Text">
+              <h1>
+                Welcome to <br />
+                Beats Support
+              </h1>
+            </div>
+            <div className="Main-Img">
+              <img src={Config.SupportHeroImg} alt="Main-top-img" />
+            </div>
+          </div>
+        </section>
+        <section className="SupportPopular">
+          <div className="SupportPopularWrap">
+            <div className="PopularImg">
+              <img src={Config.SupportPopularImg} alt="popular topics" />
             </div>
           </section>
           <section className="SupportPopular">

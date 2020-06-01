@@ -1,11 +1,18 @@
-.news {
-    .sectionSpacing4 {
-        padding-top: 60px;
-    }
+.Products{
+     transition: all .5s cubic-bezier(0.215, 0.61, 0.355, 1);
+    .news {
+        .sectionSpacing4 {
+            padding-top: 60px;
+        }
 
-    background-color: #f7f7f8;
+        background-color: #f7f7f8;
 
-    .sectionSpacing3 {
-        padding-top: 60px;
+        .sectionSpacing3 {
+            padding-top: 60px;
+        }
     }
+}
+.cartClicked{
+    margin-top: 400px;
+    transition: all .5s cubic-bezier(0.215, 0.61, 0.355, 1);
 }
