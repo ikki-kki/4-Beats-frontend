@@ -6,8 +6,11 @@ import "./Order.scss";
 class Order extends React.Component {
   state = {
     orderList: [],
-    checked: false,
+    Postcode: "",
+    cardCheck: false,
+    RChecked: false,
   };
+
   searchHandler = () => {
     new window.daum.Postcode({
       oncomplete: function (data) {
@@ -34,7 +37,7 @@ class Order extends React.Component {
         } else {
           document.getElementById("sample6_extraAddress").value = "";
         }
-
+        console.log(data.zonecode);
         document.getElementById("sample6_postcode").value = data.zonecode;
         document.getElementById("sample6_address").value = addr;
         document.getElementById("sample6_datailAddress").focus();
@@ -42,11 +45,20 @@ class Order extends React.Component {
     }).open();
   };
 
-  checkHandler = (e) => {
-    const {
-      target: { checked },
-    } = e;
-    this.setState({ checked });
+  cardHandler = () => {
+    this.setState({ cardCheck: true });
+  };
+
+  requiredHandler = () => {
+    this.setState({ RChecked: true });
+  };
+
+  changePostCode = (event) => {
+    console.log("실행");
+    console.log("event.value", event.target.value);
+    this.setState({
+      Postcode: event.target.value,
+    });
   };
 
   // componentDidMount() {
@@ -58,6 +70,7 @@ class Order extends React.Component {
   // }
 
   render() {
+    console.log("this.state.Postcode", this.state.Postcode);
     return (
       <>
         <MainHeader />
@@ -153,6 +166,8 @@ class Order extends React.Component {
                             type="text"
                             id="sample6_postcode"
                             placeholder="Post Code"
+                            onChange={this.changePostCode}
+                            value={this.state.Postcode}
                           />
                         </span>
                         <button onClick={this.searchHandler}>Search</button>
@@ -163,6 +178,7 @@ class Order extends React.Component {
                             type="text"
                             id="sample6_address"
                             placeholder="Address"
+                            onChange={this.changeAddress}
                           />
                         </span>
                         <span>
@@ -170,13 +186,15 @@ class Order extends React.Component {
                             type="text"
                             id="sample6_datailAddress"
                             placeholder="Detail"
+                            onChange={this.changeDetail}
                           />
                         </span>
                         <span>
                           <input
                             type="text"
                             id="sample6_extraAddress"
-                            placeholder="extra"
+                            placeholder="Extra"
+                            onChange={this.changeExtra}
                           />
                         </span>
                       </div>
@@ -190,10 +208,16 @@ class Order extends React.Component {
             <h3 className="payTitle">Payment</h3>
             <div className="checkPay">
               <div className="checkWrap">
-                <div className="checkTitle">Choice</div>
+                <div className="checkTitle">Payment</div>
                 <div className="selection">
                   <div className="checkForm">
-                    <input type="radio" name="creditCard" className="radio" />
+                    <input
+                      type="radio"
+                      name="creditCard"
+                      className="radio"
+                      checked={this.state.cardCheck}
+                      onChange={this.cardHandler}
+                    />
                     <span>Credit Card</span>
                   </div>
                   {/* <div className="checkForm">
@@ -223,8 +247,9 @@ class Order extends React.Component {
                   <input
                     type="checkbox"
                     className="checkbox require"
-                    checked={this.state.checked}
-                    onChange={this.checkHandler}
+                    checked={this.state.Rchecked}
+                    value={this.state.Postcode}
+                    onChange={this.requiredHandler}
                   />
                   <strong>(Required)</strong>
                   <p>
