@@ -11,20 +11,39 @@ export default class CartLists extends Component {
     };
   }
 
-  //제품 추가, 삭제 메서드
-  quantityMinus = (num) => {
-    const { quantity } = this.state;
-    if (quantity !== 1) {
-      this.setState({ quantity: quantity + num });
+  updateQuantity = (modifier) => {
+    // 최대 최소값 범위
+    const minimum = this.props.min || 1;
+    const maximum = this.props.max || Number.POSITIVE_INFINITY; // 양수 무한대
+
+    // 업데이트된 수량의 값
+    const quantity = this.state.quantity + modifier;
+
+    // 최대 최소값 예외처리
+    if (quantity < minimum || maximum < quantity) {
+      return;
     }
+
+    // state를 업데이트
+    this.setState({
+      quantity,
+    });
   };
-  quantityAdd = (num) => {
-    const { quantity } = this.state;
-    this.setState({ quantity: quantity + num });
-  };
+
+  deleteData(item) {
+    fetch("http://10.58.5.168:8000/api/cart/" + item, {
+      method: "delete",
+    }).then((res) =>
+      res.json().then((json) => {
+        return json;
+      })
+    );
+  }
 
   render() {
     const { product, color, price } = this.props;
+    let productPrice = (price * this.state.quantity).toFixed(2);
+    //let totalPrice =
 
     return (
       <li className="CartLists">
@@ -32,28 +51,25 @@ export default class CartLists extends Component {
           <Link className="productName" to="">
             {product}
           </Link>
-          <div
-            className="productColor"
-            style={{ backgroundColor: color }}
-          ></div>
+          <div className="productColor">{color}</div>
         </div>
         <div className="productQuantity">
-          <button className="minusBtn" onClick={() => this.quantityMinus(-1)}>
+          <button className="minusBtn" onClick={() => this.updateQuantity(-1)}>
             -
           </button>
           <div className="productCount">
             <span className="count">{this.state.quantity}</span>
           </div>
-          <button className="plusBtn" onClick={() => this.quantityAdd(1)}>
+          <button className="plusBtn" onClick={() => this.updateQuantity(1)}>
             +
           </button>
           <div className="productRemove">
-            <button>remove</button>
+            <button onClick={() => this.deleteData()}>remove</button>
           </div>
         </div>
         <div className="productPrice">
-          <span>₩</span>
-          <span>{price}</span>
+          <span>$&nbsp;</span>
+          <span>{productPrice}</span>
         </div>
       </li>
     );

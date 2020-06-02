@@ -11,7 +11,6 @@ export default class Stories extends Component {
     this.state = {
       clicked: 0,
       display: "inline-block",
-      clickCart: false,
     };
   }
   /**
@@ -30,14 +29,10 @@ export default class Stories extends Component {
   };
 
   render() {
-    console.log(this.state.clickCart);
+    //console.log(this.state.clickCart);
     return (
-      <main
-        className={`StoryContainer ${
-          this.state.clickCart === true ? "cartClicked" : ""
-        }`}
-      >
-        <MainHeader clickCartHandler={this.callBackClickCart} />
+      <main className="StoryContainer">
+        <MainHeader />
         <section className="storyContainer">
           <div className="storyBox">
             <div className="columns">

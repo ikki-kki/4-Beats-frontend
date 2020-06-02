@@ -5,25 +5,10 @@ import MainHeader from "../../components/Headers/MainHeader/MainHeader";
 import "./Support.scss";
 
 class Support extends React.Component {
-  constructor() {
-    super();
-    this.state = {
-      clickCart: false,
-    };
-  }
-
-  callBackClickCart = () => {
-    this.setState({ clickCart: !this.state.clickCart });
-  };
-
   render() {
     return (
-      <div
-        className={`Support ${
-          this.state.clickCart === true ? "cartClicked" : ""
-        }`}
-      >
-        <MainHeader clickCartHandler={this.callBackClickCart} />
+      <div className="Support">
+        <MainHeader />
         <section className="Support-Top">
           <div className="Support-Top-Wrap">
             <div className="Main-Text">

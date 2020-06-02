@@ -13,7 +13,8 @@ class MainHeader extends Component {
     this.state = {
       menuIdx: 0,
       display: "none",
-      showCart: "false",
+      showCart: false,
+      response: [],
     };
   }
 
@@ -32,19 +33,35 @@ class MainHeader extends Component {
 
   //카트 버튼 클릭 핸들러
   cartClickHandler = () => {
-    this.props.clickCartHandler();
     this.setState({ showCart: !this.state.showCart });
+    fetch("http://localhost:3000/data/productModk.json", {
+      method: "GET",
+      headers: {
+        // Authorization:
+        //   "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6NX0.AY_p0-u1GLfQJB9E8hAhcE467blaITgrJ8SptpVZBSU",
+        "Content-Type": "application/json",
+      },
+    })
+      .then((res) => res.json())
+      .then((res) => {
+        // console.log(res, "res");
+        this.setState({
+          response: res,
+        });
+      });
   };
 
   render() {
-    console.log(this.state.clickCart);
     return (
       <>
-        <Cart
-          clickHandler={this.cartClickHandler}
-          showCart={this.state.showCart}
-          onMouseEnter={this.outMenuHandler}
-        />
+        {this.state.showCart && (
+          <Cart
+            showCart={this.state.showCart}
+            clickHandler={this.cartClickHandler}
+            response={this.state.response}
+          />
+        )}
+
         <header className="MainHeader">
           <nav className="header-nav">
             <ul className="nav-container">
@@ -94,7 +111,10 @@ class MainHeader extends Component {
                   className="btnDefault"
                   type="button"
                   onClick={() => this.cartClickHandler()}
-                ></button>
+                >
+                  {/* 장바구니에 아이템이 들어오면 span이 생김 */}
+                  <span>1</span>
+                </button>
               </li>
             </ul>
             <div

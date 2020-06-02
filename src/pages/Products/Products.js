@@ -17,7 +17,6 @@ class Products extends React.Component {
       sec4: [],
       sec5: [],
       sec6: [],
-      clickCart: false,
     };
   }
 
@@ -48,18 +47,10 @@ class Products extends React.Component {
       });
   }
 
-  callBackClickCart = () => {
-    this.setState({ clickCart: !this.state.clickCart });
-  };
-
   render() {
     return (
-      <div
-        className={`Products ${
-          this.state.clickCart === true ? "cartClicked" : ""
-        }`}
-      >
-        <MainHeader clickCartHandler={this.callBackClickCart} />
+      <div className="Products">
+        <MainHeader />
         {/* <ProductsArticles lists={this.state.productsList} /> */}
         <ProductsArticles
           section1={this.state.sec1}

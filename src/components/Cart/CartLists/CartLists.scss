@@ -26,11 +26,8 @@
       color: #fff;
     }
     .productColor{
-      border: 1px solid #fff;
-      display: inline-block;
-      border-radius: 50%;
-      width: 34px;
-      height: 34px;
+      width: calc(100% * 3/12);
+      flex-basis: auto;
     }
   }
   

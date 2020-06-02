@@ -1,0 +1,55 @@
+@import "../../styles/common.scss";
+
+.Search{
+  z-index: 999;
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+
+  .searchContainer{
+    position: relative;
+
+    .searchBox {
+      transition: width $tl, border-radius $tl, background $tl, box-shadow $tl;
+      width: 40px;
+      height: 40px;
+      border-radius: 20px;
+      border: none;
+      cursor: pointer;
+      background: rgba(235, 235, 235, 1);
+      display: flex;
+
+      &:hover {
+        background: rgba(200, 200, 200, 0.719);
+        box-shadow: 0 0 0 1px $mainBlack;
+      }
+
+      &:focus {
+        transition: width $tl cubic-bezier(0,1.22,.66,1.39), border-radius $tl, background $tl;
+        border: none;
+        outline: none;
+        box-shadow: none;
+        padding-left: 15px;
+        cursor: text;
+        width: 300px;
+        border-radius: auto;
+        background: rgb(235, 235, 235);
+        color: black;
+      }
+
+      &:not(:focus) {
+        text-indent:-5000px;
+      }
+    }
+
+    .searchIcon {
+      position: absolute;
+      top:20%;
+      left:20%;
+      color: $mainBlack;
+      cursor: pointer;
+      }
+    }
+  }
+
+  
