@@ -1,9 +1,11 @@
 import React from "react";
 import MainHeader from "../../components/Headers/MainHeader/MainHeader";
 import MainFooter from "../../components/Footers/MainFooter/MainFooter";
+// import DaumPostcode from "react-daum-postcode";
 import "./Order.scss";
 
 class Order extends React.Component {
+  inputValueRef = React.createRef();
   state = {
     orderList: [],
     Postcode: "",
@@ -14,36 +16,66 @@ class Order extends React.Component {
   searchHandler = () => {
     new window.daum.Postcode({
       oncomplete: function (data) {
-        let addr = "";
-        let extraAddr = "";
-        if (data.userSelectType === "R") {
-          addr = data.roadAddress;
-        } else {
-          addr = data.jibunAddress;
+        let fullAddress = data.address;
+        // this.setState({ Postcode: data.address });
+        let extraAddress = "";
+
+        if (data.addressType === "R") {
+          if (data.bname !== "") {
+            extraAddress += data.bname;
+          }
+          if (data.buildingName !== "") {
+            extraAddress +=
+              extraAddress !== ""
+                ? `, ${data.buildingName}`
+                : data.buildingName;
+          }
+          fullAddress += extraAddress !== "" ? ` (${extraAddress})` : "";
         }
 
-        if (data.userSelectType === "R") {
-          if (data.bname !== "" && /[동|로|가]$/g.test(data.bname)) {
-            extraAddr += data.bname;
-          }
-          if (data.buildingName !== "" && data.apartment === "Y") {
-            extraAddr +=
-              extraAddr !== "" ? ", " + data.buildingName : data.buildingName;
-          }
-          if (extraAddr !== "") {
-            extraAddr = " (" + extraAddr + " )";
-          }
-          document.getElementById("sample6_extraAddress").value = extraAddr;
-        } else {
-          document.getElementById("sample6_extraAddress").value = "";
-        }
+        console.log(fullAddress); // e.g. '서울 성동구 왕십리로2길 20 (성수동1가)'
         console.log(data.zonecode);
         document.getElementById("sample6_postcode").value = data.zonecode;
-        document.getElementById("sample6_address").value = addr;
+        document.getElementById("sample6_address").value = fullAddress;
         document.getElementById("sample6_datailAddress").focus();
+        // this.setState({ Postcode: fullAddress });
       },
     }).open();
   };
+
+  // searchHandler = () => {
+  //   new window.daum.Postcode({
+  //     oncomplete: function (data) {
+  //       let addr = "";
+  //       let extraAddr = "";
+  //       if (data.userSelectType === "R") {
+  //         addr = data.roadAddress;
+  //       } else {
+  //         addr = data.jibunAddress;
+  //       }
+
+  //       if (data.userSelectType === "R") {
+  //         if (data.bname !== "" && /[동|로|가]$/g.test(data.bname)) {
+  //           extraAddr += data.bname;
+  //         }
+  //         if (data.buildingName !== "" && data.apartment === "Y") {
+  //           extraAddr +=
+  //             extraAddr !== "" ? ", " + data.buildingName : data.buildingName;
+  //         }
+  //         if (extraAddr !== "") {
+  //           extraAddr = " (" + extraAddr + " )";
+  //         }
+  //         document.getElementById("sample6_extraAddress").value = extraAddr;
+  //       } else {
+  //         document.getElementById("sample6_extraAddress").value = "";
+  //       }
+  //       console.log(data.zonecode);
+  //       document.getElementById("sample6_postcode").value = data.zonecode;
+  //       document.getElementById("sample6_address").value = addr;
+  //       document.getElementById("sample6_datailAddress").focus();
+  //     },
+  //   }).open();
+  // };
 
   cardHandler = () => {
     this.setState({ cardCheck: true });
@@ -53,11 +85,9 @@ class Order extends React.Component {
     this.setState({ RChecked: true });
   };
 
-  changePostCode = (event) => {
-    console.log("실행");
-    console.log("event.value", event.target.value);
+  changePostCode = (e) => {
     this.setState({
-      Postcode: event.target.value,
+      Postcode: e.target.value,
     });
   };
 
@@ -166,12 +196,17 @@ class Order extends React.Component {
                             type="text"
                             id="sample6_postcode"
                             placeholder="Post Code"
+                            ref={this.inputValueRef}
                             onChange={this.changePostCode}
                             value={this.state.Postcode}
                           />
                         </span>
                         <button onClick={this.searchHandler}>Search</button>
                       </div>
+                      {/* <DaumPostcode
+                        onComplete={this.handleComplete}
+                        {...this.props}
+                      /> */}
                       <div className="addressDetail">
                         <span>
                           <input

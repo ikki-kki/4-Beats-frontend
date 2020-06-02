@@ -1,0 +1,36 @@
+{
+    "data": [{
+            "id": 2,
+            "img": "https://www.beatsbydre.com/content/dam/beats/web/product/earphones/powerbeats-pro/pdp/pp-pdp-p1-hero-lrg.jpg.large.2x.jpg"
+
+        },
+        {
+            "id": 3,
+            "img": "https://www.beatsbydre.com/content/dam/beats/web/product/headphones/solo-pro/pdp/solo-pro-pdp-hero.jpg.large.2x.jpg"
+        },
+        {
+            "id": 4,
+            "img": "https://www.beatsbydre.com/content/dam/beats/web/product/headphones/solo3-wireless/pdp/solo3-pdp-p1.jpg.large.2x.jpg"
+        },
+        {
+            "id": 5,
+            "img": "https://www.beatsbydre.com/content/dam/beats/web/product/headphones/studio3-wireless/pdp/studio3-pdp-p01.jpg.large.2x.jpg"
+        },
+        {
+            "id": 6,
+            "img": "https://www.beatsbydre.com/content/dam/beats/web/pdp/beats-x/hero/x_hero_retina_3440x1940_optim.jpg"
+        },
+        {
+            "id": 7,
+            "img": "https://www.beatsbydre.com/content/dam/beats/web/pdp/beats-ep/Hero/ep_hero_retina_3440x1940%20optim.jpg"
+        },
+        {
+            "id": 8,
+            "img": "https://www.beatsbydre.com/content/dam/beats/web/pdp/urbeats3_lightning/hero/refresh/urbeats3-satinsilver_hero_pdp_desktop_3440x1940.png"
+        },
+        {
+            "id": 9,
+            "img": "https://www.beatsbydre.com/content/dam/beats/web/pdp/urbeats3/hero/hero/urbeats3-black_hero_pdp_desktop_3440x1940.jpg"
+        }
+    ]
+}
