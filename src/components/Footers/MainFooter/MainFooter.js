@@ -27,6 +27,9 @@ const supportData = [
 ];
 
 export default class MainFooter extends Component {
+  scrollToTop = (event) => {
+    document.getElementById("root").scrollTo(0, 0);
+  };
   render() {
     return (
       <footer className="MainFooter">

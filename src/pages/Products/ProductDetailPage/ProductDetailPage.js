@@ -7,6 +7,7 @@ import MainHeader from "../../../components/Headers/MainHeader/MainHeader";
 import NewsFooter from "../../../components/Footers/NewsFooter/NewsFooter";
 import MainFooter from "../../../components/Footers/MainFooter/MainFooter";
 import Fade from "react-reveal/Fade";
+import RedButton from "../../../components/Buttons/RedButton";
 import "./ProductDetailPage.scss";
 
 const selProduct = {
@@ -88,7 +89,7 @@ class ProductDetailPage extends React.Component {
       >
         <MainHeader clickCartHandler={this.callBackClickCart} />
         <section className="headerWrapper">
-          <ProductHeader />
+          <ProductHeader goTo="#color" />
           <div className="headerImage">
             <div className="gradientOverlay"></div>
             <img
@@ -209,7 +210,7 @@ class ProductDetailPage extends React.Component {
         </section>
         <section
           className="mainContentsSelect"
-          id="buy"
+          id="color"
           style={{
             backgroundColor: selProduct[this.state.current].productColor,
           }}
@@ -279,6 +280,9 @@ class ProductDetailPage extends React.Component {
               <button onClick={this.rightBtn} className="rightBtn">
                 <div className="rightBtnWrap" />
               </button>
+              <div className="redButtonWrap">
+                <RedButton text="Add to cart" />
+              </div>
             </div>
           </div>
         </section>
