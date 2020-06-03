@@ -1,6 +1,6 @@
-@import '../../styles/common.scss';
+@import "../../styles/common.scss";
 
-.GrayBorderButton{
+.GrayBorderButton {
   height: 47px;
   position: relative;
   background-color: #fff;
@@ -8,7 +8,7 @@
   display: inline-block;
   text-align: center;
   padding: 13px 30px 10px 32px;
-  border: 1.5px solid #d3dede;
+  border: 1.5px solid #dbdbdb;
   border-radius: 27px;
   font-family: $subFont;
   letter-spacing: 1px;
@@ -17,37 +17,37 @@
   text-decoration: none;
   z-index: 1;
   overflow: hidden;
-    &:after{
-      content:'';
-      position: absolute;
-      bottom:0;
-      left:0;
-      width: 100%;
-      height: 100%;
-      background-color: #fff;
-      border-radius: 10rem;
-      z-index: -2;
-    }
-    &:before{
-      content:'';
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      width: 100%;
-      height: 0%;
-      background-color: $mainBlack;
-      border:0;
-      transition: all .15s;
-      border-radius: 10rem;
-      z-index: -1;
-    }
-    &:hover{
-      color: #fff;
-      border: 2px solid $mainBlack;
-      background-color:$mainBlack;
+  &:after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #fff;
+    border-radius: 10rem;
+    z-index: -2;
+  }
+  &:before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 0%;
+    background-color: $mainBlack;
+    border: 0;
+    transition: all 0.15s;
+    border-radius: 10rem;
+    z-index: -1;
+  }
+  &:hover {
+    color: #fff;
+    border: 2px solid $mainBlack;
+    background-color: $mainBlack;
 
-      &:before{
-        height: 100%
-      }
+    &:before {
+      height: 100%;
     }
+  }
 }

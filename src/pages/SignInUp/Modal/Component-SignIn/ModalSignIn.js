@@ -1,16 +1,19 @@
 import React from "react";
+import { withRouter } from "react-router-dom";
 import ReactTransitionGroup from "react-addons-css-transition-group";
-import Config from "../../Config";
+import { API } from "../../Config";
+
 import "./ModalSignIn.scss";
 
 class ModalSignIn extends React.Component {
-  constructor(props) {
-    super(props);
+  constructor() {
+    super();
     this.state = {
       BtnColor: true,
       // SignUpOpen: true,
       email: "",
       password: "",
+      AlarmOpen: 0,
     };
   }
 
@@ -25,8 +28,9 @@ class ModalSignIn extends React.Component {
     });
   };
 
-  buttonColorChange = () => {
-    if (this.state.email.includes("@") && this.state.password.length >= 5) {
+  BtnActive = () => {
+    const { email, password } = this.state;
+    if (email.includes("@") && password.length >= 8) {
       this.setState({ BtnColor: false });
     } else {
       this.setState({ BtnColor: true });
@@ -34,18 +38,22 @@ class ModalSignIn extends React.Component {
   };
 
   handleBtnClickEvent = () => {
-    fetch(Config.SignInAPI, {
+    fetch(`${API}/login`, {
       method: "POST",
       body: JSON.stringify({
         email: this.state.email,
         password: this.state.password,
       }),
     })
-      .then((response) => response.json())
-      .then((response) => {
-        if (response.token) {
-          localStorage.setItem("token", response.token);
+      .then((res) => res.json())
+      .then((res) => {
+        console.log("response", res);
+        if (res.Authorization) {
+          localStorage.setItem("token", res.Authorization);
+
           this.props.history.push("/products");
+        } else {
+          this.BtnActive();
         }
       });
   };
@@ -75,22 +83,30 @@ class ModalSignIn extends React.Component {
                 </button>
                 <div className="mainTitle">
                   <h2 className="title">Welcome back to Beats.</h2>
-                  {/* <div className="subTitle">Please confirm your password</div> */}
+                  <div className="subTitle">Please confirm your password</div>
                 </div>
                 <div className="contentInputEmail">
-                  <input
-                    onChange={this.inputValueEmail}
-                    onKeyUp={this.buttonColorChange}
-                    className="TextInput"
-                    name="email"
-                    placeholder="Email address"
-                    type="email"
-                  />
+                  <label>
+                    <input
+                      onChange={this.inputValueEmail}
+                      onKeyUp={this.BtnActive}
+                      className="TextInput"
+                      name="email"
+                      placeholder="Email address"
+                      type="email"
+                    />
+
+                    {/* <span className="TextLabel">Email address</span> */}
+                  </label>
+                  <p className="TextAlarm">
+                    Please enter a valid email address
+                  </p>
                 </div>
+
                 <div className="contentInputPw">
                   <input
                     onChange={this.inputValuePw}
-                    onKeyUp={this.buttonColorChange}
+                    onKeyUp={this.BtnActive}
                     className="TextInput"
                     name="password"
                     placeholder="Password"
@@ -101,14 +117,14 @@ class ModalSignIn extends React.Component {
                 <div className="SignInBtn-wrap">
                   <button
                     className={
-                      this.state.BtnColor ? "button" : "BtnColorChange"
+                      this.state.BtnColor ? "DefaultBtn" : "BtnColorChange"
                     }
                     onClick={this.handleBtnClickEvent}
                   >
                     Login
                   </button>
                 </div>
-                <div className="SignUpB">
+                <div className="GotoSignUp">
                   <button
                     className="SignUpBtn"
                     onClick={changeCo}
@@ -132,4 +148,4 @@ class ModalSignIn extends React.Component {
     );
   }
 }
-export default ModalSignIn;
+export default withRouter(ModalSignIn);

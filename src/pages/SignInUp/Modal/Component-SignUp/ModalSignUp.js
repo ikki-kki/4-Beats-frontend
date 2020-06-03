@@ -1,7 +1,10 @@
 import React from "react";
 import ReactTransitionGroup from "react-addons-css-transition-group";
-import { ValidationEmail, ValidationPassword } from "../../Utils";
-import Config from "../../Config";
+import {
+  ValidationEmail,
+  ValidationPassword,
+} from "../../../../utils/SignInUp/Utils";
+import { API } from "../../Config";
 
 import "./ModalSignUp.scss";
 
@@ -16,6 +19,7 @@ class ModalSignUp extends React.Component {
       password_re: "",
       last_name: "",
       first_name: "",
+      emailAlarm: 0,
     };
   }
 
@@ -49,115 +53,81 @@ class ModalSignUp extends React.Component {
     });
   };
 
-  buttonColorChange = () => {
-    const { password, password_re } = this.state;
-    if (password === password_re) {
-      this.setState({ BtnColor: false });
+  BtnActive = () => {
+    const { email, password, password_re } = this.state;
+    if (email.includes("@")) {
+      if (password === password_re) {
+        this.setState({ BtnColor: false });
+      }
     } else {
       this.setState({ BtnColor: true });
     }
   };
 
-  FetchEmail = () => {
-    fetch(Config.SignUpEmailCheckAPI, {
-      method: "POST",
-      headers: {
-        "Content-type": "application/json",
-      },
-      body: JSON.stringify({
-        email: this.state.email,
-      }),
-    })
-      .then((response) => response.json())
-      .then((response) => {
-        if (response.status === 200) {
-          localStorage.setItem("token", response.token);
-          alert("Available Email");
-          this.setState({
-            emailCheck: this.state.email,
-          });
-        } else {
-          alert("This email already exists.");
-        }
-      });
+  // TextCheck = (num) => {
+  //   const { emailAlarm } = this.state;
+  //   this.setState({ emailAlarm: num });
+  // };
+
+  checkSignUp = () => {
+    this.checkCycle();
+  };
+
+  checkCycle = () => {
+    const { email, password, password_re, first_name, last_name } = this.state;
+    if (email || password || password_re || first_name || last_name) {
+      this.checkEmail();
+    } else {
+      alert("CHECK!!");
+    }
+  };
+
+  checkEmail = () => {
+    //console.log(ValidationEmail(this.state.email));
+    if (!ValidationEmail(this.state.email)) {
+      alert("Email is invalid");
+    } else {
+      this.checkPassword();
+    }
+  };
+
+  checkPassword = () => {
+    ValidationPassword();
+    if (ValidationPassword(this.state.password_re) === false) {
+    } else {
+      if (this.state.password === this.state.password_re) {
+        this.handleClickEvent();
+      }
+    }
   };
 
   FetchRegister = () => {
-    fetch(Config.SignUpBtnAPI, {
+    fetch(`${API}/register`, {
       method: "POST",
 
       body: JSON.stringify({
-        email: this.state.emailCheck,
-        password: this.state.passwordCheck,
-        password_re: this.state.password_re,
+        email: this.state.email,
+        password: this.state.password,
         first_name: this.state.first_name,
         last_name: this.state.last_name,
       }),
-    }).then((response) => {
-      if (response.status === 200) {
-        localStorage.setItem("token", response.token);
+    }).then((res) => {
+      if (res.ok) {
+        localStorage.setItem("token", res.token);
+        alert("회원가입 성공");
         this.props.switch();
       }
     });
   };
 
-  //이메일 중복검사
-  checkEmail = (e) => {
-    e.preventDefault();
-    //이메일 유효성 검사 함수
-
-    ValidationEmail();
-
-    if (ValidationEmail(this.state.email) === false) {
-      alert("Email is invalid");
-      this.setState({
-        email: "",
-      });
-    } else {
-      this.FetchEmail();
-    }
-  };
-  //첫번째 두번째 패스워드 일치 확인
-
-  CheckPw = (e) => {
-    e.preventDefault();
-
-    //비밀번호 유효성 검사 (영문, 숫자 혼합 6~20)
-    ValidationPassword();
-    if (ValidationPassword(this.state.password_re) === false) {
-      alert("영문, 숫자를 혼합하여 6~12자 이내");
-      this.setState({
-        password: "",
-        password_re: "",
-      });
-    } else {
-      alert("사용가능한 비번");
-      if (this.state.password === this.state.password_re) {
-        this.setState({
-          passwordCheck: this.state.password_re,
-        });
-      }
-    }
-  };
-
   handleClickEvent = () => {
-    const {
-      email,
-      password,
-      emailCheck,
-      passwordCheck,
-      password_re,
-      first_name,
-      last_name,
-    } = this.state;
+    const { email, password, password_re, first_name, last_name } = this.state;
 
     if (
       email &&
       password &&
       password_re &&
-      email === emailCheck &&
       password === password_re &&
-      password === passwordCheck &&
       first_name &&
       last_name
     ) {
@@ -196,25 +166,21 @@ class ModalSignUp extends React.Component {
                     </div>
                   </div>
                   <div className="content1">
-                    {/* <button onClick={this.checkEmail}>check</button> */}
-
                     <input
                       onChange={this.inputValueEmail}
-                      onKeyUp={this.buttonColorChange}
+                      onKeyUp={this.BtnActive}
+                      // onKeyUp={() => this.TextCheck(1)}
                       className="TextInput"
                       name="email"
                       placeholder="Email address"
                       type="email"
                     />
-                    <button onClick={this.checkEmail}>
-                      <i className="fa fa-check" aria-hidden="true"></i>
-                    </button>
                   </div>
                   <div className="addContent">
                     <div className="content2">
                       <input
                         onChange={this.inputValuePw}
-                        onKeyUp={this.buttonColorChange}
+                        onKeyUp={this.BtnActive}
                         className="TextInput"
                         name="password"
                         placeholder="Password"
@@ -222,25 +188,22 @@ class ModalSignUp extends React.Component {
                       />
                     </div>
                     <div className="content3">
-                      {/* <button onClick={this.CheckPw}>check</button> */}
-
                       <input
                         onChange={this.inputValuePwCo}
-                        onKeyUp={this.buttonColorChange}
+                        onKeyUp={this.BtnActive}
                         className="TextInput"
                         name="password"
                         placeholder="Confirm your password"
                         type="password"
                       />
-                      <button onClick={this.CheckPw}>
-                        <i class="fa fa-check" aria-hidden="true"></i>
-                      </button>
+                      <div className="TextAlarm">
+                        Please enter the password you used previously
+                      </div>
                     </div>
                     <div className="content4">
                       <div className="content4-1">
                         <input
                           onChange={this.inputValueFN}
-                          onKeyUp={this.buttonColorChange}
                           className="TextInput"
                           name="firstname"
                           placeholder="First name"
@@ -250,7 +213,6 @@ class ModalSignUp extends React.Component {
                       <div className="content4-2">
                         <input
                           onChange={this.inputValueLN}
-                          onKeyUp={this.buttonColorChange}
                           className="TextInput"
                           name="lastname"
                           placeholder="Last name"
@@ -259,12 +221,12 @@ class ModalSignUp extends React.Component {
                       </div>
                     </div>
                   </div>
-                  <div className="button-wrap">
+                  <div className="SignInBtn-wrap">
                     <button
                       className={
-                        this.state.BtnColor ? "button" : "BtnColorChange"
+                        this.state.BtnColor ? "DefaultBtn" : "BtnColorChange"
                       }
-                      onClick={this.handleClickEvent}
+                      onClick={this.checkSignUp}
                     >
                       Register
                     </button>
