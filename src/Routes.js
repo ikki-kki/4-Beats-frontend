@@ -7,6 +7,7 @@ import Products from "./pages/Products/Products";
 import ProductDetailPage from "./pages/Products/ProductDetailPage/ProductDetailPage";
 import Support from "./pages/Support/Support";
 import Order from "./pages/Order/Order";
+import ProductsDetailPage2 from "./pages/Products/ProductsDetailPage2/ProductsDetailPage2";
 
 class Routes extends Component {
   render() {
@@ -17,6 +18,11 @@ class Routes extends Component {
           <Route exact path="/signIn" component={SignInUp} />
           <Route exact path="/products" component={Products} />
           <Route exact path="/products/detail" component={ProductDetailPage} />
+          <Route
+            exact
+            path="/products/detail2"
+            component={ProductsDetailPage2}
+          />
           <Route exact path="/order" component={Order} />
           <Route exact path="/support" component={Support} />
         </Switch>

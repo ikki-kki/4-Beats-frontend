@@ -1,15 +1,15 @@
 import React from "react";
 import Config from "./Config";
 import MainHeader from "../../components/Headers/MainHeader/MainHeader";
-import "./Support.scss";
 import GrayBorderButton from "../../components/Buttons/GrayBorderButton";
+import "./Support.scss";
 
 class Support extends React.Component {
   constructor() {
     super();
     this.state = {
       clickCart: false,
-      ShowContent: false,
+      isActive: 0,
     };
   }
 
@@ -17,14 +17,16 @@ class Support extends React.Component {
     this.setState({ clickCart: !this.state.clickCart });
   };
 
-  ContentShowBtn = () => {
-    if (this.state.ShowContent === true) {
+  handleOptionSelect = (num) => {
+    const { isActive } = this.state;
+
+    if (isActive === 0) {
       this.setState({
-        ShowContent: false,
+        isActive: num,
       });
-    } else if (this.state.ShowContent === false) {
+    } else if (isActive !== 0) {
       this.setState({
-        ShowContent: true,
+        isActive: num,
       });
     }
   };
@@ -60,65 +62,120 @@ class Support extends React.Component {
                 <h2>Popular Topics</h2>
               </div>
               <div className="ContentBox">
-                <div className="Content">
+                <div
+                  className={`ContentBluetooth ${
+                    this.state.ShowContentBluetooth
+                      ? "ContentBluetoothColor"
+                      : ""
+                  }`}
+                >
                   <div
-                    className="BluetoothPairing"
-                    onClick={this.ContentShowBtn}
+                    className="BluetoothDropBtn"
+                    onClick={() => this.handleOptionSelect(1)}
                   >
                     <button>
                       <h3>Bluetooth Pairing</h3>
                     </button>
-                    <span>
-                      <i class="fas fa-plus"></i>
-                    </span>
+                    <i
+                      className={`fas fa-plus ${
+                        this.state.isActive === 1 ? "iconActive" : ""
+                      }`}
+                    ></i>
                   </div>
                   <div
                     className={`ContentShow ${
-                      this.state.ShowContent ? "ContentShowActive" : ""
+                      this.state.isActive === 1 ? "ContentShowActive" : ""
                     }`}
                   >
                     <ul>
-                      <li>
+                      <li className="Line1">
                         <a href="https://www.beatsbydre.com/support/how-to/bluetooth-troubleshooting">
                           CONNECT DEVICES WITH BLUETOOTH
                           <span>
-                            <i class="fas fa-caret-right"></i>
+                            <i className="fas fa-caret-right"></i>
                           </span>
                         </a>
                       </li>
-                      <li>
+                      <li className="Line2">
                         <a href="https://www.beatsbydre.com/support/how-to/bluetooth-troubleshooting">
                           PAIR WITH MAC
                           <span>
-                            <i class="fas fa-caret-right"></i>
+                            <i className="fas fa-caret-right"></i>
                           </span>
                         </a>
                       </li>
                     </ul>
                   </div>
                 </div>
-                <div className="Content">
-                  <div className="SoundHelp">
+                <div className="ContentSound">
+                  <div
+                    className="SoundHelpDropBtn"
+                    onClick={() => this.handleOptionSelect(2)}
+                  >
                     <button>
                       <h3>Sound Help</h3>
                     </button>
-                    <span>
-                      <i class="fas fa-plus"></i>
-                    </span>
+                    <i
+                      className={`fas fa-plus ${
+                        this.state.isActive === 2 ? "iconActive" : ""
+                      }`}
+                    ></i>
                   </div>
-                  {/* <div>HEADPHONES AND EARPHONES</div>
-                  <div>SPEAKERS</div> */}
+                  <div
+                    className={`ContentShow ${
+                      this.state.isActive === 2 ? "ContentShowActive" : ""
+                    }`}
+                  >
+                    <ul>
+                      <li className="Line2-1">
+                        <a href="https://www.beatsbydre.com/support/how-to/sound-troubleshooting-headphones">
+                          HEADPHONES AND EARPHONES
+                          <span>
+                            <i className="fas fa-caret-right"></i>
+                          </span>
+                        </a>
+                      </li>
+                      <li className="Line2-2">
+                        <a href="https://www.beatsbydre.com/support/how-to/sound-troubleshooting-speakers">
+                          SPEAKERS
+                          <span>
+                            <i className="fas fa-caret-right"></i>
+                          </span>
+                        </a>
+                      </li>
+                    </ul>
+                  </div>
                 </div>
-                <div className="Content">
-                  <div className="FirmwareUpdates">
+                <div className="ContentFirmware">
+                  <div
+                    className="FirmwareDropBtn"
+                    onClick={() => this.handleOptionSelect(3)}
+                  >
                     <button>
                       <h3>Firmware Updates</h3>
                     </button>
-                    <span>
-                      <i class="fas fa-plus"></i>
-                    </span>
+                    <i
+                      className={`fas fa-plus ${
+                        this.state.isActive === 3 ? "iconActive" : ""
+                      }`}
+                    ></i>
                   </div>
-                  {/* <div>BEATS UPDATER</div> */}
+                  <div
+                    className={`ContentShow ${
+                      this.state.isActive === 3 ? "ContentShowActive" : ""
+                    }`}
+                  >
+                    <ul className="LineFirmware">
+                      <li>
+                        <a href="https://www.beatsbydre.com/support/how-to/firmware-updates-beats-updater">
+                          BEATS UPDATER
+                          <span>
+                            <i className="fas fa-caret-right"></i>
+                          </span>
+                        </a>
+                      </li>
+                    </ul>
+                  </div>
                 </div>
               </div>
             </div>
@@ -140,6 +197,7 @@ class Support extends React.Component {
                   <div className="Btn">
                     <GrayBorderButton
                       text="VIEW SERVICE AND WARRANTY"
+                      link="https://support.apple.com/beats/repair/service"
                       className="BlackBtn"
                     />
                   </div>
@@ -155,6 +213,7 @@ class Support extends React.Component {
                   <div className="Btn">
                     <GrayBorderButton
                       text="REGISTER TOUR BEATS"
+                      link="https://support.apple.com/beats/repair/service"
                       className="BlackBtn"
                     />
                   </div>
@@ -170,6 +229,7 @@ class Support extends React.Component {
                   <div className="Btn">
                     <GrayBorderButton
                       text="UPDATE YOUR BEATS"
+                      link="https://support.apple.com/beats/repair/service"
                       className="BlackBtn"
                     />
                   </div>
@@ -185,6 +245,7 @@ class Support extends React.Component {
                   <div className="Btn">
                     <GrayBorderButton
                       text="VIEW RETAILERS"
+                      link="https://support.apple.com/beats/repair/service"
                       className="BlackBtn"
                     />
                   </div>
@@ -200,6 +261,7 @@ class Support extends React.Component {
                   <div className="Btn">
                     <GrayBorderButton
                       text="LEARN ABOUT SAFE BUYING"
+                      link="https://support.apple.com/beats/repair/service"
                       className="BlackBtn"
                     />
                   </div>
@@ -215,6 +277,7 @@ class Support extends React.Component {
                   <div className="Btn">
                     <GrayBorderButton
                       text="CONTACT APPLE"
+                      link="https://support.apple.com/beats/repair/service"
                       className="BlackBtn"
                     />
                   </div>

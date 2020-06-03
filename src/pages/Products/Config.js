@@ -6,5 +6,7 @@ const Config = {
     "https://www.beatsbydre.com/content/dam/beats/web/product/earphones/powerbeats/global/ecom/product-tiles",
   ProductDetail:
     "https://www.beatsbydre.com/content/dam/beats/web/product/earphones/powerbeats/pdp/powerbeats-pdp",
+  ProductsPillImg:
+    "https://www.beatsbydre.com/content/dam/beats/web/pdp/beats-pill-plus/hero/pillplus_pdp_hero_retina_V2.jpg",
 };
 export default Config;
