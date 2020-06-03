@@ -1,7 +1,6 @@
 import React from "react";
 import MainHeader from "../../components/Headers/MainHeader/MainHeader";
 import MainFooter from "../../components/Footers/MainFooter/MainFooter";
-import DaumPostcode from "react-daum-postcode";
 import "./Order.scss";
 
 class Order extends React.Component {
@@ -13,13 +12,13 @@ class Order extends React.Component {
     cardCheck: false,
     RChecked: false,
   };
-  // fullAddress;
+
+  fullAddress;
   searchHandler = () => {
     new window.daum.Postcode({
       oncomplete: function (data) {
         let fullAddress = data.address;
         let extraAddress = "";
-
         if (data.addressType === "R") {
           if (data.bname !== "") {
             extraAddress += data.bname;
@@ -35,14 +34,14 @@ class Order extends React.Component {
         // console.log(this.fullAddress);
         // console.log(fullAddress); // e.g. '서울 성동구 왕십리로2길 20 (성수동1가)'
         // console.log(data.zonecode);
-        this.setState({
-          fullAddr: fullAddress,
-          Postcode: data.zonecode,
-        });
+        // this.setState({
+        //   fullAddr: fullAddress,
+        //   Postcode: data.zonecode,
+        // });
         // document.getElementById("sample6_postcode").value = data.zonecode;
         // document.getElementById("sample6_address").value = fullAddress;
+
         document.getElementById("sample6_datailAddress").focus();
-        this.setState({ Postcode: fullAddress });
       },
     }).open();
   };
@@ -225,7 +224,7 @@ class Order extends React.Component {
                         <span>
                           <input
                             type="text"
-                            id="sample6_datailAddress"
+                            id="sample6_detailAddress"
                             placeholder="Detail"
                             onChange={this.changeDetail}
                           />
