@@ -327,8 +327,16 @@
       left: 0;
       bottom: 0;
       right: 0;
-      background: radial-gradient(circle farthest-side transparent 10%, rgba(0, 0, 0, 0.3) 100%);
-      background-image: -webkit-radial-gradient(center, circle farthest-side, transparent 10%, rgba(0, 0, 0, 0.3) 100%);
+      background: radial-gradient(
+        circle farthest-side transparent 10%,
+        rgba(0, 0, 0, 0.3) 100%
+      );
+      background-image: -webkit-radial-gradient(
+        center,
+        circle farthest-side,
+        transparent 10%,
+        rgba(0, 0, 0, 0.3) 100%
+      );
       display: flex;
       justify-content: center;
     }
@@ -378,7 +386,8 @@
             left: 18px;
             opacity: 0;
             z-index: 10;
-            background: url('https://www.beatsbydre.com/etc/designs/apps/beats/resources/img/icons/Check-border-1x.png') no-repeat;
+            background: url("https://www.beatsbydre.com/etc/designs/apps/beats/resources/img/icons/Check-border-1x.png")
+              no-repeat;
           }
 
           .checked {
@@ -405,7 +414,8 @@
             left: 18px;
             opacity: 0;
             z-index: 10;
-            background: url('https://www.beatsbydre.com/etc/designs/apps/beats/resources/img/icons/Check-border-1x.png') no-repeat;
+            background: url("https://www.beatsbydre.com/etc/designs/apps/beats/resources/img/icons/Check-border-1x.png")
+              no-repeat;
           }
 
           .checked {
@@ -432,7 +442,8 @@
             left: 18px;
             opacity: 0;
             z-index: 10;
-            background: url('https://www.beatsbydre.com/etc/designs/apps/beats/resources/img/icons/Check-border-1x.png') no-repeat;
+            background: url("https://www.beatsbydre.com/etc/designs/apps/beats/resources/img/icons/Check-border-1x.png")
+              no-repeat;
           }
 
           .checked {
@@ -481,7 +492,8 @@
             height: 40px;
             top: 46px;
             left: 10px;
-            background: url('https://www.beatsbydre.com/etc/designs/apps/beats/resources/img/icons/slide-show-caret.png') no-repeat;
+            background: url("https://www.beatsbydre.com/etc/designs/apps/beats/resources/img/icons/slide-show-caret.png")
+              no-repeat;
             z-index: 5;
             transform: scaleX(-1);
           }
@@ -520,7 +532,8 @@
             height: 40px;
             top: 46px;
             left: 20px;
-            background: url('https://www.beatsbydre.com/etc/designs/apps/beats/resources/img/icons/slide-show-caret.png') no-repeat;
+            background: url("https://www.beatsbydre.com/etc/designs/apps/beats/resources/img/icons/slide-show-caret.png")
+              no-repeat;
             z-index: 5;
           }
         }
@@ -832,11 +845,3 @@
     }
   }
 }
-<<<<<<< HEAD
-
-.cartClicked {
-  margin-top: 400px;
-  transition: all 0.5s cubic-bezier(0.215, 0.61, 0.355, 1);
-}
-=======
->>>>>>> master
