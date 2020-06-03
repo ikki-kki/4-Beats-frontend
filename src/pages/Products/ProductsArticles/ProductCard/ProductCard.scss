@@ -1,3 +1,5 @@
+@import "../../../../styles/common.scss";
+
 .item1 {
     background-color: #f1f1f1;
     margin: 25px 0;
@@ -229,6 +231,62 @@
             border-radius: 30px;
             width: 34px;
             height: 34px;
+        }
+    }
+}
+
+.BlackBorderButton {
+    width: 100%;
+    height: 47px;
+    position: relative;
+    background-color: #fff;
+    color: $mainBlack;
+    display: inline-block;
+    text-align: center;
+    padding: 13px 30px 10px 34px;
+    border: 1.5px solid $mainBlack;
+    border-radius: 27px;
+    font-family: $subFont;
+    letter-spacing: 1px;
+    font-size: 17px;
+    text-transform: uppercase;
+    text-decoration: none;
+    z-index: 1;
+    overflow: hidden;
+
+    &:after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: #fff;
+        border-radius: 10rem;
+        z-index: -2;
+    }
+
+    &:before {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 0%;
+        background-color: $mainBlack;
+        border: 0;
+        transition: all .15s;
+        border-radius: 10rem;
+        z-index: -1;
+    }
+
+    &:hover {
+        color: #fff;
+        border: 1.5px solid $mainBlack;
+        background-color: $mainBlack;
+
+        &:before {
+            height: 100%
         }
     }
 }

@@ -12,12 +12,11 @@ class Order extends React.Component {
     cardCheck: false,
     RChecked: false,
   };
-
+  // fullAddress;
   searchHandler = () => {
     new window.daum.Postcode({
       oncomplete: function (data) {
         let fullAddress = data.address;
-        // this.setState({ Postcode: data.address });
         let extraAddress = "";
 
         if (data.addressType === "R") {
@@ -32,13 +31,13 @@ class Order extends React.Component {
           }
           fullAddress += extraAddress !== "" ? ` (${extraAddress})` : "";
         }
-
+        console.log(this.fullAddress);
         console.log(fullAddress); // e.g. '서울 성동구 왕십리로2길 20 (성수동1가)'
         console.log(data.zonecode);
         document.getElementById("sample6_postcode").value = data.zonecode;
         document.getElementById("sample6_address").value = fullAddress;
         document.getElementById("sample6_datailAddress").focus();
-        // this.setState({ Postcode: fullAddress });
+        this.setState({ Postcode: fullAddress });
       },
     }).open();
   };
@@ -90,7 +89,9 @@ class Order extends React.Component {
       Postcode: e.target.value,
     });
   };
-
+  test = () => {
+    this.setState({ Postcode: this.fullAddress });
+  };
   // componentDidMount() {
   //   fetch("api 주소")
   //     .then((res) => res.json())

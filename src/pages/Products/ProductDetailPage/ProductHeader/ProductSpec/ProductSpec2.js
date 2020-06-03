@@ -1,16 +1,11 @@
 import React from "react";
-import "./ProductSpec.scss";
+import "./ProductSpec2.scss";
 
-class ProductSpec extends React.Component {
+class ProductSpec2 extends React.Component {
   render() {
     const { text, url } = this.props;
     return (
       <section className="ProductSpec">
-        <div className="iconWrap">
-          <div className="icons">
-            <img alt="" src={url} className="test" />
-          </div>
-        </div>
         <div className="textWrap">
           <div className="text" style={{ background: url }}>
             {text}
@@ -21,4 +16,4 @@ class ProductSpec extends React.Component {
   }
 }
 
-export default ProductSpec;
+export default ProductSpec2;
