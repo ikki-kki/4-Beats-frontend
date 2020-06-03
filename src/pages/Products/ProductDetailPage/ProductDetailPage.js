@@ -6,6 +6,7 @@ import Config from "../Config";
 import MainHeader from "../../../components/Headers/MainHeader/MainHeader";
 import NewsFooter from "../../../components/Footers/NewsFooter/NewsFooter";
 import MainFooter from "../../../components/Footers/MainFooter/MainFooter";
+import GoTop from "../../../components/GoTop/GoTop";
 import Fade from "react-reveal/Fade";
 import RedButton from "../../../components/Buttons/RedButton";
 import "./ProductDetailPage.scss";
@@ -41,7 +42,6 @@ class ProductDetailPage extends React.Component {
   state = {
     current: 0,
     view: false,
-    clickCart: false,
   };
 
   changeColor = (e) => {
@@ -76,18 +76,11 @@ class ProductDetailPage extends React.Component {
     }
   };
 
-  callBackClickCart = () => {
-    this.setState({ clickCart: !this.state.clickCart });
-  };
-
   render() {
     return (
-      <div
-        className={`ProductDetailPage ${
-          this.state.clickCart === true ? "cartClicked" : ""
-        }`}
-      >
-        <MainHeader clickCartHandler={this.callBackClickCart} />
+      <div className="ProductDetailPage">
+        <GoTop />
+        <MainHeader />
         <section className="headerWrapper">
           <ProductHeader goTo="#color" />
           <div className="headerImage">

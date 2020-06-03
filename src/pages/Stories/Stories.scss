@@ -3,7 +3,7 @@
 .StoryContainer {
   width: 100%;
   margin: 0 auto;
-  transition: all .5s cubic-bezier(0.215, 0.61, 0.355, 1);
+  position: relative;
 
   .storyContainer {
     padding: 60px 90px;
@@ -28,10 +28,6 @@
   }
 }
 
-.cartClicked {
-  margin-top: 400px;
-  transition: all .5s cubic-bezier(0.215, 0.61, 0.355, 1);
-}
 
 @media only screen and (max-width: 1440px) {
   .StoryContainer .storyContainer {

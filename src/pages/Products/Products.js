@@ -4,6 +4,7 @@ import ProductsArticles from "./ProductsArticles/ProductsArticles";
 import MainHeader from "../../components/Headers/MainHeader/MainHeader";
 import NewsFooter from "../../components/Footers/NewsFooter/NewsFooter";
 import MainFooter from "../../components/Footers/MainFooter/MainFooter";
+import GoTop from "../../components/GoTop/GoTop";
 import "./Products.scss";
 
 class Products extends React.Component {
@@ -17,7 +18,6 @@ class Products extends React.Component {
       sec4: [],
       sec5: [],
       sec6: [],
-      clickCart: false,
     };
   }
 
@@ -48,18 +48,11 @@ class Products extends React.Component {
       });
   }
 
-  callBackClickCart = () => {
-    this.setState({ clickCart: !this.state.clickCart });
-  };
-
   render() {
     return (
-      <div
-        className={`Products ${
-          this.state.clickCart === true ? "cartClicked" : ""
-        }`}
-      >
-        <MainHeader clickCartHandler={this.callBackClickCart} />
+      <div className="Products">
+        <GoTop />
+        <MainHeader />
         {/* <ProductsArticles lists={this.state.productsList} /> */}
         <ProductsArticles
           section1={this.state.sec1}

@@ -9,17 +9,22 @@ button{
   overflow:visible;
 }
 
-.Cart{ 
-  opacity: 0;
-  max-height: 0;
-  transition: all .1.5s cubic-bezier(0.215, 0.61, 0.355, 1);
+@keyframes ani{
+  from {
+    max-height: 0;
+  }
+  to{
+    max-height: 100vh;
+  }
+}
+
+.Cart{   
+  opacity: 1;
+  max-height: 100vh;
+  animation: ani .9s ease-in-out;
   width: 100%;
   background-color: $mainBlack;
   color: #fff;
- // overflow-y: scroll;
-  position: absolute;
-  top: 0;
-  left: 0;
   transform: none;
   z-index: 800;
   font-family: $mainFont;
@@ -27,6 +32,7 @@ button{
   color: $footerGray;
   line-height: 1rem;
   font-weight: 300;
+  overflow: hidden;
   
   .cartProducts{
     font-size: 1.2rem;
@@ -45,7 +51,7 @@ button{
         flex-basis: auto;
         flex-shrink: 0;
       }
-      .sizeLabel{
+      .colorLabel{
         width: calc(100% * 3/12);
         flex-basis: auto;
       }
@@ -65,6 +71,8 @@ button{
     }
   }
   .cartSummary{
+      animation-delay: 2s;
+  animation: ani .9s ease-in-out;
     padding: 30px 40px 40px;
 
     .notice{
@@ -97,9 +105,4 @@ button{
       padding: 15px 0 15px;
     }
   }
-}
-.cartOpen{
-  opacity: 1;
-  max-height: 100vh;
-  transition: all .8s cubic-bezier(0.215, 0.61, 0.355, 1);
 }
