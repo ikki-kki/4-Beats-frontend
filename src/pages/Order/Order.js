@@ -1,13 +1,14 @@
 import React from "react";
 import MainHeader from "../../components/Headers/MainHeader/MainHeader";
 import MainFooter from "../../components/Footers/MainFooter/MainFooter";
-// import DaumPostcode from "react-daum-postcode";
+import DaumPostcode from "react-daum-postcode";
 import "./Order.scss";
 
 class Order extends React.Component {
   inputValueRef = React.createRef();
   state = {
     orderList: [],
+    fullAddr: "",
     Postcode: "",
     cardCheck: false,
     RChecked: false,
@@ -31,11 +32,15 @@ class Order extends React.Component {
           }
           fullAddress += extraAddress !== "" ? ` (${extraAddress})` : "";
         }
-        console.log(this.fullAddress);
-        console.log(fullAddress); // e.g. '서울 성동구 왕십리로2길 20 (성수동1가)'
-        console.log(data.zonecode);
-        document.getElementById("sample6_postcode").value = data.zonecode;
-        document.getElementById("sample6_address").value = fullAddress;
+        // console.log(this.fullAddress);
+        // console.log(fullAddress); // e.g. '서울 성동구 왕십리로2길 20 (성수동1가)'
+        // console.log(data.zonecode);
+        this.setState({
+          fullAddr: fullAddress,
+          Postcode: data.zonecode,
+        });
+        // document.getElementById("sample6_postcode").value = data.zonecode;
+        // document.getElementById("sample6_address").value = fullAddress;
         document.getElementById("sample6_datailAddress").focus();
         this.setState({ Postcode: fullAddress });
       },
