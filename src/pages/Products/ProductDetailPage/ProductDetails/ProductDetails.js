@@ -48,6 +48,7 @@ class ProductDetails extends React.Component {
           subject={post.subject[0].subject}
           description={post.theme[0].description}
           specLists={post.item_info}
+          color={post.colors}
         />
       ));
     return (

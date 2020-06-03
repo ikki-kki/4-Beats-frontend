@@ -13,7 +13,7 @@ class DetailCard extends React.Component {
     fetch(`${API}/product/${id}/${this.state.current}/cart`, {
       method: "POST",
     }).then((res) => {
-      if (res.status === 200) {
+      if (res.ok) {
         this.props.history.push("/ordered");
       } else {
         alert("try again");
@@ -25,6 +25,7 @@ class DetailCard extends React.Component {
   selectColor = (colorID) => {
     this.setState({ current: colorID });
   };
+
   render() {
     const {
       id,
@@ -34,7 +35,9 @@ class DetailCard extends React.Component {
       description,
       specLists,
       price,
+      color,
     } = this.props;
+    console.log(this.state.current);
     return (
       <section className="DetailCard">
         <div className="headerContentsWrapper">
@@ -45,24 +48,39 @@ class DetailCard extends React.Component {
               <div className="subBody">{description}</div>
             </div>
             <div className="buyWrap">
-              <div className="item1" onClick={() => this.selectColor()}>
+              <div
+                className="item1"
+                style={{ backgroundColor: color[0].hex }}
+                id={color[0].id}
+                onClick={() => this.selectColor(color[0].id)}
+              >
                 <span
                   className={`checkedWhite white ${
-                    this.state.current === 0 ? "checked" : ""
+                    this.state.current === color[0].id ? "checked" : ""
                   }`}
                 />
               </div>
-              <div className="item1" onClick={() => this.selectColor()}>
+              <div
+                className="item1"
+                style={{ backgroundColor: color[1].hex }}
+                id={color[1].id}
+                onClick={() => this.selectColor(color[1].id)}
+              >
                 <span
                   className={`checkedWhite white ${
-                    this.state.current === 0 ? "checked" : ""
+                    this.state.current === color[1].id ? "checked" : ""
                   }`}
                 />
               </div>
-              <div className="item1" onClick={() => this.selectColor()}>
+              <div
+                className="item1"
+                style={{ backgroundColor: color[2].hex }}
+                id={color[2].id}
+                onClick={() => this.selectColor(color[2].id)}
+              >
                 <span
                   className={`checkedWhite white ${
-                    this.state.current === 0 ? "checked" : ""
+                    this.state.current === color[2].id ? "checked" : ""
                   }`}
                 />
               </div>
