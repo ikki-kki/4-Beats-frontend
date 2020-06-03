@@ -32,6 +32,7 @@ button{
   color: $footerGray;
   line-height: 1rem;
   font-weight: 300;
+  overflow: hidden;
   
   .cartProducts{
     font-size: 1.2rem;
@@ -70,6 +71,8 @@ button{
     }
   }
   .cartSummary{
+      animation-delay: 2s;
+  animation: ani .9s ease-in-out;
     padding: 30px 40px 40px;
 
     .notice{
