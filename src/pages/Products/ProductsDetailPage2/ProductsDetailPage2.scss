@@ -1,0 +1,30 @@
+@import "../../../styles/common.scss";
+.ProductsDetail_Pill {
+  width: 100%;
+  overflow: hidden;
+  .Header {
+    display: block;
+    position: relative;
+    .HeaderWrap {
+      position: relative;
+      img {
+        width: 100%;
+        z-index: 0;
+      }
+      .Text {
+        position: absolute;
+        z-index: 10;
+        display: inline-block;
+        vertical-align: middle;
+        width: 100%;
+        font-size: 15px;
+        line-height: 24px;
+        color: white;
+        font-family: $mainFont;
+        .TextInner {
+          position: absolute;
+        }
+      }
+    }
+  }
+}

@@ -1,6 +1,6 @@
 export const ValidationEmail = (str) => {
   var regExp = /^[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*.[a-zA-Z]{2,3}$/i;
-  return regExp.test(str) ? true : false;
+  return regExp.test(str) && str.includes(".com") ? true : false;
 };
 
 export const ValidationPassword = (str) => {
