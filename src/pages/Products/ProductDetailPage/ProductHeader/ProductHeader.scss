@@ -37,10 +37,6 @@
             margin-bottom: 50px;
             .buyBtn {
                 margin-right: 30px;
-                .btnWrapper {
-                    text-decoration: none;
-                    color: #fff;
-                    text-transform: uppercase;
                     span {
                         display: inline-block;
                         font-family: $subFont;
@@ -52,7 +48,6 @@
                         border: 1.5px solid $mainRed;
                         background-color: $mainRed;
                     }
-                }
             }
             .price {
                 font-size: 20px;

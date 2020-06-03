@@ -1,0 +1,26 @@
+ @import '../../styles/common.scss';
+ 
+ .goUp{
+  z-index: 9999;
+  width: 40px;
+  height: 40px;
+  background-color: rgb(245, 245, 245);
+  border: 1px solid rgb(226, 226, 226);
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: $footerGray;
+  text-decoration: none;
+  position: fixed;
+  right: 40px;
+  bottom: 40px;
+  transition: all .3s ease-in-out;
+  cursor: pointer;
+
+  &:hover{
+    background-color: $footerGray;
+    color: #fff;
+    transition: all .3s ease-in-out;
+  }
+}
