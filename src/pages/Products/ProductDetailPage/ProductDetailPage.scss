@@ -1,7 +1,7 @@
 @import "../../../styles/common.scss";
 .ProductDetailPage {
   overflow: hidden;
-  transition: all 0.5s cubic-bezier(0.215, 0.61, 0.355, 1);
+
   .headerWrapper {
     .headerContentsWrapper {
       font-family: $mainFont;
@@ -700,8 +700,4 @@
       padding-top: 60px;
     }
   }
-}
-.cartClicked {
-  margin-top: 400px;
-  transition: all 0.5s cubic-bezier(0.215, 0.61, 0.355, 1);
 }

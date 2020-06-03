@@ -1,0 +1,39 @@
+{
+  "data": [{
+      "id": 1,
+      "name": "Powerbeats",
+      "price": 149.95,
+      "color": "red"
+    },
+    {
+      "id": 2,
+      "name": "Powerbeats Pro",
+      "price": 199.95,
+      "color": "silver"
+    },
+    {
+      "id": 3,
+      "name": "Solo Pro",
+      "price": 249.95,
+      "color": "mint"
+    },
+    {
+      "id": 4,
+      "name": "Solo Pro",
+      "price": 216.95,
+      "color": "ivory"
+    },
+    {
+      "id": 5,
+      "name": "Solo Pro",
+      "price": 238.95,
+      "color": "white"
+    },
+    {
+      "id": 6,
+      "name": "Solo Pro",
+      "price": 211.95,
+      "color": "black"
+    }
+  ]
+}

@@ -2,6 +2,7 @@ import React from "react";
 import Config from "./Config";
 import MainHeader from "../../components/Headers/MainHeader/MainHeader";
 import GrayBorderButton from "../../components/Buttons/GrayBorderButton";
+import GoTop from "../../components/GoTop/GoTop";
 import "./Support.scss";
 
 class Support extends React.Component {
@@ -33,12 +34,9 @@ class Support extends React.Component {
 
   render() {
     return (
-      <div
-        className={`Support ${
-          this.state.clickCart === true ? "cartClicked" : ""
-        }`}
-      >
-        <MainHeader clickCartHandler={this.callBackClickCart} />
+      <div className="Support">
+        <GoTop />
+        <MainHeader />
         <section className="Support-Top">
           <div className="Support-Top-Wrap">
             <div className="Main-Text">
