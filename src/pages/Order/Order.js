@@ -38,8 +38,8 @@ class Order extends React.Component {
         //   fullAddr: fullAddress,
         //   Postcode: data.zonecode,
         // });
-        // document.getElementById("sample6_postcode").value = data.zonecode;
-        // document.getElementById("sample6_address").value = fullAddress;
+        document.getElementById("sample6_postcode").value = data.zonecode;
+        document.getElementById("sample6_address").value = fullAddress;
 
         document.getElementById("sample6_datailAddress").focus();
       },
@@ -146,7 +146,7 @@ class Order extends React.Component {
                       </div>
                     </td>
                     <td className="taC productColor">
-                      <div className="colorCircle2"></div>
+                      <span>Red</span>
                     </td>
                     <td className="taC productQuantity">1</td>
                     <td className="taC productPrice">$149.95</td>
