@@ -101,7 +101,7 @@
               // overflow: hidden;
               max-height: 0;
               opacity: 0;
-              transition: all ease-in-out 0.2s;
+              transition: all ease-in-out 0.1s;
               li {
                 font-family: $subFont;
                 a {
@@ -203,68 +203,65 @@
               // overflow: hidden;
               max-height: 0;
               opacity: 0;
-              transition: all ease-in-out 0.2s;
-              ul {
-                display: block;
-                li {
-                  font-family: $subFont;
-                  a {
-                    color: black;
-                    text-decoration: none;
-                    letter-spacing: 0.06em;
-                    font-weight: 500;
-                    font-size: 14px;
-                  }
+              transition: all ease-in-out 0.1s;
+              li {
+                font-family: $subFont;
+                a {
+                  color: black;
+                  text-decoration: none;
+                  letter-spacing: 0.06em;
+                  font-weight: 500;
+                  font-size: 14px;
                 }
-                li {
-                  margin-bottom: 15px;
-                  .fas {
-                    margin-left: 5px;
-                    margin-top: 3px;
-                  }
-                  &:last-child {
-                    margin-bottom: 50px;
-                  }
+              }
+              li {
+                margin-bottom: 15px;
+                .fas {
+                  margin-left: 5px;
+                  margin-top: 3px;
+                }
+                &:last-child {
+                  margin-bottom: 50px;
                 }
               }
 
-              // .Line2-1 a:before {
-              //   content: "";
-              //   border-bottom: solid 2px rgb(0, 0, 0);
-              //   position: absolute;
-              //   bottom: 30%;
-              //   left: 6.7%;
-              //   width: 0;
-              // }
+              .Line2-1 a:before {
+                content: "";
+                border-bottom: solid 2px rgb(0, 0, 0);
+                position: absolute;
+                bottom: 30%;
+                left: 6.7%;
+                width: 0;
+              }
 
-              // .Line2-1 a:hover:before {
-              //   width: 40%;
-              // }
+              .Line2-1 a:hover:before {
+                width: 40%;
+              }
 
-              // .Line2-1 a:before {
-              //   transition: all 0.2s ease;
-              // }
+              .Line2-1 a:before {
+                transition: all 0.2s ease;
+              }
 
-              // .Line2-2 a:before {
-              //   content: "";
-              //   border-bottom: solid 2px rgb(0, 0, 0);
-              //   position: absolute;
-              //   bottom: 10%;
-              //   left: 6.7%;
-              //   width: 0;
-              // }
+              .Line2-2 a:before {
+                content: "";
+                border-bottom: solid 2px rgb(0, 0, 0);
+                position: absolute;
+                bottom: 10%;
+                left: 6.7%;
+                width: 0;
+              }
 
-              // .Line2-2 a:hover:before {
-              //   width: 17%;
-              // }
+              .Line2-2 a:hover:before {
+                width: 17%;
+              }
 
-              // .Line2-2 a:before {
-              //   transition: all 0.2s ease;
-              // }
+              .Line2-2 a:before {
+                transition: all 0.2s ease;
+              }
             }
             .ContentShowActive {
               overflow: auto;
-              max-height: 110px;
+              max-height: 200px;
               opacity: 1;
               transition: all ease-in-out 0.2s;
             }
@@ -297,28 +294,25 @@
               // overflow: hidden;
               max-height: 0;
               opacity: 0;
-              transition: all ease-in-out 0.2s;
-              ul {
-                display: block;
-                li {
-                  font-family: $subFont;
-                  a {
-                    color: black;
-                    text-decoration: none;
-                    letter-spacing: 0.06em;
-                    font-weight: 500;
-                    font-size: 14px;
-                  }
+              transition: all ease-in-out 0.1s;
+              li {
+                font-family: $subFont;
+                a {
+                  color: black;
+                  text-decoration: none;
+                  letter-spacing: 0.06em;
+                  font-weight: 500;
+                  font-size: 14px;
                 }
-                li {
-                  margin-bottom: 15px;
-                  .fas {
-                    margin-left: 5px;
-                    margin-top: 3px;
-                  }
-                  &:last-child {
-                    margin-bottom: 50px;
-                  }
+              }
+              li {
+                margin-bottom: 15px;
+                .fas {
+                  margin-left: 5px;
+                  margin-top: 3px;
+                }
+                &:last-child {
+                  margin-bottom: 50px;
                 }
               }
             }
@@ -326,7 +320,6 @@
               overflow: auto;
               max-height: 200px;
               opacity: 1;
-              transition: all ease-in-out 0.2s;
             }
           }
         }
