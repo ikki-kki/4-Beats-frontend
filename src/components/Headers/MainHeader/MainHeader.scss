@@ -113,6 +113,7 @@
         align-items: baseline;
         font-family: $mainFont;
         font-size: 20px;
+        padding-bottom: 10px;
 
         .hoverTitle {
           color: #fff;
@@ -144,22 +145,17 @@
             opacity: 1;
           }
         }
-        .lastChild {
-          margin-bottom: 148px;
+        .buttonBottom {
+          margin-top: auto;
         }
-      }
-      .lastChild {
-        margin-bottom: 148px;
       }
     }
   }
 }
-  .showCartHeder{
-    margin-top: 400px;
-  }
 
 @media only screen and (max-width: 1440px) {
-  .MainHeader .header-nav .nav-container , .header-nav .hover-container .hover-ul{
+  .MainHeader .header-nav .nav-container , 
+  .MainHeader .header-nav .hover-container .hover-ul{
     margin: 0;
   }
 }

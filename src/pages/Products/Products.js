@@ -4,6 +4,7 @@ import ProductsArticles from "./ProductsArticles/ProductsArticles";
 import MainHeader from "../../components/Headers/MainHeader/MainHeader";
 import NewsFooter from "../../components/Footers/NewsFooter/NewsFooter";
 import MainFooter from "../../components/Footers/MainFooter/MainFooter";
+import GoTop from "../../components/GoTop/GoTop";
 import "./Products.scss";
 
 class Products extends React.Component {
@@ -50,6 +51,7 @@ class Products extends React.Component {
   render() {
     return (
       <div className="Products">
+        <GoTop />
         <MainHeader />
         {/* <ProductsArticles lists={this.state.productsList} /> */}
         <ProductsArticles

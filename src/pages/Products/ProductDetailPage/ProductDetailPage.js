@@ -6,6 +6,7 @@ import Config from "../Config";
 import MainHeader from "../../../components/Headers/MainHeader/MainHeader";
 import NewsFooter from "../../../components/Footers/NewsFooter/NewsFooter";
 import MainFooter from "../../../components/Footers/MainFooter/MainFooter";
+import GoTop from "../../../components/GoTop/GoTop";
 import Fade from "react-reveal/Fade";
 import "./ProductDetailPage.scss";
 
@@ -77,6 +78,7 @@ class ProductDetailPage extends React.Component {
   render() {
     return (
       <div className="ProductDetailPage">
+        <GoTop />
         <MainHeader />
         <section className="headerWrapper">
           <ProductHeader />

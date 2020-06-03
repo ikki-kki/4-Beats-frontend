@@ -4,6 +4,7 @@ import StoryArticlesSmall from "./StoryArticles/StoryArticlesSmall/StoryArticles
 import StoryArticlesMiddle from "./StoryArticles/StoryArticlesMiddle/StoryArticlesMiddle";
 import BlackBorderButton from "../../components/Buttons/BlackBorderButton";
 import MainHeader from "../../components/Headers/MainHeader/MainHeader";
+import GoTop from "../../components/GoTop/GoTop";
 import "./Stories.scss";
 export default class Stories extends Component {
   constructor() {
@@ -32,6 +33,7 @@ export default class Stories extends Component {
     //console.log(this.state.clickCart);
     return (
       <main className="StoryContainer">
+        <GoTop />
         <MainHeader />
         <section className="storyContainer">
           <div className="storyBox">

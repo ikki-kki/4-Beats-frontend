@@ -139,13 +139,15 @@ class MainHeader extends Component {
                   HeadPhones
                 </li>
                 <li
-                  className="hover-menus lastChild"
+                  className="hover-menus"
                   id="Speaker"
                   onMouseEnter={() => this.menuHandler(2)}
                 >
                   Speaker
                 </li>
-                <WhiteBorderButton text="SEE MORE" link="/products" />
+                <div className="buttonBottom">
+                  <WhiteBorderButton text="SEE MORE" link="/products" />
+                </div>
               </ul>
               <HoverMenu id={this.state.menuIdx} />
             </div>

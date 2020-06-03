@@ -33,20 +33,20 @@ export default class Cart extends Component {
             </button>
           </div>
           <ul className="cartProductsList">
-            {this.props.response.data &&
+            {/* {this.props.response.data &&
               this.props.response.data.map((el, i) => {
                 console.log("el: ", el);
-                return (
+                return;
+                setTimeout(() => {
                   <CartLists
                     key={i}
                     product={el.name}
                     color={el.color}
                     price={el.price}
-                  />
-                );
-              })}
-            {/* {cartListMap} */}
-            {/* <CartLists /> */}
+                    showCart={this.props.showCart}
+                  />;
+                }, 1000);
+              })} */}
           </ul>
         </div>
         <div className="cartSummary">

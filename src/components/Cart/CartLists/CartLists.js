@@ -46,32 +46,37 @@ export default class CartLists extends Component {
     //let totalPrice =
 
     return (
-      <li className="CartLists">
-        <div className="productContainer">
-          <Link className="productName" to="">
-            {product}
-          </Link>
-          <div className="productColor">{color}</div>
-        </div>
-        <div className="productQuantity">
-          <button className="minusBtn" onClick={() => this.updateQuantity(-1)}>
-            -
-          </button>
-          <div className="productCount">
-            <span className="count">{this.state.quantity}</span>
+      <>
+        <li className="CartLists" showCart={this.props.showCart}>
+          <div className="productContainer">
+            <Link className="productName" to="">
+              {product}
+            </Link>
+            <div className="productColor">{color}</div>
           </div>
-          <button className="plusBtn" onClick={() => this.updateQuantity(1)}>
-            +
-          </button>
-          <div className="productRemove">
-            <button onClick={() => this.deleteData()}>remove</button>
+          <div className="productQuantity">
+            <button
+              className="minusBtn"
+              onClick={() => this.updateQuantity(-1)}
+            >
+              -
+            </button>
+            <div className="productCount">
+              <span className="count">{this.state.quantity}</span>
+            </div>
+            <button className="plusBtn" onClick={() => this.updateQuantity(1)}>
+              +
+            </button>
+            <div className="productRemove">
+              <button onClick={() => this.deleteData()}>remove</button>
+            </div>
           </div>
-        </div>
-        <div className="productPrice">
-          <span>$&nbsp;</span>
-          <span>{productPrice}</span>
-        </div>
-      </li>
+          <div className="productPrice">
+            <span>$&nbsp;</span>
+            <span>{productPrice}</span>
+          </div>
+        </li>
+      </>
     );
   }
 }
