@@ -1,7 +1,7 @@
 import React from "react";
 import MainHeader from "../../components/Headers/MainHeader/MainHeader";
 import MainFooter from "../../components/Footers/MainFooter/MainFooter";
-import DaumPostcode from "react-daum-postcode";
+// import DaumPostcode from "react-daum-postcode";
 import "./Order.scss";
 
 class Order extends React.Component {
