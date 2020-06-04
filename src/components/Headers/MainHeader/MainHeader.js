@@ -4,6 +4,7 @@ import { withRouter } from "react-router-dom";
 import HoverMenu from "./HoverMenu/HoverMenu";
 import WhiteBorderButton from "../../Buttons/WhiteBorderButton";
 import SignInUp from "../../../pages/SignInUp/SignInUp";
+import UserName from "../../../pages/SignInUp/UserName/UserName";
 import Cart from "../../Cart/Cart";
 import { API } from "../../../config";
 import "./MainHeader.scss";
@@ -17,10 +18,21 @@ class MainHeader extends Component {
       showCart: false,
       response: [],
       sumAmount: 0,
+      count: 0,
+      isActive: true,
       amountPost: 0,
       itemIdPost: 0,
       responsePost: {},
     };
+  }
+
+  //로그인시 login버튼이 username으로 변경
+  componentDidMount() {
+    if (localStorage.getItem("full_name")) {
+      this.setState({ isActive: false });
+    } else {
+      this.setState({ isActive: true });
+    }
   }
 
   //메뉴 hover 관련 핸들러
@@ -96,7 +108,6 @@ class MainHeader extends Component {
   };
 
   render() {
-    //console.log("ㅎ보내줄거: ", this.state.responsePost);
     return (
       <>
         {this.state.showCart && (
@@ -152,9 +163,10 @@ class MainHeader extends Component {
                 </Link>
               </li>
               {/* 로그인이랑 연결 */}
+              {/* 로그인시 Login 버튼 -> username으로 변경 */}
               <li className="navMenus">
                 <button className="login">
-                  <SignInUp />
+                  {this.state.isActive ? <SignInUp /> : <UserName />}
                 </button>
                 <button
                   className="btnDefault"

@@ -48,10 +48,11 @@ class ModalSignIn extends React.Component {
       .then((res) => res.json())
       .then((res) => {
         console.log("response", res);
-        if (res.Authorization) {
+        if (res.Authorization && res.full_name) {
           localStorage.setItem("Authorization", res.Authorization);
-
-          this.props.history.push("/order");
+          localStorage.setItem("full_name", res.full_name);
+          this.props.history.push("/products");
+          window.location.reload();
         } else {
           this.BtnActive();
         }
@@ -95,8 +96,6 @@ class ModalSignIn extends React.Component {
                       placeholder="Email address"
                       type="email"
                     />
-
-                    {/* <span className="TextLabel">Email address</span> */}
                   </label>
                   <p className="TextAlarm">
                     Please enter a valid email address

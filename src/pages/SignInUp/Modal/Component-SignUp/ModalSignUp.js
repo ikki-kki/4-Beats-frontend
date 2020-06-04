@@ -54,20 +54,15 @@ class ModalSignUp extends React.Component {
   };
 
   BtnActive = () => {
-    const { email, password, password_re } = this.state;
-    if (email.includes("@")) {
-      if (password === password_re) {
+    const { password, password_re, first_name, last_name } = this.state;
+    if (password === password_re) {
+      if (first_name && last_name) {
         this.setState({ BtnColor: false });
       }
     } else {
       this.setState({ BtnColor: true });
     }
   };
-
-  // TextCheck = (num) => {
-  //   const { emailAlarm } = this.state;
-  //   this.setState({ emailAlarm: num });
-  // };
 
   checkSignUp = () => {
     this.checkCycle();
@@ -83,7 +78,6 @@ class ModalSignUp extends React.Component {
   };
 
   checkEmail = () => {
-    //console.log(ValidationEmail(this.state.email));
     if (!ValidationEmail(this.state.email)) {
       alert("Email is invalid");
     } else {
@@ -113,8 +107,8 @@ class ModalSignUp extends React.Component {
       }),
     }).then((res) => {
       if (res.ok) {
-        localStorage.setItem("token", res.token);
-        alert("회원가입 성공");
+        localStorage.setItem("Authorization", res.Authorization);
+        alert("WELCOME TO THE BEATS");
         this.props.switch();
       }
     });
@@ -168,7 +162,6 @@ class ModalSignUp extends React.Component {
                   <div className="content1">
                     <input
                       onChange={this.inputValueEmail}
-                      onKeyUp={this.BtnActive}
                       // onKeyUp={() => this.TextCheck(1)}
                       className="TextInput"
                       name="email"
@@ -204,6 +197,7 @@ class ModalSignUp extends React.Component {
                       <div className="content4-1">
                         <input
                           onChange={this.inputValueFN}
+                          onKeyUp={this.BtnActive}
                           className="TextInput"
                           name="firstname"
                           placeholder="First name"
@@ -213,6 +207,7 @@ class ModalSignUp extends React.Component {
                       <div className="content4-2">
                         <input
                           onChange={this.inputValueLN}
+                          onKeyUp={this.BtnActive}
                           className="TextInput"
                           name="lastname"
                           placeholder="Last name"
