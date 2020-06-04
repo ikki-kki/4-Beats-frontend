@@ -49,9 +49,9 @@ class ModalSignIn extends React.Component {
       .then((res) => {
         console.log("response", res);
         if (res.Authorization) {
-          localStorage.setItem("token", res.Authorization);
+          localStorage.setItem("Authorization", res.Authorization);
 
-          this.props.history.push("/products");
+          this.props.history.push("/order");
         } else {
           this.BtnActive();
         }

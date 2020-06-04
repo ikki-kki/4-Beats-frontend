@@ -99,9 +99,9 @@
 
             .ContentShow {
               // overflow: hidden;
-              max-height: 0;
-              opacity: 0;
               transition: all ease-in-out 0.2s;
+              height: auto;
+              overflow: hidden;
               li {
                 font-family: $subFont;
                 a {
@@ -126,13 +126,13 @@
                 content: "";
                 border-bottom: solid 2px rgb(0, 0, 0);
                 position: absolute;
-                bottom: 64%;
-                left: 6.7%;
+                bottom: 56.5%;
+                left: 6.2%;
                 width: 0;
               }
 
               .Line1 a:hover:before {
-                width: 40%;
+                width: 38%;
                 transition: all ease-in-out 0.2s;
               }
 
@@ -145,7 +145,7 @@
                 content: "";
                 border-bottom: solid 2px rgb(0, 0, 0);
                 position: absolute;
-                bottom: 58.5%;
+                bottom: 49.5%;
                 left: 6.7%;
                 width: 0;
               }
@@ -160,10 +160,10 @@
               }
             }
             .ContentShowActive {
-              overflow: auto;
-              max-height: 110px;
-              opacity: 1;
-              transition: all ease-in-out 0.2s;
+              // overflow: auto;
+              // max-height: 110px;
+              display: none;
+              // transition: all ease-in-out 0.2s;
             }
           }
           .ContentBluetoothColor {
@@ -201,8 +201,8 @@
 
             .ContentShow {
               // overflow: hidden;
-              max-height: 0;
-              opacity: 0;
+              height: auto;
+              overflow: hidden;
               transition: all ease-in-out 0.2s;
               ul {
                 display: block;
@@ -263,10 +263,11 @@
               // }
             }
             .ContentShowActive {
-              overflow: auto;
-              max-height: 110px;
-              opacity: 1;
-              transition: all ease-in-out 0.2s;
+              display: none;
+              // overflow: auto;
+              // max-height: 110px;
+              // opacity: 1;
+              // transition: all ease-in-out 0.2s;
             }
           }
 
@@ -295,8 +296,8 @@
 
             .ContentShow {
               // overflow: hidden;
-              max-height: 0;
-              opacity: 0;
+              height: auto;
+              overflow: hidden;
               transition: all ease-in-out 0.2s;
               ul {
                 display: block;
@@ -323,9 +324,10 @@
               }
             }
             .ContentShowActive {
-              overflow: auto;
-              max-height: 200px;
-              opacity: 1;
+              // overflow: auto;
+              // max-height: 200px;
+              // opacity: 1;
+              display: none;
               transition: all ease-in-out 0.2s;
             }
           }
