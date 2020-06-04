@@ -25,17 +25,6 @@ class ProductDetails extends React.Component {
   };
 
   render() {
-    // console.log(this.state);
-    // const {
-    //   //   id,
-    //   name,
-    //   imgage_url,
-    //   subject,
-    //   price,
-    //   description,
-    // } = this.state.list;
-
-    // console.log(this.state.list.name);
     const detailList =
       this.state.list &&
       this.state.list.map((post, idx) => (
