@@ -5,6 +5,7 @@ import { API } from "../../config";
 // import DaumPostcode from "react-daum-postcode";
 import "./Order.scss";
 import OrderList from "./OrderList/OrderList";
+import OrderPiceList from "./OrderPiceList";
 import CustomerInfo from "./CustomerInfo";
 
 class Order extends React.Component {
@@ -35,13 +36,6 @@ class Order extends React.Component {
           }
           fullAddress += extraAddress !== "" ? ` (${extraAddress})` : "";
         }
-        // console.log(this.fullAddress);
-        // console.log(fullAddress); // e.g. '서울 성동구 왕십리로2길 20 (성수동1가)'
-        // console.log(data.zonecode);
-        // this.setState({
-        //   fullAddr: fullAddress,
-        //   Postcode: data.zonecode,
-        // });
         document.getElementById("sample6_postcode").value = data.zonecode;
         document.getElementById("sample6_address").value = fullAddress;
 
@@ -67,10 +61,17 @@ class Order extends React.Component {
     this.setState({ Postcode: this.fullAddress });
   };
   componentDidMount() {
-    fetch(`${API}/`)
+    fetch(`${API}/cart`, {
+      method: "GET",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization:
+          "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6NX0.AY_p0-u1GLfQJB9E8hAhcE467blaITgrJ8SptpVZBSU",
+      },
+    })
       .then((res) => res.json())
-      .then((res) => console.log(res))
-      .then((res) => this.setState({ orderList: res }));
+      // .then((res) => console.log(res))
+      .then((res) => this.setState({ orderList: res.data }));
   }
 
   orderHandler = () => {
@@ -78,11 +79,6 @@ class Order extends React.Component {
   };
 
   render() {
-    const orderL =
-      this.state.orderList &&
-      this.state.orderList.map((post, idx) => (
-        <OrderList key={idx} name={post.name} />
-      ));
     return (
       <>
         <MainHeader />
@@ -96,13 +92,49 @@ class Order extends React.Component {
             </div>
           </section>
           <div className="tableWrap">
-            {orderL}
+            <h3 className="tableTitle">Product</h3>
+            <section className="productTable">
+              <table>
+                <thead>
+                  <tr>
+                    <th className="productN">Product</th>
+                    <th>Color</th>
+                    <th>Quantity</th>
+                    <th>Price</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {this.state.orderList &&
+                    this.state.orderList.map((post, idx) => (
+                      <OrderList
+                        key={idx}
+                        name={post.name}
+                        img={post.image_url[0].image_url}
+                        color={post.color}
+                        amount={post.amount}
+                        price={post.price}
+                      />
+                    ))}
+                </tbody>
+              </table>
+              {this.state.orderList &&
+                this.state.orderList.map((mon, idx) => (
+                  <OrderPiceList key={idx} totalPrice={mon.totalPrice} />
+                ))}
+            </section>
             <section className="customerInfo">
               <h3>Customer Info</h3>
               <div className="infoTable">
                 <table>
                   <tbody>
-                    <CustomerInfo />
+                    {this.state.orderList &&
+                      this.state.orderList.map((info, idx) => (
+                        <CustomerInfo
+                          key={idx}
+                          name={info.full_name}
+                          email={info.email}
+                        />
+                      ))}
                     <tr>
                       <th className="nameTitle">Address</th>
                       <td className="addressArea">
