@@ -82,7 +82,7 @@ class Support extends React.Component {
                   </div>
                   <div
                     className={`ContentShow ${
-                      this.state.isActive === 1 ? "ContentShowActive" : ""
+                      this.state.isActive === 1 ? "" : "ContentShowActive"
                     }`}
                   >
                     <ul>
@@ -121,7 +121,7 @@ class Support extends React.Component {
                   </div>
                   <div
                     className={`ContentShow ${
-                      this.state.isActive === 2 ? "ContentShowActive" : ""
+                      this.state.isActive === 2 ? "" : "ContentShowActive"
                     }`}
                   >
                     <ul>
@@ -160,7 +160,7 @@ class Support extends React.Component {
                   </div>
                   <div
                     className={`ContentShow ${
-                      this.state.isActive === 3 ? "ContentShowActive" : ""
+                      this.state.isActive === 3 ? "" : "ContentShowActive"
                     }`}
                   >
                     <ul className="LineFirmware">
