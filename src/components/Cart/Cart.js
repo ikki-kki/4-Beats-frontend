@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import CartLists from "./CartLists/CartLists";
-import "./Cart.scss";
 import WhiteBorderButton from "../Buttons/WhiteBorderButton";
+import "./Cart.scss";
 
 export default class Cart extends Component {
   constructor(props) {
@@ -11,19 +11,7 @@ export default class Cart extends Component {
     };
   }
 
-  // shouldComponentUpdate(nextProps, nextState) {
-  //   if (nextProps.response === this.props.response) {
-  //     return false;
-  //   } else {
-  //     return true;
-  //   }
-  // }
-  // sumAmountHandler = () => {
-  //   this.setState({ totalPrice: this.props.sumAmount });
-  // };
-
   render() {
-    console.log(this.props.sumAmount, "sum");
     return (
       <div className="Cart">
         <div className="cartProducts">
@@ -39,15 +27,18 @@ export default class Cart extends Component {
             </button>
           </div>
           <ul className="cartProductsList">
-            {this.props.response.data &&
-              this.props.response.data.map((el, i) => {
+            {this.props.response &&
+              this.props.response.map((el, i) => {
                 return (
                   <CartLists
                     key={i}
+                    idx={i}
+                    id={el.id}
+                    item_id={el.item_id}
                     product={el.name}
                     color={el.color}
-                    price={el.price}
-                    totalPrice={this.props.sumAmount}
+                    price={Number(el.price)}
+                    totalPrice={Number(this.props.sumAmount)}
                     addHandler={this.props.addHandler}
                   />
                 );
@@ -62,7 +53,7 @@ export default class Cart extends Component {
             <h5>Subtotal</h5>
             <span>${this.props.sumAmount}</span>
           </div>
-          <div className="buyBtn">
+          <div className="buyBtn" onClick={this.props.postPayment}>
             <WhiteBorderButton text="paymont" link="/order" />
           </div>
         </div>

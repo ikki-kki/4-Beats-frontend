@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
+import { API } from "../../../config";
 import "./CartLists.scss";
 
 export default class CartLists extends Component {
@@ -12,11 +13,11 @@ export default class CartLists extends Component {
   }
 
   updateQuantity = (modifier) => {
-    const { price } = this.props;
+    const { price } = this.props; // 통과
 
     // 최대 최소값 범위
     const minimum = this.props.min || 1;
-    const maximum = this.props.max || Number.POSITIVE_INFINITY; // 양수 무한대
+    const maximum = this.props.max || 100; // 양수 무한대
 
     // 업데이트된 수량의 값
     const quantity = this.state.quantity + modifier;
@@ -31,35 +32,35 @@ export default class CartLists extends Component {
         quantity: quantity,
       },
       () => {
-        console.log("this.props.totalPrice: ", this.props.totalPrice);
+        let itemId = this.props.item_id;
         let countTotalPrice;
+
         if (modifier === -1) {
           countTotalPrice = this.props.totalPrice - price;
         } else {
           countTotalPrice = this.props.totalPrice + price;
         }
-        this.props.addHandler(countTotalPrice.toFixed(2));
+        this.props.addHandler(countTotalPrice, quantity, itemId);
       }
     );
   };
 
-  deleteData(item) {
-    // fetch("http://10.58.5.168:8000/api/cart/" + item,
-    fetch("http://localhost:3002/data/productModk.json", {
-      method: "delete",
-    }).then((res) =>
-      res.json().then((json) => {
-        return json;
-      })
-    );
-  }
+  deleteData = () => {
+    const token = localStorage.getItem("token");
+    fetch(`${API}/cart/${this.props.id}`, {
+      method: "DELETE",
+      headers: {
+        Authorization: token,
+        "Content-Type": "application/json",
+      },
+    }).then((res) => console.log("delete res: ", res));
+  };
 
   render() {
     const { product, color, price } = this.props;
 
     let productPrice = (price * this.state.quantity).toFixed(2);
 
-    //console.log(countTotalPrice);
     return (
       <>
         <li className="CartLists" showcart={this.props.showcart}>
