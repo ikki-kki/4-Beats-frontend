@@ -22,7 +22,7 @@ class Routes extends Component {
           <Route exact path="/product/:num" component={ProductDetails} />
           <Route
             exact
-            path="/products/detail2"
+            path="/products/speaker"
             component={ProductsDetailPage2}
           />
           <Route exact path="/order" component={Order} />
