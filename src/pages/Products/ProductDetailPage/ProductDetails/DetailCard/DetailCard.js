@@ -10,8 +10,13 @@ class DetailCard extends React.Component {
   };
   // order 버튼 눌렀을 때 fetch 함수 실행
   sendProduct = (id) => {
+    const token = localStorage.getItem("token");
     fetch(`${API}/product/${id}/${this.state.current}/cart`, {
       method: "POST",
+      headers: {
+        Authorization: token,
+        "Content-Type": "application/json",
+      },
     }).then((res) => {
       if (res.status === 200) {
         alert("OK");

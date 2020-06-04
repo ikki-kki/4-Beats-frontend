@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import CartLists from "./CartLists/CartLists";
-import "./Cart.scss";
 import WhiteBorderButton from "../Buttons/WhiteBorderButton";
+import "./Cart.scss";
 
 export default class Cart extends Component {
   constructor(props) {
@@ -11,19 +11,8 @@ export default class Cart extends Component {
     };
   }
 
-  // shouldComponentUpdate(nextProps, nextState) {
-  //   if (nextProps.response === this.props.response) {
-  //     return false;
-  //   } else {
-  //     return true;
-  //   }
-  // }
-  // sumAmountHandler = () => {
-  //   this.setState({ totalPrice: this.props.sumAmount });
-  // };
-
   render() {
-    console.log(this.props.sumAmount, "sum");
+    const { sumAmount, addHandler, postPayment, response } = this.props;
     return (
       <div className="Cart">
         <div className="cartProducts">
@@ -39,16 +28,19 @@ export default class Cart extends Component {
             </button>
           </div>
           <ul className="cartProductsList">
-            {this.props.response.data &&
-              this.props.response.data.map((el, i) => {
+            {response &&
+              response.map((el, i) => {
                 return (
                   <CartLists
                     key={i}
+                    idx={i}
+                    id={el.id}
+                    item_id={el.item_id}
                     product={el.name}
                     color={el.color}
-                    price={el.price}
-                    totalPrice={this.props.sumAmount}
-                    addHandler={this.props.addHandler}
+                    price={Number(el.price)}
+                    totalPrice={Number(sumAmount)}
+                    addHandler={addHandler}
                   />
                 );
               })}
@@ -60,9 +52,9 @@ export default class Cart extends Component {
           </div>
           <div className="items">
             <h5>Subtotal</h5>
-            <span>${this.props.sumAmount}</span>
+            <span>${sumAmount}</span>
           </div>
-          <div className="buyBtn">
+          <div className="buyBtn" onClick={postPayment}>
             <WhiteBorderButton text="paymont" link="/order" />
           </div>
         </div>
