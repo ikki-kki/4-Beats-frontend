@@ -42,7 +42,7 @@ class MainHeader extends Component {
   //카트 버튼 클릭 핸들러
   cartClickHandler = () => {
     this.setState({ showCart: !this.state.showCart });
-    fetch("http://localhost:3002/data/productModk.json", {
+    fetch("http://localhost:3000/data/productModk.json", {
       method: "GET",
       headers: {
         // Authorization:
@@ -64,7 +64,6 @@ class MainHeader extends Component {
   };
 
   render() {
-    console.log("sdfsdf: ", this.state.sumAmount);
     return (
       <>
         {this.state.showCart && (
