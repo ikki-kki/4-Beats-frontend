@@ -3,6 +3,33 @@ import Config from "../Config";
 import RedButton from "../../../components/Buttons/RedButton";
 import "./ProductsDetailPage2.scss";
 
+// const ProductColor = {
+//   0: {
+//     ProductColor: "white",
+//     ProductColorName: "White",
+//     ProductColorNameC: "#000",
+//     src: `${Config.ProductPillColor}/white_thqrt_retina_1800x1800_V2.png`,
+//     check: 1,
+//     color: "rgb(101,101,101)",
+//   },
+//   1: {
+//     ProductColor: "black",
+//     ProductColorName: "Black",
+//     ProductColorNameC: "#000",
+//     src: `${Config.ProductPillColor}/black_thqrt_retina_1800x1800_V2.png`,
+//     check: 2,
+//     color: "rgb(101,101,101)",
+//   },
+//   2: {
+//     ProductColor: "red",
+//     ProductColorName: "red",
+//     ProductColorNameC: "#000",
+//     src: `${Config.ProductPillColor}/_0001_rgb_ML4Q2-RGB-thrqtrlft_V2.png`,
+//     check: 3,
+//     color: "rgb(101,101,101)",
+//   },
+// };
+
 class ProductsDetailPage2 extends React.Component {
   render() {
     return (
@@ -59,7 +86,7 @@ class ProductsDetailPage2 extends React.Component {
                           id="ColorSelector1"
                         />
                         <label for="ColorSelector1">
-                          <a href="#">
+                          <a href="/">
                             <div className="BtnBorder">
                               <div className="ImgWrap">
                                 <img
@@ -82,7 +109,7 @@ class ProductsDetailPage2 extends React.Component {
                           id="ColorSelector2"
                         />
                         <label for="ColorSelector2">
-                          <a href="#">
+                          <a href="/">
                             <div className="BtnBorder">
                               <div className="ImgWrap">
                                 <img
@@ -105,7 +132,7 @@ class ProductsDetailPage2 extends React.Component {
                           id="ColorSelector3"
                         />
                         <label for="ColorSelector3">
-                          <a href="#">
+                          <a href="/">
                             <div className="BtnBorder">
                               <div className="ImgWrap">
                                 <img
