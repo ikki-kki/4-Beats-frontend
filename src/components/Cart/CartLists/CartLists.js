@@ -46,7 +46,7 @@ export default class CartLists extends Component {
   };
 
   deleteData = () => {
-    const token = localStorage.getItem("token");
+    const token = localStorage.getItem("Authorization");
     fetch(`${API}/cart/${this.props.id}`, {
       method: "DELETE",
       headers: {

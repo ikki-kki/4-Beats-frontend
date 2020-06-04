@@ -9,6 +9,7 @@ import Cart from "../../Cart/Cart";
 import { API } from "../../../config";
 import "./MainHeader.scss";
 
+const token = localStorage.getItem("Authorization");
 class MainHeader extends Component {
   constructor() {
     super();
@@ -67,8 +68,6 @@ class MainHeader extends Component {
   //카트 버튼 클릭 핸들러
   cartClickHandler = () => {
     this.setState({ showCart: !this.state.showCart });
-
-    const token = localStorage.getItem("token");
     fetch(`${API}/cart`, {
       method: "GET",
       headers: {
@@ -78,6 +77,7 @@ class MainHeader extends Component {
     })
       .then((res) => res.json())
       .then((res) => {
+        console.log(res);
         let sum = 0;
         res.data[0].cart_data.forEach((num) => (sum += Number(num.price)));
         this.setState({
@@ -90,7 +90,6 @@ class MainHeader extends Component {
 
   postPayment = () => {
     const { idxPost, amountPost } = this.state;
-    const token = localStorage.getItem("token");
     fetch(`${API}/cart/${idxPost}/${amountPost}`, {
       method: "POST",
       hedaer: {
@@ -103,7 +102,7 @@ class MainHeader extends Component {
     })
       .then((res) => res.json())
       .then((res) => {
-        // console.log(res);
+        console.log(res);
       });
   };
 
@@ -174,7 +173,7 @@ class MainHeader extends Component {
                   onClick={() => this.cartClickHandler()}
                 >
                   {/* 장바구니에 아이템이 들어오면 span이 생김 */}
-                  {this.state.itemIdPost > 0 && (
+                  {(this.state.itemIdPost > 0 && token)(
                     <span>{this.state.itemIdPost}</span>
                   )}
                 </button>
