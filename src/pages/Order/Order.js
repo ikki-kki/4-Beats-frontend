@@ -2,7 +2,7 @@ import React from "react";
 import MainHeader from "../../components/Headers/MainHeader/MainHeader";
 import MainFooter from "../../components/Footers/MainFooter/MainFooter";
 import { API } from "../../config";
-// import DaumPostcode from "react-daum-postcode";
+import DaumPostcode from "react-daum-postcode";
 import "./Order.scss";
 import OrderList from "./OrderList/OrderList";
 import OrderPriceList from "./OrderPriceList";
@@ -20,31 +20,30 @@ class Order extends React.Component {
     RChecked: false,
   };
 
-  fullAddress;
-  searchHandler = () => {
-    new window.daum.Postcode({
-      oncomplete: function (data) {
-        let fullAddress = data.address;
-        let extraAddress = "";
-        if (data.addressType === "R") {
-          if (data.bname !== "") {
-            extraAddress += data.bname;
-          }
-          if (data.buildingName !== "") {
-            extraAddress +=
-              extraAddress !== ""
-                ? `, ${data.buildingName}`
-                : data.buildingName;
-          }
-          fullAddress += extraAddress !== "" ? ` (${extraAddress})` : "";
-        }
-        document.getElementById("sample6_postcode").value = data.zonecode;
-        document.getElementById("sample6_address").value = fullAddress;
+  // searchHandler = () => {
+  //   new window.daum.Postcode({
+  //     oncomplete: function (data) {
+  //       let fullAddress = data.address;
+  //       let extraAddress = "";
+  //       if (data.addressType === "R") {
+  //         if (data.bname !== "") {
+  //           extraAddress += data.bname;
+  //         }
+  //         if (data.buildingName !== "") {
+  //           extraAddress +=
+  //             extraAddress !== ""
+  //               ? `, ${data.buildingName}`
+  //               : data.buildingName;
+  //         }
+  //         fullAddress += extraAddress !== "" ? ` (${extraAddress})` : "";
+  //       }
+  //       document.getElementById("sample6_postcode").value = data.zonecode;
+  //       document.getElementById("sample6_address").value = fullAddress;
 
-        document.getElementById("sample6_datailAddress").focus();
-      },
-    }).open();
-  };
+  //       document.getElementById("sample6_datailAddress").focus();
+  //     },
+  //   }).open();
+  // };
 
   cardHandler = () => {
     this.setState({ cardCheck: true });
@@ -64,16 +63,15 @@ class Order extends React.Component {
   };
 
   componentDidMount() {
+    const token = localStorage.getItem("Authorization");
     fetch(`${API}/cart`, {
       method: "GET",
       headers: {
         "Content-Type": "application/json",
-        Authorization:
-          "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6NX0.AY_p0-u1GLfQJB9E8hAhcE467blaITgrJ8SptpVZBSU",
+        Authorization: token,
       },
     })
       .then((res) => res.json())
-      // .then((res) => console.log(res))
       .then((res) =>
         this.setState({
           orderList: res.data[0].cart_data,
@@ -84,43 +82,47 @@ class Order extends React.Component {
   }
 
   orderHandler = () => {
+    const token = localStorage.getItem("Authorization");
     fetch(`${API}/order`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
-        Authorization:
-          "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6NX0.AY_p0-u1GLfQJB9E8hAhcE467blaITgrJ8SptpVZBSU",
+        Authorization: token,
       },
       body: JSON.stringify({
-        email: "yj607252@gmail.com",
-        full_name: "yunji",
+        email: this.state.userInfo.email,
+        full_name: this.state.userInfo.full_name,
         address: "address",
       }),
-    })
-      // .then((res) => {
-      //   if (res.status === 500) {
-      //     alert("백 잘못");
-      //     return;
-      //   } else if (res.status === 200) {
-      //     alert("ok 성공");
-      //   }
-      // });
-      // .then(res => )
-      // .then((res) => console.log("res", res.status))
-      // .then((res) => res.json())
-      // // .then((res) => console.log(res))
-      .then((res) => {
-        if (res.status === 200) {
-          alert("OK");
-          this.props.history.push(`/order/confirm`);
-        } else {
-          alert("try again");
-        }
-      });
+    }).then((res) => {
+      if (res.status === 200) {
+        alert("OK");
+        this.props.history.push(`/order/confirm`);
+      } else {
+        alert("try again");
+      }
+    });
+  };
+
+  handleComplete = (data) => {
+    let fullAddress = data.address;
+    let extraAddress = "";
+
+    if (data.addressType === "R") {
+      if (data.bname !== "") {
+        extraAddress += data.bname;
+      }
+      if (data.buildingName !== "") {
+        extraAddress +=
+          extraAddress !== "" ? `, ${data.buildingName}` : data.buildingName;
+      }
+      fullAddress += extraAddress !== "" ? ` (${extraAddress})` : "";
+    }
+
+    console.log(fullAddress); // e.g. '서울 성동구 왕십리로2길 20 (성수동1가)'
   };
 
   render() {
-    console.log(this.state.userInfo);
     return (
       <>
         <MainHeader />
@@ -210,7 +212,8 @@ class Order extends React.Component {
                               value={this.state.Postcode}
                             />
                           </span>
-                          <button onClick={this.props.search}>Search</button>
+                          <button onClick={this.searchHandler}>Search</button>
+                          {<DaumPostcode onComplete={this.handleComplete} />}
                         </div>
                         <div className="addressDetail">
                           <span>
@@ -224,7 +227,7 @@ class Order extends React.Component {
                           <span>
                             <input
                               type="text"
-                              id="sample6_detailAddress"
+                              id="sample6_datailAddress"
                               placeholder="Detail"
                               onChange={this.changeDetail}
                             />
