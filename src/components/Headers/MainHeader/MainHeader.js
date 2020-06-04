@@ -10,6 +10,7 @@ import { API } from "../../../config";
 import "./MainHeader.scss";
 
 const token = localStorage.getItem("Authorization");
+
 class MainHeader extends Component {
   constructor() {
     super();
@@ -22,7 +23,7 @@ class MainHeader extends Component {
       count: 0,
       isActive: true,
       amountPost: 0,
-      itemIdPost: 0,
+      itemCount: 0,
       responsePost: {},
     };
   }
@@ -49,19 +50,15 @@ class MainHeader extends Component {
     this.setState({ display: "none" });
   };
 
-  addCartHandler = (num, amount, itemId) => {
+  addCartHandler = (num, amount, idx) => {
     const obj = { ...this.state.responsePost };
-    obj.data[0].cart_data[itemId].amount = amount;
-    // console.log("amount: ", amount);
-    // console.log("itemId: ", itemId);
-    // console.log("num: ", num);
-    // 아직 미완료라 필요해유 ㅜ
+    obj.data[0].cart_data[idx].amount = amount;
 
     this.setState({
       sumAmount: Number(num),
       responsePost: obj,
       amountPost: amount,
-      itemIdPost: itemId,
+      itemCount: idx,
     });
   };
 
@@ -89,24 +86,24 @@ class MainHeader extends Component {
   };
 
   postPayment = () => {
-    const { idxPost, amountPost } = this.state;
-    fetch(`${API}/cart/${idxPost}/${amountPost}`, {
+    const token = localStorage.getItem("Authorization");
+    fetch(`${API}/cart/amount`, {
       method: "POST",
-      hedaer: {
+      headers: {
         Authorization: token,
         "Content-Type": "application/json",
       },
       body: JSON.stringify({
-        response: this.state.amountPost,
+        data: this.state.responsePost,
       }),
-    })
-      .then((res) => res.json())
-      .then((res) => {
-        console.log(res);
-      });
+    }).then((res) => {
+      console.log(res);
+    });
   };
 
   render() {
+    console.log("보내기", this.state.responsePost);
+    console.log("length: ", this.state.response.length);
     return (
       <>
         {this.state.showCart && (
@@ -173,8 +170,8 @@ class MainHeader extends Component {
                   onClick={() => this.cartClickHandler()}
                 >
                   {/* 장바구니에 아이템이 들어오면 span이 생김 */}
-                  {(this.state.itemIdPost > 0 && token)(
-                    <span>{this.state.itemIdPost}</span>
+                  {this.state.response.length > 0 && (
+                    <span>{this.state.response.length}</span>
                   )}
                 </button>
               </li>

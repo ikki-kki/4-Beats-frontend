@@ -52,7 +52,7 @@ export default class Cart extends Component {
           </div>
           <div className="items">
             <h5>Subtotal</h5>
-            <span>${sumAmount}</span>
+            <span>${sumAmount.toFixed(2)}</span>
           </div>
           <div className="buyBtn" onClick={postPayment}>
             <WhiteBorderButton text="paymont" link="/order" />
