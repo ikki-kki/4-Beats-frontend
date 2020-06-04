@@ -1,16 +1,13 @@
 import React from "react";
 import MainHeader from "../../../components/Headers/MainHeader/MainHeader";
 import OrderList from "../OrderList/OrderList";
-import OrderPriceList from "../OrderPriceList";
 import MainFooter from "../../../components/Footers/MainFooter/MainFooter";
 import { API } from "../../../config";
 import "./OrderConfirm.scss";
 
 class OrderConfirm extends React.Component {
   state = {
-    orderList: [],
     userInfo: [],
-    totalP: "",
   };
   componentDidMount() {
     const token = localStorage.getItem("Authorization");
@@ -24,9 +21,7 @@ class OrderConfirm extends React.Component {
       .then((res) => res.json())
       .then((res) =>
         this.setState({
-          orderList: res.data[0].cart_data,
           userInfo: res.data[0],
-          totalP: res.data[0].total_price,
         })
       );
   }
@@ -69,10 +64,10 @@ class OrderConfirm extends React.Component {
                     ))}
                 </tbody>
               </table>
-              {this.state.orderList &&
+              {/* {this.state.orderList &&
                 this.state.orderList.map((mon, idx) => (
                   <OrderPriceList key={idx} totalPrice={mon.totalPrice} />
-                ))}
+                ))} */}
             </section>
           </div>
         </div>

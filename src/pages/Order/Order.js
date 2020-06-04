@@ -2,11 +2,9 @@ import React from "react";
 import MainHeader from "../../components/Headers/MainHeader/MainHeader";
 import MainFooter from "../../components/Footers/MainFooter/MainFooter";
 import { API } from "../../config";
-import DaumPostcode from "react-daum-postcode";
 import "./Order.scss";
 import OrderList from "./OrderList/OrderList";
 import OrderPriceList from "./OrderPriceList";
-// import CustomerInfo from "./CustomerInfo";
 
 class Order extends React.Component {
   inputValueRef = React.createRef();
@@ -20,30 +18,30 @@ class Order extends React.Component {
     RChecked: false,
   };
 
-  // searchHandler = () => {
-  //   new window.daum.Postcode({
-  //     oncomplete: function (data) {
-  //       let fullAddress = data.address;
-  //       let extraAddress = "";
-  //       if (data.addressType === "R") {
-  //         if (data.bname !== "") {
-  //           extraAddress += data.bname;
-  //         }
-  //         if (data.buildingName !== "") {
-  //           extraAddress +=
-  //             extraAddress !== ""
-  //               ? `, ${data.buildingName}`
-  //               : data.buildingName;
-  //         }
-  //         fullAddress += extraAddress !== "" ? ` (${extraAddress})` : "";
-  //       }
-  //       document.getElementById("sample6_postcode").value = data.zonecode;
-  //       document.getElementById("sample6_address").value = fullAddress;
+  searchHandler = () => {
+    new window.daum.Postcode({
+      oncomplete: function (data) {
+        let fullAddress = data.address;
+        let extraAddress = "";
+        if (data.addressType === "R") {
+          if (data.bname !== "") {
+            extraAddress += data.bname;
+          }
+          if (data.buildingName !== "") {
+            extraAddress +=
+              extraAddress !== ""
+                ? `, ${data.buildingName}`
+                : data.buildingName;
+          }
+          fullAddress += extraAddress !== "" ? ` (${extraAddress})` : "";
+        }
+        document.getElementById("sample6_postcode").value = data.zonecode;
+        document.getElementById("sample6_address").value = fullAddress;
 
-  //       document.getElementById("sample6_datailAddress").focus();
-  //     },
-  //   }).open();
-  // };
+        document.getElementById("sample6_datailAddress").focus();
+      },
+    }).open();
+  };
 
   cardHandler = () => {
     this.setState({ cardCheck: true });
@@ -104,24 +102,6 @@ class Order extends React.Component {
     });
   };
 
-  handleComplete = (data) => {
-    let fullAddress = data.address;
-    let extraAddress = "";
-
-    if (data.addressType === "R") {
-      if (data.bname !== "") {
-        extraAddress += data.bname;
-      }
-      if (data.buildingName !== "") {
-        extraAddress +=
-          extraAddress !== "" ? `, ${data.buildingName}` : data.buildingName;
-      }
-      fullAddress += extraAddress !== "" ? ` (${extraAddress})` : "";
-    }
-
-    console.log(fullAddress); // e.g. '서울 성동구 왕십리로2길 20 (성수동1가)'
-  };
-
   render() {
     return (
       <>
@@ -161,10 +141,6 @@ class Order extends React.Component {
                     ))}
                 </tbody>
               </table>
-              {/* {this.state.totalP &&
-                this.state.totalP.map((mon, idx) => (
-                  <OrderPriceList key={idx} totalPrice={mon.totalP} />
-                ))} */}
               <OrderPriceList
                 totalPrice={this.state.totalP && this.state.totalP}
               />
@@ -213,7 +189,6 @@ class Order extends React.Component {
                             />
                           </span>
                           <button onClick={this.searchHandler}>Search</button>
-                          {<DaumPostcode onComplete={this.handleComplete} />}
                         </div>
                         <div className="addressDetail">
                           <span>
@@ -263,18 +238,6 @@ class Order extends React.Component {
                       />
                       <span>Credit Card</span>
                     </div>
-                    {/* <div className="checkForm">
-                    <input type="radio" name="creditCard" className="radio" />
-                    <span>Credit Card</span>
-                  </div>
-                  <div className="checkForm">
-                    <input type="radio" name="creditCard" className="radio" />
-                    <span>Credit Card</span>
-                  </div>
-                  <div className="checkForm">
-                    <input type="radio" name="creditCard" className="radio" />
-                    <span>Credit Card</span>
-                  </div> */}
                   </div>
                 </div>
               </div>
@@ -283,7 +246,7 @@ class Order extends React.Component {
                   <div className="priceWrap">
                     <span>Total price</span>
                     <span className="totalPrice">
-                      {Number(this.state.totalP) + 6}
+                      {Number(this.state.totalP) + 6.0}
                     </span>
                   </div>
                 </div>

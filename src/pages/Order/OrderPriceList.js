@@ -6,7 +6,7 @@ class OrderPriceList extends React.Component {
   };
   render() {
     const { totalPrice } = this.props;
-    const orderTotal = Number(totalPrice) + 6;
+    const orderTotal = Number(totalPrice) + 6.0;
     return (
       <>
         <div className="priceBox">
