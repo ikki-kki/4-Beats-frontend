@@ -7,11 +7,13 @@ export default class CartLists extends Component {
     super(props);
     this.state = {
       quantity: 1,
-      price: 0,
+      totalCount: 0,
     };
   }
 
   updateQuantity = (modifier) => {
+    const { price } = this.props;
+
     // 최대 최소값 범위
     const minimum = this.props.min || 1;
     const maximum = this.props.max || Number.POSITIVE_INFINITY; // 양수 무한대
@@ -23,15 +25,27 @@ export default class CartLists extends Component {
     if (quantity < minimum || maximum < quantity) {
       return;
     }
-
     // state를 업데이트
-    this.setState({
-      quantity,
-    });
+    this.setState(
+      {
+        quantity: quantity,
+      },
+      () => {
+        console.log("this.props.totalPrice: ", this.props.totalPrice);
+        let countTotalPrice;
+        if (modifier === -1) {
+          countTotalPrice = this.props.totalPrice - price;
+        } else {
+          countTotalPrice = this.props.totalPrice + price;
+        }
+        this.props.addHandler(countTotalPrice.toFixed(2));
+      }
+    );
   };
 
   deleteData(item) {
-    fetch("http://10.58.5.168:8000/api/cart/" + item, {
+    // fetch("http://10.58.5.168:8000/api/cart/" + item,
+    fetch("http://localhost:3002/data/productModk.json", {
       method: "delete",
     }).then((res) =>
       res.json().then((json) => {
@@ -42,12 +56,13 @@ export default class CartLists extends Component {
 
   render() {
     const { product, color, price } = this.props;
-    let productPrice = (price * this.state.quantity).toFixed(2);
-    //let totalPrice =
 
+    let productPrice = (price * this.state.quantity).toFixed(2);
+
+    //console.log(countTotalPrice);
     return (
       <>
-        <li className="CartLists" showCart={this.props.showCart}>
+        <li className="CartLists" showcart={this.props.showcart}>
           <div className="productContainer">
             <Link className="productName" to="">
               {product}
