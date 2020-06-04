@@ -63,31 +63,31 @@ class Order extends React.Component {
   };
 
   componentDidMount() {
+    const token = localStorage.getItem("Authorization");
     fetch(`${API}/cart`, {
       method: "GET",
       headers: {
         "Content-Type": "application/json",
-        Authorization:
-          "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6NX0.AY_p0-u1GLfQJB9E8hAhcE467blaITgrJ8SptpVZBSU",
+        Authorization: token,
       },
-    }).then((res) => res.json());
-    // .then((res) => console.log(res))
-    // .then((res) =>
-    //   this.setState({
-    //     orderList: res.data[0].cart_data,
-    //     userInfo: res.data[0],
-    //     totalP: res.data[0].total_price,
-    //   })
-    // );
+    })
+      .then((res) => res.json())
+      .then((res) =>
+        this.setState({
+          orderList: res.data[0].cart_data,
+          userInfo: res.data[0],
+          totalP: res.data[0].total_price,
+        })
+      );
   }
 
   orderHandler = () => {
+    const token = localStorage.getItem("Authorization");
     fetch(`${API}/order`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
-        Authorization:
-          "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6NX0.AY_p0-u1GLfQJB9E8hAhcE467blaITgrJ8SptpVZBSU",
+        Authorization: token,
       },
       body: JSON.stringify({
         email: this.state.userInfo.email,
@@ -104,24 +104,25 @@ class Order extends React.Component {
     });
   };
 
-  render() {
-    const handleComplete = (data) => {
-      let fullAddress = data.address;
-      let extraAddress = "";
+  handleComplete = (data) => {
+    let fullAddress = data.address;
+    let extraAddress = "";
 
-      if (data.addressType === "R") {
-        if (data.bname !== "") {
-          extraAddress += data.bname;
-        }
-        if (data.buildingName !== "") {
-          extraAddress +=
-            extraAddress !== "" ? `, ${data.buildingName}` : data.buildingName;
-        }
-        fullAddress += extraAddress !== "" ? ` (${extraAddress})` : "";
+    if (data.addressType === "R") {
+      if (data.bname !== "") {
+        extraAddress += data.bname;
       }
+      if (data.buildingName !== "") {
+        extraAddress +=
+          extraAddress !== "" ? `, ${data.buildingName}` : data.buildingName;
+      }
+      fullAddress += extraAddress !== "" ? ` (${extraAddress})` : "";
+    }
 
-      console.log(fullAddress); // e.g. '서울 성동구 왕십리로2길 20 (성수동1가)'
-    };
+    console.log(fullAddress); // e.g. '서울 성동구 왕십리로2길 20 (성수동1가)'
+  };
+
+  render() {
     return (
       <>
         <MainHeader />
@@ -212,7 +213,7 @@ class Order extends React.Component {
                             />
                           </span>
                           <button onClick={this.searchHandler}>Search</button>
-                          {<DaumPostcode onComplete={handleComplete} />}
+                          {<DaumPostcode onComplete={this.handleComplete} />}
                         </div>
                         <div className="addressDetail">
                           <span>
