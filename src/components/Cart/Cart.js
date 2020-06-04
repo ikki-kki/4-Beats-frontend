@@ -6,18 +6,24 @@ import WhiteBorderButton from "../Buttons/WhiteBorderButton";
 export default class Cart extends Component {
   constructor(props) {
     super(props);
-    this.state = {};
+    this.state = {
+      totalPrice: 0,
+    };
   }
 
-  shouldComponentUpdate(nextProps, nextState) {
-    if (nextProps.response === this.props.response) {
-      return false;
-    } else {
-      return true;
-    }
-  }
+  // shouldComponentUpdate(nextProps, nextState) {
+  //   if (nextProps.response === this.props.response) {
+  //     return false;
+  //   } else {
+  //     return true;
+  //   }
+  // }
+  // sumAmountHandler = () => {
+  //   this.setState({ totalPrice: this.props.sumAmount });
+  // };
 
   render() {
+    console.log(this.props.sumAmount, "sum");
     return (
       <div className="Cart">
         <div className="cartProducts">
@@ -35,13 +41,14 @@ export default class Cart extends Component {
           <ul className="cartProductsList">
             {this.props.response.data &&
               this.props.response.data.map((el, i) => {
-                console.log("el: ", el);
                 return (
                   <CartLists
                     key={i}
                     product={el.name}
                     color={el.color}
                     price={el.price}
+                    totalPrice={this.props.sumAmount}
+                    addHandler={this.props.addHandler}
                   />
                 );
               })}
@@ -53,7 +60,7 @@ export default class Cart extends Component {
           </div>
           <div className="items">
             <h5>Subtotal</h5>
-            <span>$ 95,000</span>
+            <span>${this.props.sumAmount}</span>
           </div>
           <div className="buyBtn">
             <WhiteBorderButton text="paymont" link="/order" />
