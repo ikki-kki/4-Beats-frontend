@@ -162,7 +162,9 @@ class MainHeader extends Component {
                   onClick={() => this.cartClickHandler()}
                 >
                   {/* 장바구니에 아이템이 들어오면 span이 생김 */}
-                  {this.state.count > 0 && <span>{this.state.count}</span>}
+                  {this.state.itemIdPost > 0 && (
+                    <span>{this.state.itemIdPost}</span>
+                  )}
                 </button>
               </li>
             </ul>
