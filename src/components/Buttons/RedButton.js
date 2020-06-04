@@ -3,6 +3,10 @@ import "./RedButton.scss";
 
 export default class RedButton extends Component {
   render() {
-    return <div className="RedButton">{this.props.text}</div>;
+    return (
+      <div className="RedButton" onClick={this.props.sendProduct}>
+        {this.props.text}
+      </div>
+    );
   }
 }

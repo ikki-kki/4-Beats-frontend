@@ -13,8 +13,8 @@ class DetailCard extends React.Component {
     fetch(`${API}/product/${id}/${this.state.current}/cart`, {
       method: "POST",
     }).then((res) => {
-      if (res.ok) {
-        this.props.history.push("/ordered");
+      if (res.status === 200) {
+        alert("OK");
       } else {
         alert("try again");
       }
