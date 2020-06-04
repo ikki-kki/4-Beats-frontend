@@ -1,11 +1,12 @@
 import React from "react";
 
-class OrderPiceList extends React.Component {
+class OrderPriceList extends React.Component {
   state = {
-    orderTotal: [],
+    orderTotalSave: [],
   };
   render() {
     const { totalPrice } = this.props;
+    const orderTotal = Number(totalPrice) + 6;
     return (
       <>
         <div className="priceBox">
@@ -17,7 +18,7 @@ class OrderPiceList extends React.Component {
             <span className="subPrice">$ 6.00</span>
             <span className="priceCarculate">=</span>
             <span>Order Total</span>
-            <span className="totalPrice">{this.state.orderTotal}</span>
+            <span className="totalPrice">{orderTotal}</span>
           </div>
         </div>
       </>
@@ -25,4 +26,4 @@ class OrderPiceList extends React.Component {
   }
 }
 
-export default OrderPiceList;
+export default OrderPriceList;

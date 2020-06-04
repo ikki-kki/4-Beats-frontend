@@ -1,7 +1,7 @@
 import React from "react";
 import MainHeader from "../../../components/Headers/MainHeader/MainHeader";
 // import OrderList from "../OrderList/OrderList";
-// import OrderPiceList from "../OrderPiceList";
+// import OrderPriceList from "../OrderPiceList";
 // import CustomerInfo from "../CustomerInfo";
 import MainFooter from "../../../components/Footers/MainFooter/MainFooter";
 import "./OrderConfirm.scss";
@@ -48,7 +48,7 @@ class OrderConfirm extends React.Component {
               </table>
               {/* {this.state.orderList &&
                 this.state.orderList.map((mon, idx) => (
-                  <OrderPiceList key={idx} totalPrice={mon.totalPrice} />
+                  <OrderPriceList key={idx} totalPrice={mon.totalPrice} />
                 ))} */}
             </section>
           </div>

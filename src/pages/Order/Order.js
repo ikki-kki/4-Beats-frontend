@@ -5,13 +5,15 @@ import { API } from "../../config";
 // import DaumPostcode from "react-daum-postcode";
 import "./Order.scss";
 import OrderList from "./OrderList/OrderList";
-import OrderPiceList from "./OrderPiceList";
-import CustomerInfo from "./CustomerInfo";
+import OrderPriceList from "./OrderPriceList";
+// import CustomerInfo from "./CustomerInfo";
 
 class Order extends React.Component {
   inputValueRef = React.createRef();
   state = {
     orderList: [],
+    userInfo: [],
+    totalP: "",
     fullAddr: "",
     Postcode: "",
     cardCheck: false,
@@ -60,6 +62,7 @@ class Order extends React.Component {
   test = () => {
     this.setState({ Postcode: this.fullAddress });
   };
+
   componentDidMount() {
     fetch(`${API}/cart`, {
       method: "GET",
@@ -71,14 +74,53 @@ class Order extends React.Component {
     })
       .then((res) => res.json())
       // .then((res) => console.log(res))
-      .then((res) => this.setState({ orderList: res.data }));
+      .then((res) =>
+        this.setState({
+          orderList: res.data[0].cart_data,
+          userInfo: res.data[0],
+          totalP: res.data[0].total_price,
+        })
+      );
   }
 
   orderHandler = () => {
-    this.props.history.push("/order/check");
+    fetch(`${API}/order`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization:
+          "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6NX0.AY_p0-u1GLfQJB9E8hAhcE467blaITgrJ8SptpVZBSU",
+      },
+      body: JSON.stringify({
+        email: "yj607252@gmail.com",
+        full_name: "yunji",
+        address: "address",
+      }),
+    })
+      // .then((res) => {
+      //   if (res.status === 500) {
+      //     alert("백 잘못");
+      //     return;
+      //   } else if (res.status === 200) {
+      //     alert("ok 성공");
+      //   }
+      // });
+      // .then(res => )
+      // .then((res) => console.log("res", res.status))
+      // .then((res) => res.json())
+      // // .then((res) => console.log(res))
+      .then((res) => {
+        if (res.status === 200) {
+          alert("OK");
+          this.props.history.push(`/order/confirm`);
+        } else {
+          alert("try again");
+        }
+      });
   };
 
   render() {
+    console.log(this.state.userInfo);
     return (
       <>
         <MainHeader />
@@ -117,24 +159,43 @@ class Order extends React.Component {
                     ))}
                 </tbody>
               </table>
-              {this.state.orderList &&
-                this.state.orderList.map((mon, idx) => (
-                  <OrderPiceList key={idx} totalPrice={mon.totalPrice} />
-                ))}
+              {/* {this.state.totalP &&
+                this.state.totalP.map((mon, idx) => (
+                  <OrderPriceList key={idx} totalPrice={mon.totalP} />
+                ))} */}
+              <OrderPriceList
+                totalPrice={this.state.totalP && this.state.totalP}
+              />
             </section>
             <section className="customerInfo">
               <h3>Customer Info</h3>
               <div className="infoTable">
                 <table>
                   <tbody>
-                    {this.state.orderList &&
-                      this.state.orderList.map((info, idx) => (
-                        <CustomerInfo
-                          key={idx}
-                          name={info.full_name}
-                          email={info.email}
-                        />
-                      ))}
+                    <tr>
+                      <th className="nameTitle">Name</th>
+                      <td>
+                        <div className="inputWrap">
+                          <input
+                            type="text"
+                            name="orderName"
+                            value={this.state.userInfo.full_name}
+                          />
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <th className="nameTitle">E-mail</th>
+                      <td>
+                        <div className="inputWrap">
+                          <input
+                            type="text"
+                            name="orderName"
+                            value={this.state.userInfo.email}
+                          />
+                        </div>
+                      </td>
+                    </tr>
                     <tr>
                       <th className="nameTitle">Address</th>
                       <td className="addressArea">
@@ -218,7 +279,9 @@ class Order extends React.Component {
                 <div className="priceBox">
                   <div className="priceWrap">
                     <span>Total price</span>
-                    <span className="totalPrice">$ 155.95</span>
+                    <span className="totalPrice">
+                      {Number(this.state.totalP) + 6}
+                    </span>
                   </div>
                 </div>
                 <div className="requiredCheck">
