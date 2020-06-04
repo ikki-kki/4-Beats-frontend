@@ -39,9 +39,10 @@ class MainHeader extends Component {
   addCartHandler = (num, amount, itemId) => {
     const obj = { ...this.state.responsePost };
     obj.data[0].cart_data[itemId].amount = amount;
-    console.log("amount: ", amount);
-    console.log("itemId: ", itemId);
-    console.log("num: ", num);
+    // console.log("amount: ", amount);
+    // console.log("itemId: ", itemId);
+    // console.log("num: ", num);
+    // 아직 미완료라 필요해유 ㅜ
 
     this.setState({
       sumAmount: Number(num),
@@ -90,14 +91,12 @@ class MainHeader extends Component {
     })
       .then((res) => res.json())
       .then((res) => {
-        console.log(res);
+        // console.log(res);
       });
   };
 
-  //1. +- 누를떄 뭘, 어떻게 바꿀지
-  //2. +- 버튼 이벤트 만들어서 수량 변할 때 부모에 객체를 넣어주기 amount인듯
   render() {
-    console.log("ㅎ보내줄거: ", this.state.responsePost);
+    //console.log("ㅎ보내줄거: ", this.state.responsePost);
     return (
       <>
         {this.state.showCart && (

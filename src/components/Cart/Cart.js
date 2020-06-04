@@ -12,6 +12,7 @@ export default class Cart extends Component {
   }
 
   render() {
+    const { sumAmount, addHandler, postPayment, response } = this.props;
     return (
       <div className="Cart">
         <div className="cartProducts">
@@ -27,8 +28,8 @@ export default class Cart extends Component {
             </button>
           </div>
           <ul className="cartProductsList">
-            {this.props.response &&
-              this.props.response.map((el, i) => {
+            {response &&
+              response.map((el, i) => {
                 return (
                   <CartLists
                     key={i}
@@ -38,8 +39,8 @@ export default class Cart extends Component {
                     product={el.name}
                     color={el.color}
                     price={Number(el.price)}
-                    totalPrice={Number(this.props.sumAmount)}
-                    addHandler={this.props.addHandler}
+                    totalPrice={Number(sumAmount)}
+                    addHandler={addHandler}
                   />
                 );
               })}
@@ -51,9 +52,9 @@ export default class Cart extends Component {
           </div>
           <div className="items">
             <h5>Subtotal</h5>
-            <span>${this.props.sumAmount}</span>
+            <span>${sumAmount}</span>
           </div>
-          <div className="buyBtn" onClick={this.props.postPayment}>
+          <div className="buyBtn" onClick={postPayment}>
             <WhiteBorderButton text="paymont" link="/order" />
           </div>
         </div>

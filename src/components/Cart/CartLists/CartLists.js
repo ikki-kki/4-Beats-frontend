@@ -62,37 +62,32 @@ export default class CartLists extends Component {
     let productPrice = (price * this.state.quantity).toFixed(2);
 
     return (
-      <>
-        <li className="CartLists" showcart={this.props.showcart}>
-          <div className="productContainer">
-            <Link className="productName" to="">
-              {product}
-            </Link>
-            <div className="productColor">{color}</div>
+      <li className="CartLists" showcart={this.props.showcart}>
+        <div className="productContainer">
+          <Link className="productName" to="">
+            {product}
+          </Link>
+          <div className="productColor">{color}</div>
+        </div>
+        <div className="productQuantity">
+          <button className="minusBtn" onClick={() => this.updateQuantity(-1)}>
+            -
+          </button>
+          <div className="productCount">
+            <span className="count">{this.state.quantity}</span>
           </div>
-          <div className="productQuantity">
-            <button
-              className="minusBtn"
-              onClick={() => this.updateQuantity(-1)}
-            >
-              -
-            </button>
-            <div className="productCount">
-              <span className="count">{this.state.quantity}</span>
-            </div>
-            <button className="plusBtn" onClick={() => this.updateQuantity(1)}>
-              +
-            </button>
-            <div className="productRemove">
-              <button onClick={() => this.deleteData()}>remove</button>
-            </div>
+          <button className="plusBtn" onClick={() => this.updateQuantity(1)}>
+            +
+          </button>
+          <div className="productRemove">
+            <button onClick={() => this.deleteData()}>remove</button>
           </div>
-          <div className="productPrice">
-            <span>$&nbsp;</span>
-            <span>{productPrice}</span>
-          </div>
-        </li>
-      </>
+        </div>
+        <div className="productPrice">
+          <span>$&nbsp;</span>
+          <span>{productPrice}</span>
+        </div>
+      </li>
     );
   }
 }
