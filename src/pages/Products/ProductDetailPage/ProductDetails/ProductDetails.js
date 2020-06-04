@@ -2,7 +2,7 @@ import React from "react";
 import "./ProductDetails.scss";
 import DetailCard from "./DetailCard/DetailCard";
 import MainHeader from "../../../../components/Headers/MainHeader/MainHeader";
-// import Config from "../../../../config";
+import { API } from "../../../../config";
 
 class ProductDetails extends React.Component {
   constructor() {
@@ -15,21 +15,11 @@ class ProductDetails extends React.Component {
   }
 
   componentDidMount() {
-    fetch(`http://10.58.5.168:8000/api/product/${this.props.match.params.num}`)
+    fetch(`${API}/product/${this.props.match.params.num}`)
       .then((res) => res.json())
       //   .then((res) => console.log(res));
       .then((res) => this.setState({ list: res.data }));
   }
-
-  //   componentDidUpdate(prevProps) {
-  //     if (prevProps.props.match.params.num !== this.props.match.params.num) {
-  //       fetch(
-  //         `http://10.58.5.168:8000/api/product/${this.props.match.params.num}`
-  //       )
-  //         .then((res) => res.json())
-  //         .then((res) => this.setState({ list: res.data }));
-  //     }
-  //   }
   callBackClickCart = () => {
     this.setState({ clickCart: !this.state.clickCart });
   };
@@ -51,12 +41,14 @@ class ProductDetails extends React.Component {
       this.state.list.map((post, idx) => (
         <DetailCard
           key={idx}
+          id={post.id}
           name={post.name}
           price={post.price}
           image={post.imgage_url[0].imgage_url}
           subject={post.subject[0].subject}
           description={post.theme[0].description}
           specLists={post.item_info}
+          color={post.colors}
         />
       ));
     return (
