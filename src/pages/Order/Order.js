@@ -20,7 +20,6 @@ class Order extends React.Component {
     RChecked: false,
   };
 
-  fullAddress;
   searchHandler = () => {
     new window.daum.Postcode({
       oncomplete: function (data) {
@@ -210,7 +209,7 @@ class Order extends React.Component {
                               value={this.state.Postcode}
                             />
                           </span>
-                          <button onClick={this.props.search}>Search</button>
+                          <button onClick={this.searchHandler}>Search</button>
                         </div>
                         <div className="addressDetail">
                           <span>
@@ -224,7 +223,7 @@ class Order extends React.Component {
                           <span>
                             <input
                               type="text"
-                              id="sample6_detailAddress"
+                              id="sample6_datailAddress"
                               placeholder="Detail"
                               onChange={this.changeDetail}
                             />
