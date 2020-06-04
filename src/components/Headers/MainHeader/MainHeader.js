@@ -4,6 +4,7 @@ import { withRouter } from "react-router-dom";
 import HoverMenu from "./HoverMenu/HoverMenu";
 import WhiteBorderButton from "../../Buttons/WhiteBorderButton";
 import SignInUp from "../../../pages/SignInUp/SignInUp";
+import UserName from "../../../pages/SignInUp/UserName";
 import Cart from "../../Cart/Cart";
 import "./MainHeader.scss";
 
@@ -106,6 +107,7 @@ class MainHeader extends Component {
               <li className="navMenus">
                 <button className="login">
                   <SignInUp />
+                  <UserName />
                 </button>
                 <button
                   className="btnDefault"
