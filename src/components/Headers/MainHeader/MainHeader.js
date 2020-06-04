@@ -75,7 +75,6 @@ class MainHeader extends Component {
   };
 
   render() {
-    console.log("sdfsdf: ", this.state.isActive);
     return (
       <>
         {this.state.showCart && (
