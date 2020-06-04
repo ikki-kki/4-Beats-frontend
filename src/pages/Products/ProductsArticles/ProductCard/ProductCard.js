@@ -1,9 +1,12 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { withRouter } from "react-router-dom";
 import "./ProductCard.scss";
 import BlackBorderButton from "../../../../components/Buttons/BlackBorderButton";
 
 class ProductCard extends React.Component {
+  goDetail = () => {
+    this.props.history.push(`/product/${this.props.num}`);
+  };
   render() {
     const { num, name, image, title, specLists, price } = this.props;
     return (
@@ -30,9 +33,20 @@ class ProductCard extends React.Component {
               <span>{price}</span>
             </p>
             <div className="buttonWrap">
-              <Link to="/products/detail" className="btnWrapper">
-                <BlackBorderButton text="Learn More" link="products/detail" />
-              </Link>
+              <div className="btnWrapper">
+                <BlackBorderButton
+                  text="Learn More"
+                  // link="products/detail"
+                  clickHandler={this.goDetail}
+                  id={num}
+                />
+                {/* <button
+                  className="BlackBorderButton"
+                  onClick={() => history.push(`/products/${num}`)}
+                >
+                  Learn More
+                </button> */}
+              </div>
             </div>
           </div>
           <div className="productImageWrapper">
@@ -45,4 +59,4 @@ class ProductCard extends React.Component {
   }
 }
 
-export default ProductCard;
+export default withRouter(ProductCard);
