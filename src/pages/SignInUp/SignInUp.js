@@ -36,19 +36,17 @@ class SignInUp extends React.Component {
         <div className="loginTap">
           <span onClick={this.openModal}>LOGIN</span>
         </div>
-        {/* <ModalSuccess changeCo={this.handleOnClickEvent} isOpen={this.state.isModalOpen} close={this.closeModal} ColorChange={this.buttonColorChange}/> */}
         {this.state.loginState ? (
           <ModalSignIn
             changeCo={this.handleOnClickEvent}
             isOpen={this.state.isModalOpen}
             close={this.closeModal}
-            ColorChange={this.buttonColorChange}
           />
         ) : (
           <ModalSignUp
             changeCo={this.handleLoginTrue}
             isOpen={this.state.isModalOpen}
-            switch={this.handleOnClickEvent}
+            switch={this.handleLoginTrue}
             close={this.closeModal}
           />
         )}
