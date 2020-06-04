@@ -8,6 +8,7 @@ import ProductDetailPage from "./pages/Products/ProductDetailPage/ProductDetailP
 import ProductDetails from "./pages/Products/ProductDetailPage/ProductDetails/ProductDetails";
 import Support from "./pages/Support/Support";
 import Order from "./pages/Order/Order";
+import OrderConfirm from "./pages/Order/OrderConfirm/OrderConfirm";
 import ProductsDetailPage2 from "./pages/Products/ProductsDetailPage2/ProductsDetailPage2";
 
 class Routes extends Component {
@@ -26,6 +27,7 @@ class Routes extends Component {
             component={ProductsDetailPage2}
           />
           <Route exact path="/order" component={Order} />
+          <Route exact path="/order/confirm" component={OrderConfirm} />
           <Route exact path="/support" component={Support} />
         </Switch>
       </Router>

@@ -5,12 +5,15 @@ import { API } from "../../config";
 // import DaumPostcode from "react-daum-postcode";
 import "./Order.scss";
 import OrderList from "./OrderList/OrderList";
-import CustomerInfo from "./CustomerInfo";
+import OrderPriceList from "./OrderPriceList";
+// import CustomerInfo from "./CustomerInfo";
 
 class Order extends React.Component {
   inputValueRef = React.createRef();
   state = {
     orderList: [],
+    userInfo: [],
+    totalP: "",
     fullAddr: "",
     Postcode: "",
     cardCheck: false,
@@ -35,13 +38,6 @@ class Order extends React.Component {
           }
           fullAddress += extraAddress !== "" ? ` (${extraAddress})` : "";
         }
-        // console.log(this.fullAddress);
-        // console.log(fullAddress); // e.g. '서울 성동구 왕십리로2길 20 (성수동1가)'
-        // console.log(data.zonecode);
-        // this.setState({
-        //   fullAddr: fullAddress,
-        //   Postcode: data.zonecode,
-        // });
         document.getElementById("sample6_postcode").value = data.zonecode;
         document.getElementById("sample6_address").value = fullAddress;
 
@@ -66,23 +62,65 @@ class Order extends React.Component {
   test = () => {
     this.setState({ Postcode: this.fullAddress });
   };
+
   componentDidMount() {
-    fetch(`${API}/`)
+    fetch(`${API}/cart`, {
+      method: "GET",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization:
+          "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6NX0.AY_p0-u1GLfQJB9E8hAhcE467blaITgrJ8SptpVZBSU",
+      },
+    })
       .then((res) => res.json())
-      .then((res) => console.log(res))
-      .then((res) => this.setState({ orderList: res }));
+      // .then((res) => console.log(res))
+      .then((res) =>
+        this.setState({
+          orderList: res.data[0].cart_data,
+          userInfo: res.data[0],
+          totalP: res.data[0].total_price,
+        })
+      );
   }
 
   orderHandler = () => {
-    this.props.history.push("/order/check");
+    fetch(`${API}/order`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization:
+          "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6NX0.AY_p0-u1GLfQJB9E8hAhcE467blaITgrJ8SptpVZBSU",
+      },
+      body: JSON.stringify({
+        email: "yj607252@gmail.com",
+        full_name: "yunji",
+        address: "address",
+      }),
+    })
+      // .then((res) => {
+      //   if (res.status === 500) {
+      //     alert("백 잘못");
+      //     return;
+      //   } else if (res.status === 200) {
+      //     alert("ok 성공");
+      //   }
+      // });
+      // .then(res => )
+      // .then((res) => console.log("res", res.status))
+      // .then((res) => res.json())
+      // // .then((res) => console.log(res))
+      .then((res) => {
+        if (res.status === 200) {
+          alert("OK");
+          this.props.history.push(`/order/confirm`);
+        } else {
+          alert("try again");
+        }
+      });
   };
 
   render() {
-    const orderL =
-      this.state.orderList &&
-      this.state.orderList.map((post, idx) => (
-        <OrderList key={idx} name={post.name} />
-      ));
+    console.log(this.state.userInfo);
     return (
       <>
         <MainHeader />
@@ -96,13 +134,68 @@ class Order extends React.Component {
             </div>
           </section>
           <div className="tableWrap">
-            {orderL}
+            <h3 className="tableTitle">Product</h3>
+            <section className="productTable">
+              <table>
+                <thead>
+                  <tr>
+                    <th className="productN">Product</th>
+                    <th>Color</th>
+                    <th>Quantity</th>
+                    <th>Price</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {this.state.orderList &&
+                    this.state.orderList.map((post, idx) => (
+                      <OrderList
+                        key={idx}
+                        name={post.name}
+                        img={post.image_url[0].image_url}
+                        color={post.color}
+                        amount={post.amount}
+                        price={post.price}
+                      />
+                    ))}
+                </tbody>
+              </table>
+              {/* {this.state.totalP &&
+                this.state.totalP.map((mon, idx) => (
+                  <OrderPriceList key={idx} totalPrice={mon.totalP} />
+                ))} */}
+              <OrderPriceList
+                totalPrice={this.state.totalP && this.state.totalP}
+              />
+            </section>
             <section className="customerInfo">
               <h3>Customer Info</h3>
               <div className="infoTable">
                 <table>
                   <tbody>
-                    <CustomerInfo />
+                    <tr>
+                      <th className="nameTitle">Name</th>
+                      <td>
+                        <div className="inputWrap">
+                          <input
+                            type="text"
+                            name="orderName"
+                            value={this.state.userInfo.full_name}
+                          />
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <th className="nameTitle">E-mail</th>
+                      <td>
+                        <div className="inputWrap">
+                          <input
+                            type="text"
+                            name="orderName"
+                            value={this.state.userInfo.email}
+                          />
+                        </div>
+                      </td>
+                    </tr>
                     <tr>
                       <th className="nameTitle">Address</th>
                       <td className="addressArea">
@@ -186,7 +279,9 @@ class Order extends React.Component {
                 <div className="priceBox">
                   <div className="priceWrap">
                     <span>Total price</span>
-                    <span className="totalPrice">$ 155.95</span>
+                    <span className="totalPrice">
+                      {Number(this.state.totalP) + 6}
+                    </span>
                   </div>
                 </div>
                 <div className="requiredCheck">

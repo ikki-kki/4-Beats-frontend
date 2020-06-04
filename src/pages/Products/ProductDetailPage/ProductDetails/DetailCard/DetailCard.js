@@ -10,8 +10,17 @@ class DetailCard extends React.Component {
   };
   // order 버튼 눌렀을 때 fetch 함수 실행
   sendProduct = (id) => {
+    // const token = localStorage.getItem("Authorization");
     fetch(`${API}/product/${id}/${this.state.current}/cart`, {
       method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization:
+          "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6NX0.AY_p0-u1GLfQJB9E8hAhcE467blaITgrJ8SptpVZBSU",
+      },
+      body: JSON.stringify({
+        text: "order",
+      }),
     }).then((res) => {
       if (res.status === 200) {
         alert("OK");
@@ -85,12 +94,12 @@ class DetailCard extends React.Component {
                 />
               </div>
               <div className="buyBtn">
-                <a href="#buy" className="btnWrapper">
+                <div className="btnWrapper">
                   <RedButton
                     text="Buy"
                     sendProduct={() => this.sendProduct(id)}
                   />
-                </a>
+                </div>
               </div>
               <div className="price">
                 <span>{price}</span>

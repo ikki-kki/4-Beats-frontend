@@ -6,6 +6,7 @@ import WhiteBorderButton from "../../Buttons/WhiteBorderButton";
 import SignInUp from "../../../pages/SignInUp/SignInUp";
 import UserName from "../../../pages/SignInUp/UserName/UserName";
 import Cart from "../../Cart/Cart";
+import { API } from "../../../config";
 import "./MainHeader.scss";
 
 class MainHeader extends Component {
@@ -19,6 +20,9 @@ class MainHeader extends Component {
       sumAmount: 0,
       count: 0,
       isActive: true,
+      amountPost: 0,
+      itemIdPost: 0,
+      responsePost: {},
     };
   }
 
@@ -44,33 +48,62 @@ class MainHeader extends Component {
     this.setState({ display: "none" });
   };
 
-  addCartHandler = (test) => {
+  addCartHandler = (num, amount, itemId) => {
+    const obj = { ...this.state.responsePost };
+    obj.data[0].cart_data[itemId].amount = amount;
+    // console.log("amount: ", amount);
+    // console.log("itemId: ", itemId);
+    // console.log("num: ", num);
+    // 아직 미완료라 필요해유 ㅜ
+
     this.setState({
-      sumAmount: Number(test),
+      sumAmount: Number(num),
+      responsePost: obj,
+      amountPost: amount,
+      itemIdPost: itemId,
     });
   };
 
   //카트 버튼 클릭 핸들러
   cartClickHandler = () => {
     this.setState({ showCart: !this.state.showCart });
-    fetch("http://localhost:3002/data/productModk.json", {
+
+    const token = localStorage.getItem("token");
+    fetch(`${API}/cart`, {
       method: "GET",
       headers: {
-        // Authorization:
-        //   "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6NX0.AY_p0-u1GLfQJB9E8hAhcE467blaITgrJ8SptpVZBSU",
+        Authorization: token,
         "Content-Type": "application/json",
       },
     })
       .then((res) => res.json())
       .then((res) => {
         let sum = 0;
-
-        res.data.forEach((num) => (sum += num.price));
-
+        res.data[0].cart_data.forEach((num) => (sum += Number(num.price)));
         this.setState({
-          response: res,
+          response: res.data[0].cart_data,
           sumAmount: sum,
+          responsePost: res,
         });
+      });
+  };
+
+  postPayment = () => {
+    const { idxPost, amountPost } = this.state;
+    const token = localStorage.getItem("token");
+    fetch(`${API}/cart/${idxPost}/${amountPost}`, {
+      method: "POST",
+      hedaer: {
+        Authorization: token,
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        response: this.state.amountPost,
+      }),
+    })
+      .then((res) => res.json())
+      .then((res) => {
+        // console.log(res);
       });
   };
 
@@ -84,6 +117,7 @@ class MainHeader extends Component {
             response={this.state.response}
             sumAmount={this.state.sumAmount}
             addHandler={this.addCartHandler}
+            postPayment={this.postPayment}
             //여기서 실행되지 않는 함수는 콜백 하지 않아도 된디.
           />
         )}
