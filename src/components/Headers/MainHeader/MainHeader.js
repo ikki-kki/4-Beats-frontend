@@ -16,6 +16,8 @@ class MainHeader extends Component {
       display: "none",
       showCart: false,
       response: [],
+      sumAmount: 0,
+      count: 0,
     };
   }
 
@@ -32,10 +34,16 @@ class MainHeader extends Component {
     this.setState({ display: "none" });
   };
 
+  addCartHandler = (test) => {
+    this.setState({
+      sumAmount: Number(test),
+    });
+  };
+
   //카트 버튼 클릭 핸들러
   cartClickHandler = () => {
     this.setState({ showCart: !this.state.showCart });
-    fetch("http://localhost:3000/data/productModk.json", {
+    fetch("http://localhost:3002/data/productModk.json", {
       method: "GET",
       headers: {
         // Authorization:
@@ -45,14 +53,19 @@ class MainHeader extends Component {
     })
       .then((res) => res.json())
       .then((res) => {
-        // console.log(res, "res");
+        let sum = 0;
+
+        res.data.forEach((num) => (sum += num.price));
+
         this.setState({
           response: res,
+          sumAmount: sum,
         });
       });
   };
 
   render() {
+    console.log("sdfsdf: ", this.state.sumAmount);
     return (
       <>
         {this.state.showCart && (
@@ -60,6 +73,9 @@ class MainHeader extends Component {
             showCart={this.state.showCart}
             clickHandler={this.cartClickHandler}
             response={this.state.response}
+            sumAmount={this.state.sumAmount}
+            addHandler={this.addCartHandler}
+            //여기서 실행되지 않는 함수는 콜백 하지 않아도 된디.
           />
         )}
 
@@ -115,7 +131,7 @@ class MainHeader extends Component {
                   onClick={() => this.cartClickHandler()}
                 >
                   {/* 장바구니에 아이템이 들어오면 span이 생김 */}
-                  <span>1</span>
+                  {this.state.count > 0 && <span>{this.state.count}</span>}
                 </button>
               </li>
             </ul>

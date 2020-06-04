@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import { Link } from "react-router-dom";
 import "./StoryArticlesLarge.scss";
 export default class StoryArticlesLarge extends Component {
   constructor() {
@@ -19,8 +18,8 @@ export default class StoryArticlesLarge extends Component {
 
   render() {
     return (
-      <Link
-        to="/"
+      <a
+        href="https://www.beatsbydre.com/stories/2020/05/behind-the-studio-door-how-selena-gomez-boyfriend-came-to-life"
         className="StoryArticlesLarge"
         onMouseEnter={this.mouseEnterHandler}
         onMouseLeave={this.mouseLeaveHandler}
@@ -32,7 +31,7 @@ export default class StoryArticlesLarge extends Component {
             <span style={{ color: this.state.color }}>READ</span>
           </h2>
         </div>
-      </Link>
+      </a>
     );
   }
 }
