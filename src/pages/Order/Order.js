@@ -2,11 +2,9 @@ import React from "react";
 import MainHeader from "../../components/Headers/MainHeader/MainHeader";
 import MainFooter from "../../components/Footers/MainFooter/MainFooter";
 import { API } from "../../config";
-// import DaumPostcode from "react-daum-postcode";
 import "./Order.scss";
 import OrderList from "./OrderList/OrderList";
 import OrderPriceList from "./OrderPriceList";
-// import CustomerInfo from "./CustomerInfo";
 
 class Order extends React.Component {
   inputValueRef = React.createRef();
@@ -20,7 +18,6 @@ class Order extends React.Component {
     RChecked: false,
   };
 
-  fullAddress;
   searchHandler = () => {
     new window.daum.Postcode({
       oncomplete: function (data) {
@@ -64,16 +61,15 @@ class Order extends React.Component {
   };
 
   componentDidMount() {
+    const token = localStorage.getItem("Authorization");
     fetch(`${API}/cart`, {
       method: "GET",
       headers: {
         "Content-Type": "application/json",
-        Authorization:
-          "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6NX0.AY_p0-u1GLfQJB9E8hAhcE467blaITgrJ8SptpVZBSU",
+        Authorization: token,
       },
     })
       .then((res) => res.json())
-      // .then((res) => console.log(res))
       .then((res) =>
         this.setState({
           orderList: res.data[0].cart_data,
@@ -84,43 +80,29 @@ class Order extends React.Component {
   }
 
   orderHandler = () => {
+    const token = localStorage.getItem("Authorization");
     fetch(`${API}/order`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
-        Authorization:
-          "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6NX0.AY_p0-u1GLfQJB9E8hAhcE467blaITgrJ8SptpVZBSU",
+        Authorization: token,
       },
       body: JSON.stringify({
-        email: "yj607252@gmail.com",
-        full_name: "yunji",
+        email: this.state.userInfo.email,
+        full_name: this.state.userInfo.full_name,
         address: "address",
       }),
-    })
-      // .then((res) => {
-      //   if (res.status === 500) {
-      //     alert("백 잘못");
-      //     return;
-      //   } else if (res.status === 200) {
-      //     alert("ok 성공");
-      //   }
-      // });
-      // .then(res => )
-      // .then((res) => console.log("res", res.status))
-      // .then((res) => res.json())
-      // // .then((res) => console.log(res))
-      .then((res) => {
-        if (res.status === 200) {
-          alert("OK");
-          this.props.history.push(`/order/confirm`);
-        } else {
-          alert("try again");
-        }
-      });
+    }).then((res) => {
+      if (res.status === 200) {
+        alert("OK");
+        this.props.history.push(`/order/confirm`);
+      } else {
+        alert("try again");
+      }
+    });
   };
 
   render() {
-    console.log(this.state.userInfo);
     return (
       <>
         <MainHeader />
@@ -159,10 +141,6 @@ class Order extends React.Component {
                     ))}
                 </tbody>
               </table>
-              {/* {this.state.totalP &&
-                this.state.totalP.map((mon, idx) => (
-                  <OrderPriceList key={idx} totalPrice={mon.totalP} />
-                ))} */}
               <OrderPriceList
                 totalPrice={this.state.totalP && this.state.totalP}
               />
@@ -210,7 +188,7 @@ class Order extends React.Component {
                               value={this.state.Postcode}
                             />
                           </span>
-                          <button onClick={this.props.search}>Search</button>
+                          <button onClick={this.searchHandler}>Search</button>
                         </div>
                         <div className="addressDetail">
                           <span>
@@ -224,7 +202,7 @@ class Order extends React.Component {
                           <span>
                             <input
                               type="text"
-                              id="sample6_detailAddress"
+                              id="sample6_datailAddress"
                               placeholder="Detail"
                               onChange={this.changeDetail}
                             />
@@ -260,18 +238,6 @@ class Order extends React.Component {
                       />
                       <span>Credit Card</span>
                     </div>
-                    {/* <div className="checkForm">
-                    <input type="radio" name="creditCard" className="radio" />
-                    <span>Credit Card</span>
-                  </div>
-                  <div className="checkForm">
-                    <input type="radio" name="creditCard" className="radio" />
-                    <span>Credit Card</span>
-                  </div>
-                  <div className="checkForm">
-                    <input type="radio" name="creditCard" className="radio" />
-                    <span>Credit Card</span>
-                  </div> */}
                   </div>
                 </div>
               </div>
@@ -280,7 +246,7 @@ class Order extends React.Component {
                   <div className="priceWrap">
                     <span>Total price</span>
                     <span className="totalPrice">
-                      {Number(this.state.totalP) + 6}
+                      {Number(this.state.totalP) + 6.0}
                     </span>
                   </div>
                 </div>
