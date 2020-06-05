@@ -77,6 +77,7 @@ class MainHeader extends Component {
         console.log(res);
         let sum = 0;
         res.data[0].cart_data.forEach((num) => (sum += Number(num.price)));
+        console.log(res);
         this.setState({
           response: res.data[0].cart_data,
           sumAmount: sum,
