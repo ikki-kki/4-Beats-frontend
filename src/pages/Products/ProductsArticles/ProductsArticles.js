@@ -117,10 +117,10 @@ class ProductsArticles extends React.Component {
               wireless earphones
             </h2>
           </section>
+          <div className="sectionSpacingStart" />
+          {makeCard1}
+          <hr className="seperateSection" />
         </Fade>
-        <div className="sectionSpacingStart" />
-        {makeCard1}
-        <hr className="seperateSection" />
         <div className="sectionSpacingStart" />
         <Fade>
           <section className="productTitle">
@@ -130,10 +130,10 @@ class ProductsArticles extends React.Component {
               ON‑EAR HEADPHONES
             </h2>
           </section>
+          <div className="sectionSpacingStart" />
+          {makeCard2}
+          <hr className="seperateSection" />
         </Fade>
-        <div className="sectionSpacingStart" />
-        {makeCard2}
-        <hr className="seperateSection" />
         <div className="sectionSpacingStart" />
         <Fade>
           <section className="productTitle">
@@ -143,10 +143,10 @@ class ProductsArticles extends React.Component {
               OVER‑EAR HEADPHONES
             </h2>
           </section>
+          <div className="sectionSpacingStart" />
+          {makeCard3}
+          <hr className="seperateSection" />
         </Fade>
-        <div className="sectionSpacingStart" />
-        {makeCard3}
-        <hr className="seperateSection" />
         <div className="sectionSpacingStart" />
         <Fade>
           <section className="productTitle">
@@ -156,19 +156,19 @@ class ProductsArticles extends React.Component {
               WIRELESS EARPHONES
             </h2>
           </section>
+          <div className="sectionSpacingStart" />
+          {makeCard4}
+          <hr className="seperateSection" />
         </Fade>
-        <div className="sectionSpacingStart" />
-        {makeCard4}
-        <hr className="seperateSection" />
         <div className="sectionSpacingStart" />
         <Fade>
           <section className="productTitle">
             <h2>WIRED OPTIONS</h2>
           </section>
+          <div className="sectionSpacingStart" />
+          {makeCard5}
+          <hr className="seperateSection" />
         </Fade>
-        <div className="sectionSpacingStart" />
-        {makeCard5}
-        <hr className="seperateSection" />
         <div className="sectionSpacingStart" />
         <Fade>
           <section className="productTitle">
@@ -178,9 +178,10 @@ class ProductsArticles extends React.Component {
               WIRELESS SPEAKER
             </h2>
           </section>
+
+          <div className="sectionSpacingStart" />
+          {makeCard6}
         </Fade>
-        <div className="sectionSpacingStart" />
-        {makeCard6}
       </div>
     );
   }
