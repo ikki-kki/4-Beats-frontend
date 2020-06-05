@@ -22,7 +22,7 @@ class DetailCard extends React.Component {
       }),
     }).then((res) => {
       if (res.status === 200) {
-        alert("OK");
+        alert("Add to cart");
       } else {
         alert("try again");
       }
