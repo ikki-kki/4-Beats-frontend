@@ -16,7 +16,7 @@ class UserName extends React.Component {
   render() {
     const userName = localStorage.getItem("full_name");
     return (
-      <Link to="order/confirm" className="orderOpen">
+      <Link to="/order/confirm" className="orderOpen">
         <span>{userName}</span>
       </Link>
     );
