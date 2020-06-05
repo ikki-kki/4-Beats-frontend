@@ -1,6 +1,8 @@
 import React from "react";
 import Config from "../Config";
 import RedButton from "../../../components/Buttons/RedButton";
+import MainHeader from "../../../components/Headers/MainHeader/MainHeader";
+import GoTop from "../../../components/GoTop/GoTop";
 import Footers from "../../../components/Footers/Footers";
 import "./ProductsDetailPage2.scss";
 
@@ -46,6 +48,8 @@ class ProductsDetailPage2 extends React.Component {
   render() {
     return (
       <div className="ProductsDetail_Pill">
+        <GoTop />
+        <MainHeader />
         <section className="HeaderWrap">
           <div className="TextWrap">
             <div className="TextInner">
