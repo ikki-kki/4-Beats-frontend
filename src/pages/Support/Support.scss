@@ -98,7 +98,6 @@
             }
 
             .ContentShow {
-              // overflow: hidden;
               transition: all ease-in-out 0.2s;
               height: auto;
               overflow: hidden;
@@ -122,48 +121,9 @@
                   margin-bottom: 50px;
                 }
               }
-              .Line1 a:before {
-                content: "";
-                border-bottom: solid 2px rgb(0, 0, 0);
-                position: absolute;
-                bottom: 56.5%;
-                left: 6.2%;
-                width: 0;
-              }
-
-              .Line1 a:hover:before {
-                width: 38%;
-                transition: all ease-in-out 0.2s;
-              }
-
-              .Line1 a:before {
-                transition: all 0.2s ease;
-                transition: all ease-in-out 0.2s;
-              }
-
-              .Line2 a:before {
-                content: "";
-                border-bottom: solid 2px rgb(0, 0, 0);
-                position: absolute;
-                bottom: 49.5%;
-                left: 6.7%;
-                width: 0;
-              }
-
-              .Line2 a:hover:before {
-                width: 17%;
-                transition: all ease-in-out 0.2s;
-              }
-
-              .Line2 a:before {
-                transition: all 0.2s ease;
-              }
             }
             .ContentShowActive {
-              // overflow: auto;
-              // max-height: 110px;
               display: none;
-              // transition: all ease-in-out 0.2s;
             }
           }
           .ContentBluetoothColor {
@@ -178,7 +138,6 @@
           .ContentSound {
             padding: 0 30px 0 30px;
             border-top: solid 1px #dddddd;
-            // border-bottom: solid 1px #dddddd;
             &:hover {
               background-color: rgba(255, 255, 255, 0.2);
               transition: all ease-in-out 0.2s;
@@ -200,7 +159,6 @@
             }
 
             .ContentShow {
-              // overflow: hidden;
               height: auto;
               overflow: hidden;
               transition: all ease-in-out 0.2s;
@@ -227,47 +185,9 @@
                   }
                 }
               }
-
-              // .Line2-1 a:before {
-              //   content: "";
-              //   border-bottom: solid 2px rgb(0, 0, 0);
-              //   position: absolute;
-              //   bottom: 30%;
-              //   left: 6.7%;
-              //   width: 0;
-              // }
-
-              // .Line2-1 a:hover:before {
-              //   width: 40%;
-              // }
-
-              // .Line2-1 a:before {
-              //   transition: all 0.2s ease;
-              // }
-
-              // .Line2-2 a:before {
-              //   content: "";
-              //   border-bottom: solid 2px rgb(0, 0, 0);
-              //   position: absolute;
-              //   bottom: 10%;
-              //   left: 6.7%;
-              //   width: 0;
-              // }
-
-              // .Line2-2 a:hover:before {
-              //   width: 17%;
-              // }
-
-              // .Line2-2 a:before {
-              //   transition: all 0.2s ease;
-              // }
             }
             .ContentShowActive {
               display: none;
-              // overflow: auto;
-              // max-height: 110px;
-              // opacity: 1;
-              // transition: all ease-in-out 0.2s;
             }
           }
 
@@ -295,7 +215,6 @@
             }
 
             .ContentShow {
-              // overflow: hidden;
               height: auto;
               overflow: hidden;
               transition: all ease-in-out 0.2s;
@@ -324,9 +243,6 @@
               }
             }
             .ContentShowActive {
-              // overflow: auto;
-              // max-height: 200px;
-              // opacity: 1;
               display: none;
               transition: all ease-in-out 0.2s;
             }
@@ -381,7 +297,6 @@
             padding-bottom: 15px;
           }
           .Tile-Inner p {
-            // font-family: $subFont;
             font-size: 14px;
             min-height: 90px;
             line-height: 1.6;
