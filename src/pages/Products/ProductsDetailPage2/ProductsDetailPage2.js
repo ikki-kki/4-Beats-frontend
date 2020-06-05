@@ -1,36 +1,48 @@
 import React from "react";
 import Config from "../Config";
 import RedButton from "../../../components/Buttons/RedButton";
+import Footers from "../../../components/Footers/Footers";
 import "./ProductsDetailPage2.scss";
 
-// const ProductColor = {
-//   0: {
-//     ProductColor: "white",
-//     ProductColorName: "White",
-//     ProductColorNameC: "#000",
-//     src: `${Config.ProductPillColor}/white_thqrt_retina_1800x1800_V2.png`,
-//     check: 1,
-//     color: "rgb(101,101,101)",
-//   },
-//   1: {
-//     ProductColor: "black",
-//     ProductColorName: "Black",
-//     ProductColorNameC: "#000",
-//     src: `${Config.ProductPillColor}/black_thqrt_retina_1800x1800_V2.png`,
-//     check: 2,
-//     color: "rgb(101,101,101)",
-//   },
-//   2: {
-//     ProductColor: "red",
-//     ProductColorName: "red",
-//     ProductColorNameC: "#000",
-//     src: `${Config.ProductPillColor}/_0001_rgb_ML4Q2-RGB-thrqtrlft_V2.png`,
-//     check: 3,
-//     color: "rgb(101,101,101)",
-//   },
-// };
+const SpeakerImg = {
+  0: {
+    src:
+      "https://www.beatsbydre.com/content/dam/beats/web/pdp/beats-pill-plus/color_selection/white_thqrt_retina_1800x1800_V2.png",
+  },
+  1: {
+    src:
+      "https://www.beatsbydre.com/content/dam/beats/web/pdp/beats-pill-plus/color_selection/black_thqrt_retina_1800x1800_V2.png",
+  },
+  2: {
+    src:
+      "https://www.beatsbydre.com/content/dam/beats/web/pdp/beats-pill-plus/color_selection/_0001_rgb_ML4Q2-RGB-thrqtrlft_V2.png",
+  },
+};
 
 class ProductsDetailPage2 extends React.Component {
+  state = {
+    isActive: 0,
+    view: 0,
+  };
+
+  handleOptionSelect = (num) => {
+    const { isActive } = this.state;
+
+    if (isActive === 0) {
+      this.setState({
+        isActive: num,
+      });
+    } else if (isActive !== 0) {
+      this.setState({
+        isActive: num,
+      });
+    }
+  };
+
+  ImgSelect = (number) => {
+    this.setState({ view: number });
+  };
+
   render() {
     return (
       <div className="ProductsDetail_Pill">
@@ -39,9 +51,7 @@ class ProductsDetailPage2 extends React.Component {
             <div className="TextInner">
               <h1>
                 Beats Pill
-                <sup>
-                  <b>+</b>
-                </sup>
+                <sup>+</sup>
               </h1>
               <p>Portable Wireless Speaker</p>
               <div className="PriceBuyWrap">
@@ -51,8 +61,8 @@ class ProductsDetailPage2 extends React.Component {
                     href="https://www.apple.com/shop/product/ML4M2LL/A/beats-pill-portable-speaker-black?cid=app_Beats_PillPlus_PDP_US_AOS_BeatsPillPlus"
                     className="BuyBtn"
                   >
-                    <div>
-                      <RedButton text={"Buy on"} link="/" />
+                    <div className="RedBtn">
+                      <RedButton text={"BUY ON"} />
                     </div>
                   </a>
                 </div>
@@ -70,84 +80,42 @@ class ProductsDetailPage2 extends React.Component {
             <div className="ColorSelector">
               <div className="Container">
                 <fieldset className="ColorSelectorContent">
-                  <legend className="TextNote">
+                  <div className="TextNote">
                     <h2>Available Colors</h2>
-                    Find Your Color
-                  </legend>
+                  </div>
                   <div className="ColorList">
-                    <ul>
-                      <li className="Active" role="presentation">
-                        <input
-                          className="ColorListInput1"
-                          name="color1"
-                          type="radio"
-                          value="white"
-                          checked="checked"
-                          id="ColorSelector1"
+                    <div className="WhiteWrap">
+                      <div className="White">
+                        <div
+                          className="WhiteBox"
+                          onClick={() => this.ImgSelect(0)}
                         />
-                        <label for="ColorSelector1">
-                          <a href="/">
-                            <div className="BtnBorder">
-                              <div className="ImgWrap">
-                                <img
-                                  src="https://www.beatsbydre.com/content/dam/beats/content-blocks/pdp/color-selector/white.gif"
-                                  alt="white"
-                                />
-                              </div>
-                            </div>
-                            <div className="ColorTitle">White</div>
-                          </a>
-                        </label>
-                      </li>
-                      <li className="Active" role="presentation">
-                        <input
-                          className="ColorListInput2"
-                          name="color2"
-                          type="radio"
-                          value="black"
-                          checked="checked"
-                          id="ColorSelector2"
+                      </div>
+                      <div className="TextWhite">White</div>
+                    </div>
+                    <div className="BlackWrap">
+                      <div className="Black">
+                        <div
+                          className="BlackBox"
+                          onClick={() => this.ImgSelect(1)}
                         />
-                        <label for="ColorSelector2">
-                          <a href="/">
-                            <div className="BtnBorder">
-                              <div className="ImgWrap">
-                                <img
-                                  src="https://www.beatsbydre.com/content/dam/beats/content-blocks/pdp/color-selector/swatch-black.gif"
-                                  alt="black"
-                                />
-                              </div>
-                            </div>
-                            <div className="ColorTitle">Black</div>
-                          </a>
-                        </label>
-                      </li>
-                      <li className="Active" role="presentation">
-                        <input
-                          className="ColorListInput3"
-                          name="color3"
-                          type="radio"
-                          value="red"
-                          checked="checked"
-                          id="ColorSelector3"
+                      </div>
+                      <div className="TextBlack">Black</div>
+                    </div>
+                    <div className="RedWrap">
+                      <div className="Red">
+                        <div
+                          className="RedBox"
+                          onClick={() => this.ImgSelect(2)}
                         />
-                        <label for="ColorSelector3">
-                          <a href="/">
-                            <div className="BtnBorder">
-                              <div className="ImgWrap">
-                                <img
-                                  src="https://www.beatsbydre.com/content/dam/beats/content-blocks/pdp/color-selector/(PRODUCT)RED.jpg"
-                                  alt="red"
-                                />
-                              </div>
-                            </div>
-                            <div className="ColorTitle">(RED)™</div>
-                          </a>
-                        </label>
-                      </li>
-                    </ul>
+                      </div>
+                      <div className="TextRed">Red</div>
+                    </div>
                   </div>
                 </fieldset>
+                <div className="SpeakerWhite">
+                  <img src={SpeakerImg[this.state.view].src} alt="Color" />
+                </div>
               </div>
             </div>
           </div>
@@ -255,6 +223,137 @@ class ProductsDetailPage2 extends React.Component {
             </div>
           </div>
         </section>
+        <section className="StickySection">
+          <div className="SlideWrap">
+            <div className="Text">
+              <div className="TextInner">
+                <h3>DJ the Playlist</h3>
+                <p>
+                  Grab a friend and control the music from two Bluetooth
+                  <sup>®</sup> sources.{" "}
+                </p>
+              </div>
+            </div>
+            <div className="StickyImg"></div>
+          </div>
+          <div className="SlideWrap_2">
+            <div className="Text">
+              <div className="TextInner">
+                <h3>Amplify Your Sound</h3>
+                <p>
+                  Add a second Beats Pill<sup>+</sup> into the mix and
+                  simultaneously play from both speakers for a sound that’s
+                  twice as full.
+                </p>
+              </div>
+            </div>
+            <div className="StickyImg"></div>
+          </div>
+          <div className="SlideWrap_3">
+            <div className="Text">
+              <div className="TextInner">
+                <h3>Put It in Stereo</h3>
+                <p>
+                  Sync two Beats Pill<sup>+</sup> speakers together for
+                  dedicated left and right playback and an even more dynamic
+                  sound experience.
+                </p>
+              </div>
+            </div>
+            <div className="StickyImg"></div>
+          </div>
+        </section>
+        <section className="ProductOverview">
+          <div className="Container">
+            <div className="Content">
+              <div className="ItemLeft">
+                <div className="Title">
+                  <h2>Product Overview</h2>
+                  <p>
+                    Pill’s lightweight and portable design lets you bring the
+                    music wherever you go. Despite its compact size, the Pill
+                    produces powerful sound with soaring highs and deep bass to
+                    fill up any room.
+                  </p>
+                </div>
+                <div className="Toggle">
+                  <div className="HighlightsBtn">
+                    <div
+                      className="HighDropBtn"
+                      onClick={() => this.handleOptionSelect(1)}
+                    >
+                      <button>
+                        <h4>Highlights</h4>
+                      </button>
+                      <i
+                        className={`fas fa-plus ${
+                          this.state.isActive === 1 ? "iconActive" : ""
+                        }`}
+                      ></i>
+                    </div>
+                    <div
+                      className={`ContentShow ${
+                        this.state.isActive === 1 ? "" : "ContentNone"
+                      }`}
+                    >
+                      <p>
+                        • Defined, pure sound quality in a portable, compact
+                        design <br />• Pair and play with your Bluetooth® device{" "}
+                        <br />• 12-hour rechargeable battery <br />• Built-in
+                        speakerphone <br />• Charge out to charge your iPhone
+                        and other devices <br />• Power adapter and Lightning
+                        cable included
+                      </p>
+                    </div>
+                  </div>
+                  <div className="TechSpecsBtn">
+                    <div
+                      className="TechDropBtn"
+                      onClick={() => this.handleOptionSelect(2)}
+                    >
+                      <button>
+                        <h4>Tech Specs</h4>
+                      </button>
+                      <i
+                        className={`fas fa-plus ${
+                          this.state.isActive === 2 ? "iconActive" : ""
+                        }`}
+                      ></i>
+                    </div>
+                    <div
+                      className={`ContentShow ${
+                        this.state.isActive === 2 ? "" : "ContentNone"
+                      }`}
+                    >
+                      <p>
+                        • Height: 2.5 in/6.36 cm
+                        <br />• Length: 8.27 in/21 cm
+                        <br />• Width: 2.72 in/6.92 cm
+                        <br />• Stereo Bluetooth®
+                        <br />• 3.5mm stereo jack
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                <div className="PriceWrap">
+                  <div className="Price">$179.95</div>
+                  <div>
+                    <RedButton text={"BUY ON"} />
+                  </div>
+                </div>
+              </div>
+              <div className="ItemRight">
+                <div className="Image">
+                  <img
+                    src="https://www.beatsbydre.com/content/dam/beats/web/pdp/beats-pill-plus/product_overview/overview_pillplus_retina_V2.png"
+                    alt="img"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <Footers />
       </div>
     );
   }

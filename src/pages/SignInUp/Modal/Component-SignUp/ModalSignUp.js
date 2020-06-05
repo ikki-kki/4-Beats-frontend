@@ -162,7 +162,6 @@ class ModalSignUp extends React.Component {
                   <div className="content1">
                     <input
                       onChange={this.inputValueEmail}
-                      // onKeyUp={() => this.TextCheck(1)}
                       className="TextInput"
                       name="email"
                       placeholder="Email address"
