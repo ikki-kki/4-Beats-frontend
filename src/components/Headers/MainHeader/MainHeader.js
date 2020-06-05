@@ -101,6 +101,10 @@ class MainHeader extends Component {
     });
   };
 
+  toProductsSpeacker = () => {
+    this.props.history.push("/products/speaker");
+  };
+
   render() {
     console.log("보내기", this.state.responsePost);
     console.log("length: ", this.state.response.length);
@@ -201,6 +205,7 @@ class MainHeader extends Component {
                   className="hover-menus"
                   id="Speaker"
                   onMouseEnter={() => this.menuHandler(2)}
+                  onClick={this.toProductsSpeacker}
                 >
                   Speaker
                 </li>
