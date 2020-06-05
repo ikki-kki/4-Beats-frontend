@@ -341,7 +341,7 @@ class ProductsDetailPage2 extends React.Component {
                 </div>
                 <div className="PriceWrap">
                   <div className="Price">$179.95</div>
-                  <div>
+                  <div className="RedBtn">
                     <RedButton text={"BUY ON"} />
                   </div>
                 </div>

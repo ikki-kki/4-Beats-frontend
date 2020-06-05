@@ -94,7 +94,7 @@ class Order extends React.Component {
       }),
     }).then((res) => {
       if (res.status === 200) {
-        alert("OK");
+        alert("Order Completed");
         this.props.history.push(`/order/confirm`);
       } else {
         alert("try again");
