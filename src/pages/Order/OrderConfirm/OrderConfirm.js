@@ -9,6 +9,7 @@ class OrderConfirm extends React.Component {
   state = {
     userInfo: [],
   };
+
   componentDidMount() {
     const token = localStorage.getItem("Authorization");
     fetch(`${API}/order`, {
@@ -25,6 +26,7 @@ class OrderConfirm extends React.Component {
         })
       );
   }
+
   render() {
     return (
       <>

@@ -6,19 +6,21 @@ class OrderPriceList extends React.Component {
   };
   render() {
     const { totalPrice } = this.props;
-    const orderTotal = Number(totalPrice) + 6.0;
+    const orderTotal = (Number(totalPrice) + 6.0).toLocaleString("en-US");
     return (
       <>
         <div className="priceBox">
           <div className="priceWrap">
             <span>Subtotal</span>
-            <span className="subPrice">{totalPrice}</span>
+            <span className="subPrice">
+              $ {Number(totalPrice).toLocaleString("en-US")}
+            </span>
             <span className="priceCarculate">+</span>
             <span>Shipping</span>
             <span className="subPrice">$ 6.00</span>
             <span className="priceCarculate">=</span>
             <span>Order Total</span>
-            <span className="totalPrice">{orderTotal}</span>
+            <span className="totalPrice">$ {orderTotal}</span>
           </div>
         </div>
       </>

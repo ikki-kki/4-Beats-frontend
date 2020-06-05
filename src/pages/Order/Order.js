@@ -246,7 +246,10 @@ class Order extends React.Component {
                   <div className="priceWrap">
                     <span>Total price</span>
                     <span className="totalPrice">
-                      {Number(this.state.totalP) + 6.0}
+                      ${" "}
+                      {(Number(this.state.totalP) + 6.0).toLocaleString(
+                        "en-US"
+                      )}
                     </span>
                   </div>
                 </div>
