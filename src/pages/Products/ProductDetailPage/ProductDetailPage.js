@@ -8,7 +8,7 @@ import NewsFooter from "../../../components/Footers/NewsFooter/NewsFooter";
 import MainFooter from "../../../components/Footers/MainFooter/MainFooter";
 import GoTop from "../../../components/GoTop/GoTop";
 import Fade from "react-reveal/Fade";
-import RedButton from "../../../components/Buttons/RedButton";
+// import RedButton from "../../../components/Buttons/RedButton";
 import "./ProductDetailPage.scss";
 
 const selProduct = {
@@ -274,7 +274,7 @@ class ProductDetailPage extends React.Component {
                 <div className="rightBtnWrap" />
               </button>
               <div className="redButtonWrap">
-                <RedButton text="Add to cart" />
+                {/* <RedButton text="Add to cart" /> */}
               </div>
             </div>
           </div>
