@@ -95,7 +95,7 @@ class DetailCard extends React.Component {
               <div className="buyBtn">
                 <div className="btnWrapper">
                   <RedButton
-                    text="Buy"
+                    text="ADD TO CART"
                     sendProduct={() => this.sendProduct(id)}
                   />
                 </div>
