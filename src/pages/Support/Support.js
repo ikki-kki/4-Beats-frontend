@@ -3,6 +3,7 @@ import Config from "./Config";
 import MainHeader from "../../components/Headers/MainHeader/MainHeader";
 import GrayBorderButton from "../../components/Buttons/GrayBorderButton";
 import GoTop from "../../components/GoTop/GoTop";
+import Footers from "../../components/Footers/Footers";
 import "./Support.scss";
 
 class Support extends React.Component {
@@ -284,6 +285,7 @@ class Support extends React.Component {
             </div>
           </div>
         </section>
+        <Footers />
       </div>
     );
   }
