@@ -17,19 +17,24 @@
         left: 62%;
         padding-top: 24%;
         font-size: 15px;
-        line-height: 24px;
         color: white;
 
         h1 {
           font-size: 60px;
           font-weight: 800;
           margin-bottom: 5px;
+          sup {
+            font-size: 47px;
+            vertical-align: baseline;
+            top: -18px;
+            position: relative;
+          }
         }
         p {
           font-size: 13px;
           margin-bottom: 10px;
           letter-spacing: 0.3px;
-          padding-top: 30px;
+          padding-top: 15px;
         }
       }
       .PriceBuyWrap {
@@ -42,7 +47,7 @@
           line-height: 22px;
           position: relative;
           margin-right: 15px;
-          margin-top: 2.9%;
+          margin-top: 2.4%;
         }
       }
     }
@@ -69,211 +74,110 @@
         position: relative;
         width: 100%;
         left: 0;
-        top: 40%;
+        top: 30%;
         z-index: 5;
         .Container {
           width: 80%;
           margin-left: auto;
           margin-right: auto;
+          display: flex;
           .ColorSelectorContent {
-            width: 33.333%;
-            left: 8.333%;
+            width: 50%;
+            left: 1%;
             position: relative;
             border: none;
-            legend {
+            .TextNote {
               display: block;
-              border-style: none;
               color: #a7a6a6;
               font-weight: 700;
               font-size: 13px;
-              margin-bottom: 5px;
+              padding-bottom: 5px;
+              font-family: $mainFont;
               h2 {
                 font-size: 50px;
                 line-height: 1.1;
                 color: #222021;
+                margin-bottom: 20px;
+                font-weight: 900;
+                padding-left: 3%;
               }
             }
             .ColorList {
-              padding: 50px;
-              background-color: rgba(162, 162, 162, 0.13);
-              height: 20px;
-              ul {
+              padding: 20px;
+              height: 30px;
+              display: flex;
+              .WhiteWrap {
                 padding: 3px;
-                display: block;
-                .Active {
-                  width: 50%;
-                  margin-bottom: 20px;
-                  padding: 1px 10px 1px 1px;
-                  margin-right: 0;
-                  float: left;
-                  .ColorListInput1 {
-                    display: block;
-                    clip: rect(1px, 1px, 1px, 1px);
-                    height: 1px;
-                    overflow: hidden;
-                    position: absolute !important;
-                    width: 1px;
-                  }
-                  label {
-                    display: flex;
-                    align-items: center;
-                    a {
-                      text-decoration: none;
-                      font-weight: 500;
-                      transition: border-color 0.35s ease-out;
-                      .BtnBorder {
-                        border: 2px solid #222021;
-                        width: 40px;
-                        height: 40px;
-                        min-width: fit-content;
-                        margin-right: 17px;
-                        border-radius: 50%;
-                        padding: 3px;
-                        vertical-align: middle;
-                        transition: border-color 280ms ease-out;
-
-                        .ImgWrap {
-                          width: 30px;
-                          height: 30px;
-                          border: 1px solid rgba(167, 166, 166, 0.5);
-                          overflow: hidden;
-                          border-radius: 50px;
-                          img {
-                            display: block;
-                            max-width: 100%;
-                          }
-                        }
-                      }
-                      .ColorTitle {
-                        font-size: 13px;
-                        line-height: 1;
-                        color: #222021;
-                        font-weight: 600;
-                        margin-top: 4px;
-                        text-align: left;
-                        font-family: $mainFont;
-                      }
-                    }
-                  }
+                display: flex;
+                font-family: $mainFont;
+                font-weight: 600;
+                font-size: 13px;
+                width: 25%;
+                .WhiteBox {
+                  width: 30px;
+                  height: 30px;
+                  border-radius: 50px;
+                  border: 1px solid rgb(185, 185, 185);
+                  background-color: white;
+                  cursor: pointer;
                 }
-                .Active {
-                  width: 50%;
-                  margin-bottom: 20px;
-                  padding: 1px 10px 1px 1px;
-                  margin-right: 0;
-                  float: left;
-                  .ColorListInput2 {
-                    display: block;
-                    clip: rect(1px, 1px, 1px, 1px);
-                    height: 1px;
-                    overflow: hidden;
-                    position: absolute !important;
-                    width: 1px;
-                  }
-                  label {
-                    display: flex;
-                    align-items: center;
-                    margin-bottom: 0;
-                    a {
-                      text-decoration: none;
-                      font-weight: 500;
-                      transition: border-color 0.35s ease-out;
-                      display: flex;
-                      align-items: center;
-                      .BtnBorder {
-                        width: 40px;
-                        height: 40px;
-                        min-width: fit-content;
-                        margin-right: 17px;
-                        border-radius: 50%;
-                        padding: 3px;
-                        vertical-align: middle;
-                        transition: border-color 280ms ease-out;
-
-                        .ImgWrap {
-                          width: 30px;
-                          height: 30px;
-                          border: 1px solid rgba(167, 166, 166, 0.5);
-                          overflow: hidden;
-                          border-radius: 50px;
-                          img {
-                            display: block;
-                            max-width: 100%;
-                          }
-                        }
-                      }
-                      .ColorTitle {
-                        font-size: 13px;
-                        line-height: 1;
-                        color: #222021;
-                        font-weight: 600;
-                        margin-top: 4px;
-                        text-align: left;
-                        font-family: $mainFont;
-                      }
-                    }
-                  }
-                }
-                .Active {
-                  width: 50%;
-                  margin-bottom: 20px;
-                  padding: 1px 10px 1px 1px;
-                  margin-right: 0;
-                  float: left;
-                  .ColorListInput3 {
-                    display: block;
-                    clip: rect(1px, 1px, 1px, 1px);
-                    height: 1px;
-                    width: 1px;
-                    overflow: hidden;
-                    position: absolute !important;
-                  }
-                  label {
-                    display: flex;
-                    align-items: center;
-                    margin-bottom: 0;
-                    cursor: default;
-                    a {
-                      text-decoration: none;
-                      font-weight: 500;
-                      transition: border-color 0.35s ease-out;
-                      display: flex;
-                      align-items: center;
-                      .BtnBorder {
-                        width: 40px;
-                        height: 40px;
-                        min-width: fit-content;
-                        margin-right: 17px;
-                        border-radius: 50%;
-                        padding: 3px;
-                        vertical-align: middle;
-                        transition: border-color 280ms ease-out;
-
-                        .ImgWrap {
-                          width: 30px;
-                          height: 30px;
-                          border: 1px solid rgba(167, 166, 166, 0.5);
-                          overflow: hidden;
-                          border-radius: 50px;
-                          img {
-                            display: block;
-                            max-width: 100%;
-                          }
-                        }
-                      }
-                      .ColorTitle {
-                        font-size: 13px;
-                        line-height: 1;
-                        color: #222021;
-                        font-weight: 600;
-                        margin-top: 4px;
-                        text-align: left;
-                        font-family: $mainFont;
-                      }
-                    }
-                  }
+                .TextWhite {
+                  margin-top: 10px;
+                  margin-left: 11px;
                 }
               }
+              .BlackWrap {
+                padding: 3px;
+                display: flex;
+                font-family: $mainFont;
+                font-weight: 600;
+                font-size: 13px;
+                width: 25%;
+
+                .BlackBox {
+                  width: 30px;
+                  height: 30px;
+                  border-radius: 50px;
+                  border: 1px solid rgb(185, 185, 185);
+                  background-color: black;
+                  cursor: pointer;
+                }
+                .TextBlack {
+                  margin-top: 10px;
+                  margin-left: 11px;
+                }
+              }
+              .RedWrap {
+                padding: 3px;
+                display: flex;
+                font-family: $mainFont;
+                font-weight: 600;
+                font-size: 13px;
+                .RedBox {
+                  width: 30px;
+                  height: 30px;
+                  border-radius: 50px;
+                  border: 1px solid rgb(185, 185, 185);
+                  background-color: red;
+                  cursor: pointer;
+                }
+                .TextRed {
+                  margin-top: 10px;
+                  margin-left: 11px;
+                }
+              }
+            }
+          }
+          .SpeakerWhite {
+            width: 50%;
+            position: relative;
+
+            img {
+              width: 100%;
+              position: absolute;
+              float: right;
+              top: -200%;
+              left: 8%;
             }
           }
         }
@@ -311,20 +215,20 @@
             h3 {
               font-size: 1.875rem;
               letter-spacing: -0.01em;
-              width: 100% !important;
-              margin-left: 0 !important;
-              line-height: 1.111111111;
-              margin-bottom: 0.6666666667rem;
+              width: 100%;
+              margin-left: 0;
+              line-height: 1.1;
+              margin-bottom: 0.67rem;
               font-weight: 700;
             }
             p {
               font-size: 24px;
               line-height: 24px;
-              width: 100% !important;
+              width: 100%;
               color: rgb(185, 185, 185);
               line-height: 30px;
               sup {
-                font-size: 0.675em;
+                font-size: 0.67em;
                 vertical-align: baseline;
                 top: -0.4em;
                 position: relative;
@@ -354,23 +258,23 @@
           vertical-align: middle;
           position: relative;
           .TextInner {
-            width: 66.66667%;
-            margin-left: 16.66667%;
+            width: 66.67%;
+            margin-left: 16.67%;
             padding: 0 10px;
             font-family: $mainFont;
             h3 {
-              font-size: 1.875rem;
+              font-size: 1.87rem;
               letter-spacing: -0.01em;
-              width: 100% !important;
-              margin-left: 0 !important;
-              line-height: 1.111111111;
-              margin-bottom: 0.6666666667rem;
+              width: 100%;
+              margin-left: 0;
+              line-height: 1.1;
+              margin-bottom: 0.67rem;
               font-weight: 700;
             }
             p {
               font-size: 24px;
               line-height: 24px;
-              width: 100% !important;
+              width: 100%;
               color: rgb(185, 185, 185);
               line-height: 30px;
             }
@@ -396,23 +300,23 @@
           vertical-align: middle;
           position: relative;
           .TextInner {
-            width: 66.66667%;
-            margin-left: 16.66667%;
+            width: 66.67%;
+            margin-left: 16.67%;
             padding: 0 10px;
             font-family: $mainFont;
             h3 {
-              font-size: 1.875rem;
+              font-size: 1.87rem;
               letter-spacing: -0.01em;
-              width: 100% !important;
-              margin-left: 0 !important;
-              line-height: 1.111111111;
-              margin-bottom: 0.6666666667rem;
+              width: 100%;
+              margin-left: 0;
+              line-height: 1.1;
+              margin-bottom: 0.67rem;
               font-weight: 700;
             }
             p {
               font-size: 24px;
               line-height: 24px;
-              width: 100% !important;
+              width: 100%;
               color: rgb(185, 185, 185);
               line-height: 30px;
             }
@@ -433,12 +337,12 @@
         text-align: center;
         h2 {
           font-size: 2.4rem;
-          margin-bottom: 0.6666666667rem;
+          margin-bottom: 0.67rem;
           color: #222021;
           font-weight: 700;
           line-height: 1;
           sup {
-            font-size: 0.675em;
+            font-size: 0.67em;
             vertical-align: baseline;
             top: -0.4em;
             position: relative;
@@ -489,6 +393,336 @@
               display: block;
               max-width: 100%;
             }
+          }
+        }
+      }
+    }
+  }
+  .StickySection {
+    display: block;
+    .SlideWrap {
+      width: 100%;
+      height: 100vh;
+      position: relative;
+      overflow: hidden;
+      .Text {
+        width: 50%;
+        float: left;
+        background-color: #fff;
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        z-index: 2;
+        font-family: $mainFont;
+        .TextInner {
+          width: 55.8333%;
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translateX(-50%) translateY(-50%);
+          h3 {
+            font-size: 45px;
+            font-weight: 800;
+            color: #222021;
+            line-height: 1.1;
+            margin-bottom: 10px;
+          }
+          p {
+            color: #565656c5;
+            font-size: 15px;
+            line-height: 1.4;
+            width: 100%;
+            sup {
+              font-size: 10px;
+              vertical-align: baseline;
+              top: -5px;
+              position: relative;
+            }
+          }
+        }
+      }
+      .StickyImg {
+        background-image: url(https://www.beatsbydre.com/content/dam/beats/web/pdp/beats-pill-plus/parallax/pill%2b_parallax_dj_retina_1720x2440_V2.jpg);
+        background-size: 50%;
+        background-position: top right;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        width: 500%;
+        height: 100%;
+        float: right;
+        z-index: 3;
+      }
+    }
+    .SlideWrap_2 {
+      height: 100vh;
+      position: relative;
+      overflow: hidden;
+      .Text {
+        width: 50%;
+        float: left;
+        background-color: #fff;
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        z-index: 2;
+        font-family: $mainFont;
+        .TextInner {
+          width: 55.8333%;
+          position: absolute;
+          left: 50%;
+          top: 50%;
+          transform: translateX(-50%) translateY(-50%);
+          h3 {
+            font-size: 45px;
+            font-weight: 800;
+            line-height: 1.1;
+            margin-bottom: 10px;
+            color: #222021;
+          }
+          p {
+            color: #565656c5;
+            font-size: 15px;
+            line-height: 1.4;
+            width: 100%;
+            sup {
+              font-size: 10px;
+              vertical-align: baseline;
+              top: -5px;
+              position: relative;
+            }
+          }
+        }
+      }
+      .StickyImg {
+        background-image: url(https://www.beatsbydre.com/content/dam/beats/web/pdp/beats-pill-plus/parallax/pill%2b_parallax_amplify_retina_1720x2440_V2.jpg);
+        background-size: 50%;
+        background-position: top right;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        width: 50%;
+        height: 100%;
+        float: right;
+      }
+    }
+    .SlideWrap_3 {
+      height: 100vh;
+      position: relative;
+      overflow: hidden;
+      .Text {
+        width: 50%;
+        float: left;
+        background-color: white;
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        z-index: 3;
+        .TextInner {
+          width: 55.8%;
+          position: absolute;
+          left: 50%;
+          top: 50%;
+          transform: translateX(-50%) translateY(-50%);
+          h3 {
+            font-size: 45px;
+            line-height: 1.1;
+            margin-bottom: 10px;
+            font-weight: 800;
+          }
+          p {
+            color: #565656c5;
+            font-size: 15px;
+            line-height: 1.4;
+            width: 100%;
+            sup {
+              font-size: 10px;
+              vertical-align: baseline;
+              top: -5px;
+              position: relative;
+            }
+          }
+        }
+      }
+      .StickyImg {
+        background-image: url(https://www.beatsbydre.com/content/dam/beats/web/pdp/beats-pill-plus/parallax/pill%2b_parallax_stereo_retina_1720x2440_V2.jpg);
+        background-size: 50%;
+        background-position: top right;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        width: 50%;
+        height: 100%;
+        float: right;
+      }
+    }
+  }
+  .ProductOverview {
+    display: block;
+    .Container {
+      padding: 170px 0;
+      background-color: #fff;
+      margin-bottom: 115px;
+      .Content {
+        width: 85%;
+        margin-left: auto;
+        margin-right: auto;
+        display: flex;
+        align-items: center;
+        .ItemLeft {
+          left: 8.333%;
+          flex: 0 0 33.33%;
+          position: relative;
+          z-index: 2;
+          .Title {
+            margin-bottom: 40px;
+            font-size: 14px;
+            font-family: $mainFont;
+            h2 {
+              font-size: 50px;
+              line-height: 1.1;
+              color: #222021;
+              font-weight: 700;
+              margin: 35px 0;
+            }
+            p {
+              margin-bottom: 1em;
+              color: #8c8c8c;
+              line-height: 1.6;
+            }
+          }
+          .Toggle {
+            .HighlightsBtn {
+              padding: 0 30px 0 30px;
+              border-top: solid 1px #dddddd;
+              &:hover {
+                background-color: #f7f7f7;
+                transition: all ease-in-out 0.2s;
+              }
+              &:last-child {
+                border-bottom: solid 1px #dddddd;
+              }
+              h4 {
+                font-size: 15px;
+                letter-spacing: 0.025em;
+                font-weight: 600;
+                cursor: pointer;
+                line-height: 1.2;
+                color: black;
+              }
+              .HighDropBtn {
+                width: 100%;
+                padding: 40px 0 34px 0;
+                display: flex;
+                justify-content: space-between;
+                .fas {
+                  font-size: 6px;
+                  color: #a7a6a6;
+                  transform: rotate(0deg);
+                  transition: transform 0.2s ease-in-out;
+                }
+                .iconActive {
+                  transform: rotate(-45deg);
+                }
+              }
+              .ContentShow {
+                height: auto;
+                display: block;
+                overflow: hidden;
+                transition: all ease-in-out 0.2s;
+                p {
+                  padding: 0 20px 0 20px;
+                  margin-bottom: 1em;
+                  font-family: $mainFont;
+                  color: #a0a0a0;
+                  line-height: 1.4;
+                }
+              }
+              .ContentNone {
+                display: none;
+                transition: all ease-in-out 0.2s;
+              }
+            }
+            .TechSpecsBtn {
+              padding: 0 30px 0 30px;
+              border-top: solid 1px #dddddd;
+              &:hover {
+                background-color: #f7f7f7;
+                transition: all ease-in-out 0.2s;
+              }
+              &:last-child {
+                border-bottom: solid 1px #dddddd;
+              }
+              h4 {
+                font-size: 15px;
+                letter-spacing: 0.025em;
+                font-weight: 600;
+                cursor: pointer;
+                line-height: 1.2;
+                color: black;
+              }
+              .TechDropBtn {
+                width: 100%;
+                padding: 40px 0 34px 0;
+                display: flex;
+                justify-content: space-between;
+                .fas {
+                  font-size: 6px;
+                  color: #a7a6a6;
+                  transform: rotate(0deg);
+                  transition: transform 0.2s ease-in-out;
+                }
+                .iconActive {
+                  transform: rotate(-45deg);
+                }
+              }
+              .ContentShow {
+                height: auto;
+                display: block;
+                overflow: hidden;
+                transition: all ease-in-out 0.2s;
+                p {
+                  padding: 0 20px 0 20px;
+                  margin-bottom: 1em;
+                  font-family: $mainFont;
+                  color: #a0a0a0;
+                  line-height: 1.4;
+                }
+              }
+              .ContentNone {
+                display: none;
+                transition: all ease-in-out 0.2s;
+              }
+            }
+          }
+          .PriceWrap {
+            padding-top: 60px;
+            display: flex;
+            margin-left: 10px;
+            .Price {
+              display: inline-block;
+              font-size: 22px;
+              line-height: 22px;
+              color: #222021;
+              font-family: $mainFont;
+              position: relative;
+              top: 14px;
+              margin-right: 25px;
+            }
+          }
+        }
+        .ItemRight {
+          flex: 0 0 58.3%;
+          left: 8.33%;
+          width: 100%;
+          position: relative;
+          z-index: 1;
+          .Image img {
+            display: block;
+            width: 100%;
           }
         }
       }
