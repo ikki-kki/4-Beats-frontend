@@ -13,11 +13,11 @@ export default class CartLists extends Component {
   }
 
   updateQuantity = (modifier) => {
-    const { price } = this.props; // 통과
+    const { price } = this.props;
 
     // 최대 최소값 범위
     const minimum = this.props.min || 1;
-    const maximum = this.props.max || 100; // 양수 무한대
+    const maximum = this.props.max || 100;
 
     // 업데이트된 수량의 값
     const quantity = this.state.quantity + modifier;
@@ -32,7 +32,7 @@ export default class CartLists extends Component {
         quantity: quantity,
       },
       () => {
-        let itemId = this.props.item_id;
+        let idx = this.props.idx;
         let countTotalPrice;
 
         if (modifier === -1) {
@@ -40,13 +40,13 @@ export default class CartLists extends Component {
         } else {
           countTotalPrice = this.props.totalPrice + price;
         }
-        this.props.addHandler(countTotalPrice, quantity, itemId);
+        this.props.addHandler(countTotalPrice, quantity, idx);
       }
     );
   };
 
   deleteData = () => {
-    const token = localStorage.getItem("token");
+    const token = localStorage.getItem("Authorization");
     fetch(`${API}/cart/${this.props.id}`, {
       method: "DELETE",
       headers: {
