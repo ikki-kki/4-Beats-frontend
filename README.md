@@ -1,12 +1,12 @@
 # 1차 프로젝트 : beatsbydre.com 클론
 
 ## Introduction
-WeCode 기 수강생들의 1차 2주 클론 프로젝트입니다.
-프로젝트 기간 : 2020.5.25 ~ 2020.6.5 (2주)
-4명의 개발자가 함께 협업했습니다. (3 Front-End, 1Back-End)
+- WeCode 기 수강생들의 1차 2주 클론 프로젝트입니다.
+- 프로젝트 기간 : 2020.5.25 ~ 2020.6.5 (2주)
+- 4명의 개발자가 함께 협업했습니다. (3 Front-End, 1Back-End)
 
 ## Demo
-<iframe width="560" height="315" src="https://www.youtube.com/embed/SYwS8Oii69w" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+[![](https://img.youtube.com/embed/SYwS8Oii69w/0.jpg)](https://www.youtube.com/embed/SYwS8Oii69w?t=0s) 
 
 ## 목표
 - [beatsbydre.com](http://beatsbydre.com) 사이트의 interface 와 동일하게 화면 구현하기.
