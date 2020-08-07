@@ -6,7 +6,7 @@
 - 4명의 개발자가 함께 협업했습니다. (3 Front-End, 1Back-End)
 
 ## Demo
-[![](https://img.youtube.com/embed/SYwS8Oii69w/0.jpg)](https://www.youtube.com/embed/SYwS8Oii69w?t=0s) 
+[![youtube](https://i.ytimg.com/vi/SYwS8Oii69w/original.jpg)](https://www.youtube.com/embed/SYwS8Oii69w?t=0s) 
 
 ## 목표
 - [beatsbydre.com](http://beatsbydre.com) 사이트의 interface 와 동일하게 화면 구현하기.
